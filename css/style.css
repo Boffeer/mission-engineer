@@ -553,12 +553,12 @@ body._lock {
 .button--on.button--primary[disabled]:hover {
   --button-color: var(--c-blind);
   color: var(--c-text-disabled);
-  color: #106332;
   opacity: 1;
 }
 @media (prefers-color-scheme: dark) {
   .button--on.button--primary[disabled],
 .button--on.button--primary[disabled]:hover {
+    color: #106332;
     --button-color: var(--c-accent--dark);
   }
 }
@@ -591,10 +591,17 @@ body._lock {
 
 .button--on.button--secondary[disabled],
 .button--on.button--secondary[disabled]:hover {
-  --button-color: var(--c-text-disabled);
+  --button-color: var(--c-blind);
   color: var(--button-color);
   background-color: transparent;
-  opacity: 0.4;
+  border-color: var(--button-color);
+}
+@media (prefers-color-scheme: dark) {
+  .button--on.button--secondary[disabled],
+.button--on.button--secondary[disabled]:hover {
+    --button-color: var(--c-text-disabled);
+    opacity: 0.4;
+  }
 }
 
 .button--thirdly {
@@ -624,6 +631,7 @@ body._lock {
   .button--on.button--thirdly[disabled],
 .button--on.button--thirdly[disabled]:hover {
     --button-color: #1a743f;
+    color: var(--button-color);
   }
 }
 
