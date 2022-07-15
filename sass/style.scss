@@ -1,10 +1,21 @@
-@import "_fonts"; // Шрифты
-@import "_variables"; // Переменные
-@import "_reset"; // Сброс css
+@import "fonts"; // Шрифты
+@import "variables"; // Переменные
+@import "reset"; // Сброс css
+
+@mixin getmask($image_path: null, $size: contain) {
+    -webkit-mask: url("#{$image_path}");
+    mask: url("#{$image_path}");
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: #{$size};
+    mask-size: #{$size};
+}
 
 // Миксин для перевода px в vw
 @function vw($px) {
-    @return $px/(1920 / 100vw);
+    @return $px / (1920 / 100vw);
 }
 
 // Общие стили для страниц
@@ -39,11 +50,11 @@
 
 body {
     font-family: $ffMain;
-    color: $main;
     font-size: 16px;
-    font-weight: 400;
     font-style: normal;
+    font-weight: 400;
     line-height: 1.5;
+    color: $main;
     background: $bg-page;
 
     &._lock {
@@ -53,34 +64,34 @@ body {
 
 .wrapper {
     position: relative;
-    width: 100%;
-    min-height: 100%;
     display: flex;
     flex-direction: column;
+    width: 100%;
+    min-height: 100%;
     overflow: hidden;
 }
 
-@import "_grid"; // Сетка
+@import "grid"; // Сетка
 
 // Анимация
-@import "./_animation";
+@import "./animation";
 
 // Компоненты
-@import "./components/_buttons";
-@import "./components/_forms";
-@import "./components/_modal";
+@import "./components/buttons";
+@import "./components/forms";
+@import "./components/modal";
 
 // Текстовые компоненты
-@import "./components/text/_text";
-@import "./components/text/_titles";
+@import "./components/text/text";
+@import "./components/text/titles";
 
 // Секции
-@import "./sections/_header";
-@import "./sections/_footer";
+@import "./sections/header";
+@import "./sections/footer";
 
 // Страницы
 
 // Библиотеки
-@import "./libs/_aos";
-@import "./libs/_lightgallery";
-@import "./libs/_swiper";
+@import "./libs/aos";
+@import "./libs/lightgallery";
+@import "./libs/swiper";

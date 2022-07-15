@@ -1,9 +1,79 @@
+$mediaMobile: 768px;
 // Пользовательские переменные
 :root {
     --ffMain: "Noto Sans", sans-serif;
     --ffHeader: sans-serif;
     --tr: 0.3s; // Плавность перехода
     --radius: 16px; // border-radius
+
+    --fz-h1: 30px;
+    --lh-h1: 133.3%;
+    @media (max-width: $mediaMobile) {
+        --fz-h1: 20px;
+        --lh-h1: 150%;
+    }
+
+    --fz-h2: 26px;
+    --lh-h2: 123.3%;
+    @media (max-width: $mediaMobile) {
+        --fz-h2: 18px;
+        --lh-h2: 133.3%;
+    }
+
+    --fz-h3: 20px;
+    --lh-h3: 130%;
+    @media (max-width: $mediaMobile) {
+        --fz-h3: 16px;
+        --lh-h3: 150%;
+    }
+
+    --fz-h4: 16px;
+    --lh-h4: 150%;
+
+    --fz-navigation: 16px;
+    --lh-navigation: 125%;
+
+    --fz-button: 16px;
+    --lh-button: 125%;
+
+    --fz-button--small: 14px;
+    --lh-button--small: 120%;
+
+    --fz-lead: 18px;
+    --lh-lead: 177.7%;
+    @media (max-width: $mediaMobile) {
+        --fz-lead: 16px;
+        --lh-lead: 187.7%;
+    }
+
+    --fz-body: 16px;
+    --lh-body: 187.6%;
+    --lh-body--p: 150%;
+    --fz-body--small: 14px;
+    --lh-body--small: 157.14%;
+    --fz-body--small-2: 12px;
+    --lh-body--small-2: 150%;
+
+    --fz-tag: 12px;
+    --lh-tag: 150%;
+
+    --bg-app: #f3f5f6;
+    --bg-element: #ffffff;
+
+    --c-accent: #28be46;
+    --c-accent--dark: #0e9243;
+    --c-accent--light: #d8eee1;
+
+    --c-text: #000000;
+    --c-text-grey: #565656;
+    --c-text-grey-2: #999999;
+    --c-text-disabled: #b0b4b9;
+    --c-text-on: #ffffff;
+
+    --c-blind: #e7e9ea;
+    --c-element-disabled: #eeeeee;
+
+    --c-error: #e23c2a;
 }
 
 $ffMain: var(--ffMain);
@@ -21,19 +91,19 @@ $mobile-m: 375px;
 $mobile-s: 320px;
 
 // Цвета
-:root {
-    --main: #242424;
-    --second: #747474;
-    --accent: #399478;
-    --accent-hover: #44bd99;
-    --accent-active: #37866e;
-    --accent2: #dc8b2d;
-    --accent2-active: #c27b29;
-    --outline: #c0c0c0;
-    --bg-page: #fff;
-    --bg-block: #f8f8f8;
-    --error: #e83d3d;
-}
+// :root {
+//     --main: #242424;
+//     --second: #747474;
+//     --accent: #399478;
+//     --accent-hover: #44bd99;
+//     --accent-active: #37866e;
+//     --accent2: #dc8b2d;
+//     --accent2-active: #c27b29;
+//     --outline: #c0c0c0;
+//     --bg-page: #fff;
+//     --bg-block: #f8f8f8;
+//     --error: #e83d3d;
+// }
 
 $main: var(--main);
 $second: var(--second);

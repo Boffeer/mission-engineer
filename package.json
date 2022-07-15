@@ -11,6 +11,8 @@
   "devDependencies": {
     "editorconfig": "^0.15.3",
     "eslint": "^8.19.0",
-    "stylelint": "^14.9.1"
+    "stylelint": "^14.9.1",
+    "stylelint-config-recess-order": "^3.0.0",
+    "stylelint-config-recommended-scss": "^7.0.0"
   }
 }
