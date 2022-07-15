@@ -1,0 +1,11 @@
+node_modules
+dist
+!.eleventy.js
+src/html
+src/css
+src/js
+src/tools
+src/recipes
+src/pages
+src/people
+src/specials

@@ -1,0 +1,16 @@
+{
+  "name": "mission-engineer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "editorconfig": "^0.15.3",
+    "eslint": "^8.19.0",
+    "stylelint": "^14.9.1"
+  }
+}
