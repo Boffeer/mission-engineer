@@ -211,22 +211,43 @@ $margin-icon: 12px; // Отступ иконки от текста
     font-size: var(--fz-button--small);
     line-height: var(--lh-button--small);
 }
+.button[disabled] {
+    --button-color: var(--c-blind);
+    color: var(--c-text-disabled);
+    cursor: default;
+}
+.button:active {
+    opacity: 0.6;
+}
 
 .button--primary {
+    --button-color: var(--c-accent);
     color: var(--c-text-on);
-    background-color: var(--c-accent);
+    background-color: var(--button-color);
     border-radius: 5px;
 }
 .button--primary:hover {
-    background-color: var(--c-accent--dark);
+    --button-color: var(--c-accent--dark);
+}
+.button--primary[disabled] {
+    --button-color: var(--c-blind);
 }
 .button--on.button--primary {
-    --button-color: var(--c-accent);
+    --button-color: var(--c-text-on);
     color: var(--c-accent);
-    background-color: var(--c-text-on);
 }
 .button--on.button--primary:hover {
-    background-color: var(--c-accent--light);
+    --button-color: var(--c-accent--light);
+}
+.button--on.button--primary[disabled],
+.button--on.button--primary[disabled]:hover {
+    --button-color: var(--c-blind);
+    color: var(--c-text-disabled);
+    color: #106332;
+    opacity: 1;
+    @media (prefers-color-scheme: dark) {
+        --button-color: var(--c-accent--dark);
+    }
 }
 
 .button--secondary {
@@ -239,11 +260,26 @@ $margin-icon: 12px; // Отступ иконки от текста
     color: var(--c-text-on);
     background-color: var(--button-color);
 }
+
+.button--secondary[disabled],
+.button--secondary[disabled]:hover {
+    background-color: transparent;
+    border-color: var(--c-text-disabled);
+}
+
 .button--on.button--secondary {
     --button-color: var(--c-text-on);
 }
 .button--on.button--secondary:hover {
     color: var(--c-accent);
+}
+
+.button--on.button--secondary[disabled],
+.button--on.button--secondary[disabled]:hover {
+    --button-color: var(--c-text-disabled);
+    color: var(--button-color);
+    background-color: transparent;
+    opacity: 0.4;
 }
 
 .button--thirdly {
@@ -257,9 +293,19 @@ $margin-icon: 12px; // Отступ иконки от текста
 .button--on.button--thirdly {
     --button-color: var(--c-text-on);
     // --icon-color: var(--c-text-on);
+    @media (prefers-color-scheme: dark) {
+        --button-color: var(--bg-element);
+    }
 }
 .button--on.button--thirdly:hover {
     --button-color: var(--c-accent--light);
+}
+
+.button--on.button--thirdly[disabled],
+.button--on.button--thirdly[disabled]:hover {
+    @media (prefers-color-scheme: dark) {
+        --button-color: #1a743f;
+    }
 }
 
 .button__text {

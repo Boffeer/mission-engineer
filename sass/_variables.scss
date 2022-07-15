@@ -1,6 +1,8 @@
 $mediaMobile: 768px;
 // Пользовательские переменные
 :root {
+    color-scheme: light dark;
+
     --ffMain: "Noto Sans", sans-serif;
     --ffHeader: sans-serif;
     --tr: 0.3s; // Плавность перехода

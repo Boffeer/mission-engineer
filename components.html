@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="css/dark-theme.css"
+      media="(prefers-color-scheme: dark)"
+    />
   </head>
   <body>
     <div class="container">
@@ -15,6 +20,15 @@
           <button class="button button--primary">Первичная</button>
           <button class="button button--secondary">Вторичная</button>
           <button class="button button--thirdly">Третичная</button>
+          <button class="button button--primary" disabled>
+            Первичная задизабленая
+          </button>
+          <button class="button button--secondary" disabled>
+            Вторичная задизаблеаня
+          </button>
+          <button class="button button--thirdly" disabled>
+            Третичная задизаблеаня
+          </button>
         </div>
         <div>
           <button class="button button--primary button--small">
@@ -38,6 +52,15 @@
         </div>
       </div>
       <div style="background: var(--c-accent); padding: 5rem">
+        <button class="button button--primary button--on" disabled>
+          Первичная задизабленая
+        </button>
+        <button class="button button--secondary button--on" disabled>
+          Вторичная задизаблеаня
+        </button>
+        <button class="button button--thirdly button--on" disabled>
+          Третичная задизаблеаня
+        </button>
         <div style="margin-bottom: 2em">
           <button class="button button--primary button--on">Первичная</button>
           <button class="button button--secondary button--on">Вторичная</button>
