@@ -1,8 +1,8 @@
 // Пользовательские переменные
 :root {
-    --ffMain: 'Noto Sans', sans-serif;
+    --ffMain: "Noto Sans", sans-serif;
     --ffHeader: sans-serif;
-    --tr: .3s;  // Плавность перехода
+    --tr: 0.3s; // Плавность перехода
     --radius: 16px; // border-radius
 }
 
@@ -25,14 +25,14 @@ $mobile-s: 320px;
     --main: #242424;
     --second: #747474;
     --accent: #399478;
-    --accent-hover: #44BD99;
-    --accent-active: #37866E;
-    --accent2: #DC8B2D;
-    --accent2-active: #C27B29;
-    --outline: #C0C0C0;
-    --bg-page: #FFF;
-    --bg-block: #F8F8F8;
-    --error: #E83D3D;
+    --accent-hover: #44bd99;
+    --accent-active: #37866e;
+    --accent2: #dc8b2d;
+    --accent2-active: #c27b29;
+    --outline: #c0c0c0;
+    --bg-page: #fff;
+    --bg-block: #f8f8f8;
+    --error: #e83d3d;
 }
 
 $main: var(--main);
