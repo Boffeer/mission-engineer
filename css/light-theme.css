@@ -12,4 +12,8 @@
   --c-blind: #e7e9ea;
   --c-element-disabled: #eeeeee;
   --c-error: #e23c2a;
+}
+
+.header-logo {
+  filter: invert(0);
 }/*# sourceMappingURL=light-theme.css.map */
