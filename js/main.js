@@ -276,12 +276,71 @@ function modal() {
 }
 
 /**
+ * @tabs
+ *
+ * Табы инициируются все
+ * У какой кнопки таба есть класс из js переменной TAB_ACTIVE_CLASS, тот таб и будет активным сразу
+ */
+const tabsBars = document.querySelectorAll(".tabs");
+const tabsPagesWraps = document.querySelectorAll(".tabs-content");
+const TAB_ACTIVE_CLASS = "tab--active";
+
+// Добавляем активное состояние для табов, чтоб инициализировать Swiper
+tabsBars.forEach((tabsBar) => {
+  if (tabsBar.dataset.tabs) {
+    tabsPagesWraps.forEach((tabsPagesWrap) => {
+      const tabPages = tabsPagesWrap.querySelectorAll(".tabs-page");
+      console.log(tabPages);
+      tabPages.forEach((tabPage) => {
+        tabPage.classList.add(TAB_ACTIVE_CLASS);
+      });
+    });
+  }
+});
+
+// Задержка нужна, чтобы Swiper слайдеры не разъезжались
+setTimeout(() => {
+  tabsBars.forEach((tabsBar) => {
+    const tabBarButtons = tabsBar.querySelectorAll(".tab");
+    tabBarButtons.forEach((tabButton, buttonIndex) => {
+      tabButton.addEventListener("click", () => {
+        tabBarButtons.forEach((tab) => {
+          tab.classList.remove(TAB_ACTIVE_CLASS);
+        });
+        tabButton.classList.add(TAB_ACTIVE_CLASS);
+        if (tabsBar.dataset.tabs) {
+          const tabPages = document
+            .querySelector(`.tabs-content[data-tabs="${tabsBar.dataset.tabs}"]`)
+            .querySelectorAll(".tabs-page");
+
+          if (tabPages[buttonIndex]) {
+            tabPages.forEach((tabPage) => {
+              tabPage.classList.remove(TAB_ACTIVE_CLASS);
+            });
+            tabPages[buttonIndex].classList.add(TAB_ACTIVE_CLASS);
+          }
+        } else {
+          console.warn(
+            `there is no tab pages [data-tab="${tabsBar.dataset.tabs}"]`
+          );
+        }
+      });
+    });
+    tabBarButtons.forEach((tabButton) => {
+      if (tabButton.classList.contains(TAB_ACTIVE_CLASS)) {
+        tabButton.click();
+      }
+    });
+  });
+}, 150);
+
+/**
  * @sliders
  */
-let newsSlider = document.querySelector(".news-slider");
-if (newsSlider) {
+let newsSliders = document.querySelectorAll(".news-slider");
+if (newsSliders) {
   // eslint-disable-next-line no-undef, no-unused-vars
-  newsSlider = new Swiper(".news-slider", {
+  let newsSlider = new Swiper(".news-slider", {
     slidesPerView: 3,
     slidesPerGroup: 3,
     spaceBetween: 24,

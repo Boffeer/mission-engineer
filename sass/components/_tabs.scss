@@ -31,8 +31,15 @@
     margin-right: 0;
 }
 
-.tab--active {
+.tab.tab--active {
     color: var(--c-text);
     background-color: var(--bg-element);
     stroke: var(--c-accent);
+}
+
+.tabs-page {
+    display: none;
+}
+.tabs-page.tab--active {
+    display: block;
 }
