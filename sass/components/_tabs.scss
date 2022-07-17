@@ -1,0 +1,31 @@
+.tabs {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px;
+    background-color: var(--bg-app);
+    border-radius: 10px;
+}
+
+.tab {
+    margin-right: 4px;
+    border-radius: 10px;
+    fill: transparent;
+    stroke: var(--c-text-disabled);
+}
+.tab--theme {
+    --button-size: 32px;
+    width: var(--button-size);
+    min-width: var(--button-size);
+    max-width: var(--button-size);
+    height: var(--button-size);
+    max-height: 32px;
+    padding: 8px;
+}
+.tab:last-child {
+    margin-right: 0;
+}
+
+.tab--active {
+    background-color: var(--bg-element);
+    stroke: var(--c-accent);
+}

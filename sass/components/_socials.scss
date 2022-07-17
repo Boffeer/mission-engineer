@@ -1,0 +1,24 @@
+.socials {
+    display: flex;
+    align-items: center;
+}
+.socials__link {
+    --size: 24px;
+    display: block;
+    width: var(--size);
+    min-width: var(--size);
+    max-width: var(--size);
+    height: var(--size);
+    min-height: var(--size);
+    max-height: var(--size);
+    margin-right: 12px;
+    fill: var(--c-text-grey-2);
+}
+
+.socials__link:last-of-type {
+    margin-right: 0;
+}
+
+.socials__link:hover {
+    fill: var(--c-accent);
+}

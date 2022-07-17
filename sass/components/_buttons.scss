@@ -293,6 +293,7 @@ $margin-icon: 12px; // Отступ иконки от текста
 }
 .button--thirdly:hover {
     --button-color: var(--c-accent--dark);
+    --icon-color: var(--button-color);
 }
 .button--on.button--thirdly {
     --button-color: var(--c-text-on);
@@ -325,9 +326,15 @@ $margin-icon: 12px; // Отступ иконки от текста
     max-width: var(--button-icon-size);
     height: var(--button-icon-size);
     background-color: var(--icon-color);
+    fill: transparent;
+    stroke: var(--icon-color);
     transition: all var(--tr) ease;
 }
-.button:hover .button__icon {
+.button--icon-fill .button__icon {
+    fill: var(--icon-color);
+    stroke: none;
+}
+.button--icon-hover-rotate:hover .button__icon {
     transform: rotate(-45deg);
     transform-origin: center;
 }
@@ -339,6 +346,7 @@ $margin-icon: 12px; // Отступ иконки от текста
     order: 5;
     margin-left: 0.57em;
 }
+
 .button__icon path {
     stroke: var(--button-color);
 }

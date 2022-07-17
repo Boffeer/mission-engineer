@@ -1,0 +1,23 @@
+.header__button-search {
+    display: none;
+    stroke: #000;
+}
+
+.header-logo {
+    display: inline-block;
+    width: auto;
+    height: 36px;
+    margin-bottom: 16px;
+}
+.header-logo__pic {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.header-logo__pic--small {
+    display: none;
+}
+
+.header__button-burger {
+    display: none;
+}
