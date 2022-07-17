@@ -19,185 +19,187 @@
   <body>
     <div class="wrapper wrapper--app">
       <div class="menu">
-        <header class="header">
-          <button class="header__button-search">
-            <svg>
-              <use xlink:href="./img/icons/search.svg#search"></use>
-            </svg>
-          </button>
-          <a href="/" class="header-logo">
-            <picture class="header-logo__pic header-logo__pic--full">
-              <source
-                srcset="./img/common/logo-white.svg"
-                media="(prefers-color-scheme: dark)"
-              />
-              <img
-                src="./img/common/logo.svg"
-                alt="Миссия Инженер"
-                class="header-logo__img"
-              />
-            </picture>
-            <picture class="header-logo__pic header-logo__pic--small">
-              <source
-                srcset="./img/common/logo-small-white.svg"
-                media="(prefers-color-scheme: dark)"
-              />
-              <img
-                src="./img/common/logo-small.svg"
-                alt="Миссия Инженер"
-                class="header-logo__img"
-              />
-            </picture>
-          </a>
-          <button class="header__button-burger burger">
-            <span class="burger__lne"></span>
-            <span class="burger__lne"></span>
-            <span class="burger__lne"></span>
-          </button>
-        </header>
-        <div class="menu__content">
-          <div class="menu__top">
-            <nav class="menu__nav">
-              <ul class="menu__nav-list">
-                <li class="menu__nav-item">
-                  <a
-                    href="#"
-                    class="menu__nav-link button button--thirdly button--icon-left"
-                  >
-                    <span class="button__icon">
-                      <svg>
-                        <use xlink:href="./img/icons/all.svg#all"></use>
-                      </svg>
-                    </span>
-                    <span class="button__text">Все материалы</span>
-                  </a>
-                </li>
-                <li class="menu__nav-item menu__nav-item--active">
-                  <a
-                    href="#"
-                    class="menu__nav-link button button--thirdly button--icon-left"
-                  >
-                    <span class="button__icon">
-                      <svg>
-                        <use xlink:href="./img/icons/news.svg#news"></use>
-                      </svg>
-                    </span>
-                    <span class="button__text">Новости</span>
-                  </a>
-                </li>
-                <li class="menu__nav-item">
-                  <a
-                    href="#"
-                    class="menu__nav-link button button--thirdly button--icon-left"
-                  >
-                    <span class="button__icon">
-                      <svg>
-                        <use
-                          xlink:href="./img/icons/calendar.svg#calendar"
-                        ></use>
-                      </svg>
-                    </span>
-                    <span class="button__text">Мероприятия</span>
-                  </a>
-                </li>
-                <li class="menu__nav-item">
-                  <a
-                    href="#"
-                    class="menu__nav-link button button--thirdly button--icon-left"
-                  >
-                    <span class="button__icon">
-                      <svg>
-                        <use
-                          xlink:href="./img/icons/clipboard.svg#clipboard"
-                        ></use>
-                      </svg>
-                    </span>
-                    <span class="button__text">Новости вузов</span>
-                  </a>
-                </li>
-                <li class="menu__nav-item">
-                  <a
-                    href="#"
-                    class="menu__nav-link button button--thirdly button--icon-left"
-                  >
-                    <span class="button__icon">
-                      <svg>
-                        <use xlink:href="./img/icons/cube.svg#cube"></use>
-                      </svg>
-                    </span>
-                    <span class="button__text">Проекты</span>
-                  </a>
-                </li>
-              </ul>
-              <ul class="menu__nav-list">
-                <li class="menu__nav-item">
-                  <a
-                    href="#"
-                    class="menu__nav-link button button--thirdly button--icon-left button--icon-fill"
-                  >
-                    <span class="button__icon">
-                      <svg>
-                        <use xlink:href="./img/icons/t.svg#t"></use>
-                      </svg>
-                    </span>
-                    <span class="button__text">О нас</span>
-                  </a>
-                </li>
-                <li class="menu__nav-item">
-                  <a
-                    href="#"
-                    class="menu__nav-link button button--thirdly button--icon-left"
-                  >
-                    <span class="button__icon">
-                      <svg>
-                        <use xlink:href="./img/icons/mask.svg#mask"></use>
-                      </svg>
-                    </span>
-                    <span class="button__text">Партнёры</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <div class="tabs menu__theme tabs__theme">
-              <button
-                class="tab tab--active tabs__tab tab--theme tab--theme-ligth"
-              >
-                <svg>
-                  <use xlink:href="./img/icons/sun.svg#sun"></use>
-                </svg>
-              </button>
-              <button class="tab tabs__tab tab--theme tab--theme-dark">
-                <svg>
-                  <use xlink:href="./img/icons/moon.svg#moon"></use>
-                </svg>
-              </button>
+        <div class="menu__sticky">
+          <header class="header">
+            <button class="header__button-search">
+              <svg>
+                <use xlink:href="./img/icons/search.svg#search"></use>
+              </svg>
+            </button>
+            <a href="/" class="header-logo">
+              <picture class="header-logo__pic header-logo__pic--full">
+                <source
+                  srcset="./img/common/logo-white.svg"
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img
+                  src="./img/common/logo.svg"
+                  alt="Миссия Инженер"
+                  class="header-logo__img"
+                />
+              </picture>
+              <picture class="header-logo__pic header-logo__pic--small">
+                <source
+                  srcset="./img/common/logo-small-white.svg"
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img
+                  src="./img/common/logo-small.svg"
+                  alt="Миссия Инженер"
+                  class="header-logo__img"
+                />
+              </picture>
+            </a>
+            <button class="header__button-burger burger">
+              <span class="burger__line"></span>
+              <span class="burger__line"></span>
+              <span class="burger__line"></span>
+            </button>
+          </header>
+          <div class="menu__content">
+            <div class="menu__top">
+              <nav class="menu__nav">
+                <ul class="menu__nav-list">
+                  <li class="menu__nav-item">
+                    <a
+                      href="#"
+                      class="menu__nav-link button button--thirdly button--icon-left"
+                    >
+                      <span class="button__icon">
+                        <svg>
+                          <use xlink:href="./img/icons/all.svg#all"></use>
+                        </svg>
+                      </span>
+                      <span class="button__text">Все материалы</span>
+                    </a>
+                  </li>
+                  <li class="menu__nav-item menu__nav-item--active">
+                    <a
+                      href="#"
+                      class="menu__nav-link button button--thirdly button--icon-left"
+                    >
+                      <span class="button__icon">
+                        <svg>
+                          <use xlink:href="./img/icons/news.svg#news"></use>
+                        </svg>
+                      </span>
+                      <span class="button__text">Новости</span>
+                    </a>
+                  </li>
+                  <li class="menu__nav-item">
+                    <a
+                      href="#"
+                      class="menu__nav-link button button--thirdly button--icon-left"
+                    >
+                      <span class="button__icon">
+                        <svg>
+                          <use
+                            xlink:href="./img/icons/calendar.svg#calendar"
+                          ></use>
+                        </svg>
+                      </span>
+                      <span class="button__text">Мероприятия</span>
+                    </a>
+                  </li>
+                  <li class="menu__nav-item">
+                    <a
+                      href="#"
+                      class="menu__nav-link button button--thirdly button--icon-left"
+                    >
+                      <span class="button__icon">
+                        <svg>
+                          <use
+                            xlink:href="./img/icons/clipboard.svg#clipboard"
+                          ></use>
+                        </svg>
+                      </span>
+                      <span class="button__text">Новости вузов</span>
+                    </a>
+                  </li>
+                  <li class="menu__nav-item">
+                    <a
+                      href="#"
+                      class="menu__nav-link button button--thirdly button--icon-left"
+                    >
+                      <span class="button__icon">
+                        <svg>
+                          <use xlink:href="./img/icons/cube.svg#cube"></use>
+                        </svg>
+                      </span>
+                      <span class="button__text">Проекты</span>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="menu__nav-list">
+                  <li class="menu__nav-item">
+                    <a
+                      href="#"
+                      class="menu__nav-link button button--thirdly button--icon-left button--icon-fill"
+                    >
+                      <span class="button__icon">
+                        <svg>
+                          <use xlink:href="./img/icons/t.svg#t"></use>
+                        </svg>
+                      </span>
+                      <span class="button__text">О нас</span>
+                    </a>
+                  </li>
+                  <li class="menu__nav-item">
+                    <a
+                      href="#"
+                      class="menu__nav-link button button--thirdly button--icon-left"
+                    >
+                      <span class="button__icon">
+                        <svg>
+                          <use xlink:href="./img/icons/mask.svg#mask"></use>
+                        </svg>
+                      </span>
+                      <span class="button__text">Партнёры</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <div class="tabs menu__theme tabs--theme">
+                <button
+                  class="tab tab--active tabs__tab tab--theme tab--theme-ligth"
+                >
+                  <svg>
+                    <use xlink:href="./img/icons/sun.svg#sun"></use>
+                  </svg>
+                </button>
+                <button class="tab tabs__tab tab--theme tab--theme-dark">
+                  <svg>
+                    <use xlink:href="./img/icons/moon.svg#moon"></use>
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
-          <div class="menu__bottom">
-            <div class="menu__links">
-              <a href="#" class="menu__links-link"
-                >Томский политехнический университет</a
-              >
-              <a href="#" class="menu__links-link"
-                >Передовые инженерные школы</a
-              >
-            </div>
-            <div class="socials menu__socials">
-              <a href="#vk" class="socials__link">
-                <svg>
-                  <use xlink:href="./img/icons/vk.svg#vk"></use>
-                </svg>
-              </a>
-              <a href="#tg" class="socials__link">
-                <svg>
-                  <use xlink:href="./img/icons/telegram.svg#telegram"></use>
-                </svg>
-              </a>
-              <a href="#r" class="socials__link">
-                <svg>
-                  <use xlink:href="./img/icons/r.svg#r"></use>
-                </svg>
-              </a>
+            <div class="menu__bottom">
+              <div class="menu__links">
+                <a href="#" class="menu__links-link"
+                  >Томский политехнический университет</a
+                >
+                <a href="#" class="menu__links-link"
+                  >Передовые инженерные школы</a
+                >
+              </div>
+              <div class="socials menu__socials">
+                <a href="#vk" class="socials__link">
+                  <svg>
+                    <use xlink:href="./img/icons/vk.svg#vk"></use>
+                  </svg>
+                </a>
+                <a href="#tg" class="socials__link">
+                  <svg>
+                    <use xlink:href="./img/icons/telegram.svg#telegram"></use>
+                  </svg>
+                </a>
+                <a href="#r" class="socials__link">
+                  <svg>
+                    <use xlink:href="./img/icons/r.svg#r"></use>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -222,119 +224,610 @@
         </form>
 
         <section class="section">
-          <h2 class="section__title">Новости</h2>
+          <div class="tabs section__heading">
+            <button class="tab tab--active">События университетов</button
+            ><button class="tab">Мероприятия</button
+            ><button class="tab">Проекты</button>
+          </div>
           <div class="section__content">
-            <article class="card">
-              <div class="card__tags">
-                <a href="#" class="tag card__tag">
-                  <img src="./img/card/tag.png" alt="ТПУ" class="tag__thumb" />
-                  ТПУ
-                </a>
-              </div>
-              <picture class="card__pic"
-                ><img
-                  src="./img/card/card-1.jpg"
-                  alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
-                  class="card__img"
-              /></picture>
-              <div class="card__info">
-                <div class="card-meta">
-                  <div class="card-meta__icon">
-                    <svg>
-                      <use
-                        xlink:href="./img/card/card-bullet.svg#card-bullet"
-                      ></use>
-                    </svg>
+            <div class="tabs__content">
+              <div class="tabs__page">
+                <div class="swiper news-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/card/card-bullet.svg#card-bullet"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >Новости вузов</a
+                            >
+                            <div class="card-meta__desc">17:00, 21 апреля</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >ТПУ запустил в работу новую инженерную школу,
+                              посвященную энергетике</a
+                            >
+                          </h3>
+                          <p class="card__desc">
+                            Небольшой текст из начала новости или лида,
+                            заканчивается многото...
+                          </p>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag-2.png"
+                              alt="ВШЭ"
+                              class="tag__thumb"
+                            />
+                            ВШЭ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-2.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/card/card-bullet.svg#card-bullet"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >Новости вузов</a
+                            >
+                            <div class="card-meta__desc">17:00, 21 апреля</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >ТПУ запустил в работу новую инженерную школу,
+                              посвященную энергетике</a
+                            >
+                          </h3>
+                          <p class="card__desc">
+                            Небольшой текст из начала новости или лида,
+                            заканчивается многото...
+                          </p>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/card/card-bullet.svg#card-bullet"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >Новости вузов</a
+                            >
+                            <div class="card-meta__desc">17:00, 21 апреля</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >ТПУ запустил в работу новую инженерную школу,
+                              посвященную энергетике</a
+                            >
+                          </h3>
+                          <p class="card__desc">
+                            Небольшой текст из начала новости или лида,
+                            заканчивается многото...
+                          </p>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/card/card-bullet.svg#card-bullet"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >Новости вузов</a
+                            >
+                            <div class="card-meta__desc">17:00, 21 апреля</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >ТПУ запустил в работу новую инженерную школу,
+                              посвященную энергетике</a
+                            >
+                          </h3>
+                          <p class="card__desc">
+                            Небольшой текст из начала новости или лида,
+                            заканчивается многото...
+                          </p>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/card/card-bullet.svg#card-bullet"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >Новости вузов</a
+                            >
+                            <div class="card-meta__desc">17:00, 21 апреля</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >ТПУ запустил в работу новую инженерную школу,
+                              посвященную энергетике</a
+                            >
+                          </h3>
+                          <p class="card__desc">
+                            Небольшой текст из начала новости или лида,
+                            заканчивается многото...
+                          </p>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/card/card-bullet.svg#card-bullet"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >Новости вузов</a
+                            >
+                            <div class="card-meta__desc">17:00, 21 апреля</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >ТПУ запустил в работу новую инженерную школу,
+                              посвященную энергетике</a
+                            >
+                          </h3>
+                          <p class="card__desc">
+                            Небольшой текст из начала новости или лида,
+                            заканчивается многото...
+                          </p>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/card/card-bullet.svg#card-bullet"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >Новости вузов</a
+                            >
+                            <div class="card-meta__desc">17:00, 21 апреля</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >ТПУ запустил в работу новую инженерную школу,
+                              посвященную энергетике</a
+                            >
+                          </h3>
+                          <p class="card__desc">
+                            Небольшой текст из начала новости или лида,
+                            заканчивается многото...
+                          </p>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/card/card-bullet.svg#card-bullet"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >Новости вузов</a
+                            >
+                            <div class="card-meta__desc">17:00, 21 апреля</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >ТПУ запустил в работу новую инженерную школу,
+                              посвященную энергетике</a
+                            >
+                          </h3>
+                          <p class="card__desc">
+                            Небольшой текст из начала новости или лида,
+                            заканчивается многото...
+                          </p>
+                        </div>
+                      </article>
+                    </div>
                   </div>
-                  <a href="#" class="card-meta__title">Новости вузов</a>
-                  <div class="card-meta__desc">17:00, 21 апреля</div>
+                  <div
+                    class="swiper-pagination news-slider__pagination slider__pagination"
+                  ></div>
                 </div>
-                <h3 class="card__title">
-                  <a href="#" class="card__title-link"
-                    >ТПУ запустил в работу новую инженерную школу, посвященную
-                    энергетике</a
-                  >
-                </h3>
-                <p class="card__desc">
-                  Небольшой текст из начала новости или лида, заканчивается
-                  многото...
-                </p>
               </div>
-            </article>
-            <article class="card">
-              <div class="card__tags">
-                <a href="#" class="tag card__tag">
-                  <img src="./img/card/tag.png" alt="ТПУ" class="tag__thumb" />
-                  ТПУ
-                </a>
-              </div>
-              <picture class="card__pic"
-                ><img
-                  src="./img/card/card-1.jpg"
-                  alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
-                  class="card__img"
-              /></picture>
-              <div class="card__info">
-                <div class="card-meta">
-                  <div class="card-meta__icon">
-                    <svg>
-                      <use
-                        xlink:href="./img/card/card-bullet.svg#card-bullet"
-                      ></use>
-                    </svg>
+
+              <div class="tabs__page">
+                <div class="swiper news-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card card--event">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/icons/calendar.svg#calendar"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >28 мая, 17:00-19:00</a
+                            >
+                            <div class="card-meta__desc">Томск</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >Вебинар «Проблема самоцитирования в научных
+                              работах: возможности системы Антиплагиат»</a
+                            >
+                          </h3>
+                          <div class="card__marks">
+                            <p class="card__mark">Регистрация</p>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card card--event">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag-2.png"
+                              alt="ВШЭ"
+                              class="tag__thumb"
+                            />
+                            ВШЭ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-2.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/icons/calendar.svg#calendar"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >28 мая, 17:00-19:00</a
+                            >
+                            <div class="card-meta__desc">Томск</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >Вебинар «Проблема самоцитирования в научных
+                              работах: возможности системы Антиплагиат»</a
+                            >
+                          </h3>
+                          <div class="card__marks">
+                            <p class="card__mark">Бесплатно</p>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card card--event">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/icons/calendar.svg#calendar"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >28 мая, 17:00-19:00</a
+                            >
+                            <div class="card-meta__desc">Томск</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >Вебинар «Проблема самоцитирования в научных
+                              работах: возможности системы Антиплагиат»</a
+                            >
+                          </h3>
+                          <div class="card__marks">
+                            <p class="card__mark">Необходим билет</p>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card card--event">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <div class="card-meta">
+                            <div class="card-meta__icon">
+                              <svg>
+                                <use
+                                  xlink:href="./img/icons/calendar.svg#calendar"
+                                ></use>
+                              </svg>
+                            </div>
+                            <a href="#" class="card-meta__title"
+                              >28 мая, 17:00-19:00</a
+                            >
+                            <div class="card-meta__desc">Томск</div>
+                          </div>
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >Вебинар «Проблема самоцитирования в научных
+                              работах: возможности системы Антиплагиат»</a
+                            >
+                          </h3>
+                          <div class="card__marks">
+                            <p class="card__mark">Регистрация</p>
+                          </div>
+                        </div>
+                      </article>
+                    </div>
                   </div>
-                  <a href="#" class="card-meta__title">Новости вузов</a>
-                  <div class="card-meta__desc">17:00, 21 апреля</div>
+                  <div
+                    class="swiper-pagination news-slider__pagination slider__pagination"
+                  ></div>
                 </div>
-                <h3 class="card__title">
-                  <a href="#" class="card__title-link"
-                    >ТПУ запустил в работу новую инженерную школу, посвященную
-                    энергетике</a
-                  >
-                </h3>
-                <p class="card__desc">
-                  Небольшой текст из начала новости или лида, заканчивается
-                  многото...
-                </p>
               </div>
-            </article>
-            <article class="card">
-              <div class="card__tags">
-                <a href="#" class="tag card__tag">
-                  <img src="./img/card/tag.png" alt="ТПУ" class="tag__thumb" />
-                  ТПУ
-                </a>
-              </div>
-              <picture class="card__pic"
-                ><img
-                  src="./img/card/card-1.jpg"
-                  alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
-                  class="card__img"
-              /></picture>
-              <div class="card__info">
-                <div class="card-meta">
-                  <div class="card-meta__icon">
-                    <svg>
-                      <use
-                        xlink:href="./img/card/card-bullet.svg#card-bullet"
-                      ></use>
-                    </svg>
+              <div class="tabs__page">
+                <div class="swiper news-slider">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide news-slider-slide">
+                      <article class="card card--project">
+                        <div class="card__tags">
+                          <a href="#" class="tag card__tag">
+                            <img
+                              src="./img/card/tag.png"
+                              alt="ТПУ"
+                              class="tag__thumb"
+                            />
+                            ТПУ
+                          </a>
+                        </div>
+                        <picture class="card__pic"
+                          ><img
+                            src="./img/card/card-1.jpg"
+                            alt="ТПУ запустил в работу новую инженерную школу, посвященную энергетике"
+                            class="card__img"
+                        /></picture>
+                        <div class="card__info">
+                          <h3 class="card__title">
+                            <a href="#" class="card__title-link"
+                              >Разработка и организация высокотехнологичного
+                              производства масштабируемых систем
+                              энергоэффективных мехатронных устройств и
+                              интеллектуальных систем управления для
+                              альтернативной энергетики и других применений</a
+                            >
+                          </h3>
+                          <p class="card__desc">Авторы: ТПУ и АО «Микран»</p>
+                        </div>
+                      </article>
+                    </div>
                   </div>
-                  <a href="#" class="card-meta__title">Новости вузов</a>
-                  <div class="card-meta__desc">17:00, 21 апреля</div>
+                  <div
+                    class="swiper-pagination news-slider__pagination slider__pagination"
+                  ></div>
                 </div>
-                <h3 class="card__title">
-                  <a href="#" class="card__title-link"
-                    >ТПУ запустил в работу новую инженерную школу, посвященную
-                    энергетике</a
-                  >
-                </h3>
-                <p class="card__desc">
-                  Небольшой текст из начала новости или лида, заканчивается
-                  многото...
-                </p>
               </div>
-            </article>
+            </div>
           </div>
         </section>
       </div>

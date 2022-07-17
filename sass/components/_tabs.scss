@@ -2,12 +2,18 @@
     display: inline-flex;
     align-items: center;
     padding: 2px;
-    background-color: var(--bg-app);
+    background-color: var(--c-element-disabled);
     border-radius: 10px;
+}
+.tabs--theme {
+    background-color: var(--bg-app);
 }
 
 .tab {
+    padding: 10px 16px;
     margin-right: 4px;
+    font-weight: 700;
+    color: var(--c-text-grey-2);
     border-radius: 10px;
     fill: transparent;
     stroke: var(--c-text-disabled);
@@ -26,6 +32,7 @@
 }
 
 .tab--active {
+    color: var(--c-text);
     background-color: var(--bg-element);
     stroke: var(--c-accent);
 }

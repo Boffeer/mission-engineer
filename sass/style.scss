@@ -72,6 +72,7 @@ body {
 }
 
 @import "grid"; // Сетка
+@import "./sections/section";
 
 // Анимация
 @import "./animation";
@@ -79,12 +80,12 @@ body {
 // Компоненты
 @import "./components/buttons";
 @import "./components/forms";
+@import "./components/input";
 @import "./components/modal";
 @import "./components/card";
 @import "./components/menu";
 @import "./components/tabs";
 @import "./components/socials";
-@import "./components/input";
 
 // Текстовые компоненты
 @import "./components/text/text";
@@ -100,3 +101,5 @@ body {
 @import "./libs/aos";
 @import "./libs/lightgallery";
 @import "./libs/swiper";
+
+@import "./components/sliders";

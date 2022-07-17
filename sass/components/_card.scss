@@ -1,3 +1,6 @@
+/*
+    # @card
+*/
 .card {
     position: relative;
     background-color: var(--bg-element);
@@ -8,6 +11,7 @@
     position: absolute;
     top: 16px;
     left: 16px;
+    z-index: 2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -47,11 +51,37 @@
     display: block;
     border-radius: 5px 5px 0 0;
 }
-.card__img {
+.card--project .card__pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
     border-radius: inherit;
 }
+.card__img {
+    border-radius: inherit;
+    object-fit: cover;
+    transition: all 0.3s ease-in-out;
+}
+.card--project:hover .card__img {
+    transform: scale(1.2);
+}
 .card__info {
+    position: relative;
+    z-index: 2;
     padding: 16px;
+}
+.card--project .card__info {
+    padding-top: 100px;
+    background: linear-gradient(
+        0deg,
+        rgba(30, 30, 30, 0.6) 7.02%,
+        rgba(30, 30, 30, 0) 100%
+    );
+    border-radius: 5px;
 }
 
 .card-meta {
@@ -62,13 +92,20 @@
     line-height: var(--lh-body--small);
 }
 .card-meta__icon {
-    width: 6px;
-    min-width: 6px;
-    height: 6px;
+    --size: 6px;
+    width: var(--size);
+    min-width: var(--size);
+    height: var(--size);
     margin-right: 6px;
     margin-bottom: 2px;
     fill: var(--c-accent);
 }
+.card--event .card-meta__icon {
+    --size: 16px;
+    fill: none;
+    stroke: var(--c-accent);
+}
+
 .card-meta__title {
     margin-right: 24px;
     font-size: inherit;
@@ -89,10 +126,42 @@
     font-size: var(--fz-h4);
     font-weight: 700;
     line-height: var(--lh-h4);
+    color: var(--c-text);
+}
+.card__title-link {
+    display: block;
+    color: inherit;
+}
+.card__title-link:hover {
+    color: var(--c-accent);
+}
+.card--project .card__title,
+.card--project .card__title-link:hover,
+.card--project .card__desc {
+    color: var(--c-text-on);
 }
 
 .card__desc {
     font-size: var(--fz-body--small);
     line-height: var(--lh-body--small);
     color: var(--c-text-grey);
+}
+
+.card__marks {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 8px;
+    margin-bottom: -4px;
+}
+.card__mark {
+    padding: 8px 12px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    font-size: var(--fz-tag);
+    line-height: var(--lh-tag);
+    color: var(--c-text-grey);
+    background: var(--bg-app);
+    border-radius: 5px;
 }

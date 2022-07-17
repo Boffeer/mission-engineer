@@ -7,6 +7,7 @@
     padding: 0.893em 1.33em;
     font-size: inherit;
     background-color: var(--bg-element);
+    border-radius: 5px;
 }
 .input__label {
     position: absolute;
@@ -23,6 +24,7 @@
     justify-content: space-between;
     width: 100%;
     margin-bottom: 40px;
+    border-radius: 5px;
 }
 .search__icon {
     position: absolute;

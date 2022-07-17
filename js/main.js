@@ -274,3 +274,25 @@ function modal() {
     resetHash();
   }
 }
+
+/**
+ * @sliders
+ */
+let newsSlider = document.querySelector(".news-slider");
+if (newsSlider) {
+  // eslint-disable-next-line no-undef, no-unused-vars
+  newsSlider = new Swiper(".news-slider", {
+    slidesPerView: 3,
+    slidesPerGroup: 3,
+    spaceBetween: 24,
+    grabCursor: true,
+    // navigation: {
+    //   nextEl: '.news-slider__button-next',
+    //   prevEl: '.news-slider__button-prev',
+    // },
+    pagination: {
+      el: ".news-slider__pagination",
+      clickable: true,
+    },
+  });
+}

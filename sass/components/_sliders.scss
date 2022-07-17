@@ -1,0 +1,18 @@
+.news-slider {
+}
+
+.news-slider__pagination {
+    position: static;
+    height: auto;
+}
+.news-slider__pagination .swiper-pagination-bullet {
+    width: 94px;
+    height: 3px;
+    margin-right: 8px;
+    background-color: var(--c-text);
+    border-radius: 2px;
+    opacity: 0.12;
+}
+.news-slider__pagination .swiper-pagination-bullet-active {
+    opacity: 1;
+}
