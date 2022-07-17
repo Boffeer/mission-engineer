@@ -55,7 +55,7 @@ body {
     font-weight: 400;
     line-height: 1.5;
     color: $main;
-    background: var(--bg-page);
+    background: var(--bg-app);
 
     &._lock {
         overflow: hidden;
@@ -84,6 +84,7 @@ body {
 @import "./components/menu";
 @import "./components/tabs";
 @import "./components/socials";
+@import "./components/input";
 
 // Текстовые компоненты
 @import "./components/text/text";
