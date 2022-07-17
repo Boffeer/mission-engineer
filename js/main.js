@@ -310,7 +310,6 @@ tabsBars.forEach((tabsBar) => {
   if (tabsBar.dataset.tabs) {
     tabsPagesWraps.forEach((tabsPagesWrap) => {
       const tabPages = tabsPagesWrap.querySelectorAll(".tabs-page");
-      console.log(tabPages);
       tabPages.forEach((tabPage) => {
         tabPage.classList.add(TAB_ACTIVE_CLASS);
       });
@@ -346,11 +345,14 @@ setTimeout(() => {
         }
       });
     });
-    tabBarButtons.forEach((tabButton) => {
-      if (tabButton.classList.contains(TAB_ACTIVE_CLASS)) {
-        tabButton.click();
-      }
-    });
+
+    if (tabsBar.dataset.tabs) {
+      tabBarButtons.forEach((tabButton) => {
+        if (tabButton.classList.contains(TAB_ACTIVE_CLASS)) {
+          tabButton.click();
+        }
+      });
+    }
   });
 }, 150);
 
@@ -375,3 +377,107 @@ if (newsSliders) {
     },
   });
 }
+
+/**
+ *
+ * @theme-picker
+ *
+ */
+
+const lightStyles = document.querySelectorAll(
+  "link[rel=stylesheet][media*=prefers-color-scheme][media*=light]"
+);
+const darkStyles = document.querySelectorAll(
+  "link[rel=stylesheet][media*=prefers-color-scheme][media*=dark]"
+);
+const darkSchemeMedia = matchMedia("(prefers-color-scheme: dark)");
+const themeSwitchers = document.querySelectorAll(".tab--theme");
+// const defaultColorScheme = "light";
+
+function setupSwithcer() {
+  const savedScheme = getSavedScheme();
+  console.log("saved", savedScheme);
+
+  [...themeSwitchers].forEach((switcher) => {
+    switcher.addEventListener("click", () => {
+      setScheme(switcher.dataset.theme);
+    });
+  });
+
+  if (savedScheme !== null) {
+    const currentButton = document.querySelector(
+      `.tab--theme[data-theme="${savedScheme}"]`
+    );
+    setTimeout(() => {
+      currentButton.click();
+    }, 100);
+    return;
+  }
+
+  const systemScheme = getSystemScheme();
+  const systemSchemeButton = document.querySelector(
+    `.tab--theme[data-theme="${systemScheme}"]`
+  );
+  systemSchemeButton.click();
+}
+
+function setScheme(scheme) {
+  switchMedia(scheme);
+
+  if (scheme === "auto") {
+    clearScheme();
+  } else {
+    saveScheme(scheme);
+  }
+}
+
+function switchMedia(scheme) {
+  let lightMedia;
+  let darkMedia;
+
+  if (scheme === "auto") {
+    lightMedia = "(prefers-color-scheme: light)";
+    darkMedia = "(prefers-color-scheme: dark)";
+  } else {
+    lightMedia = scheme === "light" ? "all" : "not-all";
+    darkMedia = scheme === "dark" ? "all" : "not-all";
+  }
+
+  [...lightStyles].forEach((link) => {
+    link.media = lightMedia;
+  });
+  [...darkStyles].forEach((link) => {
+    link.media = darkMedia;
+  });
+
+  document.body.classList.remove("theme--auto", "theme--dark", "theme--light");
+  document.body.classList.add(`theme--${scheme}`);
+}
+
+function setupScheme() {
+  const savedScheme = getSavedScheme();
+  const systemScheme = getSystemScheme();
+
+  if (savedScheme === null) return;
+
+  if (savedScheme !== systemScheme) {
+    setScheme(savedScheme);
+  }
+}
+
+function getSystemScheme() {
+  const darkScheme = darkSchemeMedia.matches;
+  return darkScheme ? "dark" : "light";
+}
+
+function getSavedScheme() {
+  return localStorage.getItem("color-scheme");
+}
+function saveScheme(scheme) {
+  localStorage.setItem("color-scheme", scheme);
+}
+function clearScheme() {
+  localStorage.removeItem("color-scheme");
+}
+setupSwithcer();
+setupScheme();

@@ -1,7 +1,7 @@
 $mediaMobile: 768px;
 // Пользовательские переменные
 :root {
-    color-scheme: light dark;
+    // color-scheme: light dark;
 
     --ffMain: "Noto Sans", sans-serif;
     --ffHeader: sans-serif;
@@ -58,24 +58,6 @@ $mediaMobile: 768px;
 
     --fz-tag: 12px;
     --lh-tag: 150%;
-
-    --bg-app: #f3f5f6;
-    --bg-element: #ffffff;
-
-    --c-accent: #28be46;
-    --c-accent--dark: #0e9243;
-    --c-accent--light: #d8eee1;
-
-    --c-text: #000000;
-    --c-text-grey: #565656;
-    --c-text-grey-2: #999999;
-    --c-text-disabled: #b0b4b9;
-    --c-text-on: #ffffff;
-
-    --c-blind: #e7e9ea;
-    --c-element-disabled: #eeeeee;
-
-    --c-error: #e23c2a;
 }
 
 $ffMain: var(--ffMain);
