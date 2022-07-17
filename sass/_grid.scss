@@ -41,6 +41,11 @@
     border-bottom: 1px solid var(--c-blind);
     border-radius: 0px;
 }
+.cards--fullsize .card:last-child {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: none;
+}
 .cards--fullsize .card__pic {
     height: 260px;
     margin-bottom: 16px;
