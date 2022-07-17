@@ -357,3 +357,22 @@ $margin-icon: 12px; // Отступ иконки от текста
 .button--icon-arrow-right .button__icon {
     @include getmask("../img/icons/arrow-right.svg");
 }
+
+/*
+
+    @link
+
+*/
+
+/* stylelint-disable */
+.link {
+    color: var(--c-accent);
+    transition: all var(--t) ease-in-out;
+}
+.link:hover {
+    color: var(--c-accent--dark);
+}
+.link:active {
+    opacity: 0.6;
+}
+/* stylelint-enable */

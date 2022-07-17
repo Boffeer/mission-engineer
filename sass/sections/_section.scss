@@ -1,6 +1,9 @@
 .section {
     margin-bottom: 56px;
 }
+.section:last-child {
+    margin-bottom: 0;
+}
 .section__heading {
     margin-bottom: 24px;
 }

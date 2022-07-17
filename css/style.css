@@ -218,8 +218,39 @@ body._lock {
   overflow: visible;
 }
 
+.cards--fullsize {
+  padding: 24px;
+  background-color: var(--bg-element);
+}
+
+.cards--fullsize .card {
+  padding-bottom: 32px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--c-blind);
+  border-radius: 0px;
+}
+
+.cards--fullsize .card__pic {
+  height: 260px;
+  margin-bottom: 16px;
+  border-radius: 5px;
+}
+
+.cards--fullsize .card__info {
+  padding: 0;
+}
+
+.cards--fullsize .card__title {
+  font-size: var(--fz-h3);
+  line-height: var(--lh-h3);
+}
+
 .section {
   margin-bottom: 56px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
 }
 
 .section__heading {
@@ -705,6 +736,26 @@ body._lock {
   mask-size: contain;
 }
 
+/*
+
+    @link
+
+*/
+/* stylelint-disable */
+.link {
+  color: var(--c-accent);
+  transition: all var(--t) ease-in-out;
+}
+
+.link:hover {
+  color: var(--c-accent--dark);
+}
+
+.link:active {
+  opacity: 0.6;
+}
+
+/* stylelint-enable */
 .form {
   display: flex;
   flex-direction: column;
@@ -1083,9 +1134,14 @@ body._lock {
 }
 
 .card__desc {
+  margin-bottom: 16px;
   font-size: var(--fz-body--small);
   line-height: var(--lh-body--small);
   color: var(--c-text-grey);
+}
+
+.card__desc:last-child {
+  margin-bottom: 0;
 }
 
 .card__marks {
