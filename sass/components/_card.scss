@@ -1,5 +1,10 @@
 /*
     # @card
+
+    Бывают такие:
+    card--bg-pic
+    card--event
+    card--featured
 */
 .card {
     position: relative;
@@ -11,7 +16,7 @@
     position: absolute;
     top: 16px;
     left: 16px;
-    z-index: 2;
+    z-index: 3;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -49,39 +54,19 @@
 
 .card__pic {
     display: block;
-    border-radius: 5px 5px 0 0;
-}
-.card--project .card__pic {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-    border-radius: inherit;
+    height: 152px;
+    border-radius: 5px 5px 0 0;
 }
 .card__img {
     border-radius: inherit;
     object-fit: cover;
     transition: all 0.3s ease-in-out;
 }
-.card--project:hover .card__img {
-    transform: scale(1.2);
-}
 .card__info {
     position: relative;
     z-index: 2;
     padding: 16px;
-}
-.card--project .card__info {
-    padding-top: 100px;
-    background: linear-gradient(
-        0deg,
-        rgba(30, 30, 30, 0.6) 7.02%,
-        rgba(30, 30, 30, 0) 100%
-    );
-    border-radius: 5px;
 }
 
 .card-meta {
@@ -93,17 +78,18 @@
 }
 .card-meta__icon {
     --size: 6px;
+    --icon-color: var(--c-accent);
     width: var(--size);
     min-width: var(--size);
     height: var(--size);
     margin-right: 6px;
     margin-bottom: 2px;
-    fill: var(--c-accent);
+    fill: var(--icon-color);
 }
 .card--event .card-meta__icon {
     --size: 16px;
     fill: none;
-    stroke: var(--c-accent);
+    stroke: var(--icon-color);
 }
 
 .card-meta__title {
@@ -135,11 +121,6 @@
 .card__title-link:hover {
     color: var(--c-accent);
 }
-.card--project .card__title,
-.card--project .card__title-link:hover,
-.card--project .card__desc {
-    color: var(--c-text-on);
-}
 
 .card__desc {
     font-size: var(--fz-body--small);
@@ -164,4 +145,66 @@
     color: var(--c-text-grey);
     background: var(--bg-app);
     border-radius: 5px;
+}
+
+/*
+
+    @card--bg-pic
+
+*/
+
+.card--bg-pic .card__pic {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: inherit;
+}
+.card--bg-pic:hover .card__img {
+    transform: scale(1.2);
+}
+.card--bg-pic .card__info {
+    padding-top: 100px;
+    background: linear-gradient(
+        0deg,
+        rgba(30, 30, 30, 0.6) 7.02%,
+        rgba(30, 30, 30, 0) 100%
+    );
+    border-radius: 5px;
+}
+
+.card--bg-pic .card-meta__icon {
+    --icon-color: var(--c-text-on);
+}
+.card--bg-pic .card__title,
+.card--bg-pic .card-meta__title,
+.card--bg-pic .card-meta__desc,
+.card--bg-pic .card__title-link:hover,
+.card--bg-pic .card__desc {
+    color: var(--c-text-on);
+}
+
+/*
+
+    @card--featured
+
+*/
+
+.card--featured .card__info {
+    padding-top: 80px;
+    padding-right: 24px;
+    padding-bottom: 67px;
+    padding-left: 24px;
+}
+
+.card--featured .card-meta {
+    margin-bottom: 16px;
+}
+.card--featured .card__title {
+    margin-bottom: 16px;
+    font-size: var(--fz-h1);
+    line-height: var(--lh-h1);
 }

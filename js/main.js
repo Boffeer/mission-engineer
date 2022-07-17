@@ -276,6 +276,26 @@ function modal() {
 }
 
 /**
+ * @featured-slider
+ */
+
+const featuredSlider = document.querySelector(".featured-slider");
+if (featuredSlider) {
+  // eslint-disable-next-line no-unused-vars, no-undef
+  let featuredSlider = new Swiper(".featured-slider", {
+    grabCursor: true,
+    // navigation: {
+    //   nextEl: '.featured-slider__button-next',
+    //   prevEl: '.featured-slider__button-prev',
+    // },
+    pagination: {
+      el: ".featured-slider__pagination",
+      clickable: true,
+    },
+  });
+}
+
+/**
  * @tabs
  *
  * Табы инициируются все
