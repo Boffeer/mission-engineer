@@ -6,6 +6,13 @@
   src: url("../fonts/ALSSirius-Regular.woff2") format("woff2"), url("../fonts/ALSSirius-Regular.woff") format("woff");
   font-display: swap;
 }
+@font-face {
+  font-family: "Sirius";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/ALSSirius-Bold.woff2") format("woff2"), url("../fonts/ALSSirius-Bold.woff") format("woff");
+  font-display: swap;
+}
 :root {
   --ffMain: "Sirius", sans-serif;
   --ffHeader: sans-serif;
