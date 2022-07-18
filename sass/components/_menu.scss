@@ -1,6 +1,7 @@
 .menu {
     position: sticky;
     top: 0;
+    z-index: 10;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -9,6 +10,14 @@
     max-height: calc(100 * 1vh);
     overflow: visible;
     background-color: var(--bg-element);
+    transition: all 0.3s ease-in;
+
+    @media (max-width: 991px) {
+        position: fixed;
+        max-width: 100%;
+        height: calc(100 * 1vh);
+        background-color: transparent;
+    }
 }
 .menu__sticky {
     position: sticky;
@@ -16,15 +25,46 @@
     height: calc(100%);
     padding: 32px 40px;
     overflow: auto;
+    transition: all 0.3s ease-in-out;
+    @media (max-width: 991px) {
+        height: 100%;
+        padding: 0;
+        overflow: hidden;
+    }
 }
 .menu__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    @media (max-width: 991px) {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 5;
+        width: 100%;
+        max-width: 384px;
+        padding-right: 40px;
+        padding-bottom: 40px;
+        padding-left: 40px;
+        margin-left: auto;
+        background: var(--bg-element);
+        transition: all 0.3s ease-out;
+        transform: translateX(100%);
+    }
 }
 
 .menu__top {
     margin-bottom: 96px;
+    @media (max-width: 991px) {
+        // position: absolute;
+        right: 0;
+    }
+}
+.menu__bottom {
+    @media (max-width: 991px) {
+        // position: absolute;
+        right: 0;
+    }
 }
 
 .menu__nav-list {
@@ -70,4 +110,25 @@
 }
 .menu__links-link:last-of-type {
     margin-bottom: 0;
+}
+
+.menu--opened {
+    height: calc(100 * 1vh);
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(15px);
+}
+.menu--opened .menu__content {
+    transition: all 0.3s ease-in-out;
+    transform: translateX(0);
+}
+
+.menu--opened .menu__sticky {
+    overflow-y: auto;
+}
+
+.menu--opened .menu__top,
+.menu--opened .menu__bottom {
+    @media (max-width: 991px) {
+        position: initial;
+    }
 }

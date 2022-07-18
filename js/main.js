@@ -363,8 +363,8 @@ let newsSliders = document.querySelectorAll(".news-slider");
 if (newsSliders) {
   // eslint-disable-next-line no-undef, no-unused-vars
   let newsSlider = new Swiper(".news-slider", {
-    slidesPerView: 3,
-    slidesPerGroup: 3,
+    slidesPerView: "auto",
+    slidesPerGroup: 1,
     spaceBetween: 24,
     grabCursor: true,
     // navigation: {
@@ -374,6 +374,12 @@ if (newsSliders) {
     pagination: {
       el: ".news-slider__pagination",
       clickable: true,
+    },
+    breakpoints: {
+      1300: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
     },
   });
 }
@@ -392,7 +398,6 @@ const darkStyles = document.querySelectorAll(
 );
 const darkSchemeMedia = matchMedia("(prefers-color-scheme: dark)");
 const themeSwitchers = document.querySelectorAll(".tab--theme");
-// const defaultColorScheme = "light";
 
 function setupSwithcer() {
   const savedScheme = getSavedScheme();
@@ -481,3 +486,33 @@ function clearScheme() {
 }
 setupSwithcer();
 setupScheme();
+
+const burgerButton = document.querySelector(".burger");
+const headerMenu = document.querySelector(".menu");
+
+function openBurger() {
+  headerMenu.classList.add("menu--opened");
+  burgerButton.classList.add("burger--opened");
+  bodyLock(true);
+}
+
+function closeBurger() {
+  headerMenu.classList.remove("menu--opened");
+  burgerButton.classList.remove("burger--opened");
+  bodyLock(false);
+}
+
+burgerButton.addEventListener("click", () => {
+  if (headerMenu.classList.contains("menu--opened")) {
+    closeBurger();
+  } else {
+    openBurger();
+  }
+});
+window.addEventListener("click", (e) => {
+  if (headerMenu.classList.contains("menu--opened")) {
+    if (e.target == headerMenu.querySelector(".menu__sticky")) {
+      closeBurger();
+    }
+  }
+});

@@ -29,6 +29,9 @@
     flex-direction: row;
     width: 100%;
     overflow: visible;
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 }
 
 .cards--fullsize {
