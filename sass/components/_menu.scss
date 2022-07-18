@@ -116,10 +116,10 @@
 }
 
 .menu__sidebar {
-    max-height: calc(100% - 85px);
     overflow: auto;
-    // pointer-events: initial;
-
+    @media (max-width: 768px) {
+        max-height: calc(100% - 85px);
+    }
     @media (max-width: 575px) {
         max-height: calc(100% - 73px);
         padding-right: 16px;

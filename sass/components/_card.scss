@@ -63,6 +63,7 @@
 }
 .card__img {
     border-radius: inherit;
+    object-position: top;
     object-fit: cover;
     transition: all 0.3s ease-in-out;
 }

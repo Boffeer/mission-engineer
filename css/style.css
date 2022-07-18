@@ -1141,6 +1141,8 @@ body._lock {
 
 .card__img {
   border-radius: inherit;
+  -o-object-position: top;
+     object-position: top;
   -o-object-fit: cover;
      object-fit: cover;
   transition: all 0.3s ease-in-out;
@@ -1461,8 +1463,12 @@ body._lock {
 }
 
 .menu__sidebar {
-  max-height: calc(100% - 85px);
   overflow: auto;
+}
+@media (max-width: 768px) {
+  .menu__sidebar {
+    max-height: calc(100% - 85px);
+  }
 }
 @media (max-width: 575px) {
   .menu__sidebar {
