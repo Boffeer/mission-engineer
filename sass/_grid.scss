@@ -24,6 +24,9 @@
     width: 100%;
     padding: 32px 40px;
     overflow: hidden;
+    @media (max-width: 991px) {
+        padding-top: 124px;
+    }
 }
 .wrapper--app {
     flex-direction: row;

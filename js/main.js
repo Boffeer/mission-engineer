@@ -516,3 +516,8 @@ window.addEventListener("click", (e) => {
     }
   }
 });
+
+const searchButton = document.querySelector(".header__button-search");
+searchButton.addEventListener("click", () => {
+  searchButton.classList.toggle("active");
+});
