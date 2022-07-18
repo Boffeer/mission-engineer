@@ -1,6 +1,20 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "Noyh";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Noyh-Regular.woff2") format("woff2"), url("../fonts/Noyh-Regular.woff") format("woff");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Noyh";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Noyh-Bold.woff2") format("woff2"), url("../fonts/Noyh-Bold.woff") format("woff");
+  font-display: swap;
+}
 :root {
-  --ffMain: "Noto Sans", sans-serif;
+  --ffMain: "Noyh", sans-serif;
   --ffHeader: sans-serif;
   --tr: 0.3s;
   --radius: 16px;
