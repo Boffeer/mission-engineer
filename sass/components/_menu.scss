@@ -16,6 +16,7 @@
         position: fixed;
         max-width: 100%;
         height: calc(100 * 1vh);
+        pointer-events: none;
         background-color: transparent;
     }
 }
@@ -104,6 +105,7 @@
 
 .menu--opened {
     height: calc(100 * 1vh);
+    pointer-events: initial;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(15px);
 }
@@ -116,6 +118,7 @@
 .menu__sidebar {
     max-height: calc(100% - 85px);
     overflow: auto;
+    // pointer-events: initial;
 }
 
 .menu__search {
