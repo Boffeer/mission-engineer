@@ -8,6 +8,8 @@
     <title>ТопВерстка</title>
     <meta name="description" content="Описание сайта" />
 
+    <script src="./js/theme-detect.js"></script>
+
     <meta name="color-scheme" content="light dark" />
     <meta
       name="theme-color"
@@ -63,7 +65,7 @@
               <span class="burger__line"></span>
             </button>
           </header>
-          <div class="menu__content">
+          <div class="menu__content menu__sidebar">
             <div class="menu__top">
               <nav class="menu__nav">
                 <ul class="menu__nav-list">
@@ -219,7 +221,7 @@
               </div>
             </div>
           </div>
-          <div class="menu__search">
+          <div class="menu__search menu__sidebar">
             <div class="search">
               <form class="search__form js_no-validate form">
                 <svg class="search__icon">
@@ -240,6 +242,19 @@
                   Найти
                 </button>
               </form>
+              <div class="search-results">
+                <a href="#" class="search-results__link">Онлайн-образование</a>
+                <a href="#" class="search-results__link">Инженеры</a>
+                <a href="#" class="search-results__link"
+                  >Передовые инженерные школы</a
+                >
+                <a href="#" class="search-results__link"
+                  >Томский политехнический университет</a
+                >
+                <a href="#" class="search-results__link"
+                  >Информационные технологии</a
+                >
+              </div>
             </div>
           </div>
         </div>

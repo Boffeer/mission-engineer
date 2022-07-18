@@ -38,8 +38,8 @@
     justify-content: space-between;
     @media (max-width: 991px) {
         position: absolute;
-        top: 0;
         right: 0;
+        bottom: 0;
         z-index: 5;
         width: 100%;
         max-width: 384px;
@@ -108,20 +108,26 @@
     backdrop-filter: blur(15px);
 }
 
-.menu--burger .menu__sticky {
-    overflow-y: auto;
-}
 .menu--burger .menu__content {
     transition: all 0.3s ease-in-out;
     transform: translateX(0);
 }
 
+.menu__sidebar {
+    max-height: calc(100% - 85px);
+    overflow: auto;
+}
+
 .menu__search {
+    display: none;
     height: 100%;
     padding: 20px 40px;
     background-color: var(--bg-app);
     transition: all 0.3s ease-in-out;
     transform: translateX(-100%);
+    @media (max-width: 991px) {
+        display: block;
+    }
 }
 .menu--search .menu__search {
     transform: translateX(0);
