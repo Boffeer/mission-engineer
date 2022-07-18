@@ -169,28 +169,32 @@
                 </ul>
               </nav>
               <div class="tabs menu__theme tabs--theme">
-                <button
-                  class="tab tab--active tabs__tab tab--theme tab--theme-ligth"
-                  data-theme="light"
-                >
-                  <svg>
-                    <use xlink:href="./img/icons/sun.svg#sun"></use>
-                  </svg>
-                </button>
-                <button
-                  class="tab tab--active tabs__tab tab--theme tab--theme-auto"
-                  data-theme="auto"
-                >
-                  А
-                </button>
-                <button
-                  class="tab tabs__tab tab--theme tab--theme-dark"
-                  data-theme="dark"
-                >
-                  <svg>
-                    <use xlink:href="./img/icons/moon.svg#moon"></use>
-                  </svg>
-                </button>
+                <div class="tabs__track">
+                  <div class="tabs__scrollable">
+                    <button
+                      class="tab tab--active tabs__tab tab--theme tab--theme-ligth"
+                      data-theme="light"
+                    >
+                      <svg>
+                        <use xlink:href="./img/icons/sun.svg#sun"></use>
+                      </svg>
+                    </button>
+                    <button
+                      class="tab tab--active tabs__tab tab--theme tab--theme-auto"
+                      data-theme="auto"
+                    >
+                      А
+                    </button>
+                    <button
+                      class="tab tabs__tab tab--theme tab--theme-dark"
+                      data-theme="dark"
+                    >
+                      <svg>
+                        <use xlink:href="./img/icons/moon.svg#moon"></use>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
             <div class="menu__bottom">
@@ -415,9 +419,13 @@
 
         <section class="section">
           <div class="tabs section__heading" data-tabs="news-tabs">
-            <button class="tab">События университетов</button
-            ><button class="tab tab--active">Мероприятия</button
-            ><button class="tab">Проекты</button>
+            <div class="tabs__track">
+              <div class="tabs__scrollable">
+                <button class="tab">События университетов</button>
+                <button class="tab tab--active">Мероприятия</button
+                ><button class="tab">Проекты</button>
+              </div>
+            </div>
           </div>
           <div class="section__content">
             <div class="tabs-content" data-tabs="news-tabs">
