@@ -1,9 +1,15 @@
 .section {
     margin-bottom: 56px;
+    @media (max-width: 575px) {
+        margin-bottom: 47px;
+    }
 }
 .section:last-child {
     margin-bottom: 0;
 }
 .section__heading {
     margin-bottom: 24px;
+    @media (max-width: 575px) {
+        margin-bottom: 18px;
+    }
 }

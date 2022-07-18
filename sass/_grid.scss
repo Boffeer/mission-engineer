@@ -29,12 +29,17 @@
         padding-right: 20px;
         padding-left: 20px;
     }
+    @media (max-width: 575px) {
+        padding-top: 105px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
 }
 .wrapper--app {
     flex-direction: row;
     width: 100%;
     overflow: visible;
-    @media (max-width: 768px) {
+    @media (max-width: 991px) {
         flex-direction: column;
     }
 }

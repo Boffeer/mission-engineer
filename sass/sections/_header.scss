@@ -14,6 +14,10 @@
         background: var(--bg-element);
         border-bottom: 1px solid var(--c-blind);
     }
+    @media (max-width: 575px) {
+        padding-top: 18px;
+        padding-bottom: 18px;
+    }
 }
 .header__button-search {
     position: relative;
@@ -28,7 +32,7 @@
 }
 .header__button-search::before {
     position: absolute;
-    top: 22.5%;
+    top: 30.5%;
     right: 23.5%;
     width: 0;
     height: 2px;
@@ -41,8 +45,8 @@
 .header__button-search::after {
     position: absolute;
     right: 23.5%;
-    bottom: 22.5%;
-    width: 30%;
+    bottom: 12.5%;
+    width: 29%;
     height: 2px;
     margin-top: -1px;
     content: "";
@@ -52,11 +56,11 @@
 }
 .header__button-search-icon {
     position: absolute;
-    top: 20%;
-    left: 20%;
+    top: 15%;
+    left: 10%;
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
     border-color: var(--c-text);
     border-style: solid;
     border-width: 2px;
@@ -85,6 +89,9 @@
     @media (max-width: 991px) {
         margin-bottom: 0;
     }
+    @media (max-width: 576px) {
+        height: 30px;
+    }
 }
 .header-logo__pic {
     display: block;
@@ -96,21 +103,20 @@
     display: none;
 }
 
-.header__button-burger {
-    display: none;
-    @media (max-width: 991px) {
-        display: block;
-    }
-}
 .burger {
-    display: flex;
+    // display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 36px;
     height: 36px;
+    margin-right: -4px;
     background-color: var(--c-accent);
     border-radius: 5px;
+    @media (max-width: 991px) {
+        display: flex;
+    }
 }
 .burger__line {
     position: relative;

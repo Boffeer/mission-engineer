@@ -356,32 +356,64 @@ setTimeout(() => {
   });
 }, 150);
 
+const newsSliderSettings = {
+  slidesPerView: "auto",
+  slidesPerGroup: 1,
+  spaceBetween: 24,
+  grabCursor: true,
+  // navigation: {
+  //   nextEl: '.news-slider__button-next',
+  //   prevEl: '.news-slider__button-prev',
+  // },
+  pagination: {
+    el: ".news-slider__pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    1300: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
+  },
+};
+
 /**
  * @sliders
  */
+function initSlider(slider) {
+  // eslint-disable-next-line no-undef, no-unused-vars
+  return new Swiper(slider.selector, slider.options);
+}
+// eslint-disable-next-line no-undef, no-unused-vars
+function removeSlider(sliders) {
+  sliders.forEach(slider, () => {});
+}
+
 let newsSliders = document.querySelectorAll(".news-slider");
 if (newsSliders) {
-  // eslint-disable-next-line no-undef, no-unused-vars
-  let newsSlider = new Swiper(".news-slider", {
-    slidesPerView: "auto",
-    slidesPerGroup: 1,
-    spaceBetween: 24,
-    grabCursor: true,
-    // navigation: {
-    //   nextEl: '.news-slider__button-next',
-    //   prevEl: '.news-slider__button-prev',
-    // },
-    pagination: {
-      el: ".news-slider__pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      1300: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-      },
-    },
-  });
+  let newsSliderClass = ".news-slider";
+  let newsSlider = {
+    selector: newsSliderClass,
+    options: newsSliderSettings,
+    sliders: document.querySelectorAll(newsSliderClass),
+  };
+
+  if (window.innerWidth > 575) {
+    newsSlider.sliders.forEach((slider) => {
+      if (
+        !slider.querySelector("div").classList.value.includes("swiper-wrapper")
+      ) {
+        slider.querySelector("div").classList.add("swiper-wrapper");
+      }
+    });
+    initSlider(newsSlider);
+  } else {
+    newsSlider.sliders.forEach((slider) => {
+      const wrapper = slider.querySelector(".swiper-wrapper");
+      wrapper.classList.remove("swiper-wrapper");
+      wrapper.classList.add("swiper-wrapper-removed");
+    });
+  }
 }
 
 /**

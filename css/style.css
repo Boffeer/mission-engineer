@@ -204,13 +204,20 @@ body._lock {
     padding-left: 20px;
   }
 }
+@media (max-width: 575px) {
+  .page-content {
+    padding-top: 105px;
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
 
 .wrapper--app {
   flex-direction: row;
   width: 100%;
   overflow: visible;
 }
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .wrapper--app {
     flex-direction: column;
   }
@@ -252,6 +259,11 @@ body._lock {
 .section {
   margin-bottom: 56px;
 }
+@media (max-width: 575px) {
+  .section {
+    margin-bottom: 47px;
+  }
+}
 
 .section:last-child {
   margin-bottom: 0;
@@ -259,6 +271,11 @@ body._lock {
 
 .section__heading {
   margin-bottom: 24px;
+}
+@media (max-width: 575px) {
+  .section__heading {
+    margin-bottom: 18px;
+  }
 }
 
 /* Стили анимации пульсации кругов */
@@ -1155,6 +1172,12 @@ body._lock {
   color: var(--c-text);
 }
 
+@media (max-width: 576px) {
+  .card__title br {
+    display: none;
+  }
+}
+
 .card__title-link {
   display: block;
   color: inherit;
@@ -1169,6 +1192,12 @@ body._lock {
   font-size: var(--fz-body--small);
   line-height: var(--lh-body--small);
   color: var(--c-text-grey);
+}
+
+@media (max-width: 576px) {
+  .card__desc br {
+    display: none;
+  }
 }
 
 .card__desc:last-child {
@@ -1244,6 +1273,13 @@ body._lock {
   padding-bottom: 67px;
   padding-left: 24px;
 }
+@media (max-width: 576px) {
+  .card--featured .card__info {
+    padding-right: 16px;
+    padding-bottom: 57px;
+    padding-left: 16px;
+  }
+}
 
 .card--featured .card-meta {
   margin-bottom: 16px;
@@ -1253,6 +1289,12 @@ body._lock {
   margin-bottom: 16px;
   font-size: var(--fz-h1);
   line-height: var(--lh-h1);
+}
+@media (max-width: 576px) {
+  .card--featured .card__title {
+    padding-right: 20px;
+    margin-bottom: 13px;
+  }
 }
 
 .menu {
@@ -1532,6 +1574,12 @@ body._lock {
     border-bottom: 1px solid var(--c-blind);
   }
 }
+@media (max-width: 575px) {
+  .header {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
 
 .header__button-search {
   position: relative;
@@ -1549,7 +1597,7 @@ body._lock {
 
 .header__button-search::before {
   position: absolute;
-  top: 22.5%;
+  top: 30.5%;
   right: 23.5%;
   width: 0;
   height: 2px;
@@ -1563,8 +1611,8 @@ body._lock {
 .header__button-search::after {
   position: absolute;
   right: 23.5%;
-  bottom: 22.5%;
-  width: 30%;
+  bottom: 12.5%;
+  width: 29%;
   height: 2px;
   margin-top: -1px;
   content: "";
@@ -1575,11 +1623,11 @@ body._lock {
 
 .header__button-search-icon {
   position: absolute;
-  top: 20%;
-  left: 20%;
+  top: 15%;
+  left: 10%;
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   border-color: var(--c-text);
   border-style: solid;
   border-width: 2px;
@@ -1614,6 +1662,11 @@ body._lock {
     margin-bottom: 0;
   }
 }
+@media (max-width: 576px) {
+  .header-logo {
+    height: 30px;
+  }
+}
 
 .header-logo__pic {
   display: block;
@@ -1625,24 +1678,21 @@ body._lock {
   display: none;
 }
 
-.header__button-burger {
-  display: none;
-}
-@media (max-width: 991px) {
-  .header__button-burger {
-    display: block;
-  }
-}
-
 .burger {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 36px;
   height: 36px;
+  margin-right: -4px;
   background-color: var(--c-accent);
   border-radius: 5px;
+}
+@media (max-width: 991px) {
+  .burger {
+    display: flex;
+  }
 }
 
 .burger__line {
@@ -3776,6 +3826,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   background: transparent;
   opacity: 0.12;
 }
+@media (max-width: 576px) {
+  .slider__pagination .swiper-pagination-bullet {
+    width: 66px;
+  }
+}
 
 .slider__pagination .swiper-pagination-bullet::before {
   position: absolute;
@@ -3813,6 +3868,12 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   width: auto;
   height: auto;
 }
+@media (max-width: 576px) {
+  .featured-slider__pagination {
+    bottom: 16px;
+    left: 16px;
+  }
+}
 
 @media (max-width: 992px) {
   .news-slider {
@@ -3824,5 +3885,17 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .news-slider-slide {
     width: 100%;
     max-width: 322px;
+  }
+}
+@media (max-width: 575px) {
+  .news-slider-slide {
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 575px) {
+  .news-slider-slide:last-child {
+    margin-bottom: 0;
   }
 }/*# sourceMappingURL=style.css.map */
