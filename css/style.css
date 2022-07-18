@@ -1528,6 +1528,7 @@ body._lock {
     width: auto;
     max-width: calc(100% + 32px);
     margin-left: -16px;
+    border-radius: 0;
   }
 }
 
@@ -3966,6 +3967,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   .featured-slider__pagination {
     bottom: 16px;
     left: 16px;
+    max-width: calc(100% - 24px);
   }
 }
 

@@ -60,6 +60,7 @@
     @media (max-width: 576px) {
         bottom: 16px;
         left: 16px;
+        max-width: calc(100% - 24px);
     }
 }
 
