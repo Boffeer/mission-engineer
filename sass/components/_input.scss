@@ -16,7 +16,7 @@
     pointer-events: none;
 }
 
-.search {
+.search__form {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -47,4 +47,10 @@
 
 .search__input-field {
     padding-left: 42px;
+}
+
+.page-content__search {
+    @media (max-width: 992px) {
+        display: none;
+    }
 }

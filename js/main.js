@@ -490,34 +490,70 @@ setupScheme();
 const burgerButton = document.querySelector(".burger");
 const headerMenu = document.querySelector(".menu");
 
-function openBurger() {
+const searchButton = document.querySelector(".header__button-search");
+
+function isMenuOpened() {
+  return headerMenu.classList.contains("menu--opened");
+}
+function openMenu() {
   headerMenu.classList.add("menu--opened");
-  burgerButton.classList.add("burger--opened");
   bodyLock(true);
 }
-
-function closeBurger() {
+function closeMenu() {
   headerMenu.classList.remove("menu--opened");
-  burgerButton.classList.remove("burger--opened");
   bodyLock(false);
 }
 
+function isBurgerOpened() {
+  return headerMenu.classList.contains("menu--burger");
+}
+function openBurger() {
+  headerMenu.classList.add("menu--burger");
+  burgerButton.classList.add("burger--opened");
+}
+function closeBurger() {
+  headerMenu.classList.remove("menu--burger");
+  burgerButton.classList.remove("burger--opened");
+}
+
+function isSearchOpened() {
+  return headerMenu.classList.contains("menu--search");
+}
+function closeSearch() {
+  searchButton.classList.remove("active");
+  headerMenu.classList.remove("menu--search");
+}
+function openSearch() {
+  searchButton.classList.add("active");
+  headerMenu.classList.add("menu--search");
+}
+
 burgerButton.addEventListener("click", () => {
-  if (headerMenu.classList.contains("menu--opened")) {
+  if (isBurgerOpened()) {
+    closeMenu();
     closeBurger();
   } else {
+    openMenu();
     openBurger();
+    isSearchOpened() ? closeSearch() : false;
   }
 });
 window.addEventListener("click", (e) => {
-  if (headerMenu.classList.contains("menu--opened")) {
+  if (isMenuOpened()) {
     if (e.target == headerMenu.querySelector(".menu__sticky")) {
+      closeMenu();
       closeBurger();
     }
   }
 });
 
-const searchButton = document.querySelector(".header__button-search");
 searchButton.addEventListener("click", () => {
-  searchButton.classList.toggle("active");
+  if (isSearchOpened()) {
+    closeMenu();
+    closeSearch();
+  } else {
+    openMenu();
+    openSearch();
+    isBurgerOpened() ? closeBurger() : false;
+  }
 });

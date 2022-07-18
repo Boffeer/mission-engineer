@@ -55,16 +55,6 @@
 
 .menu__top {
     margin-bottom: 96px;
-    @media (max-width: 991px) {
-        // position: absolute;
-        right: 0;
-    }
-}
-.menu__bottom {
-    @media (max-width: 991px) {
-        // position: absolute;
-        right: 0;
-    }
 }
 
 .menu__nav-list {
@@ -117,18 +107,22 @@
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(15px);
 }
-.menu--opened .menu__content {
+
+.menu--burger .menu__sticky {
+    overflow-y: auto;
+}
+.menu--burger .menu__content {
     transition: all 0.3s ease-in-out;
     transform: translateX(0);
 }
 
-.menu--opened .menu__sticky {
-    overflow-y: auto;
+.menu__search {
+    height: 100%;
+    padding: 20px 40px;
+    background-color: var(--bg-app);
+    transition: all 0.3s ease-in-out;
+    transform: translateX(-100%);
 }
-
-.menu--opened .menu__top,
-.menu--opened .menu__bottom {
-    @media (max-width: 991px) {
-        position: initial;
-    }
+.menu--search .menu__search {
+    transform: translateX(0);
 }

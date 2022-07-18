@@ -40,9 +40,6 @@
           <header class="header">
             <button class="header__button-search">
               <span class="header__button-search-icon"></span>
-              <!-- <svg>
-                <use xlink:href="./img/icons/search.svg#search"></use>
-              </svg> -->
             </button>
             <a href="/" class="header-logo">
               <picture class="header-logo__pic header-logo__pic--full">
@@ -222,27 +219,51 @@
               </div>
             </div>
           </div>
-          <div class="menu__search"></div>
+          <div class="menu__search">
+            <div class="search">
+              <form class="search__form js_no-validate form">
+                <svg class="search__icon">
+                  <use xlink:href="./img/icons/search.svg#search"></use>
+                </svg>
+                <label class="input search__input">
+                  <input
+                    type="text"
+                    name="s"
+                    inputmode="search"
+                    placeholder="Например, онлайн-образование"
+                    class="input__field search__input-field"
+                  />
+                </label>
+                <button
+                  class="button button--primary button--small search__button"
+                >
+                  Найти
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="page__content">
-        <form class="search js_no-validate form">
-          <svg class="search__icon">
-            <use xlink:href="./img/icons/search.svg#search"></use>
-          </svg>
-          <label class="input search__input">
-            <input
-              type="text"
-              name="s"
-              inputmode="search"
-              placeholder="Например, онлайн-образование"
-              class="input__field search__input-field"
-            />
-          </label>
-          <button class="button button--primary button--small search__button">
-            Найти
-          </button>
-        </form>
+      <div class="page-content">
+        <div class="search page-content__search">
+          <form class="search__form js_no-validate form">
+            <svg class="search__icon">
+              <use xlink:href="./img/icons/search.svg#search"></use>
+            </svg>
+            <label class="input search__input">
+              <input
+                type="text"
+                name="s"
+                inputmode="search"
+                placeholder="Например, онлайн-образование"
+                class="input__field search__input-field"
+              />
+            </label>
+            <button class="button button--primary button--small search__button">
+              Найти
+            </button>
+          </form>
+        </div>
 
         <section class="section">
           <h2 class="section__title section__heading">Актуальное</h2>

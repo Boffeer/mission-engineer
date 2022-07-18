@@ -210,6 +210,7 @@ $margin-icon: 12px; // Отступ иконки от текста
     padding: 0.865em 1.33em;
     font-size: var(--fz-button--small);
     line-height: var(--lh-button--small);
+    min-width: 112px;
 }
 .button[disabled] {
     --button-color: var(--c-blind);
