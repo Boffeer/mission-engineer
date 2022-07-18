@@ -283,6 +283,7 @@ const featuredSlider = document.querySelector(".featured-slider");
 if (featuredSlider) {
   // eslint-disable-next-line no-unused-vars, no-undef
   let featuredSlider = new Swiper(".featured-slider", {
+    spaceBetween: 20,
     grabCursor: true,
     // navigation: {
     //   nextEl: '.featured-slider__button-next',

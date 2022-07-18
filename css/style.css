@@ -1,20 +1,13 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "Noyh";
+  font-family: "Sirius";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/Noyh-Regular.woff2") format("woff2"), url("../fonts/Noyh-Regular.woff") format("woff");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Noyh";
-  font-style: normal;
-  font-weight: 700;
-  src: url("../fonts/Noyh-Bold.woff2") format("woff2"), url("../fonts/Noyh-Bold.woff") format("woff");
+  src: url("../fonts/ALSSirius-Regular.woff2") format("woff2"), url("../fonts/ALSSirius-Regular.woff") format("woff");
   font-display: swap;
 }
 :root {
-  --ffMain: "Noyh", sans-serif;
+  --ffMain: "Sirius", sans-serif;
   --ffHeader: sans-serif;
   --tr: 0.3s;
   --radius: 16px;
@@ -1654,7 +1647,7 @@ body._lock {
   font-size: var(--fz-h2);
   font-weight: 700;
   line-height: var(--lh-h2);
-  color: var(--c-text-color);
+  color: var(--c-text);
 }
 
 @media (max-width: 991px) {
