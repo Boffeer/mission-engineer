@@ -386,6 +386,7 @@ function initSlider(slider) {
 }
 // eslint-disable-next-line no-undef, no-unused-vars
 function removeSlider(sliders) {
+  // eslint-disable-next-line no-undef, no-unused-vars
   sliders.forEach(slider, () => {});
 }
 
@@ -447,6 +448,10 @@ function setupSwithcer() {
     );
     setTimeout(() => {
       currentButton.click();
+      currentButton.parentElement
+        .querySelectorAll(".tab")
+        .forEach((tab) => tab.classList.remove("tab--active"));
+      currentButton.classList.add("tab--active");
     }, 100);
     return;
   }

@@ -47,12 +47,21 @@
 .cards--fullsize {
     padding: 24px;
     background-color: var(--bg-element);
+
+    @media (max-width: 575px) {
+        padding: 16px;
+    }
 }
 .cards--fullsize .card {
     padding-bottom: 32px;
     margin-bottom: 32px;
     border-bottom: 1px solid var(--c-blind);
     border-radius: 0px;
+
+    @media (max-width: 575px) {
+        padding-bottom: 24px;
+        margin-bottom: 24px;
+    }
 }
 .cards--fullsize .card:last-child {
     padding-bottom: 0;
@@ -63,6 +72,10 @@
     height: 260px;
     margin-bottom: 16px;
     border-radius: 5px;
+
+    @media (max-width: 575px) {
+        height: 127px;
+    }
 }
 .cards--fullsize .card__info {
     padding: 0;

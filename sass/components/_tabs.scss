@@ -5,9 +5,12 @@
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
-}
-.tabs--theme {
-    --background-color: var(--bg-app);
+    @media (max-width: 575px) {
+        --background-color: transparent;
+        width: auto;
+        max-width: calc(100% + 32px);
+        margin-left: -16px;
+    }
 }
 
 .tab {
@@ -18,6 +21,9 @@
     border-radius: 10px;
     fill: transparent;
     stroke: var(--c-text-disabled);
+    @media (max-width: 575px) {
+        background-color: var(--c-element-disabled);
+    }
 }
 .tab--theme {
     --button-size: 32px;
@@ -39,6 +45,10 @@
     color: var(--c-text);
     background-color: var(--bg-element);
     stroke: var(--c-accent);
+    @media (max-width: 575px) {
+        color: var(--c-text-on);
+        background-color: var(--c-accent);
+    }
 }
 
 .tabs-page {
@@ -55,9 +65,24 @@
     margin-bottom: -20px;
     overflow: auto;
     white-space: nowrap;
+
+    @media (max-width: 575px) {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
 }
 .tabs__scrollable {
     padding: 2px;
     background-color: var(--background-color);
     border-radius: 10px;
+}
+
+.tabs--theme {
+    --background-color: var(--bg-app);
+}
+.tab--theme.tab--active {
+    background-color: var(--bg-element);
+}
+.tab--theme {
+    background-color: transparent;
 }

@@ -7,6 +7,10 @@
     width: 100%;
     margin-bottom: 40px;
     border-radius: 5px;
+
+    @media (max-width: 575px) {
+        margin-bottom: 32px;
+    }
 }
 .search__icon {
     position: absolute;
@@ -43,6 +47,9 @@
     font-size: var(--fz-body);
     line-height: var(--lh-body);
     transition: all 0.3s ease;
+    @media (max-width: 575px) {
+        margin-bottom: 32px;
+    }
 }
 .search-results__link:hover {
     color: var(--c-accent-dark);

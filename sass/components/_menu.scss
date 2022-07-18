@@ -119,6 +119,12 @@
     max-height: calc(100% - 85px);
     overflow: auto;
     // pointer-events: initial;
+
+    @media (max-width: 575px) {
+        max-height: calc(100% - 73px);
+        padding-right: 16px;
+        padding-left: 16px;
+    }
 }
 
 .menu__search {
@@ -131,7 +137,16 @@
     @media (max-width: 991px) {
         display: block;
     }
+    @media (max-width: 575px) {
+        padding: 25px 16px;
+    }
 }
+.menu__search .search__button {
+    @media (max-width: 575px) {
+        display: none;
+    }
+}
+
 .menu--search .menu__search {
     transform: translateX(0);
 }
