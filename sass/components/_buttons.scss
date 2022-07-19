@@ -207,10 +207,10 @@ $margin-icon: 12px; // Отступ иконки от текста
     line-height: var(--lh-button);
 }
 .button--small {
+    min-width: 112px;
     padding: 0.865em 1.33em;
     font-size: var(--fz-button--small);
     line-height: var(--lh-button--small);
-    min-width: 112px;
 }
 .button[disabled] {
     --button-color: var(--c-blind);
@@ -290,6 +290,7 @@ $margin-icon: 12px; // Отступ иконки от текста
 .button--thirdly {
     --button-color: var(--c-accent);
     --icon-color: var(--button-color);
+    padding: 0;
     color: var(--button-color);
 }
 .button--thirdly:hover {

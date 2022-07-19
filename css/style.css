@@ -206,6 +206,11 @@ body._lock {
   }
 }
 
+.container-buttons {
+  display: flex;
+  align-items: center;
+}
+
 .page-content {
   width: 100%;
   padding: 32px 40px;
@@ -306,6 +311,23 @@ body._lock {
   .section__heading {
     margin-bottom: 18px;
   }
+}
+
+.section__latest .card__title {
+  margin-bottom: 0;
+  font-size: var(--fz-h4);
+  line-height: var(--lh-h4);
+}
+
+.section__latest .card {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+
+.section__latest .card:last-child {
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--c-blind);
 }
 
 /* Стили анимации пульсации кругов */
@@ -598,10 +620,10 @@ body._lock {
 }
 
 .button--small {
+  min-width: 112px;
   padding: 0.865em 1.33em;
   font-size: var(--fz-button--small);
   line-height: var(--lh-button--small);
-  min-width: 112px;
 }
 
 .button[disabled] {
@@ -696,6 +718,7 @@ body._lock {
 .button--thirdly {
   --button-color: var(--c-accent);
   --icon-color: var(--button-color);
+  padding: 0;
   color: var(--button-color);
 }
 

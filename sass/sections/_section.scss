@@ -13,3 +13,19 @@
         margin-bottom: 18px;
     }
 }
+
+.section__latest .card__title {
+    margin-bottom: 0;
+    font-size: var(--fz-h4);
+    line-height: var(--lh-h4);
+}
+.section__latest .card {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+}
+
+.section__latest .card:last-child {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--c-blind);
+}
