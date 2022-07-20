@@ -47,7 +47,8 @@
     top: 0px;
     height: calc(100%);
     padding: 32px 40px;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     transition: all 0.3s ease-in-out;
     @media (max-width: 991px) {
         height: 100%;
@@ -78,7 +79,14 @@
 
 .menu__top {
     margin-bottom: 96px;
+    @media (min-width: 992px) {
+        margin-bottom: 0;
+    }
 }
+.menu:hover .menu__top {
+    margin-bottom: 96px;
+}
+
 .menu__bottom {
     display: none;
 }
@@ -141,8 +149,13 @@
 }
 .menu__theme {
     @media (min-width: 992px) {
+        position: absolute;
         opacity: 0;
     }
+}
+.menu:hover .menu__theme {
+    position: static;
+    opacity: 1;
 }
 
 .menu--opened {
