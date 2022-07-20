@@ -2066,7 +2066,7 @@ body._lock {
 .detailed figcaption {
   margin-top: 12px;
   font-size: var(--fz-body--small);
-  line-height: var(--lh-body-small);
+  line-height: var(--lh-body--small);
   color: var(--c-text-grey);
 }
 
