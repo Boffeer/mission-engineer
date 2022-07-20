@@ -1,6 +1,6 @@
 // Служебные переменные
+// eslint-disable-next-line no-unused-vars
 const d = document;
-d;
 const body = document.querySelector("body");
 
 // Служебные функции
@@ -8,14 +8,14 @@ const body = document.querySelector("body");
 function find(selector) {
   return document.querySelector(selector);
 }
-find;
 
+// eslint-disable-next-line no-unused-vars
 function findAll(selectors) {
   return document.querySelectorAll(selectors);
 }
-findAll;
 
 // Удаляет у всех элементов items класс itemClass
+// eslint-disable-next-line no-unused-vars
 function removeAll(items, itemClass) {
   if (typeof items == "string") {
     items = document.querySelectorAll(items);
@@ -25,7 +25,6 @@ function removeAll(items, itemClass) {
     item.classList.remove(itemClass);
   }
 }
-removeAll;
 
 function bodyLock(con) {
   if (con === true) {
@@ -114,6 +113,7 @@ function sumbitForm() {
 
 // Мобильное меню
 // menu()
+// eslint-disable-next-line no-unused-vars
 function menu() {
   const burger = find(".burger");
   const menu = find(".menu");
@@ -136,7 +136,6 @@ function menu() {
     bodyLock();
   });
 }
-menu;
 
 // const swiper = new Swiper(".swiper-container", {
 //   slidesPerView: 1, // Кол-во показываемых слайдов
@@ -601,12 +600,14 @@ const detailedSliders = document.querySelectorAll(".detailed-slider");
 detailedSliders.forEach((slider, index) => {
   slider.classList.add(`detailed-slider-${index}`);
 
+  // eslint-disable-next-line no-undef
   let detailedSlides = new Swiper(
     `.detailed-slider-${index} .detailed-slider__slides`,
     {
       spaceBetween: 10,
     }
   );
+  // eslint-disable-next-line no-unused-vars, no-undef
   let detailedThumbs = new Swiper(
     `.detailed-slider-${index} .detailed-slider__thumbs`,
     {
