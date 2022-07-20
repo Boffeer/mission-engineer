@@ -2195,7 +2195,6 @@ body._lock {
 
 .detailed-slider figcaption {
   padding-top: 12px;
-  line-height: 1;
   border-top: 1px solid var(--c-text-disabled);
 }
 
@@ -2219,6 +2218,12 @@ body._lock {
   height: 44px;
   border: 2px solid transparent;
   border-radius: 8px;
+}
+@media (max-width: 575px) {
+  .detailed-slider__thumbs .swiper-slide {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .detailed-slider__thumbs .detailed-slider__slide--active {

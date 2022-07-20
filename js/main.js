@@ -630,4 +630,14 @@ detailedSliders.forEach((slider, index) => {
       thumb.classList.add("detailed-slider__slide--active");
     });
   });
+  detailedSlides.on("slideChange", () => {
+    console.log(detailedSlides.activeIndex);
+    detailedThumbs.slideTo(detailedSliders.activeIndex);
+    thumbs.forEach((thumb) => {
+      thumb.classList.remove("detailed-slider__slide--active");
+    });
+    thumbs[detailedSlides.activeIndex].classList.add(
+      "detailed-slider__slide--active"
+    );
+  });
 });
