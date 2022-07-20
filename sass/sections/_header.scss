@@ -98,6 +98,10 @@
     width: 100%;
     height: 100%;
 }
+.header-logo__img {
+    object-fit: cover;
+    object-position: left;
+}
 
 .header-logo__pic--small {
     display: none;

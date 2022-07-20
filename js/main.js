@@ -595,3 +595,38 @@ searchButton.addEventListener("click", () => {
     isBurgerOpened() ? closeBurger() : false;
   }
 });
+
+const detailedSliders = document.querySelectorAll(".detailed-slider");
+
+detailedSliders.forEach((slider, index) => {
+  slider.classList.add(`detailed-slider-${index}`);
+
+  let detailedSlides = new Swiper(
+    `.detailed-slider-${index} .detailed-slider__slides`,
+    {
+      spaceBetween: 10,
+    }
+  );
+  let detailedThumbs = new Swiper(
+    `.detailed-slider-${index} .detailed-slider__thumbs`,
+    {
+      grabCursor: true,
+      spaceBetween: 8,
+      slidesPerView: "auto",
+    }
+  );
+
+  const thumbs = document.querySelectorAll(
+    `.detailed-slider-${index} .detailed-slider__thumbs .swiper-slide`
+  );
+  thumbs[0].classList.add("detailed-slider__slide--active");
+  thumbs.forEach((thumb, index) => {
+    thumb.addEventListener("click", () => {
+      detailedSlides.slideTo(index);
+      thumbs.forEach((thumb) => {
+        thumb.classList.remove("detailed-slider__slide--active");
+      });
+      thumb.classList.add("detailed-slider__slide--active");
+    });
+  });
+});

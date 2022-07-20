@@ -5,7 +5,8 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 346px;
+    max-width: 112px; // потому что ширина скроллбара
+    // max-width: 130px;
     height: calc(100 * 1vh);
     max-height: calc(100 * 1vh);
     overflow: visible;
@@ -20,6 +21,27 @@
         background-color: transparent;
     }
 }
+.menu:hover {
+    max-width: 346px;
+    @media (max-width: 991px) {
+        max-width: 100%;
+    }
+}
+
+.menu__nav-link .button__text {
+    margin-right: auto;
+    transition: all 0.5s ease;
+    @media (min-width: 992px) {
+        width: 0;
+        white-space: nowrap;
+        opacity: 0;
+    }
+}
+.menu:hover .menu__nav-link .button__text {
+    width: 100%;
+    opacity: 1;
+}
+
 .menu__sticky {
     position: sticky;
     top: 0px;
@@ -57,6 +79,12 @@
 .menu__top {
     margin-bottom: 96px;
 }
+.menu__bottom {
+    display: none;
+}
+.menu:hover .menu__bottom {
+    display: block;
+}
 
 .menu__nav-list {
     padding-top: 20px;
@@ -91,6 +119,15 @@
 
 .menu__links {
     margin-bottom: 30px;
+    transition: all 0.5s ease;
+    @media (min-width: 992px) {
+        width: 0;
+        opacity: 0;
+    }
+}
+.menu:hover .menu__links {
+    width: initial;
+    opacity: 1;
 }
 .menu__links-link {
     display: block;
@@ -101,6 +138,11 @@
 }
 .menu__links-link:last-of-type {
     margin-bottom: 0;
+}
+.menu__theme {
+    @media (min-width: 992px) {
+        opacity: 0;
+    }
 }
 
 .menu--opened {
@@ -116,7 +158,8 @@
 }
 
 .menu__sidebar {
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     @media (max-width: 768px) {
         max-height: calc(100% - 85px);
     }

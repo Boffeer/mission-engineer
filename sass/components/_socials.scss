@@ -4,6 +4,7 @@
 }
 .socials__link {
     --size: 24px;
+    --icon-color: var(--c-text-grey-2);
     display: block;
     width: var(--size);
     min-width: var(--size);
@@ -12,7 +13,10 @@
     min-height: var(--size);
     max-height: var(--size);
     margin-right: 12px;
-    fill: var(--c-text-grey-2);
+    fill: var(--icon-color);
+}
+.socials__link--has-stroke {
+    stroke: var(--icon-color);
 }
 
 .socials__link:last-of-type {
@@ -20,5 +24,7 @@
 }
 
 .socials__link:hover {
-    fill: var(--c-accent);
+    --icon-color: var(--c-accent);
+    // fill: var(--c-accent);
+    // stroke: var(--icon-color);
 }

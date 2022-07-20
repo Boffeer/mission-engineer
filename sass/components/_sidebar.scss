@@ -1,0 +1,8 @@
+.sidebar {
+    max-width: 361px;
+    background-color: var(--bg-element);
+}
+.sidebar .section__content {
+    position: sticky;
+    top: 0;
+}
