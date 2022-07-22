@@ -88,3 +88,10 @@
     font-size: var(--fz-h3);
     line-height: var(--lh-h3);
 }
+
+.grid__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    row-gap: 24px;
+    column-gap: 24px;
+}

@@ -22,6 +22,7 @@
     border-radius: 10px;
     fill: transparent;
     stroke: var(--c-text-disabled);
+    transition: all 0.3s ease;
     @media (max-width: 575px) {
         background-color: var(--c-element-disabled);
     }
@@ -80,10 +81,58 @@
 
 .tabs--theme {
     --background-color: var(--bg-app);
+    background-color: transparent;
 }
 .tab--theme.tab--active {
     background-color: var(--bg-element);
 }
-.tab--theme {
+
+/*
+
+    @.tabs--chips
+
+*/
+
+.tabs--chips {
     background-color: transparent;
+}
+.tabs--chips .tab {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    background-color: var(--bg-element);
+    transition: all 0.3s ease;
+}
+
+.tabs--chips .tab:hover,
+.tabs--chips .tab--active {
+    color: var(--c-text-on);
+    background-color: var(--c-accent);
+}
+
+.tabs--chips .tab::after {
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-left: 8px;
+    background-color: var(--c-text-on);
+    transition: all 0.3s ease;
+}
+.tabs--chips .tab--active::after {
+    content: "";
+    @include getmask("../img/icons/close-icon.svg");
+}
+
+.tabs--chips .chips--date::after {
+    @include getmask("../img/icons/arrow-down.svg");
+    content: "";
+    background-color: var(--c-accent);
+}
+.tabs--chips .chips--date:hover::after,
+.tabs--chips .tab--active.chips--date::after {
+    background-color: var(--c-text-on);
+}
+.tabs--chips .tabs__scrollable {
+    --background-color: transparent;
 }
