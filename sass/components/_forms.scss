@@ -1,7 +1,10 @@
 .form {
     display: flex;
-    flex-direction: column;
+    // flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
+    padding: 24px;
+    background-color: var(--bg-element);
 }
 
 .form-elem {
@@ -18,17 +21,17 @@
 }
 
 .form-elem textarea {
-    max-width: 100%;
     min-width: 100%;
+    max-width: 100%;
     min-height: 164px;
     transition: 0s;
 }
 
 .form-elem__area {
     width: 100%;
+    padding: 30px 12px 12px 12px;
     background: #f9f9f9;
     border-radius: 8px;
-    padding: 30px 12px 12px 12px;
     transition: $tr;
 
     &:hover {
@@ -69,17 +72,17 @@
     top: 30px;
     left: 12px;
     width: 100%;
-    transform: translate(0, -50%);
     font-size: 14px;
     font-weight: 400;
     pointer-events: none;
     transition: $tr;
+    transform: translate(0, -50%);
 
     &::after {
-        content: "Error";
+        margin: 0 0 0 6px;
         font-size: inherit;
         color: $error;
-        margin: 0 0 0 6px;
+        content: "Error";
         opacity: 0;
     }
 }
@@ -89,8 +92,16 @@
     top: 50%;
     right: 12px;
     display: block;
-    transform: translate(0, -50%);
     font-size: 14px;
     color: $main;
     pointer-events: none;
+    transform: translate(0, -50%);
+}
+
+.form__title {
+    width: 100%;
+    margin-bottom: 32px;
+    font-size: var(--fz-h2);
+    font-weight: 700;
+    line-height: var(--lh-h2);
 }
