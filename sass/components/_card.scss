@@ -171,6 +171,10 @@
 
 */
 
+.card--bg-pic {
+    height: 100%;
+}
+
 .card--bg-pic .card__pic {
     position: absolute;
     top: 0;
@@ -185,6 +189,10 @@
     transform: scale(1.2);
 }
 .card--bg-pic .card__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
     padding-top: 100px;
     background: linear-gradient(
         0deg,

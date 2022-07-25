@@ -100,3 +100,14 @@
     row-gap: 24px;
     column-gap: 24px;
 }
+
+.cards--fullsize-projects .card {
+    margin-bottom: 24px;
+    @media (max-width: 575px) {
+        margin-bottom: 16px;
+    }
+}
+
+.cards--fullsize-projects .card:last-child {
+    margin-bottom: 0;
+}
