@@ -105,3 +105,9 @@
     font-weight: 700;
     line-height: var(--lh-h2);
 }
+
+.form__caption {
+    font-size: var(--fz-tag);
+    line-height: var(--lh-tag);
+    color: var(--c-text-grey-2);
+}
