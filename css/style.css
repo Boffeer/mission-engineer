@@ -1079,10 +1079,13 @@ body._lock {
   position: relative;
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  padding: 0;
   margin-bottom: 40px;
+  background-color: transparent;
   border-radius: 5px;
 }
 @media (max-width: 575px) {
@@ -1095,7 +1098,7 @@ body._lock {
   position: absolute;
   top: 50%;
   left: 16px;
-  z-index: 2;
+  z-index: 3;
   width: 16px;
   height: 16px;
   stroke: var(--c-accent);
@@ -1104,6 +1107,7 @@ body._lock {
 
 .search__input {
   width: 100%;
+  margin-bottom: 0;
   font-size: var(--fz-body--small);
   border-radius: 5px;
 }
