@@ -1,6 +1,7 @@
+/* stylelint-disable */
 .modal {
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
@@ -36,9 +37,13 @@
     }
 }
 
+.modal__body .modal__title {
+    margin-bottom: 32px;
+}
+
 .modal__content {
     position: relative;
-    max-width: 540px;
+    max-width: 784px;
     background: #fff;
     border-radius: $radius;
     padding: 40px 40px 32px 40px;
@@ -51,9 +56,15 @@
 }
 
 .modal__title {
-    font-size: 32px;
-    font-weight: 900;
-    text-align: center;
+    font-weight: 700;
+    font-size: var(--fz-h2);
+    line-height: var(--lh-h2);
+    margin-bottom: 32px;
+}
+.modal__text {
+    font-size: var(--fz-body);
+    line-height: var(--lh-body);
+    margin-bottom: 30px;
 }
 
 .modal__form {
@@ -73,10 +84,10 @@
 
 .modal__close {
     position: absolute;
-    top: 16px;
-    right: 16px;
-    width: 24px;
-    height: 24px;
+    top: 40px;
+    right: 40px;
+    width: 32px;
+    height: 32px;
 
     & span {
         position: absolute;
@@ -84,7 +95,7 @@
         left: 50%;
         width: 20px;
         height: 2px;
-        background: $main;
+        background: var(--c-accent);
         border-radius: 100px;
 
         &:nth-child(1) {

@@ -273,6 +273,32 @@ function modal() {
     resetHash();
   }
 }
+// Сброс id модального окна в url
+function resetHash() {
+  const windowTop = window.pageYOffset;
+  window.location.hash = "";
+  window.scrollTo(0, windowTop);
+}
+
+function openModal(modal) {
+  modal.classList.add("_show");
+  bodyLock(true);
+}
+
+// Закрытие модального окна
+function closeModal(modal) {
+  modal.classList.remove("_show");
+  bodyLock(false);
+  resetHash();
+}
+
+const modalClosers = document.querySelectorAll("[data-modal-close]");
+modalClosers.forEach((button) => {
+  button.addEventListener("click", () => {
+    const modalId = button.dataset.modalClose;
+    document.querySelector(`#${modalId}`).classList.remove("_show");
+  });
+});
 
 /**
  * @featured-slider
@@ -639,5 +665,38 @@ detailedSliders.forEach((slider, index) => {
     thumbs[detailedSlides.activeIndex].classList.add(
       "detailed-slider__slide--active"
     );
+  });
+});
+
+/**
+ *
+ * Form
+ *
+ */
+
+const eventsThanks = document.querySelector("#events-thanks");
+const formsList = document.querySelectorAll("form");
+formsList.forEach((form) => {
+  console.log("form");
+  form.addEventListener("submit", async (event) => {
+    console.log(form);
+    event.preventDefault();
+
+    if (eventsThanks) {
+      openModal(eventsThanks);
+    }
+
+    // let response = await fetch(
+    //   window.location.origin + "/wp-content/themes/c21/send.php",
+    //   {
+    //     method: "POST",
+    //     body: new URLSearchParams(new FormData(form)),
+    //     headers: {
+    //       "Content-Type": "application/x-www-form-urlencoded",
+    //     },
+    //   }
+    // );
+    // let result = await response.json();
+    // console.log(result);
   });
 });
