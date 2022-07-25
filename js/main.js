@@ -296,7 +296,8 @@ const modalClosers = document.querySelectorAll("[data-modal-close]");
 modalClosers.forEach((button) => {
   button.addEventListener("click", () => {
     const modalId = button.dataset.modalClose;
-    document.querySelector(`#${modalId}`).classList.remove("_show");
+    const modal = document.querySelector(`#${modalId}`);
+    closeModal(modal);
   });
 });
 
