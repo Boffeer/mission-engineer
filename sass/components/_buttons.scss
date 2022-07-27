@@ -362,6 +362,9 @@ $margin-icon: 12px; // Отступ иконки от текста
 .button--icon-arrow-left .button__icon {
     @include getmask("../img/icons/arrow-left.svg");
 }
+.button--icon-link .button__icon {
+    @include getmask("../img/icons/link.svg");
+}
 
 /*
 
