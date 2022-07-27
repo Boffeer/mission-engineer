@@ -1,3 +1,23 @@
+@mixin accentCard {
+    color: var(--c-text-on);
+    --icon-color: var(--c-text-on);
+    background-color: var(--c-accent);
+}
+@mixin accentDarkCard {
+    color: var(--c-text-on);
+    --icon-color: var(--c-text-on);
+    background-color: var(--c-accent--dark);
+}
+@mixin whiteCard {
+    color: var(--c-text);
+    --icon-color: var(--c-accent);
+    background-color: var(--bg-element);
+}
+@mixin blackCard() {
+    color: var(--c-text-on);
+    background-color: var(--c-text);
+}
+
 .page-content--about {
     padding-right: 80px;
 }
@@ -8,17 +28,31 @@
 }
 
 .about-cell {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     min-height: 233px;
     padding: 32px 24px;
-    --icon-color: var(--c-accent);
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
     background-blend-mode: luminosity;
+    @include whiteCard();
 }
+.about-cell::after {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    z-index: 2;
+    display: block;
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
 .about-cell__title {
     margin-bottom: 8px;
     font-size: var(--fz-h1);
@@ -57,8 +91,7 @@
 
 .about__row:nth-child(1) .about-cell:nth-child(1),
 .about__row:nth-child(6n) .about-cell:nth-child(1) {
-    color: var(--c-text-on);
-    background-color: var(--c-accent);
+    @include accentCard();
     background-image: url("../img/about/1.png");
     background-repeat: no-repeat;
     background-position: right;
@@ -72,18 +105,21 @@
 
 .about__row:nth-child(1) .about-cell:nth-child(2),
 .about__row:nth-child(6n) .about-cell:nth-child(2) {
-    background-color: var(--bg-element);
+    @include whiteCard();
 }
+.about__row:nth-child(1) .about-cell:nth-child(2)::after,
+.about__row:nth-child(6n) .about-cell:nth-child(2)::after {
+    content: "";
+    background-image: url("../img/about/users.svg");
+}
+
 .about__row:nth-child(1) .about-cell:nth-child(3),
 .about__row:nth-child(6n) .about-cell:nth-child(3) {
-    color: var(--c-text-on);
-    background-color: var(--c-text);
+    @include blackCard();
 }
 .about__row:nth-child(1) .about-cell:nth-child(4),
 .about__row:nth-child(6n) .about-cell:nth-child(4) {
-    color: var(--c-text-on);
-    background-color: var(--c-accent--dark);
-    --icon-color: var(--c-text-on);
+    @include accentDarkCard();
 }
 
 .about__row:nth-child(2) {
@@ -94,43 +130,35 @@
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 2;
-    color: var(--c-text-on);
-    background-color: var(--c-text);
+    @include blackCard();
 }
 .about__row:nth-child(2) .about-cell:nth-child(2) {
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 3;
-    color: var(--c-text-on);
-    background-color: var(--c-accent--dark);
-    --icon-color: var(--c-text-on);
+    @include accentDarkCard();
 }
 .about__row:nth-child(2) .about-cell:nth-child(3) {
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 2;
-    --icon-color: var(--c-text-on);
-    color: var(--c-text-on);
-    background-color: var(--c-accent);
+    @include accentCard();
 }
 .about__row:nth-child(2) .about-cell:nth-child(4) {
     grid-row-start: 2;
     grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 3;
-    color: var(--c-text);
-    background-color: var(--bg-element);
+    @include whiteCard();
 }
 .about__row:nth-child(2) .about-cell:nth-child(5) {
     grid-row-start: 1;
     grid-row-end: 3;
     grid-column-start: 3;
     grid-column-end: 4;
-    --icon-color: var(--c-text-on);
-    color: var(--c-text-on);
-    background-color: var(--c-accent);
+    @include accentCard();
     background-image: url("../img/about/2.png");
 }
 .about__row:nth-child(2) .about-cell:nth-child(5) .about-cell__title {
@@ -145,55 +173,48 @@
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-end: 2;
     padding-right: 65px;
-    color: var(--c-text-on);
-    background-color: var(--c-accent--dark);
-    --icon-color: var(--c-text-on);
+    @include accentDarkCard();
+}
+.about__row:nth-child(3) .about-cell:nth-child(1)::after {
+    content: "";
+    background-image: url("../img/about/swap.svg");
 }
 .about__row:nth-child(3) .about-cell:nth-child(2) {
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 3;
-    color: var(--c-text-on);
-    background-color: var(--c-text);
+    @include blackCard();
 }
 .about__row:nth-child(3) .about-cell:nth-child(3) {
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 3;
     grid-column-end: 4;
-    color: var(--c-text);
-    background-color: var(--bg-element);
+    @include whiteCard();
 }
 
 .about__row:nth-child(4) .about-cell:nth-child(1) {
-    color: var(--c-text-on);
-    background-color: var(--c-accent);
     background-image: url("../img/about/3.png");
+    @include accentCard();
 }
 .about__row:nth-child(4) .about-cell:nth-child(2) {
     grid-column-start: 2;
     grid-column-end: 3;
-    color: var(--c-text-on);
-    background-color: var(--c-accent--dark);
-    --icon-color: var(--c-text-on);
+    @include accentDarkCard();
 }
 .about__row:nth-child(4) .about-cell:nth-child(3) {
-    --icon-color: var(--c-text-on);
     grid-column-start: 3;
     grid-column-end: 4;
-    color: var(--c-text-on);
-    background-color: var(--c-accent);
+    @include accentCard();
 }
 .about__row:nth-child(4) .about-cell:nth-child(4) {
-    color: var(--c-text);
-    background-color: var(--bg-element);
+    @include whiteCard();
 }
 .about__row:nth-child(4) .about-cell:nth-child(5) {
-    color: var(--c-text-on);
-    background-color: var(--c-text);
+    @include blackCard();
 }
 
 .about__row:nth-child(5) {
@@ -202,13 +223,18 @@
 .about__row:nth-child(5) .about-cell:nth-child(1) {
     grid-row-end: 2;
     padding-right: 65px;
-    color: var(--c-text-on);
-    background-color: var(--c-text);
-    --icon-color: var(--c-text-on);
+    @include blackCard();
 }
+.about__row:nth-child(5) .about-cell:nth-child(1)::after {
+    content: "";
+    background-image: url("../img/about/flask.svg");
+}
+
 .about__row:nth-child(5) .about-cell:nth-child(2) {
     padding-right: 65px;
-    color: var(--c-text-on);
-    background-color: var(--c-accent--dark);
-    --icon-color: var(--c-text-on);
+    @include accentDarkCard();
+}
+.about__row:nth-child(5) .about-cell:nth-child(2)::after {
+    content: "";
+    background-image: url("../img/about/atom.svg");
 }
