@@ -912,8 +912,10 @@ body._lock {
 */
 /* stylelint-disable */
 .link {
+  --icon-color: var(--c-accent);
   color: var(--c-accent);
   transition: all var(--t) ease-in-out;
+  padding: 0;
 }
 
 .link:hover {
@@ -1336,6 +1338,8 @@ body._lock {
 */
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   background-color: var(--bg-element);
   border-radius: 5px;
 }
@@ -1407,6 +1411,11 @@ body._lock {
   position: relative;
   z-index: 2;
   padding: 16px;
+}
+
+.card__info + .card__info {
+  padding-top: 0;
+  margin-top: auto;
 }
 
 .card-meta {

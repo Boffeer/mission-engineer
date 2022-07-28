@@ -374,8 +374,10 @@ $margin-icon: 12px; // Отступ иконки от текста
 
 /* stylelint-disable */
 .link {
+    --icon-color: var(--c-accent);
     color: var(--c-accent);
     transition: all var(--t) ease-in-out;
+    padding: 0;
 }
 .link:hover {
     color: var(--c-accent--dark);
