@@ -1284,6 +1284,12 @@ body._lock {
 .modal__body h2 {
   margin: 0 0 8px 0;
 }
+@media (max-width: 575px) {
+  .modal__body {
+    padding: 0;
+    align-items: flex-end;
+  }
+}
 
 .modal__body .modal__title {
   margin-bottom: 32px;
@@ -1292,9 +1298,18 @@ body._lock {
 .modal__content {
   position: relative;
   max-width: 784px;
-  background: #fff;
+  background: var(--bg-element);
   border-radius: var(--radius);
   padding: 40px 40px 32px 40px;
+}
+@media (max-width: 575px) {
+  .modal__content {
+    padding-top: 64px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 56px;
+    border-radius: 0;
+  }
 }
 
 .modal__big-icon {
@@ -1314,6 +1329,11 @@ body._lock {
   font-size: var(--fz-body);
   line-height: var(--lh-body);
   margin-bottom: 30px;
+}
+@media (max-width: 575px) {
+  .modal__text br {
+    display: none;
+  }
 }
 
 .modal__form {
@@ -1337,6 +1357,12 @@ body._lock {
   right: 40px;
   width: 32px;
   height: 32px;
+}
+@media (max-width: 575px) {
+  .modal__close {
+    right: 16px;
+    top: 16px;
+  }
 }
 .modal__close span {
   position: absolute;
