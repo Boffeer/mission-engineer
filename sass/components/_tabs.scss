@@ -27,6 +27,10 @@
         background-color: var(--c-element-disabled);
     }
 }
+.tab:hover {
+    color: var(--c-accent);
+    stroke: var(--c-accent);
+}
 .tab--theme {
     --button-size: 32px;
     width: var(--button-size);

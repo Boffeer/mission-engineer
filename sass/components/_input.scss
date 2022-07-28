@@ -27,12 +27,12 @@
     pointer-events: none;
     background-color: var(--bg-element);
     transition: all 0.3s ease;
-    transition: all 0.3s ease;
 }
 
 .input--active .input__label,
 .input__field:focus + .input__label {
-    top: -0.6em;
+    // top: -0.6em;
+    top: -9px;
     font-size: var(--fz-body--small-2);
     line-height: var(--lh-body--small-2);
 }

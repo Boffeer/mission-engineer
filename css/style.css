@@ -938,6 +938,18 @@ body._lock {
   color: var(--c-accent);
   transition: all var(--t) ease-in-out;
   padding: 0;
+  justify-content: flex-start;
+}
+
+.link .button__text {
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+  width: auto;
+}
+
+.link:hover .button__text {
+  --icon-color: var(--c-accent--dark);
+  border-bottom: 1px solid var(--icon-color);
 }
 
 .link:hover {
@@ -1062,9 +1074,11 @@ body._lock {
   }
 }
 
-.form__bottom {
-  flex-direction: column-reverse;
-  align-items: flex-start;
+@media (max-width: 575px) {
+  .form__bottom {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
 }
 
 .input {
@@ -1098,12 +1112,11 @@ body._lock {
   pointer-events: none;
   background-color: var(--bg-element);
   transition: all 0.3s ease;
-  transition: all 0.3s ease;
 }
 
 .input--active .input__label,
 .input__field:focus + .input__label {
-  top: -0.6em;
+  top: -9px;
   font-size: var(--fz-body--small-2);
   line-height: var(--lh-body--small-2);
 }
@@ -1955,6 +1968,11 @@ body._lock {
   .tab {
     background-color: var(--c-element-disabled);
   }
+}
+
+.tab:hover {
+  color: var(--c-accent);
+  stroke: var(--c-accent);
 }
 
 .tab--theme {

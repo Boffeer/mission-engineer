@@ -116,6 +116,8 @@
 }
 
 .form__bottom {
-    flex-direction: column-reverse;
-    align-items: flex-start;
+    @media (max-width: 575px) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
 }

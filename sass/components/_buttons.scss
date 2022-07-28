@@ -378,6 +378,16 @@ $margin-icon: 12px; // Отступ иконки от текста
     color: var(--c-accent);
     transition: all var(--t) ease-in-out;
     padding: 0;
+    justify-content: flex-start;
+}
+.link .button__text {
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+    width: auto;
+}
+.link:hover .button__text {
+    --icon-color: var(--c-accent--dark);
+    border-bottom: 1px solid var(--icon-color);
 }
 .link:hover {
     color: var(--c-accent--dark);
