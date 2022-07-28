@@ -402,6 +402,16 @@ body._lock {
   }
 }
 
+.section__search {
+  margin-bottom: 0;
+}
+
+@media (max-width: 575px) {
+  .section__search .search__button {
+    display: none;
+  }
+}
+
 /* Стили анимации пульсации кругов */
 @keyframes pulse {
   0% {
@@ -1221,6 +1231,10 @@ body._lock {
 
 .search-results__link:last-child {
   margin-bottom: 0;
+}
+
+.partners__search {
+  display: flex;
 }
 
 /* stylelint-disable */

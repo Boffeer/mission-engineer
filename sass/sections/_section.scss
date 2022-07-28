@@ -65,3 +65,12 @@
         padding-left: 16px;
     }
 }
+
+.section__search {
+    margin-bottom: 0;
+}
+.section__search .search__button {
+    @media (max-width: 575px) {
+        display: none;
+    }
+}
