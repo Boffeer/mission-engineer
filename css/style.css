@@ -2135,6 +2135,7 @@ body._lock {
 @media (max-width: 575px) {
   .page-content--404 {
     padding: 0;
+    background-position: -440px -70px;
   }
 }
 
