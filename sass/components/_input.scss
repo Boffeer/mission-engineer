@@ -43,7 +43,7 @@
     margin-top: -20px;
     font-size: var(--fz-tag);
     line-height: var(--lh-tag);
-    color: var(--c-error);
+    color: var(--c-text);
     transition: all 0.3s ease;
     transform: scale(1, 0);
     transform-origin: top;
@@ -58,6 +58,7 @@
 .input--invalid .input__error {
     display: block;
     margin-top: 0;
+    color: var(--c-error);
     transform: scale(1);
 }
 
@@ -75,9 +76,11 @@
     transition: all 0.3s ease;
     @include getmask("../img/icons/arrow-down.svg");
 }
-.input--active.input--dropdown::after {
+
+.input--active-dropdown.input--dropdown::after {
     transform: rotate(180deg);
 }
+
 .input-dropdown {
     position: absolute;
     width: 100%;
@@ -111,4 +114,10 @@
 .input-dropdown__item:hover {
     cursor: pointer;
     background-color: var(--c-accent--light);
+}
+
+.input--half {
+    @media (min-width: 576px) {
+        max-width: 49%;
+    }
 }

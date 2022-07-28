@@ -964,9 +964,14 @@ body._lock {
 .form {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: space-between;
   padding: 24px;
   background-color: var(--bg-element);
+}
+
+.form--regular {
+  border-radius: 5px;
 }
 
 .form-elem {
@@ -1126,7 +1131,7 @@ body._lock {
   margin-top: -20px;
   font-size: var(--fz-tag);
   line-height: var(--lh-tag);
-  color: var(--c-error);
+  color: var(--c-text);
   transition: all 0.3s ease;
   transform: scale(1, 0);
   transform-origin: top;
@@ -1143,6 +1148,7 @@ body._lock {
 .input--invalid .input__error {
   display: block;
   margin-top: 0;
+  color: var(--c-error);
   transform: scale(1);
 }
 
@@ -1168,7 +1174,7 @@ body._lock {
   mask-size: contain;
 }
 
-.input--active.input--dropdown::after {
+.input--active-dropdown.input--dropdown::after {
   transform: rotate(180deg);
 }
 
@@ -1208,6 +1214,12 @@ body._lock {
 .input-dropdown__item:hover {
   cursor: pointer;
   background-color: var(--c-accent--light);
+}
+
+@media (min-width: 576px) {
+  .input--half {
+    max-width: 49%;
+  }
 }
 
 .search__form {

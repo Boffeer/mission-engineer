@@ -684,6 +684,62 @@ detailedSliders.forEach((slider, index) => {
  *
  */
 
+// #region validate
+function validateInput(input) {
+  const field = input.querySelector("input");
+  if (field.type == "tel") {
+    return validatePhone(input);
+  } else if (field.type == "email") {
+    return validateEmail(input);
+  } else {
+    return validateInputLength(input);
+  }
+}
+function validateInputLength(input) {
+  const field = input.querySelector("input");
+  console.log(field.value);
+  if (field.value.length == 0) {
+    input.classList.add("input--invalid");
+    return false;
+  } else {
+    input.classList.remove("input--invalid");
+    return true;
+  }
+}
+function validatePhone(input) {
+  const field = input.querySelector(".input__field");
+  let regex = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+  if (!regex.test(field.value)) {
+    input.classList.add("input--invalid");
+    console.log("phone invalid");
+    return false;
+  } else {
+    input.classList.remove("input--invalid");
+    console.log("phone valid");
+    return true;
+  }
+}
+function validateEmail(input) {
+  const field = input.querySelector(".input__field");
+  let regex =
+    // eslint-disable-next-line no-control-regex
+    /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+  if (!regex.test(field.value)) {
+    input.classList.add("input--invalid");
+    console.log("email invalid");
+    return false;
+  } else {
+    input.classList.remove("input--invalid");
+    console.log("email valid");
+    return true;
+  }
+}
+function validateDropdown(input) {
+  const field = input.querySelector("input");
+  const label = input.querySelector("label");
+}
+// #endregion validate
+
 const eventsThanks = document.querySelector("#events-thanks");
 const formsList = document.querySelectorAll("form");
 formsList.forEach((form) => {
@@ -691,6 +747,10 @@ formsList.forEach((form) => {
   form.addEventListener("submit", async (event) => {
     console.log(form);
     event.preventDefault();
+
+    form.querySelectorAll(".input").forEach((input) => {
+      validateInput(input);
+    });
 
     if (eventsThanks) {
       openModal(eventsThanks);
@@ -758,6 +818,12 @@ function initInputs(inputs) {
     field.addEventListener("blur", () => {
       deactivateInput(input);
     });
+    field.addEventListener("input", () => {
+      if (field.type != "email" || field.type != "tel") {
+        validateInput(input);
+      }
+    });
+
     field.focus();
     field.blur();
 
