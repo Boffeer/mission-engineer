@@ -44,6 +44,24 @@
 .section--about {
     margin-bottom: 40px;
 }
+.section--about .section__heading {
+    @media (max-width: 991px) {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    @media (max-width: 575px) {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
 .section--mission {
     margin-bottom: 36px;
+    @media (max-width: 991px) {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    @media (max-width: 575px) {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
 }
