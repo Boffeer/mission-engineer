@@ -1,3 +1,4 @@
+// #region helpers
 // Служебные переменные
 // eslint-disable-next-line no-unused-vars
 const d = document;
@@ -301,9 +302,9 @@ modalClosers.forEach((button) => {
   });
 });
 
-/**
- * @featured-slider
- */
+// #endregion helpers
+
+// #region featured-slider
 
 const featuredSlider = document.querySelector(".featured-slider");
 if (featuredSlider) {
@@ -321,7 +322,9 @@ if (featuredSlider) {
     },
   });
 }
+// #endregion featured-slider
 
+// #region tabs
 /**
  * @tabs
  *
@@ -382,16 +385,18 @@ setTimeout(() => {
     }
   });
 }, 150);
+// #endregion tabs
+
+// #region sliders
+/**
+ * @sliders
+ */
 
 const newsSliderSettings = {
   slidesPerView: "auto",
   slidesPerGroup: 1,
   spaceBetween: 24,
   grabCursor: true,
-  // navigation: {
-  //   nextEl: '.news-slider__button-next',
-  //   prevEl: '.news-slider__button-prev',
-  // },
   pagination: {
     el: ".news-slider__pagination",
     clickable: true,
@@ -404,9 +409,6 @@ const newsSliderSettings = {
   },
 };
 
-/**
- * @sliders
- */
 function initSlider(slider) {
   // eslint-disable-next-line no-undef, no-unused-vars
   return new Swiper(slider.selector, slider.options);
@@ -443,7 +445,9 @@ if (newsSliders) {
     });
   }
 }
+// #endregion sliders
 
+// #region theme-picker
 /**
  *
  * @theme-picker
@@ -551,6 +555,9 @@ function clearScheme() {
 setupSwithcer();
 setupScheme();
 
+// #endregion theme-picker
+
+// #region burger
 const burgerButton = document.querySelector(".burger");
 const headerMenu = document.querySelector(".menu");
 
@@ -621,9 +628,10 @@ searchButton.addEventListener("click", () => {
     isBurgerOpened() ? closeBurger() : false;
   }
 });
+// #endregion burger
 
+// #region detailed-slider
 const detailedSliders = document.querySelectorAll(".detailed-slider");
-
 detailedSliders.forEach((slider, index) => {
   slider.classList.add(`detailed-slider-${index}`);
 
@@ -668,6 +676,7 @@ detailedSliders.forEach((slider, index) => {
     );
   });
 });
+// #endregion detailed-slider
 
 /**
  *
@@ -701,3 +710,113 @@ formsList.forEach((form) => {
     // console.log(result);
   });
 });
+
+// #region input-labels
+const inputs = document.querySelectorAll(".input");
+
+const inputClasses = {
+  init: "input--init",
+  active: "input--active",
+};
+
+function activateInput(input) {
+  input.classList.add(inputClasses.active);
+}
+function deactivateInput(input) {
+  const field = input.querySelector(".input__field");
+  if (field.value == "") {
+    input.classList.remove(inputClasses.active);
+  }
+}
+function initInputs(inputs) {
+  inputs.forEach((input) => {
+    if (input.classList.contains(inputClasses.init)) return;
+
+    input.classList.add(inputClasses.init);
+
+    const field = input.querySelector(".input__field");
+    const label = input.querySelector(".input__label");
+
+    input.addEventListener("click", () => {
+      activateInput(input);
+    });
+    field.addEventListener("focus", () => {
+      activateInput(input);
+    });
+    field.addEventListener("blur", () => {
+      deactivateInput(input);
+    });
+    field.focus();
+    field.blur();
+
+    if (field.value !== "") {
+      input.classList.add(inputClasses.active);
+    }
+  });
+}
+initInputs(inputs);
+
+// #endregion input-labels
+
+// #region datepicker
+/*
+Datepicker.locales.ru = {
+  days: [
+    "Воскресенье",
+    "Понедельник",
+    "Вторник",
+    "Среда",
+    "Четверг",
+    "Пятница",
+    "Суббота",
+  ],
+  daysShort: ["Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Суб"],
+  daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+  months: [
+    "Январь",
+    "Февраль",
+    "Март",
+    "Апрель",
+    "Май",
+    "Июнь",
+    "Июль",
+    "Август",
+    "Сентябрь",
+    "Октябрь",
+    "Ноябрь",
+    "Декабрь",
+  ],
+  monthsShort: [
+    "Янв",
+    "Фев",
+    "Мар",
+    "Апр",
+    "Май",
+    "Июн",
+    "Июл",
+    "Авг",
+    "Сен",
+    "Окт",
+    "Ноя",
+    "Дек",
+  ],
+  today: "Сегодня",
+  clear: "Очистить",
+  format: "dd.mm.yyyy",
+  weekStart: 1,
+  monthsTitle: "Месяцы",
+};
+Object.assign(Datepicker.locales);
+const calendarInputs = document.querySelectorAll(".input--calendar");
+if (calendarInputs) {
+  calendarInputs.forEach((calendar) => {
+    const datepicker = new Datepicker(calendar, {
+      format: "dd.mm.yyyy",
+      autohide: true,
+      maxDate: new Date(),
+      language: "ru",
+    });
+  });
+}
+*/
+// #endregion datepicker

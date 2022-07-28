@@ -1114,8 +1114,7 @@ body._lock {
   transition: all 0.3s ease;
 }
 
-.input--active .input__label,
-.input__field:focus + .input__label {
+.input--active .input__label {
   top: -9px;
   font-size: var(--fz-body--small-2);
   line-height: var(--lh-body--small-2);
