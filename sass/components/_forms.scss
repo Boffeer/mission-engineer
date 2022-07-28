@@ -110,4 +110,12 @@
     font-size: var(--fz-tag);
     line-height: var(--lh-tag);
     color: var(--c-text-grey-2);
+    @media (max-width: 575px) {
+        margin-bottom: 16px;
+    }
+}
+
+.form__bottom {
+    flex-direction: column-reverse;
+    align-items: flex-start;
 }

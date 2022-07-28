@@ -60,6 +60,9 @@
 .detailed-meta__tags {
     display: flex;
     align-items: center;
+    @media (max-width: 575px) {
+        margin-bottom: 16px;
+    }
 }
 .detailed-meta__tag {
     padding: 8px 12px;
@@ -243,6 +246,13 @@
     border-top: 1px solid var(--c-text-disabled);
 }
 
+.detailed-meta--event {
+    @media (max-width: 575px) {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
 .detailed-meta--event .detailed-meta__title {
     font-weight: 700;
     color: var(--c-text);
