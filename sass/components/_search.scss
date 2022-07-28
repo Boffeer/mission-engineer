@@ -45,6 +45,11 @@
     }
 }
 
+.search-results {
+    @media (max-width: 991px) and (min-width: 575px) {
+        margin-left: 4px;
+    }
+}
 .search-results__link {
     display: block;
     margin-bottom: 32px;

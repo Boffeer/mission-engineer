@@ -27,6 +27,9 @@
         background-color: var(--c-element-disabled);
     }
 }
+.tab:nth-child(2) {
+    margin-left: -4px;
+}
 .tab:hover {
     color: var(--c-accent);
     stroke: var(--c-accent);
