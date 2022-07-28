@@ -741,6 +741,7 @@ function validateDropdown(input) {
 // #endregion validate
 
 const eventsThanks = document.querySelector("#events-thanks");
+const formError = document.querySelector("#form-error");
 const formsList = document.querySelectorAll("form");
 formsList.forEach((form) => {
   console.log("form");
@@ -752,8 +753,14 @@ formsList.forEach((form) => {
       validateInput(input);
     });
 
-    if (eventsThanks) {
-      openModal(eventsThanks);
+    if ([...document.querySelectorAll(".input--invalid")].length === 0) {
+      if (eventsThanks) {
+        openModal(eventsThanks);
+      }
+    } else {
+      if (formError) {
+        openModal(formError);
+      }
     }
 
     // let response = await fetch(
