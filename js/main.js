@@ -717,17 +717,29 @@ const inputs = document.querySelectorAll(".input");
 const inputClasses = {
   init: "input--init",
   active: "input--active",
+  dropdown: "input--dropdown",
+  activeDropdown: "input--active-dropdown",
 };
 
 function activateInput(input) {
   input.classList.add(inputClasses.active);
+
+  if (input.classList.contains(inputClasses.dropdown)) {
+    input.classList.add(inputClasses.activeDropdown);
+  }
 }
 function deactivateInput(input) {
   const field = input.querySelector(".input__field");
-  if (field.value == "") {
-    input.classList.remove(inputClasses.active);
-  }
+  setTimeout(() => {
+    if (field.value == "") {
+      input.classList.remove(inputClasses.active);
+    }
+    if (input.classList.contains(inputClasses.dropdown)) {
+      input.classList.remove(inputClasses.activeDropdown);
+    }
+  }, 100);
 }
+
 function initInputs(inputs) {
   inputs.forEach((input) => {
     if (input.classList.contains(inputClasses.init)) return;
@@ -752,6 +764,25 @@ function initInputs(inputs) {
     if (field.value !== "") {
       input.classList.add(inputClasses.active);
     }
+    activateDropdown(input);
+  });
+}
+
+function activateDropdown(input) {
+  const dropdown = input.querySelector(".input-dropdown");
+  if (!dropdown) return;
+  const dropdownItems = dropdown.querySelectorAll(".input-dropdown__item");
+  const field = input.querySelector(".input__field");
+  const realInput = input.querySelector("input[hidden]");
+
+  dropdownItems.forEach((dropdown) => {
+    dropdown.addEventListener("click", () => {
+      field.innerText = dropdown.innerText;
+      realInput.value = dropdown.innerText;
+      setTimeout(() => {
+        input.classList.remove(inputClasses.activeDropdown);
+      }, 150);
+    });
   });
 }
 initInputs(inputs);

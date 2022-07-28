@@ -351,14 +351,43 @@
             <span class="input__label">Компания</span>
             <span class="input__error">Текст ошибки, текст ошибки</span>
           </label>
-          <label class="input input--active input--dropdown input--half">
-            <input type="text" name="user_status" class="input__field" />
+          <label class="input input--dropdown input--half">
+            <input type="text" hidden name="user_status" />
+            <div class="input__field">Выберете из списка ваш статус</div>
             <span class="input__label">Выберете из списка ваш статус</span>
             <ul class="input-dropdown">
-              <li class="input-dropdown__item">Выбор 1</li>
-              <li class="input-dropdown__item">Выбор 2</li>
-              <li class="input-dropdown__item">Выбор 3</li>
-              <li class="input-dropdown__item">Выбор 4</li>
+              <li>
+                <button
+                  class="input-dropdown__item input-dorpdown__item--single"
+                  type="button"
+                >
+                  Выбор 1
+                </button>
+              </li>
+              <li>
+                <button
+                  class="input-dropdown__item input-dorpdown__item--single"
+                  type="button"
+                >
+                  Выбор 2
+                </button>
+              </li>
+              <li>
+                <button
+                  class="input-dropdown__item input-dorpdown__item--single"
+                  type="button"
+                >
+                  Выбор 3
+                </button>
+              </li>
+              <li>
+                <button
+                  class="input-dropdown__item input-dorpdown__item--single"
+                  type="button"
+                >
+                  Выбор 4
+                </button>
+              </li>
             </ul>
           </label>
           <div class="form__bottom flex">
