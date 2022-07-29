@@ -2758,6 +2758,8 @@ body._lock {
   }
 }
 
+.detailed ul ul,
+.detailed ol ol,
 .detailed ol ul,
 .detailed ul ol {
   margin-bottom: 0;
@@ -2789,7 +2791,23 @@ body._lock {
 }
 
 .detailed ul > li:before {
+  top: 10px;
+  left: 10px;
+  width: 8px;
+  height: 8px;
+  content: "";
+  background-color: var(--c-accent);
+  transform: rotate(45deg);
+}
+
+.detailed ol ul > li:before,
+.detailed ul ul > li:before {
+  top: unset;
+  left: 0;
+  width: 0;
+  height: 0;
   content: "—";
+  transform: rotate(0);
 }
 
 .detailed p + ul,
