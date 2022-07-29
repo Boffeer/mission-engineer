@@ -66,10 +66,11 @@
 }
 @mixin blackCard() {
     color: var(--c-text-on);
-    background-color: var(--c-text);
+    background-color: var(--black-card-bg);
 }
 
 .page-content--about {
+    --black-card-bg: var(--c-text);
     padding-right: 80px;
 
     @media (max-width: 991px) {
@@ -77,6 +78,10 @@
         padding-left: 0;
     }
 }
+.theme--dark .page-content--about {
+    --black-card-bg: var(--c-element-disabled);
+}
+
 .page-content--about .tabs__track {
     padding-right: 32px;
     padding-left: 32px;
