@@ -143,3 +143,20 @@
 .tabs--chips .tabs__scrollable {
     --background-color: transparent;
 }
+.chips--date {
+    // position: relative;
+}
+.chips--date:hover .input--calendar::placeholder {
+    color: var(--c-text-on);
+}
+.chips--date .input--calendar {
+    max-width: 70px;
+    font-weight: 400;
+    color: var(--c-text-grey-2);
+    cursor: pointer;
+    background-color: transparent;
+    caret-color: transparent;
+}
+.chips--date.tab--active .input--calendar {
+    color: var(--c-text-on);
+}

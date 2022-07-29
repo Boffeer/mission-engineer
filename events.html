@@ -449,7 +449,13 @@
           <div class="tabs tabs--chips section__heading" data-chips="events">
             <div class="tabs__track">
               <div class="tabs__scrollable">
-                <button class="tab chips--date">Дата</button>
+                <button class="tab chips--date">
+                  <input
+                    type="text"
+                    class="input--calendar"
+                    placeholder="Дата"
+                  />
+                </button>
                 <button class="tab tab--active">Сегодня</button>
                 <button class="tab">Завтра</button>
                 <button class="tab">На этой неделе</button>
@@ -1012,6 +1018,7 @@
 
     <!-- Подключение скриптов -->
     <script src="./js/libs/swiper-bundle.min.js"></script>
+    <script src="./js/libs/datepicker-full.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

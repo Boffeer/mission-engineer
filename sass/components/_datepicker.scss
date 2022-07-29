@@ -1,0 +1,74 @@
+.datepicker .datepicker-picker {
+    padding: 24px;
+    font-family: var(--ffMain);
+    font-weight: 400;
+    background-color: var(--bg-element);
+    border-radius: 5px;
+    box-shadow: 3px 13px 52px rgba(209, 209, 209, 0.25);
+}
+.datepicker-controls {
+    padding: 0;
+}
+.datepicker-controls .view-switch {
+    justify-content: flex-start;
+    order: -1;
+    // padding: 0;
+    margin-left: -2px;
+    font-family: var(--ffMain);
+}
+.datepicker-controls .prev-btn {
+    font-family: var(--ffMain);
+    color: transparent;
+    background-color: var(--c-accent);
+    @include getmask("../img/icons/angle-left.svg", 70%);
+}
+.datepicker-controls .next-btn {
+    font-family: var(--ffMain);
+    color: transparent;
+    background-color: var(--c-accent);
+    @include getmask("../img/icons/angle-right.svg", 70%);
+}
+
+.datepicker-header .datepicker-controls .prev-btn:hover,
+.datepicker-header .datepicker-controls .next-btn:hover {
+    color: transparent;
+    background-color: var(--c-accent--dark);
+}
+
+.datepicker-controls .prev-btn:disabled,
+.datepicker-controls .next-btn:disabled {
+    background-color: var(--c-text-disabled);
+}
+
+.datepicker-view .dow {
+    font-size: var(--fz-body--small-2);
+    font-weight: 400;
+    color: var(--c-text-disabled);
+}
+
+.datepicker-grid .datepicker-cell {
+    font-size: var(--fz-body--small-2);
+    color: var(--c-text);
+}
+.datepicker-grid .datepicker-cell:hover {
+    color: var(--c-accent);
+    background-color: transparent;
+}
+
+.datepicker-grid .datepicker-cell.disabled {
+    color: var(--c-text-disabled);
+}
+
+.datepicker-grid .datepicker-cell.month {
+    background-color: var(--bg-element);
+}
+.datepicker-grid .datepicker-cell.month.selected {
+    font-weight: 400;
+    color: var(--c-text-on);
+    background-color: var(--bg-element);
+}
+.datepicker-grid .datepicker-cell.day.focused {
+    font-weight: 400;
+    color: var(--c-text-on);
+    background-color: var(--c-accent);
+}
