@@ -924,3 +924,34 @@ if ([...calendarInputs].length > 0) {
   });
 }
 // #endregion datepicker
+
+// #region cookies
+
+let cookiesPop = true;
+if (!localStorage.getItem("cookies")) {
+  localStorage.setItem("cookies", "true");
+} else if (localStorage.getItem("cookies") == "false") {
+  cookiesPop = false;
+}
+
+checkCookies(cookiesPop);
+
+const cookiesButton = document.querySelector("#snack-cookies .snack__button");
+cookiesButton.addEventListener("click", () => {
+  cookiesPop = false;
+  checkCookies(cookiesPop);
+  localStorage.setItem("cookies", "false");
+});
+
+function checkCookies(cookiesPop) {
+  const cookiesSnack = document.querySelector("#snack-cookies");
+  if (!cookiesPop) {
+    cookiesSnack.classList.remove("_show");
+    setTimeout(() => {
+      cookiesSnack.remove();
+    }, 2000);
+  } else {
+    cookiesSnack.classList.add("_show");
+  }
+}
+// #endregion cookies

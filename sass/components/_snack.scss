@@ -1,0 +1,158 @@
+/*
+ * @snack
+ * only mobile
+
+
+    <div class="snack snack--top _show" data-snack="app">
+      <button type="button" class="snack__close">
+        <span></span>
+        <span></span>
+      </button>
+      <picture class="snack__pic">
+        <img
+          src="./img/logos/logo-app.png"
+          alt="Установите мобильное приложение FormaCar"
+          class="snack__img"
+        />
+      </picture>
+      <div class="snack__info">
+        <h3 class="snack__title">FormaCar</h3>
+        <p class="snack__desc">Установите мобильное приложение FormaCar</p>
+        <a href="#appstore" class="snack__link">Установить</a>
+      </div>
+    </div>
+
+<div class="snack snack--top _show" data-snack="app">
+	<div class="snack__inner">
+		<button type="button" class="snack__close">
+			<span></span>
+			<span></span>
+		</button>
+		<div class="snack__info">
+			<p class="snack__desc">Мы используем <a href="<?php echo get_privacy_policy_url(); ?>">куки</a></p>
+		</div>
+		<button class="snack__button header-all__top-btn">Хорошо</button>
+	</div>
+</div>
+
+ */
+
+.snack {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    z-index: 3000;
+    max-width: 396px;
+    pointer-events: none;
+    border-radius: 5px;
+    box-shadow: var(--bs-snack);
+    opacity: 0;
+    transition: all 0.6s ease-out;
+
+    @media (max-width: 768px) {
+        right: unset;
+        bottom: 20px;
+        left: 20px;
+        max-width: #{"calc(100% - 40px)"};
+    }
+    @media (max-width: 575px) {
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.snack__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    padding: 24px;
+    background-color: var(--bg-element);
+    border-radius: 5px;
+    transition: all 0.6s ease-out;
+    @media (max-width: 575px) {
+        padding-bottom: 56px;
+    }
+}
+.snack .flex {
+    width: 100%;
+}
+.snack .flex .snack__button {
+    margin-right: 24px;
+}
+
+// .snack--top {
+//   top: 0;
+//   transform: translateY(-50vh);
+// }
+.snack._show {
+    pointer-events: initial;
+    opacity: 1;
+    // position: sticky;
+    transform: translateY(0);
+}
+
+.snack__close {
+    position: relative;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    margin-right: 20px;
+}
+.snack__close span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin-left: -10px;
+    background: #848a9b;
+    border-radius: 10px;
+}
+.snack__close span:first-child {
+    transform: rotate(-45deg);
+}
+.snack__close span:last-child {
+    transform: rotate(45deg);
+}
+
+.snack__pic {
+    display: block;
+    width: 70px;
+    min-width: 70px;
+    height: 70px;
+    margin-right: 10px;
+}
+.snack__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.snack__title {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17px;
+    color: var(--c-text);
+}
+.snack__desc {
+    margin-bottom: 5px;
+    margin-bottom: 24px;
+    font-size: var(--fz-body--small);
+    line-height: var(--lh-body--small);
+    color: var(--c-text);
+
+    a {
+        color: var(--accent);
+    }
+
+    &:last-child,
+    &:only-child {
+        margin-bottom: 0;
+    }
+}
