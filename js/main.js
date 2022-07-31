@@ -465,7 +465,7 @@ const themeSwitchers = document.querySelectorAll(".tab--theme");
 
 function setupSwithcer() {
   const savedScheme = getSavedScheme();
-  console.log("saved", savedScheme);
+  // console.log("saved", savedScheme);
 
   [...themeSwitchers].forEach((switcher) => {
     switcher.addEventListener("click", () => {
@@ -745,7 +745,7 @@ const eventsThanks = document.querySelector("#events-thanks");
 const formError = document.querySelector("#form-error");
 const formsList = document.querySelectorAll("form");
 formsList.forEach((form) => {
-  console.log("form");
+  // console.log("form");
   form.addEventListener("submit", async (event) => {
     console.log(form);
     event.preventDefault();
