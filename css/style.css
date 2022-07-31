@@ -262,6 +262,7 @@ body._lock {
 .cards--fullsize {
   padding: 24px;
   background-color: var(--bg-element);
+  border-radius: 5px;
 }
 @media (max-width: 575px) {
   .cards--fullsize {
@@ -1267,7 +1268,7 @@ body._lock {
   padding-left: 42px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .page-content__search {
     display: none;
   }
@@ -1751,12 +1752,34 @@ body._lock {
   }
 }
 
+.menu::after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  content: "";
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+}
+
 .menu:hover {
   max-width: 346px;
 }
 @media (max-width: 991px) {
   .menu:hover {
     max-width: 100%;
+  }
+}
+
+@media (min-width: 992px) {
+  .menu:hover::after {
+    opacity: 1;
   }
 }
 
@@ -1781,6 +1804,7 @@ body._lock {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+  z-index: 2;
   height: 100%;
   padding: 32px 40px;
   overflow-x: hidden;
@@ -1795,6 +1819,12 @@ body._lock {
   }
 }
 
+@media (min-width: 1200px) {
+  .menu:hover .menu__sticky {
+    background-color: var(--bg-element);
+  }
+}
+
 .menu__content {
   display: flex;
   flex-direction: column;
@@ -1806,8 +1836,10 @@ body._lock {
     right: 0;
     bottom: 0;
     z-index: 5;
+    display: block;
     width: 100%;
     max-width: 384px;
+    height: 100%;
     padding-right: 40px;
     padding-bottom: 40px;
     padding-left: 40px;
@@ -1815,6 +1847,12 @@ body._lock {
     background: var(--bg-element);
     transition: all 0.3s ease-out;
     transform: translateX(100%);
+  }
+}
+@media (max-width: 575px) {
+  .menu__content {
+    max-width: 100%;
+    padding-bottom: 120px;
   }
 }
 
@@ -1894,7 +1932,7 @@ body._lock {
 }
 @media (min-width: 992px) {
   .menu__links {
-    width: 0;
+    white-space: nowrap;
     opacity: 0;
   }
 }
@@ -1930,7 +1968,7 @@ body._lock {
 }
 
 .menu--opened {
-  height: 100vh;
+  height: calc(1vh * 100);
   pointer-events: initial;
   background: rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(15px);
@@ -2494,12 +2532,19 @@ body._lock {
   -o-object-position: left;
      object-position: left;
 }
+@media (max-width: 576px) {
+  .header-logo__img {
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
 
 .header-logo__pic--small {
   display: none;
 }
 
 .burger {
+  position: relative;
   display: none;
   flex-direction: column;
   align-items: center;
@@ -2509,6 +2554,7 @@ body._lock {
   margin-right: -4px;
   background-color: var(--c-accent);
   border-radius: 5px;
+  transition: all 0.3s ease-in-out;
 }
 @media (max-width: 991px) {
   .burger {
@@ -2517,17 +2563,30 @@ body._lock {
 }
 
 .burger__line {
-  position: relative;
+  position: absolute;
   display: block;
   width: 16px;
   height: 1px;
   margin-bottom: 5px;
   background-color: var(--c-text-on);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s ease;
+  transform: rotate(0) translateY(0);
 }
 
 .burger__line:last-child {
   margin-bottom: 0;
+}
+
+.burger__line:nth-child(1) {
+  top: 13px;
+}
+
+.burger__line:nth-child(2) {
+  top: 50%;
+}
+
+.burger__line:nth-child(3) {
+  top: 23px;
 }
 
 .burger--opened .burger__line {
@@ -2541,10 +2600,11 @@ body._lock {
 }
 
 .burger--opened .burger__line:nth-child(2) {
-  transform: scaleX(0);
+  opacity: 0;
 }
 
 .burger--opened .burger__line:nth-child(3) {
+  transition: all 0.3s ease-in-out;
   transform: rotate(-45deg) translateY(-50%);
 }
 
@@ -2700,8 +2760,8 @@ body._lock {
   padding-bottom: 24px;
   padding-left: 72px;
   margin-bottom: var(--blocks-gap-big);
-  border-top: 1px solid var(--c-text-disabled);
-  border-bottom: 1px solid var(--c-text-disabled);
+  border-top: 1px solid var(--border-bq);
+  border-bottom: 1px solid var(--border-bq);
 }
 @media (max-width: 575px) {
   .detailed blockquote {
@@ -6085,7 +6145,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .news-slider {
     overflow: visible;
   }
@@ -6107,6 +6167,15 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 @media (max-width: 575px) {
   .news-slider-slide:last-child {
     margin-bottom: 0;
+  }
+}
+
+.featured-slider-slide {
+  transition: all 0.3s ease;
+}
+@media (max-width: 575px) {
+  .featured-slider-slide {
+    width: 100%;
   }
 }
 

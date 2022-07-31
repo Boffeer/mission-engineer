@@ -65,6 +65,7 @@
 .cards--fullsize {
     padding: 24px;
     background-color: var(--bg-element);
+    border-radius: 5px;
 
     @media (max-width: 575px) {
         padding: 16px;

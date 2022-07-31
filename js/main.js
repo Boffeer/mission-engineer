@@ -402,7 +402,7 @@ const newsSliderSettings = {
     clickable: true,
   },
   breakpoints: {
-    1300: {
+    769: {
       slidesPerView: 3,
       slidesPerGroup: 3,
     },
@@ -649,6 +649,8 @@ detailedSliders.forEach((slider, index) => {
       grabCursor: true,
       spaceBetween: 8,
       slidesPerView: "auto",
+      slidesPerGroup: 1,
+      allowTouchMove: false,
     }
   );
 
@@ -666,8 +668,7 @@ detailedSliders.forEach((slider, index) => {
     });
   });
   detailedSlides.on("slideChange", () => {
-    console.log(detailedSlides.activeIndex);
-    detailedThumbs.slideTo(detailedSliders.activeIndex);
+    detailedThumbs.slideTo(detailedSlides.activeIndex);
     thumbs.forEach((thumb) => {
       thumb.classList.remove("detailed-slider__slide--active");
     });
@@ -864,7 +865,8 @@ initInputs(inputs);
 
 // #region datepicker
 
-if (Datepicker) {
+const calendarInputs = document.querySelectorAll(".input--calendar");
+if ([...calendarInputs].length > 0) {
   Datepicker.locales.ru = {
     days: [
       "Воскресенье",
@@ -912,16 +914,13 @@ if (Datepicker) {
     monthsTitle: "Месяцы",
   };
   Object.assign(Datepicker.locales);
-  const calendarInputs = document.querySelectorAll(".input--calendar");
-  if (calendarInputs) {
-    calendarInputs.forEach((calendar) => {
-      const datepicker = new Datepicker(calendar, {
-        format: "dd.mm.yyyy",
-        autohide: true,
-        maxDate: new Date(),
-        language: "ru",
-      });
+  calendarInputs.forEach((calendar) => {
+    const datepicker = new Datepicker(calendar, {
+      format: "dd.mm.yyyy",
+      autohide: true,
+      maxDate: new Date(),
+      language: "ru",
     });
-  }
+  });
 }
 // #endregion datepicker
