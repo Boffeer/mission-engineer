@@ -1101,10 +1101,16 @@ function checkCookies(cookiesPop) {
 
 function normalizeMenuMobileHeight() {
   if (window.innerWidth < 575) {
-    document.querySelector(".menu").style.height = `${window.innerHeight}px`;
+    document.querySelector(".menu").style.height = `${window.outerHeight}px`;
   }
 }
 window.addEventListener("resize", () => {
   normalizeMenuMobileHeight();
 });
 normalizeMenuMobileHeight();
+
+const checkHeight = document.querySelector(".header-logo__pic");
+checkHeight.addEventListener("click", () => {
+  alert(innerHeight, window.innerHeight);
+  alert(outerHeight, window.outerHeight);
+});
