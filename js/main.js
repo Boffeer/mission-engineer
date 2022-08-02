@@ -1,14 +1,19 @@
 // #region helpers
-const debounce = (callback, wait) => {
-  let timeoutId = null;
-  return (...args) => {
-    window.clearTimeout(timeoutId);
-    timeoutId = window.setTimeout(() => {
-      callback.apply(null, args);
-    }, wait);
+// Служебные переменные
+
+const debounce = function (fn, time) {
+  let timeout;
+
+  return function () {
+    let self = this;
+    const functionCall = function () {
+      return fn.apply(self, arguments);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(functionCall, time);
   };
 };
-// Служебные переменные
+
 // eslint-disable-next-line no-unused-vars
 const d = document;
 const body = document.querySelector("body");
@@ -855,17 +860,15 @@ function initInputs(inputs) {
     const field = input.querySelector(".input__field");
     const label = input.querySelector(".input__label");
 
-    console.log(input);
-    input.addEventListener("click", () => {
-      // if (input.classList.contains(inputClasses.activeDropdown)) {
-      //   deactivateInput(input);
-      // } else {
-      // debounce((input) => {
-      activateInput(input);
-      console.log("dropdown");
-      // }, 200);
-      // }
+    input.addEventListener("click", (e) => {
+      if (!e.target.classList.contains("input__field")) return;
+      if (input.classList.contains(inputClasses.activeDropdown)) {
+        deactivateInput(input);
+      } else {
+        activateInput(input);
+      }
     });
+
     field.addEventListener("focus", () => {
       activateInput(input);
     });
