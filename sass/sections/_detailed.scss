@@ -124,6 +124,9 @@
     line-height: var(--lh-body);
     color: var(--c-text);
 }
+.detailed p:last-child {
+    margin-bottom: 0;
+}
 
 .detailed blockquote {
     position: relative;
@@ -318,15 +321,14 @@
     align-items: center;
     justify-content: center;
     width: 48px;
-    min-width: 32px;
+    min-width: 48px;
     height: 48px;
     margin-right: 16px;
     background-color: var(--bg-element);
     border-radius: 5px;
-
-    @media (max-width: 575px) {
-        height: 32px;
-    }
+    // @media (max-width: 575px) {
+    //     height: 32px;
+    // }
 }
 
 .detailed-author__img {

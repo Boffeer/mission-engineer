@@ -26,3 +26,9 @@
         padding-left: 16px;
     }
 }
+
+.sidebar__title br {
+    @media (max-width: 1100px) {
+        display: none;
+    }
+}
