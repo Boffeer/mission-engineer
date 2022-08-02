@@ -1108,9 +1108,3 @@ window.addEventListener("resize", () => {
   normalizeMenuMobileHeight();
 });
 normalizeMenuMobileHeight();
-
-const checkHeight = document.querySelector(".header-logo__pic");
-checkHeight.addEventListener("click", () => {
-  alert(innerHeight, window.innerHeight);
-  alert(outerHeight, window.outerHeight);
-});

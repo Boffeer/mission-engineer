@@ -1835,6 +1835,8 @@ body._lock {
 @media (max-width: 1100px) {
   .menu {
     position: fixed;
+    top: unset;
+    bottom: 0;
     max-width: 100%;
     height: calc(100 * 1vh);
     pointer-events: none;
@@ -2056,7 +2058,7 @@ body._lock {
   height: calc(1vh * 100);
   pointer-events: initial;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1199px) {
   .menu--opened {
     background: rgba(0, 0, 0, 0.2);
     -webkit-backdrop-filter: blur(15px);
