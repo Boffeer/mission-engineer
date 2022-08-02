@@ -912,7 +912,12 @@ initInputs(inputs);
 
 // #region datepicker
 
-const calendarInputs = document.querySelectorAll(".input--calendar");
+const calendarInputs = document.querySelectorAll(
+  '.input--calendar[name="start"]'
+);
+const calendarInputsEnd = document.querySelectorAll(
+  '.input--calendar[name="end"]'
+);
 if ([...calendarInputs].length > 0) {
   Datepicker.locales.ru = {
     days: [
@@ -962,29 +967,69 @@ if ([...calendarInputs].length > 0) {
   };
   Object.assign(Datepicker.locales);
   calendarInputs.forEach((calendar) => {
-    const datepicker = new Datepicker(calendar, {
+    // const datepicker = new Datepicker(calendar, {
+    //   format: "dd.mm.yyyy",
+    //   // autohide: true,
+    //   dateDelimiter: " – ",
+    //   maxNumberOfDates: 2,
+    //   // maxDate: new Date(),
+    //   language: "ru",
+    // });
+    const datepicker = new DateRangePicker(calendar, {
       format: "dd.mm.yyyy",
-      autohide: true,
-      maxDate: new Date(),
+      dateDelimiter: " – ",
       language: "ru",
+      allowOneSidedRange: true,
+      inputs: [
+        calendar,
+        calendar.parentElement.querySelector('.input--calendar[name="end"]'),
+      ],
     });
   });
 }
 const chipsCalendarButtons = document.querySelectorAll(".chips--date");
 const chipsDatepickers = [];
 chipsCalendarButtons.forEach((chip) => {
-  chipsDatepickers.push(chip.querySelector(".datepicker"));
+  const dropdowns = [...chip.querySelectorAll(".datepicker")];
+  dropdowns.forEach((dropdown) => {
+    chipsDatepickers.push(dropdown);
+  });
 });
-chipsCalendarButtons.forEach((button, index) => {
-  button.parentElement.append(chipsDatepickers[index]);
+chipsDatepickers.forEach((datepicker) => {
+  console.log(datepicker.parentElement);
+  datepicker.parentElement.parentElement.append(datepicker);
 });
 
-calendarInputs.forEach((calendarInput) => {
-  calendarInput.addEventListener("changeDate", () => {
+function updateRangeValues(e) {
+  const startValue =
+    e.target.parentElement.querySelector('[name="start"]').value;
+  const endValue = e.target.parentElement.querySelector('[name="end"]').value;
+
+  let innerText = "";
+  if (endValue == "") {
+    innerText = startValue;
+  } else {
+    innerText = startValue + " – " + endValue;
+  }
+  e.target.parentElement.querySelector(".chips__text").innerText = innerText;
+}
+calendarInputs.forEach((start) => {
+  start.addEventListener("changeDate", (e) => {
+    e.target.datepicker.hide();
+    let inputName = e.target.name;
+    if (inputName == "start") {
+      e.target.parentElement.querySelector('[name="end"]').datepicker.show();
+    }
+
     setTimeout(() => {
-      calendarInput.parentElement.querySelector(".chips__text").innerText =
-        calendarInput.value;
+      updateRangeValues(e);
     }, 100);
+  });
+});
+
+calendarInputsEnd.forEach((end) => {
+  end.addEventListener("changeDate", (e) => {
+    updateRangeValues(e);
   });
 });
 // #endregion datepicker

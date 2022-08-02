@@ -979,6 +979,11 @@ body._lock {
   padding: 24px;
   background-color: var(--bg-element);
 }
+@media (max-width: 575px) {
+  .form {
+    padding: 16px;
+  }
+}
 
 .form--regular {
   border-radius: 5px;
@@ -6516,10 +6521,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .datepicker-grid .datepicker-cell.month.selected {
   font-weight: 400;
   color: var(--c-text-on);
-  background-color: var(--bg-element);
+  background-color: var(--c-accent);
 }
 
-.datepicker-grid .datepicker-cell.day.focused {
+.datepicker-grid .datepicker-cell.day.selected {
   font-weight: 400;
   color: var(--c-text-on);
   background-color: var(--c-accent);
@@ -6530,4 +6535,19 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
     right: 0 !important;
     left: 5px !important;
   }
+}
+
+.datepicker-cell.selected {
+  color: var(--c-text-on);
+  background-color: var(--c-accent);
+}
+
+.datepicker-cell.range-end:not(.selected),
+.datepicker-cell.range-start:not(.selected) {
+  color: var(--c-text-on);
+  background-color: var(--c-accent);
+}
+
+.datepicker-cell.range {
+  background: rgba(40, 190, 70, 0.1);
 }/*# sourceMappingURL=style.css.map */
