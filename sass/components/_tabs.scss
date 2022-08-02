@@ -112,7 +112,12 @@
     transition: all 0.3s ease;
 }
 
-.tabs--chips .tab:hover,
+.tabs--chips .tab:hover {
+    @media (min-width: 1100px) {
+        color: var(--c-text-on);
+        background-color: var(--c-accent);
+    }
+}
 .tabs--chips .tab--active {
     color: var(--c-text-on);
     background-color: var(--c-accent);
