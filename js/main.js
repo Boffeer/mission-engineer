@@ -27,16 +27,30 @@ function removeAll(items, itemClass) {
   }
 }
 
+//#region PlatformDetect
+// Get os class for body. It used to fix macos scrollbar issue
+let os = "Unknown";
+if (navigator.appVersion.indexOf("Win") != -1) os = "windows";
+if (navigator.appVersion.indexOf("Mac") != -1) os = "macos";
+if (navigator.appVersion.indexOf("X11") != -1) os = "unix";
+if (navigator.appVersion.indexOf("Linux") != -1) os = "linux";
+document.body.classList.add("os-" + os);
+//#endregion PlatformDetect
 function bodyLock(con) {
+  const scrollFix = window.innerWidth - document.body.clientWidth + "px";
   if (con === true) {
-    body.classList.add("_lock");
+    document.body.classList.add("_lock");
+    document.body.style.paddingRight = scrollFix;
   } else if (con === false) {
-    body.classList.remove("_lock");
+    document.body.classList.remove("_lock");
+    document.body.style.paddingRight = 0;
   } else if (con === undefined) {
     if (!body.classList.contains("_lock")) {
-      body.classList.add("_lock");
+      document.body.classList.add("_lock");
+      document.body.style.paddingRight = scrollFix;
     } else {
-      body.classList.remove("_lock");
+      document.body.classList.remove("_lock");
+      document.body.style.paddingRight = 0;
     }
   } else {
     console.error("Неопределенный аргумент у функции bodyLock()");

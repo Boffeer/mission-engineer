@@ -114,13 +114,13 @@
     font-size: var(--fz-tag);
     line-height: var(--lh-tag);
     color: var(--c-text-grey-2);
-    @media (max-width: 575px) {
+    @media (max-width: 1200px) {
         margin-bottom: 16px;
     }
 }
 
 .form__bottom {
-    @media (max-width: 575px) {
+    @media (max-width: 1200px) {
         flex-direction: column-reverse;
         align-items: flex-start;
     }

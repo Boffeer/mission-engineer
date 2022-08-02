@@ -62,6 +62,12 @@ body {
     }
 }
 
+@media (min-width: 1200px) {
+    body._lock.os-macos {
+        padding: 0;
+    }
+}
+
 .wrapper {
     position: relative;
     display: flex;

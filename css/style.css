@@ -185,6 +185,11 @@ body._lock {
   overflow: hidden;
 }
 
+@media (min-width: 1200px) {
+  body._lock.os-macos {
+    padding: 0;
+  }
+}
 .wrapper {
   position: relative;
   display: flex;
@@ -229,7 +234,7 @@ body._lock {
   padding: 32px 40px;
   overflow: hidden;
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .page-content {
     padding-top: 124px;
     padding-right: 20px;
@@ -249,7 +254,7 @@ body._lock {
   width: 100%;
   overflow: visible;
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .wrapper--app {
     flex-direction: column;
   }
@@ -1074,13 +1079,13 @@ body._lock {
   line-height: var(--lh-tag);
   color: var(--c-text-grey-2);
 }
-@media (max-width: 575px) {
+@media (max-width: 1200px) {
   .form__caption {
     margin-bottom: 16px;
   }
 }
 
-@media (max-width: 575px) {
+@media (max-width: 1200px) {
   .form__bottom {
     flex-direction: column-reverse;
     align-items: flex-start;
@@ -1328,7 +1333,6 @@ body._lock {
 .modal._show {
   visibility: visible;
   opacity: 1;
-  overflow-y: auto;
 }
 .modal._show .modal__body {
   transform: translate(0, 0);
@@ -1744,12 +1748,12 @@ body._lock {
   background-color: var(--bg-element);
   transition: all 0.3s ease-in;
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .menu {
     max-width: 100%;
   }
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .menu {
     position: fixed;
     max-width: 100%;
@@ -1808,7 +1812,7 @@ body._lock {
   overflow-y: auto;
   transition: all 0.3s ease-in-out;
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .menu__sticky {
     position: static;
     padding: 0;
@@ -1816,7 +1820,7 @@ body._lock {
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .menu--shrink .menu__sticky {
     height: 100%;
     padding: 0;
@@ -1829,7 +1833,7 @@ body._lock {
   flex-direction: column;
   justify-content: space-between;
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .menu__content {
     position: absolute;
     right: 0;
@@ -2002,7 +2006,7 @@ body._lock {
   transition: all 0.3s ease-in-out;
   transform: translateX(-100%);
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .menu__search {
     display: block;
     padding: 20px;
@@ -2294,11 +2298,6 @@ body._lock {
   background-color: var(--bg-element);
 }
 @media (max-width: 1100px) {
-  .sidebar {
-    max-width: 290px;
-  }
-}
-@media (max-width: 991px) {
   .sidebar {
     max-width: 100%;
     margin-top: 22px;
@@ -2598,7 +2597,7 @@ body._lock {
   line-height: var(--lh-h4);
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .header {
     position: -webkit-sticky;
     position: sticky;
@@ -2631,7 +2630,7 @@ body._lock {
   stroke: var(--c-text);
   transition: all 0.3s ease-in-out;
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .header__button-search {
     display: block;
   }
@@ -2699,7 +2698,7 @@ body._lock {
   height: 36px;
   margin-bottom: 16px;
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .header-logo {
     margin-bottom: 0;
   }
@@ -2746,7 +2745,7 @@ body._lock {
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
 }
-@media (max-width: 991px) {
+@media (max-width: 1100px) {
   .burger {
     display: flex;
   }
@@ -3155,7 +3154,7 @@ body._lock {
   align-items: center;
   padding-top: 16px;
   margin-bottom: 32px;
-  border-top: 1px solid var(--c-text-disabled);
+  border-top: 1px solid var(--border-bq);
 }
 @media (max-width: 575px) {
   .detailed-author {
@@ -6437,6 +6436,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
 .datepicker-grid .datepicker-cell {
   font-size: var(--fz-body--small-2);
   color: var(--c-text);
+  border-radius: 0;
 }
 
 .datepicker-grid .datepicker-cell:hover {
@@ -6462,4 +6462,11 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   font-weight: 400;
   color: var(--c-text-on);
   background-color: var(--c-accent);
+}
+
+@media (max-width: 575px) {
+  .datepicker.active {
+    right: 0 !important;
+    left: 5px !important;
+  }
 }/*# sourceMappingURL=style.css.map */
