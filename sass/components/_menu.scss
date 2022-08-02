@@ -70,6 +70,11 @@
     overflow-x: hidden;
     overflow-y: auto;
     transition: all 0.3s ease-in-out;
+    @media (max-width: 991px) {
+        position: static;
+        padding: 0;
+        overflow: hidden;
+    }
 }
 .menu--shrink .menu__sticky {
     @media (max-width: 991px) {
@@ -95,7 +100,7 @@
         display: block;
         width: 100%;
         max-width: 384px;
-        height: 100%;
+        height: calc(100% - 85px);
         padding-right: 40px;
         padding-bottom: 40px;
         padding-left: 40px;
@@ -106,6 +111,7 @@
     }
     @media (max-width: 575px) {
         max-width: 100%;
+        height: calc(100% - 73px);
         padding-bottom: 120px;
     }
 }

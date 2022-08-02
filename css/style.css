@@ -1808,6 +1808,13 @@ body._lock {
   overflow-y: auto;
   transition: all 0.3s ease-in-out;
 }
+@media (max-width: 991px) {
+  .menu__sticky {
+    position: static;
+    padding: 0;
+    overflow: hidden;
+  }
+}
 
 @media (max-width: 991px) {
   .menu--shrink .menu__sticky {
@@ -1831,7 +1838,7 @@ body._lock {
     display: block;
     width: 100%;
     max-width: 384px;
-    height: 100%;
+    height: calc(100% - 85px);
     padding-right: 40px;
     padding-bottom: 40px;
     padding-left: 40px;
@@ -1844,6 +1851,7 @@ body._lock {
 @media (max-width: 575px) {
   .menu__content {
     max-width: 100%;
+    height: calc(100% - 73px);
     padding-bottom: 120px;
   }
 }
