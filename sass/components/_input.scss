@@ -5,6 +5,9 @@
     margin-bottom: 20px;
     font-size: var(--fz-body--small);
     line-height: 1.43;
+    @media (max-width: 575px) {
+        margin-bottom: 25px;
+    }
 }
 .input__field {
     position: relative;
@@ -133,6 +136,7 @@
     padding: 10px 16px;
     font-size: var(--fz-body--small);
     line-height: var(--lh-body--small);
+    color: var(--c-text);
     text-align: left;
 }
 .input-dropdown__item:hover {

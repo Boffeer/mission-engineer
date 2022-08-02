@@ -1116,6 +1116,11 @@ body._lock {
   font-size: var(--fz-body--small);
   line-height: 1.43;
 }
+@media (max-width: 575px) {
+  .input {
+    margin-bottom: 25px;
+  }
+}
 
 .input__field {
   position: relative;
@@ -1255,6 +1260,7 @@ body._lock {
   padding: 10px 16px;
   font-size: var(--fz-body--small);
   line-height: var(--lh-body--small);
+  color: var(--c-text);
   text-align: left;
 }
 
@@ -1485,6 +1491,15 @@ body._lock {
 }
 .modal__close span:nth-child(2) {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#events-thanks br {
+  display: none;
+}
+@media (max-width: 575px) {
+  #events-thanks br {
+    display: initial;
+  }
 }
 
 /*
@@ -1987,6 +2002,11 @@ body._lock {
 .menu__links-link {
   display: block;
   margin-bottom: 24px;
+}
+@media (max-width: 767px) {
+  .menu__links-link {
+    font-size: 14px;
+  }
 }
 
 .menu__links-link:hover {
