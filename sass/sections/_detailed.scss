@@ -254,7 +254,7 @@
 
 .detailed-slider figcaption {
     padding-top: 12px;
-    border-top: 1px solid var(--c-text-disabled);
+    border-top: 1px solid var(--border-bq);
 }
 
 :is(.detailed-slider__slides, .detailed-slider__thumbs).swiper {
@@ -285,7 +285,7 @@
 
 .detailed footer {
     padding-top: var(--blocks-gap-small);
-    border-top: 1px solid var(--c-text-disabled);
+    border-top: 1px solid var(--border-bq);
 }
 
 .detailed-meta--event {
