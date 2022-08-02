@@ -6467,6 +6467,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
+.featured-slider-slide * {
+  transition: all 0.3s ease;
+}
+
 .datepicker .datepicker-picker {
   padding: 24px;
   font-family: var(--ffMain);
