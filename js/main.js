@@ -1100,8 +1100,12 @@ function checkCookies(cookiesPop) {
 // #endregion cookies
 
 function normalizeMenuMobileHeight() {
-  if (window.innerWidth < 575) {
-    document.querySelector(".menu").style.height = `${window.outerHeight}px`;
+  if (window.innerWidth < 1200) {
+    document.querySelector(".menu").style.height = `${
+      window.outerHeight + 110
+    }px`;
+  } else {
+    document.querySelector(".menu").style.height = "100%";
   }
 }
 window.addEventListener("resize", () => {
