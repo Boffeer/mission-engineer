@@ -1098,3 +1098,13 @@ function checkCookies(cookiesPop) {
   }
 }
 // #endregion cookies
+
+function normalizeMenuMobileHeight() {
+  if (window.innerWidth < 575) {
+    document.querySelector(".menu").style.height = `${window.innerHeight}px`;
+  }
+}
+window.addEventListener("resize", () => {
+  normalizeMenuMobileHeight();
+});
+normalizeMenuMobileHeight();
