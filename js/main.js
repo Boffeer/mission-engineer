@@ -878,6 +878,7 @@ function initInputs(inputs) {
     input.classList.add(inputClasses.init);
 
     const field = input.querySelector(".input__field");
+    // eslint-disable-next-line no-unused-vars
     const label = input.querySelector(".input__label");
 
     input.addEventListener("click", (e) => {
@@ -953,6 +954,7 @@ const calendarInputsEnd = document.querySelectorAll(
   '.input--calendar[name="end"]'
 );
 if ([...calendarInputs].length > 0) {
+  // eslint-disable-next-line no-undef
   Datepicker.locales.ru = {
     days: [
       "Воскресенье",
@@ -999,6 +1001,7 @@ if ([...calendarInputs].length > 0) {
     weekStart: 1,
     monthsTitle: "Месяцы",
   };
+  // eslint-disable-next-line no-undef
   Object.assign(Datepicker.locales);
   calendarInputs.forEach((calendar) => {
     // const datepicker = new Datepicker(calendar, {
@@ -1009,6 +1012,7 @@ if ([...calendarInputs].length > 0) {
     //   // maxDate: new Date(),
     //   language: "ru",
     // });
+    // eslint-disable-next-line no-unused-vars, no-undef
     const datepicker = new DateRangePicker(calendar, {
       format: "dd.mm.yyyy",
       dateDelimiter: " – ",

@@ -1958,6 +1958,11 @@ body._lock {
 .menu__bottom {
   display: block;
 }
+@media (max-width: 575px) {
+  .menu__bottom {
+    padding-bottom: 120px;
+  }
+}
 
 .menu--shrink .menu__bottom {
   display: none;
