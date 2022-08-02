@@ -6475,7 +6475,7 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
-.featured-slider-slide * {
+.featured-slider * {
   transition: all 0.3s ease;
 }
 
