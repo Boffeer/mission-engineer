@@ -3201,7 +3201,8 @@ body._lock {
   border-top: 1px solid var(--border-bq);
 }
 
-:is(.detailed-slider__slides, .detailed-slider__thumbs).swiper {
+.detailed-slider__slides.swiper,
+.detailed-slider__thumbs.swiper {
   margin-bottom: 12px;
 }
 
