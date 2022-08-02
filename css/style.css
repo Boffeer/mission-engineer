@@ -993,6 +993,13 @@ body._lock {
 .form--regular {
   border-radius: 5px;
 }
+@media (min-width: 1200px) {
+  .form--regular {
+    max-width: 783px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 
 .form-elem {
   position: relative;

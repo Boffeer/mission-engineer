@@ -12,6 +12,11 @@
 }
 .form--regular {
     border-radius: 5px;
+    @media (min-width: 1200px) {
+        max-width: 783px;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 .form-elem {
