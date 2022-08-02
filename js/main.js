@@ -68,7 +68,7 @@ function validationForm() {
 }
 
 // Отправка формы
-sumbitForm();
+// eslint-disable-next-line no-unused-vars
 function sumbitForm() {
   const form = find(".modal__form");
 
@@ -369,9 +369,9 @@ setTimeout(() => {
             tabPages[buttonIndex].classList.add(TAB_ACTIVE_CLASS);
           }
         } else {
-          console.warn(
-            `there is no tab pages [data-tab="${tabsBar.dataset.tabs}"]`
-          );
+          // console.warn(
+          //   `there is no tab pages [data-tab="${tabsBar.dataset.tabs}"]`
+          // );
         }
       });
     });
@@ -385,6 +385,20 @@ setTimeout(() => {
     }
   });
 }, 150);
+
+const filtersButtons = document.querySelectorAll(".js_tabs-filters .tab");
+filtersButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (
+      button.classList.contains("tab--active") &&
+      !button.classList.contains("chips--date")
+    ) {
+      setTimeout(() => {
+        button.classList.remove("tab--active");
+      }, 10);
+    }
+  });
+});
 // #endregion tabs
 
 // #region sliders
@@ -735,6 +749,7 @@ function validateEmail(input) {
     return true;
   }
 }
+// eslint-disable-next-line no-unused-vars
 function validateDropdown(input) {
   const field = input.querySelector("input");
   const label = input.querySelector("label");
@@ -923,6 +938,23 @@ if ([...calendarInputs].length > 0) {
     });
   });
 }
+const chipsCalendarButtons = document.querySelectorAll(".chips--date");
+const chipsDatepickers = [];
+chipsCalendarButtons.forEach((chip) => {
+  chipsDatepickers.push(chip.querySelector(".datepicker"));
+});
+chipsCalendarButtons.forEach((button, index) => {
+  button.parentElement.append(chipsDatepickers[index]);
+});
+
+calendarInputs.forEach((calendarInput) => {
+  calendarInput.addEventListener("changeDate", () => {
+    setTimeout(() => {
+      calendarInput.parentElement.querySelector(".chips__text").innerText =
+        calendarInput.value;
+    }, 100);
+  });
+});
 // #endregion datepicker
 
 // #region cookies

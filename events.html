@@ -447,15 +447,20 @@
 
         <section class="section">
           <h2 class="section__title section__heading">Афиша мероприятий</h2>
-          <div class="tabs tabs--chips section__heading" data-chips="events">
+          <div
+            class="tabs js_tabs-filters tabs--chips section__heading"
+            data-chips="events"
+          >
             <div class="tabs__track">
               <div class="tabs__scrollable">
                 <button class="tab chips--date">
                   <input
                     type="text"
                     class="input--calendar"
+                    readonly
                     placeholder="Дата"
                   />
+                  <span class="chips__text">Дата</span>
                 </button>
                 <button class="tab tab--active">Сегодня</button>
                 <button class="tab">Завтра</button>
