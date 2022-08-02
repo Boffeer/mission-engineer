@@ -1830,7 +1830,6 @@ body._lock {
     position: fixed;
     max-width: 100%;
     height: calc(100 * 1vh);
-    min-height: -webkit-fill-available;
     pointer-events: none;
     background-color: transparent;
   }
