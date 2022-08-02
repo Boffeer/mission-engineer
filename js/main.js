@@ -1,4 +1,13 @@
 // #region helpers
+const debounce = (callback, wait) => {
+  let timeoutId = null;
+  return (...args) => {
+    window.clearTimeout(timeoutId);
+    timeoutId = window.setTimeout(() => {
+      callback.apply(null, args);
+    }, wait);
+  };
+};
 // Служебные переменные
 // eslint-disable-next-line no-unused-vars
 const d = document;
@@ -816,6 +825,7 @@ const inputClasses = {
   active: "input--active",
   dropdown: "input--dropdown",
   activeDropdown: "input--active-dropdown",
+  selectedDropdown: "input--selected-dropdown",
 };
 
 function activateInput(input) {
@@ -840,14 +850,21 @@ function deactivateInput(input) {
 function initInputs(inputs) {
   inputs.forEach((input) => {
     if (input.classList.contains(inputClasses.init)) return;
-
     input.classList.add(inputClasses.init);
 
     const field = input.querySelector(".input__field");
     const label = input.querySelector(".input__label");
 
+    console.log(input);
     input.addEventListener("click", () => {
+      // if (input.classList.contains(inputClasses.activeDropdown)) {
+      //   deactivateInput(input);
+      // } else {
+      // debounce((input) => {
       activateInput(input);
+      console.log("dropdown");
+      // }, 200);
+      // }
     });
     field.addEventListener("focus", () => {
       activateInput(input);
@@ -885,6 +902,7 @@ function activateDropdown(input) {
       setTimeout(() => {
         input.classList.remove(inputClasses.activeDropdown);
       }, 150);
+      input.classList.add(inputClasses.selectedDropdown);
     });
   });
 }

@@ -118,6 +118,16 @@
         margin-bottom: 16px;
     }
 }
+.form__caption .link:hover {
+    --icon-color: var(--c-accent);
+    color: var(--c-accent);
+    opacity: 1;
+}
+.form__caption .link:active {
+    --icon-color: var(--c-accent);
+    color: var(--c-accent);
+    opacity: 1;
+}
 
 .form__bottom {
     @media (max-width: 1200px) {

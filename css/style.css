@@ -900,6 +900,10 @@ body._lock {
   mask-size: contain;
 }
 
+.button--icon-plus:hover .button__icon {
+  transform: rotate(180deg);
+}
+
 .button--icon-arrow-right .button__icon {
   -webkit-mask: url("../img/icons/arrow-right.svg");
   mask: url("../img/icons/arrow-right.svg");
@@ -1085,6 +1089,18 @@ body._lock {
   }
 }
 
+.form__caption .link:hover {
+  --icon-color: var(--c-accent);
+  color: var(--c-accent);
+  opacity: 1;
+}
+
+.form__caption .link:active {
+  --icon-color: var(--c-accent);
+  color: var(--c-accent);
+  opacity: 1;
+}
+
 @media (max-width: 1200px) {
   .form__bottom {
     flex-direction: column-reverse;
@@ -1097,23 +1113,48 @@ body._lock {
   position: relative;
   width: 100%;
   margin-bottom: 20px;
+  font-size: var(--fz-body--small);
+  line-height: 1.43;
 }
 
 .input__field {
   position: relative;
   z-index: 2;
   width: 100%;
-  padding: 0.893em 1.33em;
+  max-height: 50px;
+  padding: 14px 16px;
   font-size: inherit;
+  color: var(--c-text);
   background-color: var(--bg-element);
   border: 1px solid var(--c-blind);
   border-radius: 5px;
   transition: all 0.3s ease;
 }
 
+.input--active .input__field {
+  border-color: var(--c-text-grey-2);
+}
+
+.input--dropdown.input--active .input__field {
+  border-color: var(--c-blind);
+}
+
+.input--selected-dropdown.input--active .input__field,
+.input--active-dropdown.input--active .input__field {
+  border-color: var(--c-text-grey-2);
+}
+
+.input--dropdown .input__label {
+  opacity: 0;
+}
+
+.input--selected-dropdown .input__label {
+  opacity: 1;
+}
+
 .input__label {
   position: absolute;
-  top: 0.8em;
+  top: 13px;
   left: 16px;
   z-index: 3;
   display: inline-block;
@@ -1127,6 +1168,7 @@ body._lock {
 
 .input--active .input__label {
   top: -9px;
+  left: 12px;
   font-size: var(--fz-body--small-2);
   line-height: var(--lh-body--small-2);
 }
@@ -1134,7 +1176,6 @@ body._lock {
 .input__error {
   z-index: 1;
   display: block;
-  margin-top: -20px;
   font-size: var(--fz-tag);
   line-height: var(--lh-tag);
   color: var(--c-text);
