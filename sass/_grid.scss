@@ -121,3 +121,8 @@
 .cards--fullsize-projects .card:last-child {
     margin-bottom: 0;
 }
+
+.cards--fullsize-projects .card__title {
+    font-size: var(--fz-h1);
+    line-height: var(--lh-h1);
+}

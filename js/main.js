@@ -456,9 +456,9 @@ function initSlider(slider) {
   return new Swiper(slider.selector, slider.options);
 }
 // eslint-disable-next-line no-undef, no-unused-vars
-function removeSlider(sliders) {
+function removeSlider(slider) {
   // eslint-disable-next-line no-undef, no-unused-vars
-  sliders.forEach(slider, () => {});
+  slider.swiper.destroy();
 }
 
 let newsSliders = document.querySelectorAll(".news-slider");
@@ -486,6 +486,15 @@ if (newsSliders) {
       wrapper.classList.add("swiper-wrapper-removed");
     });
   }
+
+  window.addEventListener("resize", () => {
+    debounce(() => {
+      removeSlider(newsSlider);
+      console.log("destroyed");
+      initSlider(newsSlider);
+      console.log("inited");
+    }, 1000);
+  });
 }
 // #endregion sliders
 
@@ -734,6 +743,8 @@ function validateInput(input) {
     return validatePhone(input);
   } else if (field.type == "email") {
     return validateEmail(input);
+  } else if (input.classList.contains("input--dropdown ")) {
+    validateDropdown(input);
   } else {
     return validateInputLength(input);
   }
@@ -777,10 +788,18 @@ function validateEmail(input) {
     return true;
   }
 }
-// eslint-disable-next-line no-unused-vars
+
 function validateDropdown(input) {
   const field = input.querySelector("input");
   const label = input.querySelector("label");
+
+  if (field.value == label.innerText) {
+    input.classList.add("input--invalid");
+    return false;
+  } else {
+    input.classList.remove("input--invalid");
+    return true;
+  }
 }
 // #endregion validate
 
@@ -826,6 +845,7 @@ formsList.forEach((form) => {
 const inputs = document.querySelectorAll(".input");
 
 const inputClasses = {
+  invalid: "input--invalid",
   init: "input--init",
   active: "input--active",
   dropdown: "input--dropdown",
@@ -904,10 +924,21 @@ function activateDropdown(input) {
       realInput.value = dropdown.innerText;
       setTimeout(() => {
         input.classList.remove(inputClasses.activeDropdown);
+        console.log(input.classList);
+        input.classList.remove(inputClasses.invalid);
+        console.log(input.classList);
       }, 150);
       input.classList.add(inputClasses.selectedDropdown);
     });
   });
+
+  setTimeout(() => {
+    if (realInput.value != "") {
+      console.log(realInput.value);
+      field.innerText = realInput.value;
+      input.classList.add(inputClasses.selectedDropdown);
+    }
+  }, 200);
 }
 initInputs(inputs);
 

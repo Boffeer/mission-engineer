@@ -24,6 +24,10 @@
     height: 16px;
     stroke: var(--c-accent);
     transform: translateY(-50%);
+    @media (max-width: 1024px) and (min-width: 768px) {
+        width: 18px;
+        height: 18px;
+    }
 }
 .search__input {
     width: 100%;
