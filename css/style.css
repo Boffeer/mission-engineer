@@ -1839,8 +1839,10 @@ body._lock {
 @media (max-width: 1100px) {
   .menu {
     position: fixed;
-    max-width: calc(100 * 1vh);
+    max-width: 100%;
     height: calc(100 * 1vh);
+    min-height: -webkit-fill-available;
+    max-height: initial;
     pointer-events: none;
     background-color: transparent;
   }
