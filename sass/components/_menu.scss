@@ -6,8 +6,8 @@
     flex-direction: column;
     width: 100%;
     max-width: 346px;
-    height: calc(100 * 1vh);
-    max-height: calc(100 * 1vh);
+    height: #{"calc(100 * 1vh)"};
+    max-height: #{"calc(100 * 1vh)"};
     overflow: visible;
     background-color: var(--bg-element);
     transition: all 0.3s ease-in;
@@ -17,7 +17,8 @@
     @media (max-width: 1100px) {
         position: fixed;
         max-width: 100%;
-        height: calc(100 * 1vh);
+        height: #{"calc(100 * 1vh)"};
+        min-height: -webkit-fill-available;
         pointer-events: none;
         background-color: transparent;
     }
@@ -223,8 +224,10 @@
 .menu--opened {
     height: #{"calc(1vh * 100)"};
     pointer-events: initial;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(15px);
+    @media (max-width: 1024px) {
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(15px);
+    }
 }
 
 .menu--burger .menu__content {

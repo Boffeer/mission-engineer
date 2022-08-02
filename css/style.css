@@ -1814,8 +1814,8 @@ body._lock {
   flex-direction: column;
   width: 100%;
   max-width: 346px;
-  height: 100vh;
-  max-height: 100vh;
+  height: calc(100 * 1vh);
+  max-height: calc(100 * 1vh);
   overflow: visible;
   background-color: var(--bg-element);
   transition: all 0.3s ease-in;
@@ -1829,7 +1829,8 @@ body._lock {
   .menu {
     position: fixed;
     max-width: 100%;
-    height: 100vh;
+    height: calc(100 * 1vh);
+    min-height: -webkit-fill-available;
     pointer-events: none;
     background-color: transparent;
   }
@@ -2048,9 +2049,13 @@ body._lock {
 .menu--opened {
   height: calc(1vh * 100);
   pointer-events: initial;
-  background: rgba(0, 0, 0, 0.2);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
+}
+@media (max-width: 1024px) {
+  .menu--opened {
+    background: rgba(0, 0, 0, 0.2);
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+  }
 }
 
 .menu--burger .menu__content {
