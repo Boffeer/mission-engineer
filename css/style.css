@@ -2415,11 +2415,11 @@ body._lock {
   box-shadow: none;
 }
 
-.theme--dark .tab--active:not(.chips--date) {
+.theme--dark .tabs-filters .tab--active:not(.chips--date) {
   color: var(--bg-element);
 }
 
-.theme--dark .tab--active:not(.chips--date)::after {
+.theme--dark .tabs-filters .tab--active:not(.chips--date)::after {
   background-color: var(--bg-element);
 }
 
@@ -2433,7 +2433,7 @@ body._lock {
   height: 16px;
   margin-left: 8px;
   content: "";
-  background-color: var(--c-text-on);
+  background-color: var(--c-text-grey-2);
   transition: all 0.3s ease;
   -webkit-mask: url("../img/icons/close-icon.svg");
   mask: url("../img/icons/close-icon.svg");
@@ -2449,6 +2449,11 @@ body._lock {
   display: block;
 }
 
+.tab--active .tab--date-cancel,
+.tab--cancelable:hover .tab--date-cancel {
+  background-color: var(--c-text-on);
+}
+
 .theme--dark .tab--cancelable {
   color: var(--bg-element);
 }
@@ -2457,11 +2462,11 @@ body._lock {
   background-color: var(--bg-element);
 }
 
-.theme--dark .tab--active {
+.theme--dark .chips--date.tab--active {
   color: var(--c-text-on);
 }
 
-.theme--dark .tab--active .tab--date-cancel {
+.theme--dark .chips--date.tab--active .tab--date-cancel {
   background-color: var(--c-text-on);
 }
 

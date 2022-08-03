@@ -1043,6 +1043,7 @@ if ([...calendarInputs].length > 0) {
         .querySelectorAll("input")
         .forEach((input) => (input.value = ""));
       dateCancel.parentElement.classList.remove("tab--cancelable");
+      dateCancel.parentElement.classList.remove("calendar--active ");
       datepicker.inputs.forEach((input) => {
         let ranges = [
           ...input.datepicker.picker.element.querySelectorAll(".range-start"),
