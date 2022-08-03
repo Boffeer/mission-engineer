@@ -1109,7 +1109,7 @@ function normalizeMenuMobileHeight() {
       window.outerHeight + 110
     }px`;
   } else {
-    document.querySelector(".menu").style.height = "100%";
+    document.querySelector(".menu").style.height = "calc(100 * 1vh)";
   }
 }
 window.addEventListener("resize", () => {
