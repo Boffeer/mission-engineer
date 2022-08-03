@@ -42,6 +42,12 @@
             --icon-color: var(--c-text-on);
         }
     }
+    .about-cell__link:hover {
+        --icon-color: var(--c-accent--light);
+        .button__icon {
+            --icon-color: var(--c-accent--light);
+        }
+    }
 }
 @mixin accentDarkCard {
     color: var(--c-text-on);
@@ -50,6 +56,12 @@
         --icon-color: var(--c-text-on);
         .button__icon {
             --icon-color: var(--c-text-on);
+        }
+    }
+    .about-cell__link:hover {
+        --icon-color: var(--c-accent--light);
+        .button__icon {
+            --icon-color: var(--c-accent--light);
         }
     }
 }
@@ -63,6 +75,12 @@
             --icon-color: var(--c-accent);
         }
     }
+    .about-cell__link:hover {
+        --icon-color: var(--c-accent--dark);
+        .button__icon {
+            --icon-color: var(--c-accent--dark);
+        }
+    }
 }
 @mixin blackCard() {
     color: var(--c-text-on);
@@ -73,7 +91,7 @@
     --black-card-bg: var(--c-text);
     padding-right: 80px;
 
-    @media (max-width: 991px) {
+    @media (max-width: 1100px) {
         padding-right: 0;
         padding-left: 0;
     }
@@ -83,13 +101,15 @@
 }
 
 .page-content--about .tabs__track {
-    padding-right: 32px;
-    padding-left: 32px;
+    @media (max-width: 1100px) {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
 }
 .about__row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    @media (max-width: 991px) {
+    @media (max-width: 1100px) {
         // width: calc(100% + 40px);
         // margin-left: -20px;
         width: 100%;
@@ -113,7 +133,7 @@
     background-blend-mode: luminosity;
     @include whiteCard();
 
-    @media (max-width: 991px) {
+    @media (max-width: 1100px) {
         min-height: 209px;
         padding: 20px;
     }
@@ -177,7 +197,9 @@
 /*
     rows cells colors
 */
-
+.about__row--grided .about-cell__link:hover .button__text {
+    border-bottom-color: transparent;
+}
 .about__row:not(.about__row--grided)
     .about-cell:first-child
     .about-cell__title {
@@ -197,7 +219,7 @@
     padding-right: 65px;
     padding-left: 32px;
 
-    @media (max-width: 991px) {
+    @media (max-width: 1100px) {
         padding-right: 20px;
         padding-left: 20px;
     }
@@ -218,7 +240,7 @@
     rows--grided cells colors
 */
 .about__row--grided .about-cell {
-    @media (max-width: 991px) {
+    @media (max-width: 1100px) {
         background-size: cover;
     }
     @media (max-width: 575px) {
