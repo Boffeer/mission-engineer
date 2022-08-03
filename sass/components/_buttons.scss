@@ -228,7 +228,9 @@ $margin-icon: 12px; // Отступ иконки от текста
     border-radius: 5px;
 }
 .button--primary:hover {
-    --button-color: var(--c-accent--dark);
+    @media (min-width: $minHover) {
+        --button-color: var(--c-accent--dark);
+    }
 }
 .button--primary[disabled] {
     --button-color: var(--c-blind);
@@ -238,7 +240,9 @@ $margin-icon: 12px; // Отступ иконки от текста
     color: var(--c-accent);
 }
 .button--on.button--primary:hover {
-    --button-color: var(--c-accent--light);
+    @media (min-width: $minHover) {
+        --button-color: var(--c-accent--light);
+    }
 }
 .button--on.button--primary[disabled],
 .button--on.button--primary[disabled]:hover {
@@ -258,8 +262,10 @@ $margin-icon: 12px; // Отступ иконки от текста
     border-radius: 5px;
 }
 .button--secondary:hover {
-    color: var(--c-text-on);
-    background-color: var(--button-color);
+    @media (min-width: $minHover) {
+        color: var(--c-text-on);
+        background-color: var(--button-color);
+    }
 }
 
 .button--secondary[disabled],
@@ -272,7 +278,9 @@ $margin-icon: 12px; // Отступ иконки от текста
     --button-color: var(--c-text-on);
 }
 .button--on.button--secondary:hover {
-    color: var(--c-accent);
+    @media (min-width: $minHover) {
+        color: var(--c-accent);
+    }
 }
 
 .button--on.button--secondary[disabled],
@@ -294,8 +302,10 @@ $margin-icon: 12px; // Отступ иконки от текста
     color: var(--button-color);
 }
 .button--thirdly:hover {
-    --button-color: var(--c-accent--dark);
-    --icon-color: var(--button-color);
+    @media (min-width: $minHover) {
+        --button-color: var(--c-accent--dark);
+        --icon-color: var(--button-color);
+    }
 }
 .button--on.button--thirdly {
     --button-color: var(--c-text-on);
@@ -305,7 +315,9 @@ $margin-icon: 12px; // Отступ иконки от текста
     }
 }
 .button--on.button--thirdly:hover {
-    --button-color: var(--c-accent--light);
+    @media (min-width: $minHover) {
+        --button-color: var(--c-accent--light);
+    }
 }
 
 .button--on.button--thirdly[disabled],
@@ -337,8 +349,10 @@ $margin-icon: 12px; // Отступ иконки от текста
     stroke: none;
 }
 .button--icon-hover-rotate:hover .button__icon {
-    transform: rotate(-45deg);
-    transform-origin: center;
+    @media (min-width: $minHover) {
+        transform: rotate(-45deg);
+        transform-origin: center;
+    }
 }
 .button--icon-left .button__icon {
     order: -1;
@@ -357,11 +371,15 @@ $margin-icon: 12px; // Отступ иконки от текста
     @include getmask("../img/icons/plus.svg");
 }
 .button--icon-plus:hover .button__icon {
-    transform: rotate(180deg);
+    @media (min-width: $minHover) {
+        transform: rotate(180deg);
+    }
 }
 .button--icon-plus:hover {
-    --icon-color: var(--c-accent);
-    --button-color: var(--c-accent);
+    @media (min-width: $minHover) {
+        --icon-color: var(--c-accent);
+        --button-color: var(--c-accent);
+    }
 }
 .button--icon-arrow-right .button__icon {
     @include getmask("../img/icons/arrow-right.svg");
@@ -393,8 +411,10 @@ $margin-icon: 12px; // Отступ иконки от текста
     width: auto;
 }
 .link:hover .button__text {
-    --icon-color: var(--c-accent--dark);
-    border-bottom: 1px solid var(--icon-color);
+    @media (min-width: $minHover) {
+        --icon-color: var(--c-accent--dark);
+        border-bottom: 1px solid var(--icon-color);
+    }
 }
 .link:hover {
     color: var(--c-accent--dark);

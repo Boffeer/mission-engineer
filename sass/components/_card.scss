@@ -118,6 +118,9 @@
     line-height: inherit;
     color: var(--c-text-grey);
 }
+.theme--dark .card-meta__desc {
+    color: var(--c-text-grey-2);
+}
 
 .card__title {
     margin-bottom: 12px;
