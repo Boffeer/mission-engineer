@@ -232,6 +232,9 @@
     @include accentCard();
     background-image: url("../img/about/world.png");
     --icon-color: var(--c-text-on);
+    .about-cell__link:hover .button__text {
+        border-bottom-color: transparent;
+    }
 }
 .about__row:not(.about__row--grided) .about-cell:nth-child(2) {
     padding-right: 65px;

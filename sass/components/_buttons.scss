@@ -359,6 +359,10 @@ $margin-icon: 12px; // Отступ иконки от текста
 .button--icon-plus:hover .button__icon {
     transform: rotate(180deg);
 }
+.button--icon-plus:hover {
+    --icon-color: var(--c-accent);
+    --button-color: var(--c-accent);
+}
 .button--icon-arrow-right .button__icon {
     @include getmask("../img/icons/arrow-right.svg");
 }

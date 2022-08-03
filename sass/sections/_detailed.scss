@@ -101,6 +101,16 @@
 .detailed figure {
     margin-bottom: var(--blocks-gap-big);
 }
+.detailed figure:first-of-type {
+    height: 376px;
+}
+.detailed figure:first-of-type picture {
+    width: 100%;
+    height: 100%;
+}
+.detailed figure:first-of-type img {
+    object-fit: cover;
+}
 .detailed figcaption {
     margin-top: 12px;
     font-size: var(--fz-body--small);
