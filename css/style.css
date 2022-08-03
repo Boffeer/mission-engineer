@@ -3552,6 +3552,13 @@ body._lock {
   }
 }
 
+@media (max-width: 575px) {
+  .about-cell__row .button--icon-right:hover .button__text {
+    text-decoration: none;
+    border-bottom-color: transparent;
+  }
+}
+
 /*
     rows cells positions
 */
