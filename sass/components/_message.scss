@@ -16,10 +16,16 @@
     }
 }
 .message {
+    width: 100%;
+    max-width: 784px;
     padding: 32px;
     background-color: var(--bg-element);
     @media (min-width: 576px) {
         border-radius: 5px;
+    }
+    @media (max-width: 575px) {
+        padding-right: 16px;
+        padding-left: 16px;
     }
 }
 .message__breadcrumb {
@@ -41,6 +47,8 @@
 }
 .message__desc {
     margin-bottom: 32px;
+    font-size: var(--fz-body);
+    line-height: var(--lh-body);
 
     @media (max-width: 575px) {
         margin-bottom: 24px;
