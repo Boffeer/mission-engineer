@@ -334,32 +334,34 @@ modalClosers.forEach((button) => {
 
 // #region featured-slider
 
-const featuredSlider = document.querySelector(".featured-slider");
-if (featuredSlider) {
-  // eslint-disable-next-line no-unused-vars, no-undef
-  let featuredSlider = new Swiper(".featured-slider", {
-    spaceBetween: 20,
-    grabCursor: true,
-    // effect: "creative",
-    // creativeEffect: {
-    //   prev: {
-    //     shadow: true,
-    //     translate: [0, 0, -400],
-    //   },
-    //   next: {
-    //     translate: ["100%", 0, 0],
-    //   },
-    // },
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true,
-    },
-    pagination: {
-      el: ".featured-slider__pagination",
-      clickable: true,
-    },
-  });
-}
+window.addEventListener("DOMContentLoaded", () => {
+  const featuredSlider = document.querySelector(".featured-slider");
+  if (featuredSlider) {
+    // eslint-disable-next-line no-unused-vars, no-undef
+    let featuredSlider = new Swiper(".featured-slider", {
+      spaceBetween: 20,
+      grabCursor: true,
+      effect: "creative",
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: [0, 0, -400],
+        },
+        next: {
+          translate: ["100%", 0, 0],
+        },
+      },
+      // effect: "fade",
+      // fadeEffect: {
+      //   crossFade: true,
+      // },
+      pagination: {
+        el: ".featured-slider__pagination",
+        clickable: true,
+      },
+    });
+  }
+});
 // #endregion featured-slider
 
 // #region tabs

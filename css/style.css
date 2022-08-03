@@ -1443,6 +1443,11 @@ body._lock {
   border-radius: 5px;
   padding: 32px;
 }
+@media (max-width: 1024px) {
+  .modal__content {
+    max-width: 688px;
+  }
+}
 @media (max-width: 575px) {
   .modal__content {
     padding-top: 64px;
