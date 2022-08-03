@@ -274,7 +274,7 @@
 }
 .theme--dark
     .about__row:not(.about__row--grided)
-    .about-cell:nth-child(1n)
+    .about-cell:first-child
     .about-cell__link {
     --icon-color: var(--bg-element);
     .button__icon {
