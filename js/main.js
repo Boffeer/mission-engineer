@@ -350,10 +350,9 @@ if (featuredSlider) {
     //     translate: ["100%", 0, 0],
     //   },
     // },
-    effect: "coverflow",
-    coverflowEffect: {
-      rotate: 30,
-      slideShadows: false,
+    effect: "fade",
+    fadeEffect: {
+      crossFade: true,
     },
     pagination: {
       el: ".featured-slider__pagination",
@@ -701,7 +700,7 @@ detailedSliders.forEach((slider, index) => {
   let detailedSlides = new Swiper(
     `.detailed-slider-${index} .detailed-slider__slides`,
     {
-      spaceBetween: 10,
+      spaceBetween: 20,
     }
   );
   // eslint-disable-next-line no-unused-vars, no-undef
