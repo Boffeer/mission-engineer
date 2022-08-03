@@ -1596,7 +1596,7 @@ body._lock {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 4px 8px;
+  padding: 2px 7px;
   margin-right: 4px;
   margin-bottom: 4px;
   background-color: var(--bg-element);
