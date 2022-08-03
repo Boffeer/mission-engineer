@@ -1596,9 +1596,10 @@ body._lock {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 2px 7px;
+  padding: 4px 11px;
   margin-right: 4px;
   margin-bottom: 4px;
+  font-size: 12px;
   background-color: var(--bg-element);
   border-radius: 5px;
 }
