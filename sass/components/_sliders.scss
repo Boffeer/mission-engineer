@@ -89,6 +89,8 @@
 .featured-slider-slide {
     // transition: all 0.3s ease;
     // transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translate3d(0, 0, 0);
     @media (max-width: 575px) {
         width: 100%;
     }

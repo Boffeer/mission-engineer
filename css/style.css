@@ -6641,6 +6641,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
+.featured-slider-slide {
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+}
 @media (max-width: 575px) {
   .featured-slider-slide {
     width: 100%;
