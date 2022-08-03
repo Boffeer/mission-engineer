@@ -40,8 +40,12 @@
     min-width: var(--button-size);
     max-width: var(--button-size);
     height: var(--button-size);
-    max-height: 32px;
+    max-height: var(--button-size);
     padding: 8px;
+    @media (max-width: 575px) {
+        --button-size: 36px;
+        margin-right: 2px;
+    }
 }
 .tab--theme-auto {
     display: none;
