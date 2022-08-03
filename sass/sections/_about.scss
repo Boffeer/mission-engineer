@@ -257,6 +257,22 @@
     grid-column-end: 2;
 }
 
+.about__row:not(.about__row--grided) .about-cell .about-cell__link:hover {
+    --icon-color: var(--c-accent);
+}
+.about__row:not(.about__row--grided)
+    .about-cell
+    .about-cell__link:hover
+    .button__icon {
+    --icon-color: var(--c-accent);
+}
+.about__row:not(.about__row--grided)
+    .about-cell
+    .about-cell__link:hover
+    .button__text {
+    border-bottom-color: var(--c-accent);
+}
+
 /*
     rows--grided cells colors
 */
