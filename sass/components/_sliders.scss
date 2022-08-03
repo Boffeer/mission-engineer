@@ -87,13 +87,13 @@
 }
 
 .featured-slider-slide {
-    transition: all 0.3s ease;
-    transform: translateZ(0);
+    // transition: all 0.3s ease;
+    // transform: translateZ(0);
     @media (max-width: 575px) {
         width: 100%;
     }
 }
 
-.featured-slider * {
-    transition: all 0.3s ease;
-}
+// .featured-slider * {
+//     transition: all 0.3s ease;
+// }

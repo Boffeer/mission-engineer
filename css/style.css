@@ -6486,18 +6486,10 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   }
 }
 
-.featured-slider-slide {
-  transition: all 0.3s ease;
-  transform: translateZ(0);
-}
 @media (max-width: 575px) {
   .featured-slider-slide {
     width: 100%;
   }
-}
-
-.featured-slider * {
-  transition: all 0.3s ease;
 }
 
 .datepicker .datepicker-picker {

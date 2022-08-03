@@ -340,10 +340,21 @@ if (featuredSlider) {
   let featuredSlider = new Swiper(".featured-slider", {
     spaceBetween: 20,
     grabCursor: true,
-    // navigation: {
-    //   nextEl: '.featured-slider__button-next',
-    //   prevEl: '.featured-slider__button-prev',
+    // effect: "creative",
+    // creativeEffect: {
+    //   prev: {
+    //     shadow: true,
+    //     translate: [0, 0, -400],
+    //   },
+    //   next: {
+    //     translate: ["100%", 0, 0],
+    //   },
     // },
+    effect: "coverflow",
+    coverflowEffect: {
+      rotate: 30,
+      slideShadows: false,
+    },
     pagination: {
       el: ".featured-slider__pagination",
       clickable: true,
