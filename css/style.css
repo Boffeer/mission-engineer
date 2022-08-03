@@ -3775,6 +3775,22 @@ body._lock {
   border-bottom-color: var(--c-accent);
 }
 
+.theme--dark .about__row:not(.about__row--grided) .about-cell:nth-child(1n) .about-cell__link {
+  --icon-color: var(--bg-element);
+}
+.theme--dark .about__row:not(.about__row--grided) .about-cell:nth-child(1n) .about-cell__link .button__icon {
+  --icon-color: var(--bg-element);
+}
+.theme--dark .about__row:not(.about__row--grided) .about-cell:nth-child(1n) .about-cell__link .button__text {
+  border-bottom: none;
+}
+.theme--dark .about__row:not(.about__row--grided) .about-cell:nth-child(1n) .about-cell__link:hover {
+  --icon-color: var(--c-text-on);
+}
+.theme--dark .about__row:not(.about__row--grided) .about-cell:nth-child(1n) .about-cell__link:hover .button__icon {
+  --icon-color: var(--c-text-on);
+}
+
 /*
     rows--grided cells colors
 */

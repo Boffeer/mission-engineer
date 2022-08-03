@@ -272,6 +272,24 @@
     .button__text {
     border-bottom-color: var(--c-accent);
 }
+.theme--dark
+    .about__row:not(.about__row--grided)
+    .about-cell:nth-child(1n)
+    .about-cell__link {
+    --icon-color: var(--bg-element);
+    .button__icon {
+        --icon-color: var(--bg-element);
+    }
+    .button__text {
+        border-bottom: none;
+    }
+    &:hover {
+        --icon-color: var(--c-text-on);
+        .button__icon {
+            --icon-color: var(--c-text-on);
+        }
+    }
+}
 
 /*
     rows--grided cells colors
