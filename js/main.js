@@ -1036,6 +1036,34 @@ if ([...calendarInputs].length > 0) {
         calendar.parentElement.querySelector('.input--calendar[name="end"]'),
       ],
     });
+    const dateCancel = document.createElement("span");
+    dateCancel.classList.add("tab--date-cancel");
+    dateCancel.addEventListener("click", () => {
+      dateCancel.parentElement
+        .querySelectorAll("input")
+        .forEach((input) => (input.value = ""));
+      dateCancel.parentElement.classList.remove("tab--cancelable");
+      datepicker.inputs.forEach((input) => {
+        let ranges = [
+          ...input.datepicker.picker.element.querySelectorAll(".range-start"),
+          ...input.datepicker.picker.element.querySelectorAll(".range-end"),
+          ...input.datepicker.picker.element.querySelectorAll(".range"),
+        ];
+
+        setTimeout(() => {
+          ranges.forEach((range) => {
+            range.classList.remove("range-start");
+            range.classList.remove("range-end");
+            range.classList.remove("range");
+          });
+        }, 200);
+      });
+      setTimeout(() => {
+        dateCancel.parentElement.querySelector(".chips__text").innerText =
+          "Дата";
+      });
+    });
+    calendar.parentElement.append(dateCancel);
 
     const chipsButtonsCalendar = document.querySelectorAll(".chips--date");
     chipsButtonsCalendar.forEach((button) => {
@@ -1083,12 +1111,18 @@ function updateRangeValues(e) {
 
 function handleCalendarHide(input) {
   input.addEventListener("hide", (e) => {
-    const start = e.target.parentElement.querySelector('input[name="start"');
-    const end = e.target.parentElement.querySelector('input[name="end"');
+    const button = e.target.parentElement;
+    const start = button.querySelector('input[name="start"]');
+    const end = button.querySelector('input[name="end"]');
     input.dataset.closed = 1;
 
+    if (start.value != "" || end.value != "") {
+      button.classList.add("tab--cancelable");
+    } else {
+      button.classList.remove("tab--cancelable");
+    }
     if (start.dataset.closed == 1 && end.dataset.closed == 1) {
-      e.target.parentElement.classList.remove("calendar--active");
+      button.classList.remove("calendar--active");
       // e.target.parentElement.classList.remove("tab--active");
     }
   });

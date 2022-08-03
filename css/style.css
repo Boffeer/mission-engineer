@@ -2356,6 +2356,11 @@ body._lock {
   background-color: var(--c-accent);
 }
 
+.tabs--chips .chips--date:hover {
+  color: var(--c-text-on);
+  background-color: var(--c-accent);
+}
+
 .tabs--chips .chips--date:hover::after,
 .tabs--chips .tab--active.chips--date::after {
   background-color: var(--c-text-on);
@@ -2408,6 +2413,64 @@ body._lock {
 .chips--date .datepicker-input.in-edit:active,
 .datepicker-input.in-edit:focus {
   box-shadow: none;
+}
+
+.theme--dark .tab--active:not(.chips--date) {
+  color: var(--bg-element);
+}
+
+.theme--dark .tab--active:not(.chips--date)::after {
+  background-color: var(--bg-element);
+}
+
+.tab--cancelable::after {
+  display: none !important;
+}
+
+.tab--date-cancel {
+  display: none;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  content: "";
+  background-color: var(--c-text-on);
+  transition: all 0.3s ease;
+  -webkit-mask: url("../img/icons/close-icon.svg");
+  mask: url("../img/icons/close-icon.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.tab--cancelable .tab--date-cancel {
+  display: block;
+}
+
+.theme--dark .tab--cancelable {
+  color: var(--bg-element);
+}
+
+.theme--dark .tab--cancelable .tab--date-cancel {
+  background-color: var(--bg-element);
+}
+
+.theme--dark .tab--active {
+  color: var(--c-text-on);
+}
+
+.theme--dark .tab--active .tab--date-cancel {
+  background-color: var(--c-text-on);
+}
+
+.theme--dark .tab--cancelable:not(.tab--active) {
+  color: var(--c-text-grey-2);
+}
+
+.theme--dark .tab--cancelable:not(.tab--active) .tab--date-cancel {
+  background-color: var(--c-text-grey-2);
 }
 
 .socials {
