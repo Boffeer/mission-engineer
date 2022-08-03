@@ -18,9 +18,14 @@
     margin-right: 16px;
     --size: 72px;
     @media (max-width: 575px) {
-        --size: 32px;
+        --size: 36px;
         margin-right: 0;
         margin-bottom: 12px;
+    }
+}
+.about-info__title {
+    @media (max-width: 575px) {
+        margin-bottom: 4px;
     }
 }
 .about__logo-img {
@@ -182,6 +187,12 @@
 .about-cell__link .button__text {
     width: auto;
 }
+.about-cell__link:hover .button__text {
+    @media (max-width: 575px) {
+        text-decoration: underline;
+        border-bottom-color: transparent;
+    }
+}
 
 /*
     rows cells positions
@@ -315,6 +326,7 @@
     grid-column-end: 2;
     @include blackCard();
     @media (max-width: 575px) {
+        order: 1;
         width: 50%;
     }
 }
@@ -325,6 +337,7 @@
     grid-column-end: 3;
     @include accentDarkCard();
     @media (max-width: 575px) {
+        order: 3;
         width: 50%;
     }
 }
@@ -335,6 +348,7 @@
     grid-column-end: 2;
     @include accentCard();
     @media (max-width: 575px) {
+        order: 2;
         width: 50%;
     }
 }
@@ -345,6 +359,7 @@
     grid-column-end: 3;
     @include whiteCard();
     @media (max-width: 575px) {
+        order: 4;
         width: 50%;
     }
 }
@@ -356,6 +371,7 @@
     @include accentCard();
     background-image: url("../img/about/2.png");
     @media (max-width: 575px) {
+        order: 4;
         min-height: 250px;
     }
 }
@@ -412,6 +428,7 @@
     background-image: url("../img/about/3.png");
     @include accentCard();
     @media (max-width: 575px) {
+        order: 1;
         min-height: 250px;
     }
 }
@@ -420,6 +437,7 @@
     grid-column-end: 3;
     @include accentDarkCard();
     @media (max-width: 575px) {
+        order: 2;
         width: 50%;
     }
 }
@@ -428,18 +446,21 @@
     grid-column-end: 4;
     @include accentCard();
     @media (max-width: 575px) {
+        order: 4;
         width: 50%;
     }
 }
 .about__row--grided:nth-child(4) .about-cell:nth-child(4) {
     @include whiteCard();
     @media (max-width: 575px) {
+        order: 3;
         width: 50%;
     }
 }
 .about__row--grided:nth-child(4) .about-cell:nth-child(5) {
     @include blackCard();
     @media (max-width: 575px) {
+        order: 5;
         width: 50%;
     }
 }

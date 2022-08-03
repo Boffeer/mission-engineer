@@ -3400,9 +3400,15 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__logo {
-    --size: 32px;
+    --size: 36px;
     margin-right: 0;
     margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 575px) {
+  .about-info__title {
+    margin-bottom: 4px;
   }
 }
 
@@ -3537,6 +3543,13 @@ body._lock {
 
 .about-cell__link .button__text {
   width: auto;
+}
+
+@media (max-width: 575px) {
+  .about-cell__link:hover .button__text {
+    text-decoration: underline;
+    border-bottom-color: transparent;
+  }
 }
 
 /*
@@ -3781,6 +3794,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__row--grided:nth-child(2) .about-cell:nth-child(1) {
+    order: 1;
     width: 50%;
   }
 }
@@ -3807,6 +3821,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__row--grided:nth-child(2) .about-cell:nth-child(2) {
+    order: 3;
     width: 50%;
   }
 }
@@ -3833,6 +3848,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__row--grided:nth-child(2) .about-cell:nth-child(3) {
+    order: 2;
     width: 50%;
   }
 }
@@ -3859,6 +3875,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__row--grided:nth-child(2) .about-cell:nth-child(4) {
+    order: 4;
     width: 50%;
   }
 }
@@ -3886,6 +3903,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__row--grided:nth-child(2) .about-cell:nth-child(5) {
+    order: 4;
     min-height: 250px;
   }
 }
@@ -3997,6 +4015,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__row:nth-child(4) .about-cell:nth-child(1) {
+    order: 1;
     min-height: 250px;
   }
 }
@@ -4021,6 +4040,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__row--grided:nth-child(4) .about-cell:nth-child(2) {
+    order: 2;
     width: 50%;
   }
 }
@@ -4045,6 +4065,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__row--grided:nth-child(4) .about-cell:nth-child(3) {
+    order: 4;
     width: 50%;
   }
 }
@@ -4067,6 +4088,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__row--grided:nth-child(4) .about-cell:nth-child(4) {
+    order: 3;
     width: 50%;
   }
 }
@@ -4077,6 +4099,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .about__row--grided:nth-child(4) .about-cell:nth-child(5) {
+    order: 5;
     width: 50%;
   }
 }
