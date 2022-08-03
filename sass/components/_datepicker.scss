@@ -8,6 +8,7 @@
 }
 .datepicker-controls {
     padding: 0;
+    margin-bottom: 10px;
 }
 .datepicker-controls .view-switch {
     justify-content: flex-start;
@@ -15,6 +16,12 @@
     // padding: 0;
     margin-left: -2px;
     font-family: var(--ffMain);
+    color: var(--c-text);
+    background-color: transparent;
+}
+.datepicker-header .datepicker-controls .button:hover {
+    color: var(--c-text);
+    background-color: transparent;
 }
 .datepicker-controls .prev-btn {
     font-family: var(--ffMain);
@@ -41,6 +48,7 @@
 }
 
 .datepicker-view .dow {
+    height: 40px;
     font-size: var(--fz-body--small-2);
     font-weight: 400;
     color: var(--c-text-disabled);
@@ -91,5 +99,9 @@
     background-color: var(--c-accent);
 }
 .datepicker-cell.range {
-    background: rgba(40, 190, 70, 0.1);
+    background: rgba(40, 190, 70, 0.1) !important;
+}
+
+.datepicker-cell.focused:not(.selected) {
+    background-color: transparent;
 }

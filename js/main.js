@@ -1036,6 +1036,22 @@ if ([...calendarInputs].length > 0) {
         calendar.parentElement.querySelector('.input--calendar[name="end"]'),
       ],
     });
+
+    const chipsButtonsCalendar = document.querySelectorAll(".chips--date");
+    chipsButtonsCalendar.forEach((button) => {
+      button.addEventListener("click", () => {
+        button.classList.add("calendar--active");
+        if (button.classList.contains("tab--active")) {
+          datepicker.inputs.forEach((input) => {
+            input.datepicker.hide();
+          });
+          setTimeout(() => {
+            button.classList.remove("tab--active");
+            button.classList.remove("calendar--active");
+          });
+        }
+      });
+    });
   });
 }
 const chipsCalendarButtons = document.querySelectorAll(".chips--date");
@@ -1064,7 +1080,21 @@ function updateRangeValues(e) {
   }
   e.target.parentElement.querySelector(".chips__text").innerText = innerText;
 }
+
+function handleCalendarHide(input) {
+  input.addEventListener("hide", (e) => {
+    const start = e.target.parentElement.querySelector('input[name="start"');
+    const end = e.target.parentElement.querySelector('input[name="end"');
+    input.dataset.closed = 1;
+
+    if (start.dataset.closed == 1 && end.dataset.closed == 1) {
+      e.target.parentElement.classList.remove("calendar--active");
+      // e.target.parentElement.classList.remove("tab--active");
+    }
+  });
+}
 calendarInputs.forEach((start) => {
+  handleCalendarHide(start);
   start.addEventListener("changeDate", (e) => {
     e.target.datepicker.hide();
     let inputName = e.target.name;
@@ -1082,6 +1112,7 @@ calendarInputsEnd.forEach((end) => {
   end.addEventListener("changeDate", (e) => {
     updateRangeValues(e);
   });
+  handleCalendarHide(end);
 });
 // #endregion datepicker
 

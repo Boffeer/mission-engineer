@@ -143,6 +143,9 @@
 .chips--date {
     position: relative;
 }
+.chips--date.calendar--active::after {
+    transform: rotate(180deg);
+}
 .tabs--chips .chips--date::after {
     @include getmask("../img/icons/arrow-down.svg");
     pointer-events: none;

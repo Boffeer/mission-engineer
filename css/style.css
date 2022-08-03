@@ -2338,6 +2338,10 @@ body._lock {
   position: relative;
 }
 
+.chips--date.calendar--active::after {
+  transform: rotate(180deg);
+}
+
 .tabs--chips .chips--date::after {
   -webkit-mask: url("../img/icons/arrow-down.svg");
   mask: url("../img/icons/arrow-down.svg");
@@ -4799,6 +4803,7 @@ body._lock {
 
 .datepicker-controls {
   padding: 0;
+  margin-bottom: 10px;
 }
 
 .datepicker-controls .view-switch {
@@ -4806,6 +4811,13 @@ body._lock {
   order: -1;
   margin-left: -2px;
   font-family: var(--ffMain);
+  color: var(--c-text);
+  background-color: transparent;
+}
+
+.datepicker-header .datepicker-controls .button:hover {
+  color: var(--c-text);
+  background-color: transparent;
 }
 
 .datepicker-controls .prev-btn {
@@ -4848,6 +4860,7 @@ body._lock {
 }
 
 .datepicker-view .dow {
+  height: 40px;
   font-size: var(--fz-body--small-2);
   font-weight: 400;
   color: var(--c-text-disabled);
@@ -4903,5 +4916,9 @@ body._lock {
 }
 
 .datepicker-cell.range {
-  background: rgba(40, 190, 70, 0.1);
+  background: rgba(40, 190, 70, 0.1) !important;
+}
+
+.datepicker-cell.focused:not(.selected) {
+  background-color: transparent;
 }/*# sourceMappingURL=style.css.map */
