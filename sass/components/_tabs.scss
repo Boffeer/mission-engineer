@@ -31,8 +31,10 @@
     margin-left: -4px;
 }
 .tab:hover {
-    color: var(--c-accent);
-    stroke: var(--c-accent);
+    @media (min-width: $minHover) {
+        color: var(--c-accent);
+        stroke: var(--c-accent);
+    }
 }
 .tab--theme {
     --button-size: 36px;
@@ -150,12 +152,18 @@
     background-color: var(--c-accent);
 }
 .tabs--chips .chips--date:hover {
-    color: var(--c-text-on);
-    background-color: var(--c-accent);
+    @media (min-width: $minHover) {
+        color: var(--c-text-on);
+        background-color: var(--c-accent);
+    }
 }
-.tabs--chips .chips--date:hover::after,
 .tabs--chips .tab--active.chips--date::after {
     background-color: var(--c-text-on);
+}
+.tabs--chips .chips--date:hover::after {
+    @media (min-width: $minHover) {
+        background-color: var(--c-text-on);
+    }
 }
 .tabs--chips .tabs__scrollable {
     --background-color: transparent;
@@ -165,9 +173,14 @@
     margin-right: 8px;
 }
 
-.tab--active .input--calendar::placeholder,
-.chips--date:hover .input--calendar::placeholder {
+.tab--active .input--calendar::placeholder {
     color: var(--c-text-on);
+}
+
+.chips--date:hover .input--calendar::placeholder {
+    @media (min-width: $minHover) {
+        color: var(--c-text-on);
+    }
 }
 .chips--date .input--calendar {
     position: absolute;
@@ -219,11 +232,15 @@
 .tab--cancelable .tab--date-cancel {
     display: block;
 }
-.tab--active .tab--date-cancel,
-.tab--cancelable:hover .tab--date-cancel {
+.tab--active .tab--date-cancel {
     background-color: var(--c-text-on);
 }
 
+.tab--cancelable:hover .tab--date-cancel {
+    @media (min-width: $minHover) {
+        background-color: var(--c-text-on);
+    }
+}
 .theme--dark .tab--cancelable {
     color: var(--bg-element);
 }

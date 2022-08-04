@@ -2243,9 +2243,11 @@ body._lock {
   margin-left: -4px;
 }
 
-.tab:hover {
-  color: var(--c-accent);
-  stroke: var(--c-accent);
+@media (min-width: 769px) {
+  .tab:hover {
+    color: var(--c-accent);
+    stroke: var(--c-accent);
+  }
 }
 
 .tab--theme {
@@ -2390,14 +2392,21 @@ body._lock {
   background-color: var(--c-accent);
 }
 
-.tabs--chips .chips--date:hover {
-  color: var(--c-text-on);
-  background-color: var(--c-accent);
+@media (min-width: 769px) {
+  .tabs--chips .chips--date:hover {
+    color: var(--c-text-on);
+    background-color: var(--c-accent);
+  }
 }
 
-.tabs--chips .chips--date:hover::after,
 .tabs--chips .tab--active.chips--date::after {
   background-color: var(--c-text-on);
+}
+
+@media (min-width: 769px) {
+  .tabs--chips .chips--date:hover::after {
+    background-color: var(--c-text-on);
+  }
 }
 
 .tabs--chips .tabs__scrollable {
@@ -2408,17 +2417,28 @@ body._lock {
   margin-right: 8px;
 }
 
-.tab--active .input--calendar::-moz-placeholder, .chips--date:hover .input--calendar::-moz-placeholder {
+.tab--active .input--calendar::-moz-placeholder {
   color: var(--c-text-on);
 }
 
-.tab--active .input--calendar:-ms-input-placeholder, .chips--date:hover .input--calendar:-ms-input-placeholder {
+.tab--active .input--calendar:-ms-input-placeholder {
   color: var(--c-text-on);
 }
 
-.tab--active .input--calendar::placeholder,
-.chips--date:hover .input--calendar::placeholder {
+.tab--active .input--calendar::placeholder {
   color: var(--c-text-on);
+}
+
+@media (min-width: 769px) {
+  .chips--date:hover .input--calendar::-moz-placeholder {
+    color: var(--c-text-on);
+  }
+  .chips--date:hover .input--calendar:-ms-input-placeholder {
+    color: var(--c-text-on);
+  }
+  .chips--date:hover .input--calendar::placeholder {
+    color: var(--c-text-on);
+  }
 }
 
 .chips--date .input--calendar {
@@ -2483,9 +2503,14 @@ body._lock {
   display: block;
 }
 
-.tab--active .tab--date-cancel,
-.tab--cancelable:hover .tab--date-cancel {
+.tab--active .tab--date-cancel {
   background-color: var(--c-text-on);
+}
+
+@media (min-width: 769px) {
+  .tab--cancelable:hover .tab--date-cancel {
+    background-color: var(--c-text-on);
+  }
 }
 
 .theme--dark .tab--cancelable {
