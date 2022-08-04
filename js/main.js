@@ -541,13 +541,15 @@ function setupSwithcer() {
     const currentButton = document.querySelector(
       `.tab--theme[data-theme="${savedScheme}"]`
     );
-    setTimeout(() => {
-      currentButton.click();
-      currentButton.parentElement
-        .querySelectorAll(".tab")
-        .forEach((tab) => tab.classList.remove("tab--active"));
-      currentButton.classList.add("tab--active");
-    }, 100);
+    if (currentButton) {
+      setTimeout(() => {
+        currentButton.click();
+        currentButton.parentElement
+          .querySelectorAll(".tab")
+          .forEach((tab) => tab.classList.remove("tab--active"));
+        currentButton.classList.add("tab--active");
+      }, 100);
+    }
     return;
   }
 
@@ -663,35 +665,37 @@ function openSearch() {
   headerMenu.classList.add("menu--search");
 }
 
-burgerButton.addEventListener("click", () => {
-  if (isBurgerOpened()) {
-    closeMenu();
-    closeBurger();
-  } else {
-    openMenu();
-    openBurger();
-    isSearchOpened() ? closeSearch() : false;
-  }
-});
-window.addEventListener("click", (e) => {
-  if (isMenuOpened()) {
-    if (e.target == headerMenu.querySelector(".menu__sticky")) {
+if (burgerButton && headerMenu) {
+  burgerButton.addEventListener("click", () => {
+    if (isBurgerOpened()) {
       closeMenu();
       closeBurger();
+    } else {
+      openMenu();
+      openBurger();
+      isSearchOpened() ? closeSearch() : false;
     }
-  }
-});
+  });
+  window.addEventListener("click", (e) => {
+    if (isMenuOpened()) {
+      if (e.target == headerMenu.querySelector(".menu__sticky")) {
+        closeMenu();
+        closeBurger();
+      }
+    }
+  });
 
-searchButton.addEventListener("click", () => {
-  if (isSearchOpened()) {
-    closeMenu();
-    closeSearch();
-  } else {
-    openMenu();
-    openSearch();
-    isBurgerOpened() ? closeBurger() : false;
-  }
-});
+  searchButton.addEventListener("click", () => {
+    if (isSearchOpened()) {
+      closeMenu();
+      closeSearch();
+    } else {
+      openMenu();
+      openSearch();
+      isBurgerOpened() ? closeBurger() : false;
+    }
+  });
+}
 // #endregion burger
 
 // #region detailed-slider
@@ -1043,7 +1047,7 @@ if ([...calendarInputs].length > 0) {
         .querySelectorAll("input")
         .forEach((input) => (input.value = ""));
       dateCancel.parentElement.classList.remove("tab--cancelable");
-      dateCancel.parentElement.classList.remove("calendar--active ");
+      dateCancel.parentElement.classList.remove("calendar--active");
       datepicker.inputs.forEach((input) => {
         let ranges = [
           ...input.datepicker.picker.element.querySelectorAll(".range-start"),
@@ -1191,7 +1195,9 @@ function normalizeMenuMobileHeight() {
     document.querySelector(".menu").style.height = "calc(100 * 1vh)";
   }
 }
-window.addEventListener("resize", () => {
+if (headerMenu) {
+  window.addEventListener("resize", () => {
+    normalizeMenuMobileHeight();
+  });
   normalizeMenuMobileHeight();
-});
-normalizeMenuMobileHeight();
+}

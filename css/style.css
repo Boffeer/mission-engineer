@@ -2234,19 +2234,14 @@ body._lock {
 }
 
 .tab--theme {
-  --button-size: 32px;
+  --button-size: 36px;
   width: var(--button-size);
   min-width: var(--button-size);
   max-width: var(--button-size);
   height: var(--button-size);
   max-height: var(--button-size);
   padding: 8px;
-}
-@media (max-width: 575px) {
-  .tab--theme {
-    --button-size: 36px;
-    margin-right: 2px;
-  }
+  margin-right: 2px;
 }
 
 .tab--theme-auto {
@@ -2494,12 +2489,20 @@ body._lock {
   background-color: var(--c-text-on);
 }
 
-.theme--dark .tab--cancelable:not(.tab--active) {
+.theme--dark .tab--cancelable:not(.calendar--active) {
   color: var(--c-text-grey-2);
 }
 
-.theme--dark .tab--cancelable:not(.tab--active) .tab--date-cancel {
+.theme--dark .tab--cancelable:not(.calendar--active) .tab--date-cancel {
   background-color: var(--c-text-grey-2);
+}
+
+.theme--dark .tab--active:not(.calendar--active) {
+  color: var(--bg-element);
+}
+
+.theme--dark .tab--active:not(.calendar--active) .tab--date-cancel {
+  background-color: var(--bg-element);
 }
 
 .socials {
@@ -2601,6 +2604,11 @@ body._lock {
 @media (min-width: 576px) {
   .message {
     border-radius: 5px;
+  }
+}
+@media (max-width: 1024px) {
+  .message {
+    max-width: 648px;
   }
 }
 @media (max-width: 575px) {
@@ -3805,14 +3813,15 @@ body._lock {
 .theme--dark .about__row:not(.about__row--grided) .about-cell:first-child .about-cell__link .button__icon {
   --icon-color: var(--bg-element);
 }
-.theme--dark .about__row:not(.about__row--grided) .about-cell:first-child .about-cell__link .button__text {
-  border-bottom: none;
-}
 .theme--dark .about__row:not(.about__row--grided) .about-cell:first-child .about-cell__link:hover {
   --icon-color: var(--c-text-on);
 }
 .theme--dark .about__row:not(.about__row--grided) .about-cell:first-child .about-cell__link:hover .button__icon {
   --icon-color: var(--c-text-on);
+}
+
+.about-cell__link.button--on .button__text {
+  border-bottom: none;
 }
 
 /*

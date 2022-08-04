@@ -35,17 +35,14 @@
     stroke: var(--c-accent);
 }
 .tab--theme {
-    --button-size: 32px;
+    --button-size: 36px;
     width: var(--button-size);
     min-width: var(--button-size);
     max-width: var(--button-size);
     height: var(--button-size);
     max-height: var(--button-size);
     padding: 8px;
-    @media (max-width: 575px) {
-        --button-size: 36px;
-        margin-right: 2px;
-    }
+    margin-right: 2px;
 }
 .tab--theme-auto {
     display: none;
@@ -239,9 +236,15 @@
 .theme--dark .chips--date.tab--active .tab--date-cancel {
     background-color: var(--c-text-on);
 }
-.theme--dark .tab--cancelable:not(.tab--active) {
+.theme--dark .tab--cancelable:not(.calendar--active) {
     color: var(--c-text-grey-2);
 }
-.theme--dark .tab--cancelable:not(.tab--active) .tab--date-cancel {
+.theme--dark .tab--cancelable:not(.calendar--active) .tab--date-cancel {
     background-color: var(--c-text-grey-2);
+}
+.theme--dark .tab--active:not(.calendar--active) {
+    color: var(--bg-element);
+}
+.theme--dark .tab--active:not(.calendar--active) .tab--date-cancel {
+    background-color: var(--bg-element);
 }
