@@ -13,11 +13,11 @@
         pointer-events: initial;
         background: var(--bg-element);
         border-bottom: 1px solid var(--c-blind);
+        border-bottom: none;
     }
     @media (max-width: 575px) {
         padding-top: 18px;
         padding-bottom: 18px;
-        border-bottom: none;
     }
 }
 .header__button-search {

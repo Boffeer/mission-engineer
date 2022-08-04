@@ -288,9 +288,9 @@
     .about__row:not(.about__row--grided)
     .about-cell:first-child
     .about-cell__link {
-    --icon-color: var(--bg-element);
+    --icon-color: var(--c-text-on);
     .button__icon {
-        --icon-color: var(--bg-element);
+        --icon-color: var(--c-text-on);
     }
     &:hover {
         --icon-color: var(--c-text-on);

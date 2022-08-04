@@ -2112,6 +2112,8 @@ body._lock {
 .menu__links-link {
   display: block;
   margin-bottom: 24px;
+  color: var(--c-text);
+  transition: all 0.3s ease;
 }
 @media (max-width: 1024px) {
   .menu__links-link {
@@ -2254,7 +2256,7 @@ body._lock {
   height: var(--button-size);
   max-height: var(--button-size);
   padding: 8px;
-  margin-right: 2px;
+  margin-right: 0;
 }
 
 .tab--theme-auto {
@@ -2893,13 +2895,13 @@ body._lock {
     pointer-events: initial;
     background: var(--bg-element);
     border-bottom: 1px solid var(--c-blind);
+    border-bottom: none;
   }
 }
 @media (max-width: 575px) {
   .header {
     padding-top: 18px;
     padding-bottom: 18px;
-    border-bottom: none;
   }
 }
 
@@ -3834,10 +3836,10 @@ body._lock {
 }
 
 .theme--dark .about__row:not(.about__row--grided) .about-cell:first-child .about-cell__link {
-  --icon-color: var(--bg-element);
+  --icon-color: var(--c-text-on);
 }
 .theme--dark .about__row:not(.about__row--grided) .about-cell:first-child .about-cell__link .button__icon {
-  --icon-color: var(--bg-element);
+  --icon-color: var(--c-text-on);
 }
 .theme--dark .about__row:not(.about__row--grided) .about-cell:first-child .about-cell__link:hover {
   --icon-color: var(--c-text-on);
