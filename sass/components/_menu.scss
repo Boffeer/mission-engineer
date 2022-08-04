@@ -219,7 +219,9 @@
     }
 }
 .menu__links-link:hover {
-    color: var(--c-accent);
+    @media (min-width: $minHover) {
+        color: var(--c-accent);
+    }
 }
 .menu__links-link:last-of-type {
     margin-bottom: 0;

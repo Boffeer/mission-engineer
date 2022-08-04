@@ -24,7 +24,9 @@
 }
 
 .socials__link:hover {
-    --icon-color: var(--c-accent);
-    // fill: var(--c-accent);
-    // stroke: var(--icon-color);
+    @media (min-width: $minHover) {
+        --icon-color: var(--c-accent);
+        // fill: var(--c-accent);
+        // stroke: var(--icon-color);
+    }
 }

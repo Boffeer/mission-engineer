@@ -2121,8 +2121,10 @@ body._lock {
   }
 }
 
-.menu__links-link:hover {
-  color: var(--c-accent);
+@media (min-width: 769px) {
+  .menu__links-link:hover {
+    color: var(--c-accent);
+  }
 }
 
 .menu__links-link:last-of-type {
@@ -2572,8 +2574,10 @@ body._lock {
   margin-right: 0;
 }
 
-.socials__link:hover {
-  --icon-color: var(--c-accent);
+@media (min-width: 769px) {
+  .socials__link:hover {
+    --icon-color: var(--c-accent);
+  }
 }
 
 .sidebar {
