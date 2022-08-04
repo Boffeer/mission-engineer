@@ -49,6 +49,7 @@
 // }
 
 body {
+    overscroll-behavior: none;
     font-family: $ffMain;
     font-size: 16px;
     font-style: normal;

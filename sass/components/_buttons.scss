@@ -115,17 +115,17 @@ $margin-icon: 12px; // Отступ иконки от текста
 }
 
 // Hover-эффект у ссылки
-.link {
-    &:hover {
-        @media (min-width: $minHover) {
-            color: $accent-hover;
-        }
-    }
+// .link {
+//     &:hover {
+//         @media (min-width: $minHover) {
+//             color: $accent-hover;
+//         }
+//     }
 
-    &:active {
-        color: $accent-active;
-    }
-}
+//     &:active {
+//         color: $accent-active;
+//     }
+// }
 
 // Кнопки выбора
 .choice-chips {
@@ -412,12 +412,9 @@ $margin-icon: 12px; // Отступ иконки от текста
 }
 .link:hover .button__text {
     @media (min-width: $minHover) {
-        --icon-color: var(--c-accent--dark);
+        // --icon-color: var(--c-accent--dark);
         border-bottom: 1px solid var(--icon-color);
     }
-}
-.link:hover {
-    color: var(--c-accent--dark);
 }
 .link:active {
     opacity: 0.6;

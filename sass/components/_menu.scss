@@ -168,13 +168,19 @@
     opacity: 1;
 }
 
+.menu__nav-link .button__text {
+    transition: all 0.3s ease;
+}
 .menu__nav-link .button__icon {
     background: transparent;
+    transition: all 0.3s ease;
 }
 
 .menu__nav-item:hover {
-    --button-color: var(--c-accent--dark);
-    --icon-color: var(--c-accent--dark);
+    @media (min-width: $minHover) {
+        --button-color: var(--c-accent--dark);
+        --icon-color: var(--c-accent--dark);
+    }
 }
 .menu__nav-item--active .menu__nav-link {
     --button-color: var(--c-accent);
@@ -188,6 +194,7 @@
     font-size: var(--fz-navigation);
     font-weight: 400;
     line-height: var(--lh-navigation);
+    transition: all 0.3s ease;
 }
 
 .menu__links {

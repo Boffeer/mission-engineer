@@ -20,8 +20,10 @@
     background-color: transparent;
 }
 .datepicker-header .datepicker-controls .button:hover {
-    color: var(--c-text);
-    background-color: transparent;
+    @media (min-width: $minHover) {
+        color: var(--c-text);
+        background-color: transparent;
+    }
 }
 .datepicker-controls .prev-btn {
     font-family: var(--ffMain);
@@ -38,8 +40,10 @@
 
 .datepicker-header .datepicker-controls .prev-btn:hover,
 .datepicker-header .datepicker-controls .next-btn:hover {
-    color: transparent;
-    background-color: var(--c-accent--dark);
+    @media (min-width: $minHover) {
+        color: transparent;
+        background-color: var(--c-accent--dark);
+    }
 }
 
 .datepicker-controls .prev-btn:disabled,
@@ -60,8 +64,10 @@
     border-radius: 0;
 }
 .datepicker-grid .datepicker-cell:hover {
-    color: var(--c-accent);
-    background-color: transparent;
+    @media (min-width: $minHover) {
+        color: var(--c-accent);
+        background-color: transparent;
+    }
 }
 
 .datepicker-grid .datepicker-cell.disabled {

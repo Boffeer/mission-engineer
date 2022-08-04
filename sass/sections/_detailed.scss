@@ -101,7 +101,7 @@
 .detailed figure {
     margin-bottom: var(--blocks-gap-big);
 }
-.detailed figure:first-of-type {
+.detailed > figure:first-of-type {
     height: 376px;
 }
 .detailed figure:first-of-type picture {

@@ -242,9 +242,9 @@
 .theme--dark .tab--cancelable:not(.calendar--active) .tab--date-cancel {
     background-color: var(--c-text-grey-2);
 }
-.theme--dark .tab--active:not(.calendar--active) {
+.theme--dark .chips--date.tab--active:not(.calendar--active) {
     color: var(--bg-element);
 }
-.theme--dark .tab--active:not(.calendar--active) .tab--date-cancel {
+.theme--dark .chips--date.tab--active:not(.calendar--active) .tab--date-cancel {
     background-color: var(--bg-element);
 }

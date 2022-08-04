@@ -115,8 +115,10 @@
     text-align: left;
 }
 .input-dropdown__item:hover {
-    cursor: pointer;
-    background-color: var(--c-accent--light);
+    @media (min-width: $minHover) {
+        cursor: pointer;
+        background-color: var(--c-accent--light);
+    }
 }
 
 .input--half {

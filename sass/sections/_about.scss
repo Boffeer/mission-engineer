@@ -47,10 +47,12 @@
             --icon-color: var(--c-text-on);
         }
     }
-    .about-cell__link:hover {
-        --icon-color: var(--c-accent--light);
-        .button__icon {
+    @media (min-width: $minHover) {
+        .about-cell__link:hover {
             --icon-color: var(--c-accent--light);
+            .button__icon {
+                --icon-color: var(--c-accent--light);
+            }
         }
     }
 }
@@ -63,10 +65,12 @@
             --icon-color: var(--c-text-on);
         }
     }
-    .about-cell__link:hover {
-        --icon-color: var(--c-accent--light);
-        .button__icon {
+    @media (min-width: $minHover) {
+        .about-cell__link:hover {
             --icon-color: var(--c-accent--light);
+            .button__icon {
+                --icon-color: var(--c-accent--light);
+            }
         }
     }
 }
@@ -80,10 +84,12 @@
             --icon-color: var(--c-accent);
         }
     }
-    .about-cell__link:hover {
-        --icon-color: var(--c-accent--dark);
-        .button__icon {
+    @media (min-width: $minHover) {
+        .about-cell__link:hover {
             --icon-color: var(--c-accent--dark);
+            .button__icon {
+                --icon-color: var(--c-accent--dark);
+            }
         }
     }
 }
@@ -181,8 +187,10 @@
 }
 .about-cell__link:hover {
     // --color: var(--icon-color);
-    --icon-color: var(--c-text-on);
-    color: var(--icon-color);
+    @media (min-width: $minHover) {
+        --icon-color: var(--c-text-on);
+        color: var(--icon-color);
+    }
 }
 .about-cell__link .button__text {
     width: auto;
@@ -264,13 +272,17 @@
     .about-cell
     .about-cell__link:hover
     .button__icon {
-    --icon-color: var(--c-accent);
+    @media (min-width: $minHover) {
+        --icon-color: var(--c-accent);
+    }
 }
 .about__row:not(.about__row--grided)
     .about-cell
     .about-cell__link:hover
     .button__text {
-    border-bottom-color: var(--c-accent);
+    @media (min-width: $minHover) {
+        border-bottom-color: var(--c-accent);
+    }
 }
 .theme--dark
     .about__row:not(.about__row--grided)
