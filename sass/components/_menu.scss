@@ -120,6 +120,9 @@
 
 .menu__top {
     margin-bottom: 96px;
+    @media (min-width: 1101px) and (min-height: 860px) {
+        margin-bottom: 36px;
+    }
 }
 
 .menu--shrink .menu__top {

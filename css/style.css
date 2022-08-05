@@ -316,6 +316,7 @@ body._lock {
 }
 
 .cards--fullsize .card__title {
+  margin-bottom: 16px;
   font-size: var(--fz-h3);
   line-height: var(--lh-h3);
 }
@@ -1367,7 +1368,9 @@ body._lock {
 }
 
 .search__input-field {
+  padding-top: 12px;
   padding-left: 42px;
+  padding-bottom: 12px;
   border: none;
 }
 
@@ -2015,6 +2018,11 @@ body._lock {
 
 .menu__top {
   margin-bottom: 96px;
+}
+@media (min-width: 1101px) and (min-height: 860px) {
+  .menu__top {
+    margin-bottom: 36px;
+  }
 }
 
 @media (min-width: 992px) {
