@@ -36,13 +36,14 @@
     border-radius: 5px;
 }
 .search__button {
+    max-width: 111px;
     margin-left: 12px;
 }
 
 .search__input-field {
     padding-top: 12px;
-    padding-left: 42px;
     padding-bottom: 12px;
+    padding-left: 42px;
     border: none;
 }
 
@@ -53,18 +54,18 @@
 }
 
 .search-results {
-    @media (max-width: 991px) and (min-width: 575px) {
-        margin-left: 4px;
-    }
+    // @media (max-width: 991px) and (min-width: 575px) {
+    //     margin-left: 4px;
+    // }
 }
 .search-results__link {
     display: block;
-    margin-bottom: 32px;
+    margin-bottom: 19px;
     font-size: var(--fz-body);
     line-height: var(--lh-body);
     transition: all 0.3s ease;
     @media (max-width: 575px) {
-        margin-bottom: 32px;
+        margin-bottom: 20px;
     }
 }
 .search-results__link:hover {

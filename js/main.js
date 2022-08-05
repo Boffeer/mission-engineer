@@ -457,9 +457,12 @@ const newsSliderSettings = {
     clickable: true,
   },
   breakpoints: {
-    769: {
+    1100: {
       slidesPerView: 3,
       slidesPerGroup: 3,
+    },
+    576: {
+      slidesPerGroup: 2,
     },
   },
 };

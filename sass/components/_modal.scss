@@ -158,3 +158,9 @@
         display: initial !important;
     }
 }
+
+.only-desktop {
+    @media (max-width: 1100px) {
+        display: none;
+    }
+}

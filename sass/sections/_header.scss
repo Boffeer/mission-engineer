@@ -7,9 +7,9 @@
         align-items: center;
         justify-content: space-between;
         padding-top: 24px;
-        padding-right: 20px;
+        padding-right: 24px;
         padding-bottom: 24px;
-        padding-left: 20px;
+        padding-left: 24px;
         pointer-events: initial;
         background: var(--bg-element);
         border-bottom: 1px solid var(--c-blind);
@@ -17,7 +17,9 @@
     }
     @media (max-width: 575px) {
         padding-top: 18px;
+        padding-right: 20px;
         padding-bottom: 18px;
+        padding-left: 20px;
     }
 }
 .header__button-search {
@@ -80,6 +82,14 @@
 .header__button-search::after,
 .header__button-search .header__button-search-icon {
     transition: all 0.3s ease-in-out;
+}
+.header__button-search.active::before {
+    top: 21.5%;
+    right: 32.5%;
+}
+.header__button-search.active::after {
+    right: 32.5%;
+    bottom: 21.5%;
 }
 
 .header-logo {

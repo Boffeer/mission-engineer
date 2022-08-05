@@ -49,7 +49,7 @@
 
 .menu__nav-link .button__text {
     margin-right: auto;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
 }
 .menu--shrink .menu__nav-link .button__text {
     @media (min-width: 992px) {
@@ -113,15 +113,20 @@
     }
     @media (max-width: 575px) {
         max-width: 100%;
-        height: calc(100% - 73px);
         padding-bottom: 120px;
     }
 }
 
 .menu__top {
     margin-bottom: 96px;
-    @media (min-width: 1101px) and (min-height: 860px) {
+    @media (min-width: 1101px) and (min-height: 860px) and (max-height: 1000px) {
         margin-bottom: 36px;
+    }
+    @media (max-width: 1100px) {
+        margin-bottom: 207px;
+    }
+    @media (max-width: 575px) {
+        margin-bottom: 46px;
     }
 }
 
@@ -144,7 +149,6 @@
 .menu__nav-list {
     padding-top: 20px;
     padding-bottom: 20px;
-    // border-bottom: 1px solid var(--c-blind);
     transition: all 0.3s ease;
 }
 
@@ -154,12 +158,16 @@
 
 .menu__nav-list:first-child {
     display: block;
+    padding-top: 2px;
     border-bottom: 1px solid var(--c-blind);
     opacity: 1;
 }
 .menu__nav-list:last-child {
-    margin-bottom: 8px;
+    margin-bottom: 7px;
     border-bottom: none;
+    @media (max-width: 575px) {
+        margin-bottom: 0;
+    }
 }
 
 .menu--shrink .menu__nav-list:first-child {
@@ -171,10 +179,8 @@
     opacity: 1;
 }
 
-.menu__nav-link .button__text {
-    transition: all 0.3s ease;
-}
 .menu__nav-link .button__icon {
+    margin-right: 0.87em;
     background: transparent;
     transition: all 0.3s ease;
 }
@@ -214,12 +220,9 @@
 .menu__links-link {
     display: block;
     margin-bottom: 24px;
+    font-size: var(--fz-body--small);
     color: var(--c-text);
     transition: all 0.3s ease;
-
-    @media (max-width: 1024px) {
-        font-size: 14px;
-    }
 }
 .menu__links-link:hover {
     @media (min-width: $minHover) {
@@ -257,11 +260,11 @@
 .menu__sidebar {
     overflow-x: hidden;
     overflow-y: auto;
-    @media (max-width: 768px) {
-        max-height: calc(100% - 85px);
+    @media (max-width: 1100px) {
+        height: calc(100% - 85px);
     }
     @media (max-width: 575px) {
-        max-height: calc(100% - 73px);
+        height: calc(100% - 73px);
         padding-right: 16px;
         padding-left: 16px;
     }
@@ -269,17 +272,24 @@
 
 .menu__search {
     display: none;
-    height: 100%;
-    padding: 20px 40px;
+    // height: 100%;
+    padding: 40px 40px 20px;
     background-color: var(--bg-app);
     transition: all 0.3s ease-in-out;
     transform: translateX(-100%);
     @media (max-width: 1100px) {
         display: block;
         padding: 20px;
+        padding-top: 40px;
     }
     @media (max-width: 575px) {
         padding: 25px 16px;
+    }
+}
+.menu__search .search__form {
+    margin-bottom: 35px;
+    @media (max-width: 575px) {
+        margin-bottom: 26px;
     }
 }
 .menu__search .search__button {
