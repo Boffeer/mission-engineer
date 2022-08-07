@@ -50,6 +50,12 @@
         padding-left: 16px;
     }
 }
+
+.page-content--more-gap {
+    @media (min-width: 1101px) {
+        padding-top: 40px;
+    }
+}
 .wrapper--app {
     flex-direction: row;
     width: 100%;
@@ -101,6 +107,12 @@
 }
 .cards--fullsize .card-meta {
     margin-bottom: 16px;
+}
+.cards--fullsize-only-text .card-meta {
+    margin-bottom: 11px;
+    @media (max-width: 375px) {
+        margin-bottom: 12px;
+    }
 }
 .cards--fullsize .card__info {
     padding: 0;

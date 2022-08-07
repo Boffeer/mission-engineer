@@ -1,7 +1,12 @@
 .section {
     margin-bottom: 56px;
     @media (max-width: 575px) {
-        margin-bottom: 46px;
+        margin-bottom: 47px;
+    }
+}
+.section--more-mobile-gap {
+    @media (max-width: 575px) {
+        margin-bottom: 53px;
     }
 }
 .section:last-child {
