@@ -112,14 +112,23 @@
 */
 
 .tabs--chips {
+    margin-bottom: 20px;
     background-color: transparent;
+    @media (max-width: 575px) {
+        margin-bottom: 16px;
+    }
 }
 .tabs--chips .tab {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    padding: 6px 12px;
+    margin-right: 7px;
+    font-size: var(--fz-tag);
     font-weight: 400;
+    line-height: var(--lh-tag);
     background-color: var(--bg-element);
+    border-radius: 5px;
     transition: all 0.3s ease;
 }
 
@@ -138,11 +147,14 @@
     display: block;
     width: 16px;
     height: 16px;
-    margin-left: 8px;
     background-color: var(--c-text-on);
     transition: all 0.3s ease;
 }
+.chips--date::after {
+    margin-left: 8px;
+}
 .tabs--chips .tab--active::after {
+    margin-left: 13px;
     content: "";
     @include getmask("../img/icons/close-icon.svg");
 }
