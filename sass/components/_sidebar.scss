@@ -8,10 +8,12 @@
     // }
     @media (max-width: 1100px) {
         max-width: 100%;
+        padding-top: 43px;
         margin-top: 22px;
     }
     @media (max-width: 575px) {
-        margin-top: 14px;
+        padding-top: 23px;
+        margin-top: 16px;
     }
 }
 .sidebar__title {
@@ -21,9 +23,14 @@
     font-weight: 700;
     line-height: var(--lh-h3);
     color: var(--c-text);
+    @media (max-width: 1100px) {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
     @media (max-width: 575px) {
         padding-right: 16px;
         padding-left: 16px;
+        margin-bottom: 10px;
     }
 }
 
@@ -31,4 +38,17 @@
     @media (max-width: 1100px) {
         display: none;
     }
+}
+
+.sidebar-latest {
+    @media (min-width: 1101px) {
+        padding-top: 42px;
+        padding-left: 16px;
+    }
+}
+.sidebar-latest .card {
+    margin-bottom: 15px;
+}
+.sidebar-latest .card-meta {
+    margin-bottom: 12px;
 }

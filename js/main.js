@@ -703,49 +703,52 @@ if (burgerButton && headerMenu) {
 
 // #region detailed-slider
 const detailedSliders = document.querySelectorAll(".detailed-slider");
-detailedSliders.forEach((slider, index) => {
-  slider.classList.add(`detailed-slider-${index}`);
 
-  // eslint-disable-next-line no-undef
-  let detailedSlides = new Swiper(
-    `.detailed-slider-${index} .detailed-slider__slides`,
-    {
-      spaceBetween: 20,
-    }
-  );
-  // eslint-disable-next-line no-unused-vars, no-undef
-  let detailedThumbs = new Swiper(
-    `.detailed-slider-${index} .detailed-slider__thumbs`,
-    {
-      grabCursor: true,
-      spaceBetween: 8,
-      slidesPerView: "auto",
-      slidesPerGroup: 1,
-      allowTouchMove: false,
-    }
-  );
+window.addEventListener("DOMContentLoaded", (event) => {
+  detailedSliders.forEach((slider, index) => {
+    slider.classList.add(`detailed-slider-${index}`);
 
-  const thumbs = document.querySelectorAll(
-    `.detailed-slider-${index} .detailed-slider__thumbs .swiper-slide`
-  );
-  thumbs[0].classList.add("detailed-slider__slide--active");
-  thumbs.forEach((thumb, index) => {
-    thumb.addEventListener("click", () => {
-      detailedSlides.slideTo(index);
+    // eslint-disable-next-line no-undef
+    let detailedSlides = new Swiper(
+      `.detailed-slider-${index} .detailed-slider__slides`,
+      {
+        spaceBetween: 20,
+      }
+    );
+    // eslint-disable-next-line no-unused-vars, no-undef
+    let detailedThumbs = new Swiper(
+      `.detailed-slider-${index} .detailed-slider__thumbs`,
+      {
+        grabCursor: true,
+        spaceBetween: 8,
+        slidesPerView: "auto",
+        slidesPerGroup: 1,
+        allowTouchMove: false,
+      }
+    );
+
+    const thumbs = document.querySelectorAll(
+      `.detailed-slider-${index} .detailed-slider__thumbs .swiper-slide`
+    );
+    thumbs[0].classList.add("detailed-slider__slide--active");
+    thumbs.forEach((thumb, index) => {
+      thumb.addEventListener("click", () => {
+        detailedSlides.slideTo(index);
+        thumbs.forEach((thumb) => {
+          thumb.classList.remove("detailed-slider__slide--active");
+        });
+        thumb.classList.add("detailed-slider__slide--active");
+      });
+    });
+    detailedSlides.on("slideChange", () => {
+      detailedThumbs.slideTo(detailedSlides.activeIndex);
       thumbs.forEach((thumb) => {
         thumb.classList.remove("detailed-slider__slide--active");
       });
-      thumb.classList.add("detailed-slider__slide--active");
+      thumbs[detailedSlides.activeIndex].classList.add(
+        "detailed-slider__slide--active"
+      );
     });
-  });
-  detailedSlides.on("slideChange", () => {
-    detailedThumbs.slideTo(detailedSlides.activeIndex);
-    thumbs.forEach((thumb) => {
-      thumb.classList.remove("detailed-slider__slide--active");
-    });
-    thumbs[detailedSlides.activeIndex].classList.add(
-      "detailed-slider__slide--active"
-    );
   });
 });
 // #endregion detailed-slider
