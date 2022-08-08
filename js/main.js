@@ -506,9 +506,9 @@ if (newsSliders) {
   window.addEventListener("resize", () => {
     debounce(() => {
       removeSlider(newsSlider);
-      console.log("destroyed");
+      // console.log("destroyed");
       initSlider(newsSlider);
-      console.log("inited");
+      // console.log("inited");
     }, 1000);
   });
 }
@@ -881,6 +881,22 @@ function activateInput(input) {
 
   if (input.classList.contains(inputClasses.dropdown)) {
     input.classList.add(inputClasses.activeDropdown);
+    // input.querySelector(".input-dropdown").scrollIntoView({
+    //   behavior: "smooth",
+    //   block: "end",
+    // });
+    var element = input.querySelector(".input-dropdown");
+    var listEndOffset = 145;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition =
+      elementPosition +
+      window.pageYOffset -
+      listEndOffset -
+      element.getBoundingClientRect().height * 2;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
   }
 }
 function deactivateInput(input) {
@@ -948,9 +964,9 @@ function activateDropdown(input) {
       realInput.value = dropdown.innerText;
       setTimeout(() => {
         input.classList.remove(inputClasses.activeDropdown);
-        console.log(input.classList);
+        // console.log(input.classList);
         input.classList.remove(inputClasses.invalid);
-        console.log(input.classList);
+        // console.log(input.classList);
       }, 150);
       input.classList.add(inputClasses.selectedDropdown);
     });
@@ -958,7 +974,7 @@ function activateDropdown(input) {
 
   setTimeout(() => {
     if (realInput.value != "") {
-      console.log(realInput.value);
+      // console.log(realInput.value);
       field.innerText = realInput.value;
       input.classList.add(inputClasses.selectedDropdown);
     }
@@ -1102,7 +1118,7 @@ chipsCalendarButtons.forEach((chip) => {
   });
 });
 chipsDatepickers.forEach((datepicker) => {
-  console.log(datepicker.parentElement);
+  // console.log(datepicker.parentElement);
   datepicker.parentElement.parentElement.append(datepicker);
 });
 
