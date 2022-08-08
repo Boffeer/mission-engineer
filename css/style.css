@@ -3058,10 +3058,16 @@ body._lock {
   background-position: center;
   background-size: cover;
 }
+@media (max-width: 1100px) {
+  .page-content--404 {
+    background-position: left -820px center;
+  }
+}
 @media (max-width: 575px) {
   .page-content--404 {
     padding: 0;
     background-position: -440px -70px;
+    background-position: left -605px top -30px;
   }
 }
 
@@ -3082,6 +3088,11 @@ body._lock {
     border-radius: 5px;
   }
 }
+@media (min-width: 1101px) {
+  .message {
+    margin-bottom: 35px;
+  }
+}
 @media (max-width: 1024px) {
   .message {
     max-width: 648px;
@@ -3089,7 +3100,9 @@ body._lock {
 }
 @media (max-width: 575px) {
   .message {
+    padding-top: 16px;
     padding-right: 16px;
+    padding-bottom: 56px;
     padding-left: 16px;
   }
 }
