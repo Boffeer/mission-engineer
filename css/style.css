@@ -504,6 +504,12 @@ body._lock {
   }
 }
 
+@media (max-width: 1100px) {
+  .section-unviersity-news .card__title br {
+    display: none;
+  }
+}
+
 /* Стили анимации пульсации кругов */
 @keyframes pulse {
   0% {
