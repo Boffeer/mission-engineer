@@ -74,3 +74,17 @@
         padding-left: 16px;
     }
 }
+
+.sidebar--projects .cards--fullsize {
+    padding-top: 20px;
+    @media (max-width: 1100px) {
+        padding-top: 24px;
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    @media (max-width: 575px) {
+        padding-top: 16px;
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
