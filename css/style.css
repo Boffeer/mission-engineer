@@ -541,6 +541,46 @@ body._lock {
   margin-left: 0;
 }
 
+.section-partners {
+  grid-auto-rows: 341px;
+}
+@media (max-width: 1100px) {
+  .section-partners {
+    grid-auto-rows: 369px;
+  }
+}
+@media (max-width: 575px) {
+  .section-partners {
+    grid-auto-rows: auto;
+    row-gap: 14px;
+  }
+}
+
+.section-partners .card__pic {
+  min-height: 152px;
+}
+@media (max-width: 1100px) {
+  .section-partners .card__pic {
+    min-height: 182px;
+  }
+}
+@media (max-width: 575px) {
+  .section-partners .card__pic {
+    min-height: 161px;
+    max-height: 161px;
+  }
+}
+
+.section-partners .card__info + .card__info {
+  padding-bottom: 10px;
+}
+
+@media (max-width: 575px) {
+  .section-partners .card__info {
+    padding-bottom: 19px;
+  }
+}
+
 /* Стили анимации пульсации кругов */
 @keyframes pulse {
   0% {
@@ -1536,6 +1576,29 @@ body._lock {
 
 .partners__search {
   display: flex;
+}
+
+@media (max-width: 1100px) and (min-width: 768px) {
+  .partners__search .search__form {
+    margin-bottom: 38px;
+  }
+}
+@media (max-width: 575px) {
+  .partners__search .search__form {
+    margin-bottom: 17px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .section__search .section__title {
+    margin-bottom: 19px;
+    font-size: var(--fz-h2);
+  }
+}
+@media (max-width: 575px) {
+  .section__search .section__title {
+    margin-bottom: 16px;
+  }
 }
 
 /* stylelint-disable */

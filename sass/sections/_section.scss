@@ -104,3 +104,35 @@
 .section-stats .tabs {
     margin-left: 0;
 }
+
+.section-partners {
+    grid-auto-rows: 341px;
+    @media (max-width: 1100px) {
+        grid-auto-rows: 369px;
+    }
+    @media (max-width: 575px) {
+        grid-auto-rows: auto;
+        row-gap: 14px;
+    }
+}
+
+.section-partners .card__pic {
+    min-height: 152px;
+    @media (max-width: 1100px) {
+        min-height: 182px;
+    }
+    @media (max-width: 575px) {
+        min-height: 161px;
+        max-height: 161px;
+    }
+}
+
+.section-partners .card__info + .card__info {
+    padding-bottom: 10px;
+}
+
+.section-partners .card__info {
+    @media (max-width: 575px) {
+        padding-bottom: 19px;
+    }
+}
