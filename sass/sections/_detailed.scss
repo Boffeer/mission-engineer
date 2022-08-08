@@ -98,6 +98,11 @@
         margin-bottom: 20px;
     }
 }
+.detailed__title--news {
+    @media (max-width: 1100px) and (min-width: 577px) {
+        margin-bottom: 18px;
+    }
+}
 .detailed__title br {
     @media (max-width: 575px) {
         display: none;

@@ -108,6 +108,11 @@
         margin-bottom: 24px;
     }
 }
+#form-error .modal__title {
+    @media (max-width: 575px) {
+        margin-bottom: 10px;
+    }
+}
 #form-error .modal__text:last-of-type {
     margin-bottom: 32px;
     @media (max-width: 575px) {

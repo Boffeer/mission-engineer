@@ -581,6 +581,12 @@ body._lock {
   }
 }
 
+@media (max-width: 1100px) and (min-width: 576px) {
+  .section--events .section__title {
+    margin-bottom: 21px;
+  }
+}
+
 /* Стили анимации пульсации кругов */
 @keyframes pulse {
   0% {
@@ -1715,6 +1721,12 @@ body._lock {
 @media (max-width: 575px) {
   .modal__content .modal__text:last-of-type {
     margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  #form-error .modal__title {
+    margin-bottom: 10px;
   }
 }
 
@@ -3696,6 +3708,12 @@ body._lock {
   }
 }
 
+@media (max-width: 1100px) and (min-width: 577px) {
+  .detailed__title--news {
+    margin-bottom: 18px;
+  }
+}
+
 @media (max-width: 575px) {
   .detailed__title br {
     display: none;
@@ -4320,6 +4338,14 @@ body._lock {
   }
 }
 
+@media (max-width: 575px) {
+  .page-content--about .tab {
+    margin-right: 8px;
+  }
+  .page-content--about .tab:last-child {
+    margin-right: 0;
+  }
+}
 .about__row {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

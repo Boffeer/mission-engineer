@@ -148,6 +148,14 @@
         padding-left: 16px;
     }
 }
+@media (max-width: 575px) {
+    .page-content--about .tab {
+        margin-right: 8px;
+    }
+    .page-content--about .tab:last-child {
+        margin-right: 0;
+    }
+}
 .about__row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
