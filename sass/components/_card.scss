@@ -260,7 +260,8 @@
 */
 
 .card--featured .card__tags {
-    @media (max-width: 1100px) and (min-width: 566px) {
+    // @media (max-width: 1100px) and (min-width: 566px) {
+    @media (min-width: 566px) {
         top: 24px;
         left: 24px;
     }
@@ -308,7 +309,14 @@
         padding-top: 108px;
         padding-bottom: 64px;
     }
+    @media (max-width: 575px) {
+        padding-top: 98px;
+    }
 }
+// .featured-slider--evnets .card--featured .card__info {
+//     @media (max-width: 575px) {
+//     }
+// }
 
 .card--featured.card--event .card__title {
     margin-bottom: 0;

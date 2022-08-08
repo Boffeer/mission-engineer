@@ -2098,7 +2098,7 @@ body._lock {
     @card--featured
 
 */
-@media (max-width: 1100px) and (min-width: 566px) {
+@media (min-width: 566px) {
   .card--featured .card__tags {
     top: 24px;
     left: 24px;
@@ -2153,6 +2153,11 @@ body._lock {
   .card--featured.card--event .card__info {
     padding-top: 108px;
     padding-bottom: 64px;
+  }
+}
+@media (max-width: 575px) {
+  .card--featured.card--event .card__info {
+    padding-top: 98px;
   }
 }
 
