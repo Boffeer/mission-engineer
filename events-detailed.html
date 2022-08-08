@@ -61,7 +61,7 @@
 
   <body>
     <div class="wrapper wrapper--app">
-      <div class="menu">
+      <div class="menu menu--shrink">
         <div class="menu__sticky">
           <header class="header">
             <button class="header__button-search">
@@ -288,7 +288,7 @@
           </div>
         </div>
       </div>
-      <div class="page-content">
+      <div class="page-content page-content--more-gap">
         <article class="detailed">
           <div class="container-buttons detailed__buttons">
             <a
@@ -310,14 +310,14 @@
               <div class="detailed-meta__desc">Москва</div>
             </div>
             <div class="detailed-meta__tags">
-              <p class="detailed-meta__tag">Регистрация</p>
+              <p class="detailed-meta__tag">Бесплатно</p>
             </div>
           </div>
           <h1 class="detailed__title">
-            Конференция «Проблема самоцитирования в научных работах: возможности
-            системы Антиплагиат»
+            Конференция «Проблема самоцитирования в&nbsp;научных работах:
+            возможности системы Антиплагиат»
           </h1>
-          <div class="detailed-author">
+          <div class="detailed-author detailed-author--event">
             <picture class="detailed-author__pic"
               ><img
                 src="./img/common/logo.png"
@@ -347,123 +347,114 @@
             сплавы, гибридные и электрические силовые установки, новые рынки
             оборудования и инструмента, применение машинного зрения в
             производственных процессах.
-            <br /><br />
+          </p>
+          <p>
+            <!-- <br /><br /> -->
             От ТПУ в работе форума приняли участие директор Инженерной школы
             новых производственных технологий Кайрат Манабаев и заместитель
             директора по развитию Инженерной школы новых производственных
             технологий Роман Сазонов.
           </p>
-          <ul>
-            <li>
-              Иметь гражданство РФ, постоянную или временную регистрацию на
-              территории г.Томска, г.Северска или Томского района;
-            </li>
-            <li>
-              Состоять на воинском учете в военном комиссариате г.Томска,
-              г.Северска или Томского района:
-              <ul>
-                <li>
-                  По собственному желанию (в т.ч. в связи с призывом в ряды
-                  Вооруженных сил РФ; по состоянию здоровья);
-                </li>
-                <li>
-                  По собственному желанию (в т.ч. в связи с призывом в ряды
-                  Вооруженных сил РФ; по состоянию здоровья);
-                </li>
-              </ul>
-            </li>
-            <li>
-              Иметь хорошую успеваемость по основной образовательной программе;
-            </li>
-          </ul>
         </article>
         <form action="./mail.php" class="form form--regular">
-          <h2 class="form__title">Регистрация</h2>
-          <label class="input input--half">
-            <input type="text" name="user_name" class="input__field" />
-            <span class="input__label">Ваше имя</span>
-            <span class="input__error">Текст ошибки, текст ошибки</span>
-          </label>
-          <label class="input input--half">
-            <input type="text" name="user_name" class="input__field" />
-            <span class="input__label">Ваша фамилия</span>
-            <span class="input__error">Текст ошибки, текст ошибки</span>
-          </label>
-          <label class="input">
-            <input type="email" name="user_email" class="input__field" />
-            <span class="input__label">E-mail</span>
-            <span class="input__error">Текст ошибки, текст ошибки</span>
-          </label>
-          <label class="input">
-            <input type="text" name="user_company" class="input__field" />
-            <span class="input__label">Компания</span>
-            <span class="input__error">Текст ошибки, текст ошибки</span>
-          </label>
-          <label class="input input--dropdown">
-            <input type="text" hidden name="user_status" />
-            <div class="input__field">Выберите из списка ваш статус</div>
-            <span class="input__label">Выберите из списка ваш статус</span>
-            <ul class="input-dropdown">
-              <li>
-                <button
-                  class="input-dropdown__item input-dorpdown__item--single"
-                  type="button"
-                >
-                  Выбор 1
-                </button>
-              </li>
-              <li>
-                <button
-                  class="input-dropdown__item input-dorpdown__item--single"
-                  type="button"
-                >
-                  Выбор 2
-                </button>
-              </li>
-              <li>
-                <button
-                  class="input-dropdown__item input-dorpdown__item--single"
-                  type="button"
-                >
-                  Выбор 3
-                </button>
-              </li>
-              <li>
-                <button
-                  class="input-dropdown__item input-dorpdown__item--single"
-                  type="button"
-                >
-                  Выбор 4
-                </button>
-              </li>
-            </ul>
-          </label>
-          <div class="form__bottom flex">
-            <button
-              class="button button--primary form__button detailed-form__button"
-            >
-              Отправить
-            </button>
-            <p class="form__caption">
-              Нажимая на кнопку «Отправить» вы подтверждаете, что даете согласие
-              на
-              <a class="link" href="#"
-                ><span class="button__text"
-                  >обработку персональных данных</span
-                ></a
+          <div class="form__inner">
+            <h2 class="form__title">Регистрация</h2>
+            <label class="input input--half">
+              <input type="text" name="user_name" class="input__field" />
+              <span class="input__label">Ваше имя</span>
+              <span class="input__error">Текст ошибки, текст ошибки</span>
+            </label>
+            <label class="input input--half">
+              <input type="text" name="user_name" class="input__field" />
+              <span class="input__label">Ваша фамилия</span>
+              <span class="input__error">Текст ошибки, текст ошибки</span>
+            </label>
+            <label class="input input--invalid">
+              <input
+                type="email"
+                name="user_email"
+                class="input__field"
+                value="user@mail.ru "
+              />
+              <span class="input__label">E-mail</span>
+              <span class="input__error">Текст ошибки, текст ошибки</span>
+            </label>
+            <label class="input">
+              <input
+                type="text"
+                name="user_company"
+                class="input__field"
+                value="Томский политехнический университет"
+              />
+              <span class="input__label">Компания</span>
+              <span class="input__error">Текст ошибки, текст ошибки</span>
+            </label>
+            <label class="input input--dropdown">
+              <input type="text" hidden name="user_status" />
+              <div class="input__field">Выберите из списка ваш статус</div>
+              <span class="input__label">Выберите из списка ваш статус</span>
+              <ul class="input-dropdown">
+                <li>
+                  <button
+                    class="input-dropdown__item input-dorpdown__item--single"
+                    type="button"
+                  >
+                    Выбор 1
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="input-dropdown__item input-dorpdown__item--single"
+                    type="button"
+                  >
+                    Выбор 2
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="input-dropdown__item input-dorpdown__item--single"
+                    type="button"
+                  >
+                    Выбор 3
+                  </button>
+                </li>
+                <li>
+                  <button
+                    class="input-dropdown__item input-dorpdown__item--single"
+                    type="button"
+                  >
+                    Выбор 4
+                  </button>
+                </li>
+              </ul>
+            </label>
+            <div class="form__bottom flex">
+              <button
+                class="button button--primary form__button detailed-form__button"
               >
-              и ознакомлены с
-              <a href="#" class="link"
-                ><span class="button__text"
-                  >политикой конфиденциальности</span
-                ></a
-              >
-            </p>
+                Отправить
+              </button>
+              <p class="form__caption">
+                Нажимая на кнопку «Отправить» вы подтверждаете, что даете
+                согласие на
+                <a class="link" href="#"
+                  ><span class="button__text"
+                    >обработку персональных данных</span
+                  ></a
+                >
+                и ознакомлены с
+                <a href="#" class="link"
+                  ><span class="button__text"
+                    >политикой конфиденциальности</span
+                  ></a
+                >
+              </p>
+            </div>
           </div>
         </form>
       </div>
       <aside
-        class="sidebar sidebar-right sidebar-latest section__latest latest"
+        class="sidebar sidebar-right sidebar--events sidebar-latest section__latest latest"
       >
         <h2 class="sidebar__title">Другие мероприятия</h2>
         <div class="section__content">
@@ -479,13 +470,13 @@
                         ></use>
                       </svg>
                     </div>
-                    <a href="#" class="card-meta__title">28 мая, 17:00-19:00</a>
-                    <div class="card-meta__desc">Томск</div>
+                    <a href="#" class="card-meta__title">30 мая, весь день</a>
+                    <div class="card-meta__desc">Москва</div>
                   </div>
                   <h3 class="card__title">
                     <a href="#" class="card__title-link"
-                      >Модернизация инженерного образования в ТюмГУ набирает
-                      темп в соответствии с задачами государственн...</a
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
                     >
                   </h3>
                 </div>
@@ -500,13 +491,13 @@
                         ></use>
                       </svg>
                     </div>
-                    <a href="#" class="card-meta__title">28 мая, 17:00-19:00</a>
-                    <div class="card-meta__desc">Томск</div>
+                    <a href="#" class="card-meta__title">30 мая, 17:00</a>
+                    <div class="card-meta__desc">Новосибирск</div>
                   </div>
                   <h3 class="card__title">
                     <a href="#" class="card__title-link"
-                      >Модернизация инженерного образования в ТюмГУ набирает
-                      темп в соответствии с задачами государственн...</a
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
                     >
                   </h3>
                 </div>
@@ -521,13 +512,13 @@
                         ></use>
                       </svg>
                     </div>
-                    <a href="#" class="card-meta__title">28 мая, 17:00-19:00</a>
-                    <div class="card-meta__desc">Томск</div>
+                    <a href="#" class="card-meta__title">28 ноября, 14:00</a>
+                    <div class="card-meta__desc">Новосибирск</div>
                   </div>
                   <h3 class="card__title">
                     <a href="#" class="card__title-link"
-                      >Как распределены бюджетные места в вузах и научных
-                      организациях на 2023/2024 год</a
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
                     >
                   </h3>
                 </div>
@@ -542,13 +533,162 @@
                         ></use>
                       </svg>
                     </div>
-                    <a href="#" class="card-meta__title">28 мая, 17:00-19:00</a>
+                    <a href="#" class="card-meta__title">30 мая, весь день</a>
+                    <div class="card-meta__desc">Москва</div>
+                  </div>
+                  <h3 class="card__title">
+                    <a href="#" class="card__title-link"
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
+                    >
+                  </h3>
+                </div>
+              </article>
+
+              <article class="card card--event">
+                <div class="card__info">
+                  <div class="card-meta">
+                    <div class="card-meta__icon">
+                      <svg>
+                        <use
+                          xlink:href="./img/icons/calendar.svg#calendar"
+                        ></use>
+                      </svg>
+                    </div>
+                    <a href="#" class="card-meta__title">30 мая, 17:00</a>
+                    <div class="card-meta__desc">Новосибирск</div>
+                  </div>
+                  <h3 class="card__title">
+                    <a href="#" class="card__title-link"
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
+                    >
+                  </h3>
+                </div>
+              </article>
+              <article class="card card--event">
+                <div class="card__info">
+                  <div class="card-meta">
+                    <div class="card-meta__icon">
+                      <svg>
+                        <use
+                          xlink:href="./img/icons/calendar.svg#calendar"
+                        ></use>
+                      </svg>
+                    </div>
+                    <a href="#" class="card-meta__title">28 ноября, 14:00</a>
+                    <div class="card-meta__desc">Новосибирск</div>
+                  </div>
+                  <h3 class="card__title">
+                    <a href="#" class="card__title-link"
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
+                    >
+                  </h3>
+                </div>
+              </article>
+              <article class="card card--event">
+                <div class="card__info">
+                  <div class="card-meta">
+                    <div class="card-meta__icon">
+                      <svg>
+                        <use
+                          xlink:href="./img/icons/calendar.svg#calendar"
+                        ></use>
+                      </svg>
+                    </div>
+                    <a href="#" class="card-meta__title">30 мая, 17:00</a>
+                    <div class="card-meta__desc">Новосибирск</div>
+                  </div>
+                  <h3 class="card__title">
+                    <a href="#" class="card__title-link"
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
+                    >
+                  </h3>
+                </div>
+              </article>
+              <article class="card card--event">
+                <div class="card__info">
+                  <div class="card-meta">
+                    <div class="card-meta__icon">
+                      <svg>
+                        <use
+                          xlink:href="./img/icons/calendar.svg#calendar"
+                        ></use>
+                      </svg>
+                    </div>
+                    <a href="#" class="card-meta__title">28 ноября, 14:00</a>
+                    <div class="card-meta__desc">Новосибирск</div>
+                  </div>
+                  <h3 class="card__title">
+                    <a href="#" class="card__title-link"
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
+                    >
+                  </h3>
+                </div>
+              </article>
+
+              <article class="card card--event">
+                <div class="card__info">
+                  <div class="card-meta">
+                    <div class="card-meta__icon">
+                      <svg>
+                        <use
+                          xlink:href="./img/icons/calendar.svg#calendar"
+                        ></use>
+                      </svg>
+                    </div>
+                    <a href="#" class="card-meta__title">28 ноября, 14:00</a>
                     <div class="card-meta__desc">Томск</div>
                   </div>
                   <h3 class="card__title">
                     <a href="#" class="card__title-link"
-                      >Как распределены бюджетные места в вузах и научных
-                      организациях на 2023/2024 год</a
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
+                    >
+                  </h3>
+                </div>
+              </article>
+              <article class="card card--event">
+                <div class="card__info">
+                  <div class="card-meta">
+                    <div class="card-meta__icon">
+                      <svg>
+                        <use
+                          xlink:href="./img/icons/calendar.svg#calendar"
+                        ></use>
+                      </svg>
+                    </div>
+                    <a href="#" class="card-meta__title">28 ноября, 14:00</a>
+                    <div class="card-meta__desc">Томск</div>
+                  </div>
+                  <h3 class="card__title">
+                    <a href="#" class="card__title-link"
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
+                    >
+                  </h3>
+                </div>
+              </article>
+              <article class="card card--event">
+                <div class="card__info">
+                  <div class="card-meta">
+                    <div class="card-meta__icon">
+                      <svg>
+                        <use
+                          xlink:href="./img/icons/calendar.svg#calendar"
+                        ></use>
+                      </svg>
+                    </div>
+                    <a href="#" class="card-meta__title">28 ноября, 14:00</a>
+                    <div class="card-meta__desc">Томск</div>
+                  </div>
+                  <h3 class="card__title">
+                    <a href="#" class="card__title-link"
+                      >Вебинар «Проблема самоцитирования в научных работах:
+                      возможности системы Антиплагиат»</a
                     >
                   </h3>
                 </div>
@@ -672,6 +812,7 @@
             в научных работах: возможности системы Антиплагиат».
           </p>
           <p class="modal__text">
+            <!-- <br /><br /> -->
             Данные о времени и месте проведения отправлены на вашу почту.
             <br class="no-desktop" />
             Хорошего дня!

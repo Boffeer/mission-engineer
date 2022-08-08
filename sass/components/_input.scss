@@ -1,12 +1,13 @@
 .input {
     --label-color: var(--c-text-grey-2);
+    --mb-input: 31px;
     position: relative;
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: var(--mb-input);
     font-size: var(--fz-body--small);
     line-height: 1.43;
     @media (max-width: 575px) {
-        margin-bottom: 25px;
+        --mb-input: 26px;
     }
 }
 .input__field {
@@ -17,6 +18,7 @@
     // padding: 0.893em 1.33em;
     padding: 14px 16px;
     font-size: inherit;
+    line-height: inherit;
     color: var(--c-text);
     background-color: var(--bg-element);
     border: 1px solid var(--c-blind);
@@ -43,8 +45,8 @@
 
 .input__label {
     position: absolute;
-    top: 13px;
-    left: 16px;
+    top: 16px;
+    left: 12px;
     z-index: 3;
     display: inline-block;
     padding-right: 4px;
@@ -123,24 +125,29 @@
 
 .input--half {
     @media (min-width: 576px) {
-        max-width: 49%;
+        max-width: 48.3%;
     }
 }
 
 .input__error {
     z-index: 1;
     display: block;
-    // margin-top: -20px;
     font-size: var(--fz-tag);
     line-height: var(--lh-tag);
     color: var(--c-text);
     transition: all 0.3s ease;
     transform: scale(1, 0);
     transform-origin: top;
+    @media (max-width: 575px) {
+        padding-top: 2px;
+    }
 }
 
 .input--invalid {
     --label-color: var(--c-error);
+    @media (max-width: 575px) {
+        margin-bottom: calc(var(--mb-input) - 2px);
+    }
 }
 .input.input--invalid .input__field {
     border-color: var(--c-error);
