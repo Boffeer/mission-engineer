@@ -168,6 +168,13 @@
     }
 }
 
+.no-mobile {
+    display: none !important;
+    @media (min-width: 576px) {
+        display: initial !important;
+    }
+}
+
 .only-mobile {
     display: none;
     @media (max-width: 575px) {
@@ -178,5 +185,12 @@
 .only-desktop {
     @media (max-width: 1100px) {
         display: none;
+    }
+}
+
+.only-tablet {
+    display: none;
+    @media (max-width: 1100px) and (min-width: 576px) {
+        display: initial !important;
     }
 }
