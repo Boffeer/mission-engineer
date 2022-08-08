@@ -3227,6 +3227,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .snack__inner {
+    padding-top: 16px;
     padding-right: 16px;
     padding-bottom: 56px;
     padding-left: 16px;
