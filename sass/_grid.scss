@@ -168,3 +168,24 @@
     font-size: var(--fz-h1);
     line-height: var(--lh-h1);
 }
+
+.cards--fullsize-projects .card--bg-pic .card__tags {
+    @media (min-width: 576px) {
+        top: 22px;
+        left: 22px;
+    }
+}
+
+.cards--fullsize-projects .card--bg-pic .card__info {
+    @media (min-width: 576px) {
+        padding-right: 24px;
+        padding-bottom: 24px;
+        padding-left: 24px;
+    }
+}
+
+.cards--fullsize-projects .card--bg-pic .card__title {
+    @media (min-width: 576px) {
+        margin-bottom: 16px;
+    }
+}

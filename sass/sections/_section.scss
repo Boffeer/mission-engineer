@@ -94,3 +94,9 @@
         display: none;
     }
 }
+
+.section-projects-universities {
+    @media (max-width: 575px) {
+        padding-top: 10px;
+    }
+}

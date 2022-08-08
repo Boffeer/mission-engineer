@@ -199,6 +199,9 @@
 
 .card--bg-pic {
     height: 100%;
+    @media (max-width: 575px) {
+        margin-bottom: 18px;
+    }
 }
 
 .card--bg-pic .card__pic {
@@ -230,6 +233,9 @@
         rgba(30, 30, 30, 0) 100%
     );
     border-radius: 5px;
+    @media (max-width: 575px) {
+        padding-top: 78px;
+    }
 }
 
 .card--bg-pic .card-meta__icon {
@@ -268,7 +274,8 @@
         padding-bottom: 76px;
     }
     @media (max-width: 576px) {
-        padding-top: 78px;
+        // padding-top: 78px;
+        padding-top: 60px;
         padding-right: 16px;
         padding-bottom: 58px;
         padding-left: 16px;

@@ -397,6 +397,27 @@ body._lock {
   line-height: var(--lh-h1);
 }
 
+@media (min-width: 576px) {
+  .cards--fullsize-projects .card--bg-pic .card__tags {
+    top: 22px;
+    left: 22px;
+  }
+}
+
+@media (min-width: 576px) {
+  .cards--fullsize-projects .card--bg-pic .card__info {
+    padding-right: 24px;
+    padding-bottom: 24px;
+    padding-left: 24px;
+  }
+}
+
+@media (min-width: 576px) {
+  .cards--fullsize-projects .card--bg-pic .card__title {
+    margin-bottom: 16px;
+  }
+}
+
 .section {
   margin-bottom: 56px;
 }
@@ -507,6 +528,12 @@ body._lock {
 @media (max-width: 1100px) {
   .section-unviersity-news .card__title br {
     display: none;
+  }
+}
+
+@media (max-width: 575px) {
+  .section-projects-universities {
+    padding-top: 10px;
   }
 }
 
@@ -1924,6 +1951,11 @@ body._lock {
 .card--bg-pic {
   height: 100%;
 }
+@media (max-width: 575px) {
+  .card--bg-pic {
+    margin-bottom: 18px;
+  }
+}
 
 .card--bg-pic .card__pic {
   position: absolute;
@@ -1952,6 +1984,11 @@ body._lock {
   padding-top: 100px;
   background: linear-gradient(0deg, rgba(30, 30, 30, 0.6) 7.02%, rgba(30, 30, 30, 0) 100%);
   border-radius: 5px;
+}
+@media (max-width: 575px) {
+  .card--bg-pic .card__info {
+    padding-top: 78px;
+  }
 }
 
 .card--bg-pic .card-meta__icon {
@@ -1996,7 +2033,7 @@ body._lock {
 }
 @media (max-width: 576px) {
   .card--featured .card__info {
-    padding-top: 78px;
+    padding-top: 60px;
     padding-right: 16px;
     padding-bottom: 58px;
     padding-left: 16px;
@@ -5422,6 +5459,11 @@ body._lock {
   margin-bottom: -30px;
   margin-left: 4px;
 }
+@media (max-width: 575px) {
+  .news-slider__pagination {
+    display: none;
+  }
+}
 
 .featured-slider__pagination {
   --dots-color: var(--c-text-on);
@@ -5473,6 +5515,12 @@ body._lock {
 @media (max-width: 575px) {
   .featured-slider-slide {
     width: 100%;
+  }
+}
+
+@media (max-width: 575px) {
+  .swiper-wrapper-removed .card__title br {
+    display: initial;
   }
 }
 
