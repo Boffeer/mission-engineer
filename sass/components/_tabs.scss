@@ -96,6 +96,11 @@
         padding-left: 0;
     }
 }
+.os-macos .tabs__scrollable {
+    @media (max-width: 575px) {
+        padding-right: 20px;
+    }
+}
 
 .tabs--theme {
     --background-color: var(--bg-app);

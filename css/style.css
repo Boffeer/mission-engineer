@@ -2738,6 +2738,12 @@ body._lock {
   }
 }
 
+@media (max-width: 575px) {
+  .os-macos .tabs__scrollable {
+    padding-right: 20px;
+  }
+}
+
 .tabs--theme {
   --background-color: var(--bg-app);
   background-color: transparent;
@@ -6089,4 +6095,13 @@ body._lock {
 
 .datepicker-cell.focused:not(.selected) {
   background-color: transparent;
+}
+
+.datepicker-cell.range-end.focused:not(.selected),
+.datepicker-cell.range-start.focused:not(.selected) {
+  background: var(--c-accent);
+}
+
+.datepicker-controls .clear-btn {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

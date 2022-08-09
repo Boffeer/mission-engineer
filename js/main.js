@@ -49,6 +49,7 @@ if (navigator.appVersion.indexOf("Mac") != -1) os = "macos";
 if (navigator.appVersion.indexOf("X11") != -1) os = "unix";
 if (navigator.appVersion.indexOf("Linux") != -1) os = "linux";
 document.body.classList.add("os-" + os);
+console.log("os", os);
 //#endregion PlatformDetect
 function bodyLock(con) {
   const scrollFix = window.innerWidth - document.body.clientWidth + "px";
@@ -1067,6 +1068,7 @@ if ([...calendarInputs].length > 0) {
       dateDelimiter: " – ",
       language: "ru",
       allowOneSidedRange: true,
+      clearBtn: true,
       inputs: [
         calendar,
         calendar.parentElement.querySelector('.input--calendar[name="end"]'),
@@ -1081,24 +1083,28 @@ if ([...calendarInputs].length > 0) {
       dateCancel.parentElement.classList.remove("tab--cancelable");
       dateCancel.parentElement.classList.remove("calendar--active");
       datepicker.inputs.forEach((input) => {
-        let ranges = [
-          ...input.datepicker.picker.element.querySelectorAll(".range-start"),
-          ...input.datepicker.picker.element.querySelectorAll(".range-end"),
-          ...input.datepicker.picker.element.querySelectorAll(".range"),
-        ];
+        console.log(datepicker.element.datepicker.picker.element);
+        datepicker.element.datepicker.picker.element
+          .querySelector(".clear-btn")
+          .click();
+        // let ranges = [
+        //   ...input.datepicker.picker.element.querySelectorAll(".range-start"),
+        //   ...input.datepicker.picker.element.querySelectorAll(".range-end"),
+        //   ...input.datepicker.picker.element.querySelectorAll(".range"),
+        // ];
 
-        setTimeout(() => {
-          ranges.forEach((range) => {
-            range.classList.remove("range-start");
-            range.classList.remove("range-end");
-            range.classList.remove("range");
-          });
-        }, 200);
+        // setTimeout(() => {
+        //   ranges.forEach((range) => {
+        //     range.classList.remove("range-start");
+        //     range.classList.remove("range-end");
+        //     range.classList.remove("range");
+        //   });
+        // }, 500);
       });
       setTimeout(() => {
         dateCancel.parentElement.querySelector(".chips__text").innerText =
           "Дата";
-      });
+      }, 200);
     });
     calendar.parentElement.append(dateCancel);
 
@@ -1163,6 +1169,13 @@ function handleCalendarHide(input) {
       button.classList.remove("calendar--active");
       button.classList.remove("tab--active");
       // e.target.parentElement.classList.remove("tab--active");
+      console.log("рили?");
+      if (start.value == "" && end.value == "") {
+        console.log("да?");
+        setTimeout(() => {
+          button.querySelector(".chips__text").innerText = "Дата";
+        }, 100);
+      }
     }
   });
 }

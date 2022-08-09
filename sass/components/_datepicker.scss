@@ -120,3 +120,11 @@
 .datepicker-cell.focused:not(.selected) {
     background-color: transparent;
 }
+
+.datepicker-cell.range-end.focused:not(.selected),
+.datepicker-cell.range-start.focused:not(.selected) {
+    background: var(--c-accent);
+}
+.datepicker-controls .clear-btn {
+    display: none;
+}
