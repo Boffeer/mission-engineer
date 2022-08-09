@@ -394,6 +394,10 @@ setTimeout(() => {
     const tabBarButtons = tabsBar.querySelectorAll(".tab");
     tabBarButtons.forEach((tabButton, buttonIndex) => {
       tabButton.addEventListener("click", () => {
+        tabButton.parentElement.parentElement.scrollTo({
+          left: tabButton.getBoundingClientRect().left,
+          behavior: "smooth",
+        });
         tabBarButtons.forEach((tab) => {
           tab.classList.remove(TAB_ACTIVE_CLASS);
         });
