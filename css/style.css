@@ -1996,6 +1996,7 @@ body._lock {
 .card__title-link {
   display: block;
   color: inherit;
+  transition: all 0.3s ease;
 }
 
 @media (min-width: 769px) {
