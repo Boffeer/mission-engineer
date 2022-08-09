@@ -2733,7 +2733,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .tabs__scrollable {
-    padding-right: 20px;
+    padding-right: 0;
     padding-left: 0;
   }
 }

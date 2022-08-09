@@ -92,8 +92,7 @@
     background-color: var(--background-color);
     border-radius: 10px;
     @media (max-width: 575px) {
-        // padding-right: 0;
-        padding-right: 20px;
+        padding-right: 0;
         padding-left: 0;
     }
 }
