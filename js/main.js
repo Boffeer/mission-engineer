@@ -397,9 +397,10 @@ setTimeout(() => {
       tabButton.addEventListener("click", () => {
         if (clickedCount != 0) {
           tabButton.parentElement.parentElement.scrollTo({
-            left: tabButton.getBoundingClientRect().left + 20,
+            left: tabButton.getBoundingClientRect().left - 20,
             behavior: "smooth",
           });
+          console.log(tabButton.getBoundingClientRect().left);
         } else {
           clickedCount++;
         }
