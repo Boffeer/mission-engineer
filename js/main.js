@@ -1082,7 +1082,7 @@ if ([...calendarInputs].length > 0) {
           "Дата";
         dateCancel.parentElement.classList.remove("calendar--active");
         dateCancel.parentElement.classList.remove("tab--active");
-      }, 200);
+      }, 50);
     });
     calendar.parentElement.append(dateCancel);
 
