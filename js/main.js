@@ -1083,7 +1083,7 @@ if ([...calendarInputs].length > 0) {
       dateCancel.parentElement.classList.remove("tab--cancelable");
       dateCancel.parentElement.classList.remove("calendar--active");
       datepicker.inputs.forEach((input) => {
-        console.log(datepicker.element.datepicker.picker.element);
+        // console.log(datepicker.element.datepicker.picker.element);
         datepicker.element.datepicker.picker.element
           .querySelector(".clear-btn")
           .click();
@@ -1169,9 +1169,7 @@ function handleCalendarHide(input) {
       button.classList.remove("calendar--active");
       button.classList.remove("tab--active");
       // e.target.parentElement.classList.remove("tab--active");
-      console.log("рили?");
       if (start.value == "" && end.value == "") {
-        console.log("да?");
         setTimeout(() => {
           button.querySelector(".chips__text").innerText = "Дата";
         }, 100);
