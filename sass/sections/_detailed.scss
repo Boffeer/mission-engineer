@@ -221,6 +221,23 @@
         display: none;
     }
 }
+.detailed blockquote > figure:first-of-type {
+    margin-bottom: 4px;
+}
+.detailed blockquote > figure:first-of-type picture {
+    width: 48px;
+    height: 48px;
+}
+.detailed blockquote figure cite {
+    display: block;
+}
+.detailed blockquote figure cite::before {
+    content: none;
+}
+.detailed blockquote figure cite br {
+    display: initial;
+}
+
 .detailed cite {
     font-size: var(--fz-body--small);
     font-style: normal;
