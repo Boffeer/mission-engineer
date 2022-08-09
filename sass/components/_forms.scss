@@ -22,6 +22,10 @@
     @media (max-width: 575px) {
         padding-top: 38px;
     }
+    @media (min-width: 1800px) {
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 .form-elem {

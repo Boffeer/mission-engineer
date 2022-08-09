@@ -315,6 +315,9 @@
     @include accentCard();
     background-image: url("../img/about/world.png");
     --icon-color: var(--c-text-on);
+    @media (max-width: 1100px) {
+        background-image: url("../img/about/world-tablet.png");
+    }
     @media (max-width: 575px) {
         min-height: 250px;
         background-position-x: 170px;
@@ -349,6 +352,9 @@
     grid-column-start: 2;
     grid-column-end: 3;
     background-image: url("../img/about/russia.png");
+    @media (max-width: 1100px) {
+        background-image: url("../img/about/russia-tablet.png");
+    }
     @media (max-width: 575px) {
         min-height: 250px;
         background-position-x: 170px;

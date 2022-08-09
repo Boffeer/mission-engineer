@@ -1173,6 +1173,12 @@ body._lock {
     padding-top: 38px;
   }
 }
+@media (min-width: 1800px) {
+  .form--regular {
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
 
 .form-elem {
   position: relative;
@@ -4603,6 +4609,11 @@ body._lock {
     --icon-color: var(--c-accent--light);
   }
 }
+@media (max-width: 1100px) {
+  .about__row:not(.about__row--grided):nth-child(odd) .about-cell:first-child {
+    background-image: url("../img/about/world-tablet.png");
+  }
+}
 @media (max-width: 575px) {
   .about__row:not(.about__row--grided):nth-child(odd) .about-cell:first-child {
     min-height: 250px;
@@ -4657,6 +4668,11 @@ body._lock {
   }
   .about__row:not(.about__row--grided):nth-child(even) .about-cell:first-child .about-cell__link:hover .button__icon {
     --icon-color: var(--c-accent--light);
+  }
+}
+@media (max-width: 1100px) {
+  .about__row:not(.about__row--grided):nth-child(even) .about-cell:first-child {
+    background-image: url("../img/about/russia-tablet.png");
   }
 }
 @media (max-width: 575px) {
