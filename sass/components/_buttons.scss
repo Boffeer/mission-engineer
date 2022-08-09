@@ -218,7 +218,9 @@ $margin-icon: 12px; // Отступ иконки от текста
     cursor: default;
 }
 .button:active {
-    opacity: 0.6;
+    @media (min-width: $minHover) {
+        opacity: 0.6;
+    }
 }
 
 .button--primary {
