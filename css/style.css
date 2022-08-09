@@ -2781,6 +2781,10 @@ body._lock {
   transition: all 0.3s ease;
 }
 
+.tabs--chips .tab:last-child {
+  margin-right: 0;
+}
+
 @media (min-width: 1100px) {
   .tabs--chips .tab:hover {
     color: var(--c-text-on);

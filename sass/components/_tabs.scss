@@ -135,6 +135,9 @@
     border-radius: 5px;
     transition: all 0.3s ease;
 }
+.tabs--chips .tab:last-child {
+    margin-right: 0;
+}
 
 .tabs--chips .tab:hover {
     @media (min-width: 1100px) {
