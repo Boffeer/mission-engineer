@@ -2751,6 +2751,12 @@ body._lock {
   }
 }
 
+@media (min-width: 1100px) {
+  .tabs--chips .tab:active {
+    opacity: 0.6;
+  }
+}
+
 .tabs--chips .tab--active {
   color: var(--c-text-on);
   background-color: var(--c-accent);
