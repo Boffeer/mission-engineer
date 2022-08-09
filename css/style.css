@@ -236,6 +236,7 @@ body._lock {
 }
 
 .page-content {
+  z-index: 1;
   width: 100%;
   padding: 32px 40px;
   overflow: hidden;
