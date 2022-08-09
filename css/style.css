@@ -2256,10 +2256,15 @@ body._lock {
 }
 
 @media (min-width: 1101px) {
-  .menu--shrink:hover::after {
+  .menu--shrink::after {
     background: rgba(0, 0, 0, 0.2);
     -webkit-backdrop-filter: blur(15px);
             backdrop-filter: blur(15px);
+  }
+}
+
+@media (min-width: 1101px) {
+  .menu--shrink:hover::after {
     opacity: 1;
   }
 }
@@ -2471,6 +2476,7 @@ body._lock {
 .menu__nav-link {
   --button-color: var(--c-text-grey-2);
   --icon-color: var(--c-text-grey-2);
+  justify-content: flex-start;
   padding: 20px 0;
   font-size: var(--fz-navigation);
   font-weight: 400;
@@ -2480,12 +2486,12 @@ body._lock {
 
 .menu__links {
   margin-bottom: 30px;
+  white-space: nowrap;
   transition: all 0.5s ease;
 }
 
 @media (min-width: 992px) {
   .menu--srink .menu__links {
-    white-space: nowrap;
     opacity: 0;
   }
 }
