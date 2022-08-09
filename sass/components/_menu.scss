@@ -38,24 +38,37 @@
     transition: all 0.5s ease-in-out;
     backdrop-filter: blur(20px);
 }
-.menu--shrink {
+.menu--shrink:not(:hover) {
     @media (min-width: 1101px) {
         max-width: 112px; // потому что ширина скроллбара
     }
 }
 
+// .menu--shrink:hover ~ .page-content {
+.menu--shrink:hover {
+    @media (min-width: 1101px) {
+        margin-right: -234px;
+    }
+}
+.menu--shrink:hover::after {
+    @media (min-width: 1101px) {
+        background: rgba(0, 0, 0, 0.2);
+        backdrop-filter: blur(15px);
+        opacity: 1;
+    }
+}
 .menu__nav-link .button__text {
     margin-right: auto;
     transition: all 0.3s ease;
 }
-.menu--shrink .menu__nav-link {
+.menu--shrink:not(:hover) .menu__nav-link {
     @media (min-width: 1101px) {
         display: flex;
         margin-right: auto;
         margin-left: auto;
     }
 }
-.menu--shrink .menu__nav-link .button__icon {
+.menu--shrink:not(:hover) .menu__nav-link .button__icon {
     @media (min-width: 1101px) {
         margin-right: 0;
     }
@@ -95,11 +108,11 @@
         overflow: hidden;
     }
 }
-// .menu:hover .menu__sticky {
-//     @media (min-width: 1200px) {
-//         background-color: var(--bg-element);
-//     }
-// }
+.menu--shrink:hover .menu__sticky {
+    @media (min-width: 1200px) {
+        background-color: var(--bg-element);
+    }
+}
 .menu__content {
     display: flex;
     flex-direction: column;
@@ -141,7 +154,7 @@
     }
 }
 
-.menu--shrink .menu__top {
+.menu--shrin:not(:hover) .menu__top {
     @media (min-width: 1101px) {
         margin-bottom: 0;
     }
@@ -149,11 +162,14 @@
 
 .menu__bottom {
     display: block;
+    @media (max-width: 1100px) {
+        padding-bottom: 80px;
+    }
     @media (max-width: 575px) {
         padding-bottom: 120px;
     }
 }
-.menu--shrink .menu__bottom {
+.menu--shrink:not(:hover) .menu__bottom {
     @media (min-width: 1101px) {
         display: none;
     }
