@@ -10,7 +10,7 @@
     padding: 0;
     margin-bottom: 10px;
 }
-.datepicker-controls .view-switch {
+.datepicker-header .datepicker-controls .view-switch {
     justify-content: flex-start;
     order: -1;
     // padding: 0;
@@ -19,11 +19,20 @@
     color: var(--c-text);
     background-color: transparent;
 }
+.datepicker-header .datepicker-controls .view-switch:hover {
+    background-color: transparent;
+}
 .datepicker-header .datepicker-controls .button:hover {
     @media (min-width: $minHover) {
         color: var(--c-text);
-        background-color: transparent;
+        // background-color: transparent;
     }
+}
+
+.datepicker-header .datepicker-controls .prev-btn:hover,
+.datepicker-header .datepicker-controls .next-btn:hover {
+    color: transparent;
+    background-color: var(--c-accent);
 }
 .datepicker-controls .prev-btn {
     font-family: var(--ffMain);

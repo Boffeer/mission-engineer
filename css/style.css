@@ -5959,7 +5959,7 @@ body._lock {
   margin-bottom: 10px;
 }
 
-.datepicker-controls .view-switch {
+.datepicker-header .datepicker-controls .view-switch {
   justify-content: flex-start;
   order: -1;
   margin-left: -2px;
@@ -5968,11 +5968,20 @@ body._lock {
   background-color: transparent;
 }
 
+.datepicker-header .datepicker-controls .view-switch:hover {
+  background-color: transparent;
+}
+
 @media (min-width: 769px) {
   .datepicker-header .datepicker-controls .button:hover {
     color: var(--c-text);
-    background-color: transparent;
   }
+}
+
+.datepicker-header .datepicker-controls .prev-btn:hover,
+.datepicker-header .datepicker-controls .next-btn:hover {
+  color: transparent;
+  background-color: var(--c-accent);
 }
 
 .datepicker-controls .prev-btn {

@@ -1158,8 +1158,10 @@ function handleCalendarHide(input) {
     } else {
       button.classList.remove("tab--cancelable");
     }
+
     if (start.dataset.closed == 1 && end.dataset.closed == 1) {
       button.classList.remove("calendar--active");
+      button.classList.remove("tab--active");
       // e.target.parentElement.classList.remove("tab--active");
     }
   });
