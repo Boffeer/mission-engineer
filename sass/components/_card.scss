@@ -154,7 +154,7 @@
     transition: all 0.3s ease;
 }
 // .card__title-link:hover {
-.card:hover .card__title-link {
+.card:hover:not(.card--bg-pic) .card__title-link {
     @media (min-width: $minHover) {
         color: var(--c-accent);
     }

@@ -106,14 +106,17 @@
     }
 }
 .menu--shrink .menu__sticky {
+    overflow-y: hidden;
     @media (max-width: 1100px) {
         height: 100%;
         padding: 0;
         overflow: hidden;
     }
 }
+
 .menu--shrink:hover .menu__sticky {
-    @media (min-width: 1200px) {
+    @media (min-width: 1101px) {
+        overflow-y: auto;
         background-color: var(--bg-element);
     }
 }
@@ -166,6 +169,7 @@
 
 .menu__bottom {
     display: block;
+    transition: all 0.3s ease;
     @media (max-width: 1100px) {
         padding-bottom: 80px;
     }
@@ -175,7 +179,9 @@
 }
 .menu--shrink:not(:hover) .menu__bottom {
     @media (min-width: 1101px) {
-        display: none;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
     }
 }
 
@@ -274,8 +280,9 @@
 }
 .menu--shrink .menu__theme {
     @media (min-width: 992px) {
-        position: absolute;
+        // position: absolute;
         opacity: 0;
+        transition: all 0.3s ease;
     }
 }
 .menu:hover .menu__theme {
@@ -298,16 +305,21 @@
 }
 
 .menu__sidebar {
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
     @media (max-width: 1100px) {
         height: calc(100% - 84px);
         padding-bottom: 150px;
+        overflow-y: auto;
     }
     @media (max-width: 575px) {
         height: calc(100% - 71px);
         padding-right: 16px;
         padding-left: 16px;
+    }
+}
+.menu--shrink:not(:hover) .menu__sidebar {
+    @media (min-width: 1101px) {
+        overflow-y: hidden;
     }
 }
 
