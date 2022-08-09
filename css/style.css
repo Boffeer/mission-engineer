@@ -2379,6 +2379,11 @@ body._lock {
     margin-bottom: 36px;
   }
 }
+@media (min-width: 1101px) and (min-height: 900px) {
+  .menu__top {
+    margin-bottom: 96px;
+  }
+}
 @media (max-width: 1100px) {
   .menu__top {
     margin-bottom: 20.5vh;
