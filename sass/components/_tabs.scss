@@ -101,6 +101,10 @@
     --background-color: var(--bg-app);
     background-color: transparent;
 }
+.tabs--theme .tabs__scrollable {
+    padding-right: 2px;
+    padding-left: 2px;
+}
 .tab--theme.tab--active {
     background-color: var(--bg-element);
 }
