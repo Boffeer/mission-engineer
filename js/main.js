@@ -1182,6 +1182,7 @@ calendarInputs.forEach((start) => {
 calendarInputsEnd.forEach((end) => {
   end.addEventListener("changeDate", (e) => {
     updateRangeValues(e);
+    e.target.datepicker.hide();
   });
   handleCalendarHide(end);
 });
