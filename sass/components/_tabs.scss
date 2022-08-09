@@ -28,6 +28,11 @@
         background-color: var(--c-element-disabled);
     }
 }
+
+.tab * {
+    transition: all 0.3s ease;
+}
+
 .tab:nth-child(2) {
     margin-left: -4px;
 }

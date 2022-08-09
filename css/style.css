@@ -2656,6 +2656,10 @@ body._lock {
   }
 }
 
+.tab * {
+  transition: all 0.3s ease;
+}
+
 .tab:nth-child(2) {
   margin-left: -4px;
 }
@@ -6104,4 +6108,9 @@ body._lock {
 
 .datepicker-controls .clear-btn {
   display: none;
+}
+
+.datepicker-cell:not(.disabled):hover {
+  color: var(--c-accent);
+  background-color: transparent;
 }/*# sourceMappingURL=style.css.map */

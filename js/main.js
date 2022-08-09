@@ -447,6 +447,7 @@ filtersButtons.forEach((button) => {
     ) {
       setTimeout(() => {
         button.classList.remove("tab--active");
+        button.classList.remove("calendar--active");
       }, 10);
     }
   });
@@ -517,9 +518,7 @@ if (newsSliders) {
   window.addEventListener("resize", () => {
     debounce(() => {
       removeSlider(newsSlider);
-      // console.log("destroyed");
       initSlider(newsSlider);
-      // console.log("inited");
     }, 1000);
   });
 }
@@ -1054,14 +1053,6 @@ if ([...calendarInputs].length > 0) {
   // eslint-disable-next-line no-undef
   Object.assign(Datepicker.locales);
   calendarInputs.forEach((calendar) => {
-    // const datepicker = new Datepicker(calendar, {
-    //   format: "dd.mm.yyyy",
-    //   // autohide: true,
-    //   dateDelimiter: " – ",
-    //   maxNumberOfDates: 2,
-    //   // maxDate: new Date(),
-    //   language: "ru",
-    // });
     // eslint-disable-next-line no-unused-vars, no-undef
     const datepicker = new DateRangePicker(calendar, {
       format: "dd.mm.yyyy",
@@ -1083,27 +1074,14 @@ if ([...calendarInputs].length > 0) {
       dateCancel.parentElement.classList.remove("tab--cancelable");
       dateCancel.parentElement.classList.remove("calendar--active");
       datepicker.inputs.forEach((input) => {
-        // console.log(datepicker.element.datepicker.picker.element);
-        datepicker.element.datepicker.picker.element
-          .querySelector(".clear-btn")
-          .click();
-        // let ranges = [
-        //   ...input.datepicker.picker.element.querySelectorAll(".range-start"),
-        //   ...input.datepicker.picker.element.querySelectorAll(".range-end"),
-        //   ...input.datepicker.picker.element.querySelectorAll(".range"),
-        // ];
-
-        // setTimeout(() => {
-        //   ranges.forEach((range) => {
-        //     range.classList.remove("range-start");
-        //     range.classList.remove("range-end");
-        //     range.classList.remove("range");
-        //   });
-        // }, 500);
+        input.datepicker.picker.element.querySelector(".clear-btn").click();
+        input.datepicker.hide();
       });
       setTimeout(() => {
         dateCancel.parentElement.querySelector(".chips__text").innerText =
           "Дата";
+        dateCancel.parentElement.classList.remove("calendar--active");
+        dateCancel.parentElement.classList.remove("tab--active");
       }, 200);
     });
     calendar.parentElement.append(dateCancel);
@@ -1119,7 +1097,7 @@ if ([...calendarInputs].length > 0) {
           setTimeout(() => {
             button.classList.remove("tab--active");
             button.classList.remove("calendar--active");
-          });
+          }, 200);
         }
       });
     });
@@ -1134,7 +1112,7 @@ chipsCalendarButtons.forEach((chip) => {
   });
 });
 chipsDatepickers.forEach((datepicker) => {
-  // console.log(datepicker.parentElement);
+  // Перемещает календари выше в доме, чтоб работало внутри горизонтально скроллящихся табов
   datepicker.parentElement.parentElement.append(datepicker);
 });
 
