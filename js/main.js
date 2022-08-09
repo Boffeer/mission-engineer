@@ -392,12 +392,17 @@ tabsBars.forEach((tabsBar) => {
 setTimeout(() => {
   tabsBars.forEach((tabsBar) => {
     const tabBarButtons = tabsBar.querySelectorAll(".tab");
+    let clickedCount = 0;
     tabBarButtons.forEach((tabButton, buttonIndex) => {
       tabButton.addEventListener("click", () => {
-        tabButton.parentElement.parentElement.scrollTo({
-          left: tabButton.getBoundingClientRect().left,
-          behavior: "smooth",
-        });
+        if (clickedCount != 0) {
+          tabButton.parentElement.parentElement.scrollTo({
+            left: tabButton.getBoundingClientRect().left,
+            behavior: "smooth",
+          });
+        } else {
+          clickedCount++;
+        }
         tabBarButtons.forEach((tab) => {
           tab.classList.remove(TAB_ACTIVE_CLASS);
         });
