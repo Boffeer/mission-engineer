@@ -551,7 +551,7 @@ function setupSwithcer() {
           .querySelectorAll(".tab")
           .forEach((tab) => tab.classList.remove("tab--active"));
         currentButton.classList.add("tab--active");
-      }, 100);
+      }, 300);
     }
     return;
   }
