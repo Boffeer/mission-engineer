@@ -68,6 +68,7 @@
 .menu--shrink:not(:hover) .menu__nav-link {
     @media (min-width: 1101px) {
         display: flex;
+        justify-content: center;
         margin-right: auto;
         margin-left: auto;
     }
@@ -231,6 +232,7 @@
     margin-right: 0.87em;
     background: transparent;
     transition: all 0.3s ease;
+    --button-icon-size: 20px;
 }
 
 .menu__nav-item:hover {

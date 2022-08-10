@@ -397,10 +397,10 @@ setTimeout(() => {
     tabBarButtons.forEach((tabButton, buttonIndex) => {
       tabButton.addEventListener("click", () => {
         if (clickedCount != 0) {
-          tabButton.parentElement.parentElement.scrollTo({
-            left: tabButton.getBoundingClientRect().left - 20,
-            behavior: "smooth",
-          });
+          // tabButton.parentElement.parentElement.scrollTo({
+          //   left: tabButton.getBoundingClientRect().left - 20,
+          //   behavior: "smooth",
+          // });
           console.log(tabButton.getBoundingClientRect().left);
         } else {
           clickedCount++;
@@ -951,9 +951,6 @@ function initInputs(inputs) {
       }
     });
 
-    field.focus();
-    field.blur();
-
     if (field.value !== "") {
       input.classList.add(inputClasses.active);
     }
@@ -1078,11 +1075,11 @@ if ([...calendarInputs].length > 0) {
         input.datepicker.hide();
       });
       setTimeout(() => {
-        dateCancel.parentElement.querySelector(".chips__text").innerText =
-          "Дата";
+        // dateCancel.parentElement.querySelector(".chips__text").innerText =
+        // "Дата";
         dateCancel.parentElement.classList.remove("calendar--active");
         dateCancel.parentElement.classList.remove("tab--active");
-      }, 50);
+      }, 10);
     });
     calendar.parentElement.append(dateCancel);
 
@@ -1145,8 +1142,7 @@ function handleCalendarHide(input) {
 
     if (start.dataset.closed == 1 && end.dataset.closed == 1) {
       button.classList.remove("calendar--active");
-      button.classList.remove("tab--active");
-      // e.target.parentElement.classList.remove("tab--active");
+      // button.classList.remove("tab--active");
       if (start.value == "" && end.value == "") {
         setTimeout(() => {
           button.querySelector(".chips__text").innerText = "Дата";

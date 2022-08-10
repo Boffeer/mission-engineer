@@ -53,8 +53,8 @@
 
 .featured-slider__pagination {
     --dots-color: var(--c-text-on);
-    bottom: 26px;
-    left: 26px;
+    bottom: 29px;
+    left: 23px;
     z-index: 1;
     display: flex;
     align-items: flex-end;
@@ -62,6 +62,10 @@
     width: auto;
     height: auto;
 
+    @media (max-width: 1100px) {
+        bottom: 26px;
+        left: 24px;
+    }
     @media (max-width: 576px) {
         bottom: 18px;
         left: 16px;

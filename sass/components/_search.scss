@@ -23,7 +23,7 @@
     width: 16px;
     height: 16px;
     stroke: var(--c-accent);
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(1.2);
     @media (max-width: 1024px) and (min-width: 768px) {
         width: 18px;
         height: 18px;
@@ -44,7 +44,11 @@
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 42px;
+    color: var(--c-text-disabled);
     border: none;
+}
+.search__input-field::placeholder {
+    color: var(--c-text-disabled);
 }
 
 .page-content__search {

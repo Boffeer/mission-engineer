@@ -38,23 +38,17 @@
 }
 .about-info {
     @media (max-width: 1100px) {
+        padding-top: 1px;
+    }
+    @media (max-width: 576px) {
         padding-top: 4px;
     }
 }
 .about-info__title {
     margin-bottom: 5px;
-    @media (max-width: 575px) {
-        margin-bottom: 4px;
-    }
 }
 .about-info__desc {
-    line-height: var(--lh-body);
-    @media (max-width: 1100px) {
-        line-height: 1.5;
-    }
-    @media (max-width: 575px) {
-        line-height: 1.6;
-    }
+    line-height: 1.6;
 }
 .about__logo-img {
     display: block;
@@ -65,8 +59,14 @@
 .about__mission {
     max-width: 784px;
     line-height: var(--lh-body);
-    @media (max-width: 575px) {
-        line-height: 1.84;
+    // @media (max-width: 575px) {
+    //     line-height: 1.87;
+    // }
+}
+.about__mission + .about__mission {
+    margin-top: 24px;
+    @media (max-width: 1100px) {
+        margin-top: 25px;
     }
 }
 @mixin accentCard {
@@ -144,6 +144,10 @@
 
 .page-content--about .tabs__track {
     @media (max-width: 1100px) {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    @media (max-width: 576px) {
         padding-right: 16px;
         padding-left: 16px;
     }
@@ -219,7 +223,7 @@
 }
 
 .about-cell__title {
-    margin-bottom: 8px;
+    margin-bottom: 9px;
     font-size: 30px;
     font-weight: 700;
     line-height: var(--lh-h1);
@@ -264,6 +268,7 @@
 
 .about__row .text--secondary {
     line-height: 1.6;
+    color: var(--c-text-grey-2);
     @media (max-width: 575px) {
         line-height: 1.7;
     }
@@ -304,10 +309,8 @@
 .about__row:not(.about__row--grided) .about-cell__title + .text--secondary {
     margin-top: -10px;
     margin-bottom: 14px;
-    @media (max-width: 1100px) {
-        margin-top: -8px;
-    }
     @media (max-width: 575px) {
+        margin-top: -13px;
         margin-bottom: 11px;
     }
 }
@@ -316,10 +319,12 @@
     background-image: url("../img/about/world.png");
     --icon-color: var(--c-text-on);
     @media (max-width: 1100px) {
+        padding-bottom: 20px;
         background-image: url("../img/about/world-tablet.png");
     }
     @media (max-width: 575px) {
         min-height: 250px;
+        padding-bottom: 16px;
         background-position-x: right;
     }
     .about-cell__link:hover .button__text {
@@ -333,7 +338,7 @@
 
     @media (max-width: 1100px) {
         padding-right: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 16px;
         padding-left: 20px;
     }
     @media (max-width: 575px) {
@@ -342,7 +347,7 @@
         padding-bottom: 11px;
         padding-left: 16px;
         .about-cell__title {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
     }
 }
@@ -353,10 +358,12 @@
     grid-column-end: 3;
     background-image: url("../img/about/russia.png");
     @media (max-width: 1100px) {
+        padding-bottom: 20px;
         background-image: url("../img/about/russia-tablet.png");
     }
     @media (max-width: 575px) {
-        min-height: 250px;
+        min-height: 252px;
+        padding-bottom: 16px;
     }
 }
 .about__row:not(.about__row--grided):nth-child(even) .about-cell:nth-child(2) {

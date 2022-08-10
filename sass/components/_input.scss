@@ -66,6 +66,9 @@
     line-height: var(--lh-body--small-2);
 }
 
+.input--dropdown {
+    margin-top: -2px;
+}
 .input--dropdown::after {
     position: absolute;
     top: 17px;
@@ -138,7 +141,10 @@
     transition: all 0.3s ease;
     transform: scale(1, 0);
     transform-origin: top;
-    @media (max-width: 575px) {
+    @media (min-width: 1101px) {
+        padding-top: 2px;
+    }
+    @media (max-width: 576px) {
         padding-top: 2px;
     }
 }

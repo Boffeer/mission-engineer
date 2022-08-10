@@ -33,9 +33,6 @@
     transition: all 0.3s ease;
 }
 
-.tab:nth-child(2) {
-    margin-left: -4px;
-}
 .tab:hover {
     @media (min-width: $minHover) {
         color: var(--c-accent);
@@ -93,6 +90,9 @@
     }
 }
 .tabs__scrollable {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
     padding: 2px;
     background-color: var(--background-color);
     border-radius: 10px;
@@ -210,10 +210,6 @@
 .tabs--chips .tabs__scrollable {
     --background-color: transparent;
 }
-.chips--date:first-child {
-    // position: relative;
-    margin-right: 8px;
-}
 
 .tab--active .input--calendar::placeholder {
     color: var(--c-text-on);
@@ -243,6 +239,8 @@
 }
 
 .chips__text {
+    min-width: 28px;
+    min-height: 18px;
     pointer-events: none;
 }
 
@@ -288,6 +286,9 @@
 }
 .theme--dark .tab--cancelable .tab--date-cancel {
     background-color: var(--bg-element);
+}
+.chips--date.tab--active {
+    background-color: var(--c-accent);
 }
 .theme--dark .chips--date.tab--active {
     color: var(--c-text-on);

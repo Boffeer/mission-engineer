@@ -113,6 +113,9 @@
 .card--event .card-meta__title {
     margin-right: 28px;
 }
+.card--event .card-meta__desc {
+    color: var(--c-text-grey);
+}
 
 .card-meta__title {
     margin-right: 24px;
@@ -130,11 +133,11 @@
 .card-meta__desc {
     font-size: inherit;
     line-height: inherit;
-    color: var(--c-text-grey);
-}
-.theme--dark .card-meta__desc {
     color: var(--c-text-grey-2);
 }
+// .theme--dark .card-meta__desc {
+//     color: var(--c-text-grey-2);
+// }
 
 .card__title {
     margin-bottom: 12px;
@@ -165,6 +168,9 @@
     font-size: var(--fz-body--small);
     line-height: var(--lh-body--small);
     color: var(--c-text-grey);
+}
+.card__source {
+    color: var(--c-text-grey-2);
 }
 .card__desc br {
     @media (max-width: 576px) {
