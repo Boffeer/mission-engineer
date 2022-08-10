@@ -12,7 +12,7 @@
     border-radius: 5px;
 
     @media (max-width: 575px) {
-        margin-bottom: 32px;
+        margin-bottom: 20px;
     }
 }
 .search__icon {
@@ -88,18 +88,18 @@
 .partners__search {
     display: flex;
 }
-.partners__search .search__form {
-    @media (max-width: 1100px) and (min-width: 768px) {
-        margin-bottom: 38px;
-    }
-    @media (max-width: 575px) {
-        margin-bottom: 17px;
-    }
-}
+// .partners__search .search__form {
+//     @media (max-width: 1100px) and (min-width: 768px) {
+//         margin-bottom: 38px;
+//     }
+//     @media (max-width: 575px) {
+//         margin-bottom: 17px;
+//     }
+// }
 
 .section__search .section__title {
     @media (max-width: 1100px) {
-        margin-bottom: 19px;
+        margin-bottom: 20px;
         font-size: var(--fz-h2);
     }
     @media (max-width: 575px) {

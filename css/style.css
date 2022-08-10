@@ -1539,7 +1539,7 @@ body._lock {
 }
 @media (max-width: 575px) {
   .search__form {
-    margin-bottom: 32px;
+    margin-bottom: 20px;
   }
 }
 
@@ -1632,20 +1632,9 @@ body._lock {
   display: flex;
 }
 
-@media (max-width: 1100px) and (min-width: 768px) {
-  .partners__search .search__form {
-    margin-bottom: 38px;
-  }
-}
-@media (max-width: 575px) {
-  .partners__search .search__form {
-    margin-bottom: 17px;
-  }
-}
-
 @media (max-width: 1100px) {
   .section__search .section__title {
-    margin-bottom: 19px;
+    margin-bottom: 20px;
     font-size: var(--fz-h2);
   }
 }
