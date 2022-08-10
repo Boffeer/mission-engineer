@@ -34,6 +34,9 @@
     margin-bottom: 0;
     font-size: var(--fz-body--small);
     border-radius: 5px;
+    @media (max-width: 1100px) {
+        line-height: 1.215;
+    }
 }
 .search__button {
     max-width: 111px;
