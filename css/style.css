@@ -2309,21 +2309,6 @@ body._lock {
 }
 
 @media (min-width: 1101px) {
-  .menu--shrink:not(:hover) .menu__nav-link {
-    display: flex;
-    justify-content: center;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-
-@media (min-width: 1101px) {
-  .menu--shrink:not(:hover) .menu__nav-link .button__icon {
-    margin-right: 0;
-  }
-}
-
-@media (min-width: 1101px) {
   .menu--shrink .menu__nav-link .button__text {
     width: 0;
     margin-right: 0;
@@ -2409,6 +2394,7 @@ body._lock {
 
 .menu__top {
   margin-bottom: 96px;
+  transition: all 0.3s ease;
 }
 @media (min-width: 1101px) and (min-height: 860px) and (max-height: 1000px) {
   .menu__top {
@@ -2432,8 +2418,8 @@ body._lock {
 }
 
 @media (min-width: 1101px) {
-  .menu--shrin:not(:hover) .menu__top {
-    margin-bottom: 0;
+  .menu--shrink:not(:hover) .menu__top {
+    margin-left: 5px;
   }
 }
 
