@@ -17,13 +17,13 @@
 }
 .search__icon {
     position: absolute;
-    top: 50%;
+    top: 47%;
     left: 16px;
     z-index: 3;
     width: 16px;
     height: 16px;
     stroke: var(--c-accent);
-    transform: translateY(-50%) scale(1.2);
+    transform: translateY(-50%) scale(1.3);
     @media (max-width: 1024px) and (min-width: 768px) {
         width: 18px;
         height: 18px;

@@ -1545,13 +1545,13 @@ body._lock {
 
 .search__icon {
   position: absolute;
-  top: 50%;
+  top: 47%;
   left: 16px;
   z-index: 3;
   width: 16px;
   height: 16px;
   stroke: var(--c-accent);
-  transform: translateY(-50%) scale(1.2);
+  transform: translateY(-50%) scale(1.3);
 }
 @media (max-width: 1024px) and (min-width: 768px) {
   .search__icon {
@@ -1977,7 +1977,6 @@ body._lock {
   min-width: var(--size);
   height: var(--size);
   margin-right: 6px;
-  margin-bottom: 2px;
   fill: var(--icon-color);
 }
 
@@ -2494,7 +2493,7 @@ body._lock {
 }
 
 .menu__nav-link .button__icon {
-  margin-right: 0.87em;
+  margin-right: 12px;
   background: transparent;
   transition: all 0.3s ease;
   --button-icon-size: 20px;
