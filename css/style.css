@@ -2242,7 +2242,6 @@ body._lock {
   max-height: calc(100 * 1vh);
   overflow: visible;
   background-color: var(--bg-element);
-  transition: all 0.3s ease-in;
 }
 @media (max-width: 1100px) {
   .menu {
@@ -2259,6 +2258,10 @@ body._lock {
     pointer-events: none;
     background-color: transparent;
   }
+}
+
+.page--loaded .menu {
+  transition: all 0.3s ease-in;
 }
 
 .menu::after {
@@ -2331,7 +2334,7 @@ body._lock {
   padding: 32px 40px;
   overflow-x: hidden;
   overflow-y: auto;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in;
 }
 @media (max-width: 1100px) {
   .menu__sticky {

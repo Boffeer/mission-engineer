@@ -572,6 +572,8 @@ function setupSwithcer() {
   );
   systemSchemeButton.click();
 }
+document.documentElement.classList.add("page--loaded");
+document.documentElement.style.display = "";
 
 function setScheme(scheme) {
   switchMedia(scheme);
