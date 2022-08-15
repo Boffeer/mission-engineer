@@ -1,20 +1,22 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "Sirius";
+  font-family: "ALS Sirius";
   font-style: normal;
-  font-weight: 400;
+  font-weight: normal;
   src: url("../fonts/ALSSirius-Regular.woff2") format("woff2"), url("../fonts/ALSSirius-Regular.woff") format("woff");
   font-display: swap;
 }
 @font-face {
-  font-family: "Sirius";
+  font-family: "ALS Sirius";
   font-style: normal;
-  font-weight: 700;
+  font-weight: bold;
   src: url("../fonts/ALSSirius-Bold.woff2") format("woff2"), url("../fonts/ALSSirius-Bold.woff") format("woff");
   font-display: swap;
 }
 :root {
-  --ffMain: "Sirius", sans-serif;
+  --ffMain: "ALS Sirius", sans-serif;
+  --fw-regular: normal;
+  --fw-bold: bold;
   --ffHeader: sans-serif;
   --tr: 0.3s;
   --radius: 16px;
@@ -178,7 +180,7 @@ body {
   font-family: var(--ffMain);
   font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--fw-nomral);
   line-height: 1.5;
   color: var(--c-text);
   background: var(--bg-app);
@@ -749,7 +751,7 @@ body._lock {
   height: 48px;
   padding: 9px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   text-transform: uppercase;
   border-radius: var(--radius);
   transition: var(--tr);
@@ -820,7 +822,7 @@ body._lock {
   width: fit-content;
   padding: 12px 24px;
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--main);
   background: #f8f8f8;
   border-radius: 100px;
@@ -881,7 +883,7 @@ body._lock {
   justify-content: center;
   padding: 0.875em 2em;
   font-size: var(--fz-button);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-button);
 }
 
@@ -1261,7 +1263,7 @@ body._lock {
   left: 12px;
   width: 100%;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   pointer-events: none;
   transition: var(--tr);
   transform: translate(0, -50%);
@@ -1289,7 +1291,7 @@ body._lock {
   width: 100%;
   margin-bottom: 41px;
   font-size: var(--fz-h2);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h2);
 }
 @media (max-width: 575px) {
@@ -1728,7 +1730,7 @@ body._lock {
 }
 
 .modal__title {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   font-size: var(--fz-h2);
   line-height: var(--lh-h2);
   margin-bottom: 32px;
@@ -1999,7 +2001,7 @@ body._lock {
 .card-meta__title {
   margin-right: 24px;
   font-size: inherit;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: inherit;
   color: var(--c-text);
 }
@@ -2013,7 +2015,7 @@ body._lock {
 .card__title {
   margin-bottom: 12px;
   font-size: var(--fz-h4);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h4);
   color: var(--c-text);
 }
@@ -2520,7 +2522,7 @@ body._lock {
   justify-content: flex-start;
   padding: 20px 0;
   font-size: var(--fz-navigation);
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   line-height: var(--lh-navigation);
   transition: all 0.3s ease;
 }
@@ -2674,7 +2676,7 @@ body._lock {
   padding: 10px 16px;
   margin-right: 4px;
   font-size: var(--fz-button--small);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--c-text-grey-2);
   border-radius: 10px;
   fill: transparent;
@@ -2814,7 +2816,7 @@ body._lock {
   padding: 6px 12px;
   margin-right: 7px;
   font-size: var(--fz-tag);
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   line-height: var(--lh-tag);
   color: var(--c-text-grey);
   background-color: var(--bg-element);
@@ -2943,7 +2945,7 @@ body._lock {
   width: 100%;
   height: 100%;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   color: var(--c-text-grey-2);
   cursor: pointer;
   background-color: transparent;
@@ -3108,7 +3110,7 @@ body._lock {
   padding-right: 24px;
   padding-left: 24px;
   font-size: var(--fz-h3);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h3);
   color: var(--c-text);
 }
@@ -3434,7 +3436,7 @@ body._lock {
 
 .snack__title {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: 17px;
   color: var(--c-text);
 }
@@ -3465,32 +3467,32 @@ body._lock {
 
 .section__title {
   font-size: var(--fz-h2);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h2);
   color: var(--c-text);
 }
 
 .h1 {
   font-size: var(--fz-h1);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h1);
 }
 
 .h2 {
   font-size: var(--fz-h2);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h2);
 }
 
 .h3 {
   font-size: var(--fz-h3);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h3);
 }
 
 .h4 {
   font-size: var(--fz-h4);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h4);
 }
 
@@ -3831,7 +3833,7 @@ body._lock {
 .detailed__title {
   margin-bottom: calc(var(--blocks-gap-small) + 3px);
   font-size: var(--fz-h1);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h1);
 }
 @media (max-width: 1100px) {
@@ -3906,7 +3908,7 @@ body._lock {
 .detailed h2 {
   margin-bottom: var(--blocks-gap-small);
   font-size: var(--fz-h2);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h2);
   color: var(--c-text);
 }
@@ -4017,7 +4019,7 @@ body._lock {
 .detailed cite {
   font-size: var(--fz-body--small);
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-body--small);
 }
 @media (max-width: 575px) {
@@ -4072,7 +4074,7 @@ body._lock {
 
 .detailed blockquote figure cite {
   display: block;
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   line-height: 1.4;
 }
 
@@ -4134,7 +4136,7 @@ body._lock {
   position: absolute;
   left: 0;
   font-size: inherit;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--c-accent);
 }
 
@@ -4273,7 +4275,7 @@ body._lock {
 }
 
 .detailed-meta--event .detailed-meta__title {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--c-text);
 }
 @media (max-width: 575px) {
@@ -4348,7 +4350,7 @@ body._lock {
 
 .detailed-author__name {
   font-size: var(--fz-body--small);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-body--small);
 }
 
@@ -4378,7 +4380,7 @@ body._lock {
 }
 
 .detailed thead {
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   color: var(--c-text-disabled);
   white-space: nowrap;
 }
@@ -4595,7 +4597,7 @@ body._lock {
 .about-cell__title {
   margin-bottom: 9px;
   font-size: 30px;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   line-height: var(--lh-h1);
 }
 @media (max-width: 575px) {
@@ -6000,7 +6002,7 @@ body._lock {
 .datepicker .datepicker-picker {
   padding: 24px;
   font-family: var(--ffMain);
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   background-color: var(--bg-element);
   border-radius: 5px;
   box-shadow: 3px 13px 52px rgba(209, 209, 209, 0.25);
@@ -6080,7 +6082,7 @@ body._lock {
 .datepicker-view .dow {
   height: 40px;
   font-size: var(--fz-body--small-2);
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   color: var(--c-text-disabled);
 }
 
@@ -6106,13 +6108,13 @@ body._lock {
 }
 
 .datepicker-grid .datepicker-cell.month.selected {
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   color: var(--c-text-on);
   background-color: var(--c-accent);
 }
 
 .datepicker-grid .datepicker-cell.day.selected {
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   color: var(--c-text-on);
   background-color: var(--c-accent);
 }

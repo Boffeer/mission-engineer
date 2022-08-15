@@ -1,7 +1,7 @@
 .datepicker .datepicker-picker {
     padding: 24px;
     font-family: var(--ffMain);
-    font-weight: 400;
+    font-weight: var(--fw-normal);
     background-color: var(--bg-element);
     border-radius: 5px;
     box-shadow: 3px 13px 52px rgba(209, 209, 209, 0.25);
@@ -63,7 +63,7 @@
 .datepicker-view .dow {
     height: 40px;
     font-size: var(--fz-body--small-2);
-    font-weight: 400;
+    font-weight: var(--fw-normal);
     color: var(--c-text-disabled);
 }
 
@@ -87,12 +87,12 @@
     background-color: var(--bg-element);
 }
 .datepicker-grid .datepicker-cell.month.selected {
-    font-weight: 400;
+    font-weight: var(--fw-normal);
     color: var(--c-text-on);
     background-color: var(--c-accent);
 }
 .datepicker-grid .datepicker-cell.day.selected {
-    font-weight: 400;
+    font-weight: var(--fw-normal);
     color: var(--c-text-on);
     background-color: var(--c-accent);
 }

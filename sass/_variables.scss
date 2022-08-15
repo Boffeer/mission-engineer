@@ -4,7 +4,9 @@ $mediaMobile: 575px;
 :root {
     // color-scheme: light dark;
 
-    --ffMain: "Sirius", sans-serif;
+    --ffMain: "ALS Sirius", sans-serif;
+    --fw-regular: normal;
+    --fw-bold: bold;
     --ffHeader: sans-serif;
     --tr: 0.3s; // Плавность перехода
     --radius: 16px; // border-radius

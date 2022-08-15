@@ -10,30 +10,19 @@
 }
 
 @font-face {
-    font-family: "Sirius";
+    font-family: "ALS Sirius";
     font-style: normal;
-    font-weight: 400;
+    font-weight: normal;
     src: url("../fonts/ALSSirius-Regular.woff2") format("woff2"),
         url("../fonts/ALSSirius-Regular.woff") format("woff");
     font-display: swap;
 }
+
 @font-face {
-    font-family: "Sirius";
+    font-family: "ALS Sirius";
     font-style: normal;
-    font-weight: 700;
+    font-weight: bold;
     src: url("../fonts/ALSSirius-Bold.woff2") format("woff2"),
         url("../fonts/ALSSirius-Bold.woff") format("woff");
     font-display: swap;
 }
-// @font-face {
-//     font-family: "Noyh";
-//     font-style: normal;
-//     font-weight: 700;
-//     src: url("../fonts/Noyh-Bold.woff2") format("woff2"),
-//         url("../fonts/Noyh-Bold.woff") format("woff");
-//     font-display: swap;
-// }
-// @include ("Noyh", normal, 400, "../fonts/Noyh-Regular.woff2");
-// @include ("Noyh", normal, 700, "../fonts/Noyh-Bold.woff2");
-
-// @include font('Noto Sans', normal, 400, '../fonts/noto-sans.woff2');

@@ -18,7 +18,7 @@
     padding: 10px 16px;
     margin-right: 4px;
     font-size: var(--fz-button--small);
-    font-weight: 700;
+    font-weight: var(--fw-bold);
     color: var(--c-text-grey-2);
     border-radius: 10px;
     fill: transparent;
@@ -139,7 +139,7 @@
     padding: 6px 12px;
     margin-right: 7px;
     font-size: var(--fz-tag);
-    font-weight: 400;
+    font-weight: var(--fw-normal);
     line-height: var(--lh-tag);
     color: var(--c-text-grey);
     background-color: var(--bg-element);
@@ -228,7 +228,7 @@
     width: 100%;
     height: 100%;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: var(--fw-normal);
     color: var(--c-text-grey-2);
     cursor: pointer;
     background-color: transparent;

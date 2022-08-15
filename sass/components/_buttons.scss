@@ -32,7 +32,7 @@ $btn-second-disabled: var(--btn-second-disabled);
     height: 48px;
     padding: 9px;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: var(--fw-bold);
     text-transform: uppercase;
     border-radius: $radius;
     transition: $tr;
@@ -132,7 +132,7 @@ $margin-icon: 12px; // Отступ иконки от текста
     width: fit-content;
     padding: 12px 24px;
     font-size: 14px;
-    font-weight: 700;
+    font-weight: var(--fw-bold);
     color: $main;
     background: #f8f8f8;
     border-radius: 100px;
@@ -203,7 +203,7 @@ $margin-icon: 12px; // Отступ иконки от текста
     justify-content: center;
     padding: 0.875em 2em;
     font-size: var(--fz-button);
-    font-weight: 700;
+    font-weight: var(--fw-bold);
     line-height: var(--lh-button);
 }
 .button--small {

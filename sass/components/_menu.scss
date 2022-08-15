@@ -250,7 +250,7 @@
     justify-content: flex-start;
     padding: 20px 0;
     font-size: var(--fz-navigation);
-    font-weight: 400;
+    font-weight: var(--fw-normal);
     line-height: var(--lh-navigation);
     transition: all 0.3s ease;
 }

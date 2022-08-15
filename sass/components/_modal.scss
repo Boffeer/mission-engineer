@@ -78,7 +78,7 @@
 }
 
 .modal__title {
-    font-weight: 700;
+    font-weight: var(--fw-bold);
     font-size: var(--fz-h2);
     line-height: var(--lh-h2);
     margin-bottom: 32px;
