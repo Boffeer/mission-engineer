@@ -2553,6 +2553,7 @@ body._lock {
   display: block;
   margin-bottom: 24px;
   font-size: var(--fz-body--small);
+  line-height: var(--lh-body--small);
   color: var(--c-text);
   transition: all 0.3s ease;
 }
