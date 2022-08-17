@@ -49,7 +49,7 @@ if (navigator.appVersion.indexOf("Mac") != -1) os = "macos";
 if (navigator.appVersion.indexOf("X11") != -1) os = "unix";
 if (navigator.appVersion.indexOf("Linux") != -1) os = "linux";
 document.body.classList.add("os-" + os);
-console.log("os", os);
+
 //#endregion PlatformDetect
 function bodyLock(con) {
   const scrollFix = window.innerWidth - document.body.clientWidth + "px";
@@ -531,7 +531,6 @@ const themeSwitchers = document.querySelectorAll(".tab--theme");
 
 function setupSwithcer() {
   const savedScheme = getSavedScheme();
-  // console.log("saved", savedScheme);
 
   [...themeSwitchers].forEach((switcher) => {
     switcher.addEventListener("click", () => {
@@ -544,13 +543,11 @@ function setupSwithcer() {
       `.tab--theme[data-theme="${savedScheme}"]`
     );
     if (currentButton) {
-      setTimeout(() => {
-        currentButton.click();
-        currentButton.parentElement
-          .querySelectorAll(".tab")
-          .forEach((tab) => tab.classList.remove("tab--active"));
-        currentButton.classList.add("tab--active");
-      }, 300);
+      setScheme(savedScheme);
+      currentButton.parentElement
+        .querySelectorAll(".tab")
+        .forEach((tab) => tab.classList.remove("tab--active"));
+      currentButton.classList.add("tab--active");
     }
     return;
   }
@@ -559,10 +556,17 @@ function setupSwithcer() {
   const systemSchemeButton = document.querySelector(
     `.tab--theme[data-theme="${systemScheme}"]`
   );
-  systemSchemeButton.click();
+  systemSchemeButton.parentElement.querySelectorAll(".tab").forEach((tab) => {
+    tab.classList.remove("tab--active");
+  });
+  systemSchemeButton.classList.add("tab--active");
+  setScheme(systemScheme);
 }
-document.documentElement.classList.add("page--loaded");
-document.documentElement.style.display = "";
+
+function showDocument() {
+  document.documentElement.classList.add("page--loaded");
+  document.documentElement.style.display = "";
+}
 
 function setScheme(scheme) {
   switchMedia(scheme);
@@ -1212,3 +1216,7 @@ if (headerMenu) {
   });
   normalizeMenuMobileHeight();
 }
+
+window.addEventListener("DOMContentLoaded", () => {
+  showDocument();
+});
