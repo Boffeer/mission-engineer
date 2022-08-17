@@ -2238,6 +2238,7 @@ body._lock {
 
 .card__content {
   display: block;
+  height: 100%;
 }
 
 .menu {
@@ -2702,7 +2703,7 @@ body._lock {
 }
 
 .tab * {
-  transition: all 0.3s ease;
+  transition: all 0.1s ease;
 }
 
 @media (min-width: 769px) {
@@ -2866,12 +2867,7 @@ body._lock {
   transition: all 0.3s ease;
 }
 
-.chips--date::after {
-  margin-left: 8px;
-}
-
 .tabs--chips .tab--active::after {
-  margin-left: 13px;
   content: "";
   -webkit-mask: url("../img/icons/close-icon.svg");
   mask: url("../img/icons/close-icon.svg");
@@ -2885,6 +2881,10 @@ body._lock {
 
 .chips--date {
   position: relative;
+}
+
+.chips--date:first-of-type {
+  margin-right: 12px;
 }
 
 .chips--date.calendar--active::after {
@@ -2975,6 +2975,14 @@ body._lock {
   pointer-events: none;
 }
 
+.chips--date .chips__text {
+  margin-right: 8px;
+}
+
+.tab--active .chips__text {
+  margin-right: 13px;
+}
+
 .chips--date .datepicker-input.in-edit:active,
 .datepicker-input.in-edit:focus {
   box-shadow: none;
@@ -2986,6 +2994,15 @@ body._lock {
 
 .theme--dark .tabs-filters .tab--active:not(.chips--date)::after {
   background-color: var(--bg-element);
+}
+
+.tabs-filters .tabs__scrollable {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.tabs-filters .tab {
+  margin-right: 10px;
 }
 
 .tab--cancelable::after {
@@ -3115,6 +3132,12 @@ body._lock {
   .sidebar {
     padding-top: 23px;
     margin-top: 16px;
+  }
+}
+@media (min-width: 1101px) {
+  .sidebar {
+    height: calc(100 * 1vh);
+    overflow-y: auto;
   }
 }
 

@@ -390,7 +390,6 @@ setTimeout(() => {
           //   left: tabButton.getBoundingClientRect().left - 20,
           //   behavior: "smooth",
           // });
-          console.log(tabButton.getBoundingClientRect().left);
         } else {
           clickedCount++;
         }
@@ -429,14 +428,16 @@ setTimeout(() => {
 
 const filtersButtons = document.querySelectorAll(".js_tabs-filters .tab");
 filtersButtons.forEach((button) => {
-  button.addEventListener("click", () => {
+  button.addEventListener("click", (e) => {
     if (
       button.classList.contains("tab--active") &&
       !button.classList.contains("chips--date")
     ) {
       setTimeout(() => {
-        button.classList.remove("tab--active");
-        button.classList.remove("calendar--active");
+        if (button.getBoundingClientRect().width - e.offsetX < 28) {
+          button.classList.remove("tab--active");
+          button.classList.remove("calendar--active");
+        }
       }, 10);
     }
   });
