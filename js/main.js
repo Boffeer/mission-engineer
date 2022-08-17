@@ -413,7 +413,7 @@ setTimeout(() => {
             tabPages[buttonIndex].classList.add(TAB_ACTIVE_CLASS);
             setTimeout(() => {
               tabPages[buttonIndex].classList.add(TAB_ANIMATED_CLASS);
-            }, 80);
+            }, 60);
           }
         } else {
           // console.warn(
@@ -896,6 +896,9 @@ function activateInput(input) {
 
   if (input.classList.contains(inputClasses.dropdown)) {
     input.classList.add(inputClasses.activeDropdown);
+    setTimeout(() => {
+      window.addEventListener("click", closeDropdowns);
+    }, 400);
     // Скроллит чтоб всегда было видно первые варианты ответов
     // var element = input.querySelector(".input-dropdown");
     // var listEndOffset = 145;
@@ -976,6 +979,13 @@ function initInputs(inputs) {
   });
 }
 
+function closeDropdowns() {
+  const dropdowns = document.querySelectorAll(".input--dropdown");
+  dropdowns.forEach((item) => {
+    deactivateInput(item);
+  });
+  window.removeEventListener("click", closeDropdowns);
+}
 function activateDropdown(input) {
   const dropdown = input.querySelector(".input-dropdown");
   if (!dropdown) return;
