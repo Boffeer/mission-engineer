@@ -2252,7 +2252,6 @@ body._lock {
   height: calc(100 * 1vh);
   max-height: calc(100 * 1vh);
   overflow: visible;
-  background-color: var(--bg-element);
 }
 @media (max-width: 1100px) {
   .menu {
@@ -2267,12 +2266,11 @@ body._lock {
     min-height: -webkit-fill-available;
     max-height: initial;
     pointer-events: none;
-    background-color: transparent;
   }
 }
 
 .page--loaded .menu {
-  transition: all 0.3s ease-in;
+  transition: max-width 0.3s ease-in, margin 0.3s ease-in, opacity 0.3s ease-in;
 }
 
 .menu::after {
@@ -2345,13 +2343,14 @@ body._lock {
   padding: 32px 40px;
   overflow-x: hidden;
   overflow-y: auto;
-  transition: all 0.3s ease-in;
+  background-color: var(--bg-element);
 }
 @media (max-width: 1100px) {
   .menu__sticky {
     position: static;
     padding: 0;
     overflow: hidden;
+    background-color: transparent;
   }
 }
 
@@ -2370,6 +2369,11 @@ body._lock {
   .menu--shrink:hover .menu__sticky {
     overflow-y: auto;
     background-color: var(--bg-element);
+  }
+}
+@media (min-width: 1101px) and (min-height: 900px) {
+  .menu--shrink:hover .menu__sticky {
+    overflow-y: hidden;
   }
 }
 
@@ -2403,6 +2407,11 @@ body._lock {
     max-width: 100%;
     padding-top: 4px;
     padding-bottom: 120px;
+  }
+}
+@media (min-width: 1101px) and (min-height: 900px) {
+  .menu__content {
+    height: 94%;
   }
 }
 
@@ -2440,11 +2449,6 @@ body._lock {
 .menu__bottom {
   display: block;
   transition: all 0.3s ease;
-}
-@media (max-width: 1100px) {
-  .menu__bottom {
-    padding-bottom: 80px;
-  }
 }
 @media (max-width: 575px) {
   .menu__bottom {
