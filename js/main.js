@@ -365,6 +365,7 @@ window.addEventListener("DOMContentLoaded", () => {
 const tabsBars = document.querySelectorAll(".tabs");
 const tabsPagesWraps = document.querySelectorAll(".tabs-content");
 const TAB_ACTIVE_CLASS = "tab--active";
+const TAB_ANIMATED_CLASS = "tab--animated";
 
 // Добавляем активное состояние для табов, чтоб инициализировать Swiper
 tabsBars.forEach((tabsBar) => {
@@ -373,6 +374,7 @@ tabsBars.forEach((tabsBar) => {
       const tabPages = tabsPagesWrap.querySelectorAll(".tabs-page");
       tabPages.forEach((tabPage) => {
         tabPage.classList.add(TAB_ACTIVE_CLASS);
+        // tabPage.classList.add(TAB_ANIMATED_CLASS);
       });
     });
   }
@@ -386,10 +388,7 @@ setTimeout(() => {
     tabBarButtons.forEach((tabButton, buttonIndex) => {
       tabButton.addEventListener("click", () => {
         if (clickedCount != 0) {
-          // tabButton.parentElement.parentElement.scrollTo({
-          //   left: tabButton.getBoundingClientRect().left - 20,
-          //   behavior: "smooth",
-          // });
+          //
         } else {
           clickedCount++;
         }
@@ -403,10 +402,18 @@ setTimeout(() => {
             .querySelectorAll(".tabs-page");
 
           if (tabPages[buttonIndex]) {
-            tabPages.forEach((tabPage) => {
-              tabPage.classList.remove(TAB_ACTIVE_CLASS);
+            tabPages.forEach((tabPage, tabIndex) => {
+              if (tabIndex !== buttonIndex) {
+                tabPage.classList.remove(TAB_ANIMATED_CLASS);
+                setTimeout(() => {
+                  tabPage.classList.remove(TAB_ACTIVE_CLASS);
+                }, 10);
+              }
             });
             tabPages[buttonIndex].classList.add(TAB_ACTIVE_CLASS);
+            setTimeout(() => {
+              tabPages[buttonIndex].classList.add(TAB_ANIMATED_CLASS);
+            }, 100);
           }
         } else {
           // console.warn(
@@ -508,6 +515,7 @@ if (newsSliders) {
 
   window.addEventListener("resize", () => {
     debounce(() => {
+      console.log("resize");
       removeSlider(newsSlider);
       initSlider(newsSlider);
     }, 1000);
@@ -711,7 +719,7 @@ if (burgerButton && headerMenu) {
 // #region detailed-slider
 const detailedSliders = document.querySelectorAll(".detailed-slider");
 
-window.addEventListener("DOMContentLoaded", (event) => {
+window.addEventListener("DOMContentLoaded", () => {
   detailedSliders.forEach((slider, index) => {
     slider.classList.add(`detailed-slider-${index}`);
 
@@ -904,17 +912,11 @@ function activateInput(input) {
     //===
     const dropdownList = input.querySelector(".input-dropdown");
     const bound = dropdownList.getBoundingClientRect();
-    const top = dropdownList.getBoundingClientRect().top;
     const bottom = dropdownList.getBoundingClientRect().bottom;
     const height = dropdownList.getBoundingClientRect().height;
-    // let topOffset = top - height;
-    // if (topOffset > 200) {
-    //   dropdownList.style.top = `-${topOffset}px`;
-    // }
     const offset = window.innerHeight - bottom;
     console.log(bound);
     if (offset < height + 20) {
-      console.log("Сдвинуть выше");
       dropdownList.style.top = "unset";
       dropdownList.style.bottom = "calc(100% + 20px) ";
     }

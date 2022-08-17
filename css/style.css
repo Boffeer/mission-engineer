@@ -249,7 +249,6 @@ body._lock {
     padding-top: 124px;
     padding-right: 20px;
     padding-left: 20px;
-    overflow: visible;
   }
 }
 @media (max-width: 575px) {
@@ -2764,10 +2763,19 @@ body._lock {
 
 .tabs-page {
   display: none;
+  width: 100%;
+  opacity: 0;
+  transition: all 0.4s ease-in;
+  transform: translateX(20%);
 }
 
 .tabs-page.tab--active {
   display: block;
+}
+
+.tabs-page.tab--animated {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .tabs__track {
