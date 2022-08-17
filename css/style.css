@@ -4653,7 +4653,7 @@ body._lock {
 }
 
 .about-cell--accent {
-  color: var(--c-text-on);
+  color: #fff;
   background-color: var(--c-accent);
 }
 .about-cell--accent .about-cell__link {
@@ -4726,6 +4726,7 @@ body._lock {
   font-size: 30px;
   font-weight: var(--fw-bold);
   line-height: var(--lh-h1);
+  color: #fff;
 }
 @media (max-width: 575px) {
   .about-cell__title {

@@ -70,7 +70,7 @@
     }
 }
 @mixin accentCard {
-    color: var(--c-text-on);
+    color: #fff;
     background-color: var(--c-accent);
     .about-cell__link {
         transition: all 0.3s ease;
@@ -261,6 +261,7 @@
     font-size: 30px;
     font-weight: var(--fw-bold);
     line-height: var(--lh-h1);
+    color: #fff;
     @media (max-width: 575px) {
         margin-bottom: 0;
         font-size: 24px;
