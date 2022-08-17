@@ -42,25 +42,25 @@
     backdrop-filter: blur(20px);
 }
 .menu--shrink:not(:hover) {
-    @media (min-width: 1101px) {
+    @media (min-width: 1101px) and (max-width: 1550px) {
         max-width: 112px; // потому что ширина скроллбара
     }
 }
 
 // .menu--shrink:hover ~ .page-content {
 .menu--shrink:hover {
-    @media (min-width: 1101px) {
+    @media (min-width: 1101px) and (max-width: 1550px) {
         margin-right: -234px;
     }
 }
 .menu--shrink::after {
-    @media (min-width: 1101px) {
+    @media (min-width: 1101px) and (max-width: 1550px) {
         background: rgba(0, 0, 0, 0.2);
         backdrop-filter: blur(15px);
     }
 }
 .menu--shrink:hover::after {
-    @media (min-width: 1101px) {
+    @media (min-width: 1101px) and (max-width: 1550px) {
         opacity: 1;
     }
 }
@@ -70,7 +70,7 @@
 }
 
 .menu--shrink .menu__nav-link .button__text {
-    @media (min-width: 1101px) {
+    @media (min-width: 1101px) and (max-width: 1550px) {
         width: 0;
         margin-right: 0;
         white-space: nowrap;
@@ -112,7 +112,7 @@
 }
 
 .menu--shrink:hover .menu__sticky {
-    @media (min-width: 1101px) {
+    @media (min-width: 1101px) and (max-width: 1550px) {
         overflow-y: auto;
         background-color: var(--bg-element);
     }
@@ -171,9 +171,7 @@
 }
 
 .menu--shrink:not(:hover) .menu__top {
-    @media (min-width: 1101px) {
-        // padding-left: 4px;
-        // margin-bottom: 0;
+    @media (min-width: 1101px) and (max-width: 1550px) {
         margin-left: 5px;
     }
 }
@@ -189,7 +187,7 @@
     }
 }
 .menu--shrink:not(:hover) .menu__bottom {
-    @media (min-width: 1101px) {
+    @media (min-width: 1101px) and (max-width: 1550px) {
         height: 0;
         overflow: hidden;
         opacity: 0;
@@ -203,7 +201,7 @@
 }
 
 .menu--shrink .menu__nav-list {
-    @media (min-width: 1101px) {
+    @media (min-width: 1101px) and (max-width: 1550px) {
         opacity: 0;
     }
 }
@@ -225,7 +223,7 @@
 }
 
 .menu--shrink .menu__nav-list:first-child {
-    @media (min-width: 1101px) {
+    @media (min-width: 1101px) and (max-width: 1550px) {
         border-bottom: none;
     }
 }
@@ -273,7 +271,7 @@
     }
 }
 .menu--srink .menu__links {
-    @media (min-width: 992px) {
+    @media (min-width: 992px) and (max-width: 1550px) {
         opacity: 0;
     }
 }
@@ -295,7 +293,7 @@
     margin-bottom: 0;
 }
 .menu--shrink .menu__theme {
-    @media (min-width: 992px) {
+    @media (min-width: 992px) and (max-width: 1550px) {
         // position: absolute;
         opacity: 0;
         transition: all 0.3s ease;

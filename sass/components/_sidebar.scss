@@ -16,7 +16,11 @@
         margin-top: 16px;
     }
     @media (min-width: 1101px) {
-        height: #{"calc(100 * 1vh)"};
+        position: sticky;
+        top: 0;
+        left: 0;
+        // height: #{"calc(100 * 1vh)"};
+        height: calc(100vh);
         overflow-y: auto;
     }
 }
