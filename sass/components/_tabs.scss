@@ -141,6 +141,7 @@
 .tabs--chips {
     margin-bottom: 20px;
     background-color: transparent;
+    border-radius: 0;
     @media (max-width: 575px) {
         margin-bottom: 16px;
     }
@@ -294,7 +295,7 @@
     display: none;
     width: 16px;
     height: 16px;
-    margin-left: 8px;
+    // margin-left: 8px;
     content: "";
     background-color: var(--c-text-grey-2);
     transition: all 0.3s ease;

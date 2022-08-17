@@ -2836,6 +2836,7 @@ body._lock {
 .tabs--chips {
   margin-bottom: 20px;
   background-color: transparent;
+  border-radius: 0;
 }
 @media (max-width: 575px) {
   .tabs--chips {
@@ -3034,7 +3035,6 @@ body._lock {
   display: none;
   width: 16px;
   height: 16px;
-  margin-left: 8px;
   content: "";
   background-color: var(--c-text-grey-2);
   transition: all 0.3s ease;
