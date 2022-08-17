@@ -427,6 +427,7 @@ setTimeout(() => {
 }, 150);
 
 const filtersButtons = document.querySelectorAll(".js_tabs-filters .tab");
+const closableArea = 28;
 filtersButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
     if (
@@ -434,7 +435,7 @@ filtersButtons.forEach((button) => {
       !button.classList.contains("chips--date")
     ) {
       setTimeout(() => {
-        if (button.getBoundingClientRect().width - e.offsetX < 28) {
+        if (button.getBoundingClientRect().width - e.offsetX < closableArea) {
           button.classList.remove("tab--active");
           button.classList.remove("calendar--active");
         }
