@@ -249,6 +249,7 @@ body._lock {
     padding-top: 124px;
     padding-right: 20px;
     padding-left: 20px;
+    overflow: visible;
   }
 }
 @media (max-width: 575px) {
@@ -1442,8 +1443,10 @@ body._lock {
 .input-dropdown {
   position: absolute;
   width: 100%;
+  max-height: 188px;
   margin-top: 8px;
   overflow: hidden;
+  overflow-y: auto;
   pointer-events: none;
   visibility: hidden;
   background-color: var(--bg-element);
@@ -1458,7 +1461,9 @@ body._lock {
 }
 
 .input--active-dropdown .input-dropdown {
-  position: relative;
+  position: absolute;
+  top: 100%;
+  z-index: 4;
   pointer-events: initial;
   visibility: visible;
   opacity: 1;
@@ -1477,6 +1482,13 @@ body._lock {
   .input-dropdown__item:hover {
     cursor: pointer;
     background-color: var(--c-accent--light);
+  }
+}
+
+@media (min-width: 769px) {
+  .theme--dark .input-dropdown__item:hover {
+    cursor: pointer;
+    background: rgba(40, 190, 70, 0.1);
   }
 }
 

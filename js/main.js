@@ -888,22 +888,36 @@ function activateInput(input) {
 
   if (input.classList.contains(inputClasses.dropdown)) {
     input.classList.add(inputClasses.activeDropdown);
-    // input.querySelector(".input-dropdown").scrollIntoView({
+    // Скроллит чтоб всегда было видно первые варианты ответов
+    // var element = input.querySelector(".input-dropdown");
+    // var listEndOffset = 145;
+    // var elementPosition = element.getBoundingClientRect().top;
+    // var offsetPosition =
+    //   elementPosition +
+    //   window.pageYOffset -
+    //   listEndOffset -
+    //   element.getBoundingClientRect().height * 2;
+    // window.scrollTo({
+    //   top: offsetPosition,
     //   behavior: "smooth",
-    //   block: "end",
     // });
-    var element = input.querySelector(".input-dropdown");
-    var listEndOffset = 145;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition =
-      elementPosition +
-      window.pageYOffset -
-      listEndOffset -
-      element.getBoundingClientRect().height * 2;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
+    //===
+    const dropdownList = input.querySelector(".input-dropdown");
+    const bound = dropdownList.getBoundingClientRect();
+    const top = dropdownList.getBoundingClientRect().top;
+    const bottom = dropdownList.getBoundingClientRect().bottom;
+    const height = dropdownList.getBoundingClientRect().height;
+    // let topOffset = top - height;
+    // if (topOffset > 200) {
+    //   dropdownList.style.top = `-${topOffset}px`;
+    // }
+    const offset = window.innerHeight - bottom;
+    console.log(bound);
+    if (offset < height + 20) {
+      console.log("Сдвинуть выше");
+      dropdownList.style.top = "unset";
+      dropdownList.style.bottom = "calc(100% + 20px) ";
+    }
   }
 }
 function deactivateInput(input) {
@@ -916,6 +930,11 @@ function deactivateInput(input) {
       input.classList.remove(inputClasses.activeDropdown);
     }
   }, 100);
+  const dropdownList = input.querySelector(".input-dropdown");
+  setTimeout(() => {
+    dropdownList.style.top = "";
+    dropdownList.style.bottom = "";
+  }, 400);
 }
 
 function initInputs(inputs) {
