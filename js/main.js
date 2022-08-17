@@ -413,7 +413,7 @@ setTimeout(() => {
             tabPages[buttonIndex].classList.add(TAB_ACTIVE_CLASS);
             setTimeout(() => {
               tabPages[buttonIndex].classList.add(TAB_ANIMATED_CLASS);
-            }, 100);
+            }, 80);
           }
         } else {
           // console.warn(
