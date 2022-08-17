@@ -73,13 +73,15 @@
     color: var(--c-text-on);
     background-color: var(--c-accent);
     .about-cell__link {
+        transition: all 0.3s ease;
         --icon-color: var(--c-text-on);
         .button__icon {
             --icon-color: var(--c-text-on);
         }
     }
     @media (min-width: $minHover) {
-        .about-cell__link:hover {
+        &:hover .about-cell__link {
+            opacity: 0.6;
             --icon-color: var(--c-accent--light);
             .button__icon {
                 --icon-color: var(--c-accent--light);
@@ -91,13 +93,16 @@
     color: var(--c-text-on);
     background-color: var(--c-accent--dark);
     .about-cell__link {
+        transition: all 0.3s ease;
         --icon-color: var(--c-text-on);
         .button__icon {
             --icon-color: var(--c-text-on);
         }
     }
     @media (min-width: $minHover) {
-        .about-cell__link:hover {
+        // .about-cell__link:hover {
+        &:hover .about-cell__link {
+            opacity: 0.6;
             --icon-color: var(--c-accent--light);
             .button__icon {
                 --icon-color: var(--c-accent--light);
@@ -115,8 +120,12 @@
             --icon-color: var(--c-accent);
         }
     }
+}
+@mixin whiteCardGridded {
+    @include whiteCard();
     @media (min-width: $minHover) {
-        .about-cell__link:hover {
+        // .about-cell__link:hover {
+        &:hover .about-cell__link {
             --icon-color: var(--c-accent--dark);
             .button__icon {
                 --icon-color: var(--c-accent--dark);
@@ -127,6 +136,15 @@
 @mixin blackCard() {
     color: var(--c-text-on);
     background-color: var(--black-card-bg);
+    @media (min-width: $minHover) {
+        // .about-cell__link:hover {
+        &:hover .about-cell__link {
+            --icon-color: var(--c-accent--dark);
+            .button__icon {
+                --icon-color: var(--c-accent--dark);
+            }
+        }
+    }
 }
 
 .page-content--about {
@@ -199,6 +217,22 @@
     }
 }
 
+.about-cell--white {
+    @include whiteCardGridded();
+}
+.about-cell--black {
+    @include blackCard();
+}
+.about-cell--accent {
+    @include accentCard();
+}
+.about-cell--accent-dark {
+    @include accentDarkCard();
+}
+// .about__row--grided .about-cell {
+//     @include whiteCardGridded();
+// }
+
 .about-cell::after {
     position: absolute;
     right: 24px;
@@ -249,6 +283,7 @@
     --icon-color: var(--c-text-on);
     color: var(--icon-color);
 }
+// .about-cell:hover .about-cell__link,
 .about-cell__link:hover {
     // --color: var(--icon-color);
     @media (min-width: $minHover) {
@@ -259,6 +294,7 @@
 .about-cell__link .button__text {
     width: auto;
 }
+// .about-cell:hover .about-cell__link .button__text,
 .about-cell__link:hover .button__text {
     @media (max-width: 575px) {
         text-decoration: underline;
@@ -315,7 +351,7 @@
     }
 }
 .about__row:not(.about__row--grided):nth-child(odd) .about-cell:first-child {
-    @include accentCard();
+    // @include accentCard();
     background-image: url("../img/about/world.png");
     --icon-color: var(--c-text-on);
     @media (max-width: 1100px) {
@@ -352,7 +388,7 @@
     }
 }
 .about__row:not(.about__row--grided):nth-child(even) .about-cell:first-child {
-    @include accentDarkCard();
+    // @include accentDarkCard();
     grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 3;
@@ -435,7 +471,7 @@
 .about__row--grided:nth-child(6n) .about-cell:nth-child(1) {
     grid-row-start: 1;
     grid-row-end: 3;
-    @include accentCard();
+    // @include accentCard();
     background-image: url("../img/about/1.png");
     @media (max-width: 575px) {
         min-height: 250px;
@@ -450,7 +486,7 @@
 .about__row--grided:nth-child(6n) .about-cell:nth-child(2) {
     grid-column-start: 2;
     grid-column-end: 4;
-    @include whiteCard();
+    // @include whiteCard();
     @media (max-width: 575px) {
         min-height: 147px;
     }
@@ -463,14 +499,14 @@
 
 .about__row:nth-child(1) .about-cell:nth-child(3),
 .about__row:nth-child(6n) .about-cell:nth-child(3) {
-    @include blackCard();
+    // @include blackCard();
     @media (max-width: 575px) {
         display: none;
     }
 }
 .about__row--grided:nth-child(1) .about-cell:nth-child(4),
 .about__row--grided:nth-child(6n) .about-cell:nth-child(4) {
-    @include accentDarkCard();
+    // @include accentDarkCard();
     @media (max-width: 575px) {
         display: none;
     }
@@ -484,7 +520,7 @@
     grid-row-end: 2;
     grid-column-start: 1;
     grid-column-end: 2;
-    @include blackCard();
+    // @include blackCard();
     @media (max-width: 575px) {
         order: 1;
         width: 50%;
@@ -495,7 +531,7 @@
     grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 3;
-    @include accentDarkCard();
+    // @include accentDarkCard();
     @media (max-width: 575px) {
         order: 3;
         width: 50%;
@@ -506,7 +542,7 @@
     grid-row-end: 3;
     grid-column-start: 1;
     grid-column-end: 2;
-    @include accentCard();
+    // @include accentCard();
     @media (max-width: 575px) {
         order: 2;
         width: 50%;
@@ -517,7 +553,7 @@
     grid-row-end: 3;
     grid-column-start: 2;
     grid-column-end: 3;
-    @include whiteCard();
+    // @include whiteCard();
     @media (max-width: 575px) {
         order: 4;
         width: 50%;
@@ -528,7 +564,7 @@
     grid-row-end: 3;
     grid-column-start: 3;
     grid-column-end: 4;
-    @include accentCard();
+    // @include accentCard();
     background-image: url("../img/about/2.png");
     @media (max-width: 575px) {
         order: 4;
@@ -549,7 +585,7 @@
     grid-column-start: 1;
     grid-column-end: 2;
     padding-right: 65px;
-    @include accentDarkCard();
+    // @include accentDarkCard();
     @media (max-width: 575px) {
         min-height: 169px;
     }
@@ -563,7 +599,7 @@
     grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 3;
-    @include blackCard();
+    // @include blackCard();
     @media (max-width: 575px) {
         width: 50%;
     }
@@ -573,7 +609,7 @@
     grid-row-end: 2;
     grid-column-start: 3;
     grid-column-end: 4;
-    @include whiteCard();
+    // @include whiteCard();
     @media (max-width: 575px) {
         width: 50%;
     }
@@ -591,7 +627,7 @@
     grid-row-start: 1;
     grid-row-end: 3;
     background-image: url("../img/about/3.png");
-    @include accentCard();
+    // @include accentCard();
     @media (max-width: 575px) {
         order: 1;
         min-height: 250px;
@@ -600,7 +636,7 @@
 .about__row--grided:nth-child(4) .about-cell:nth-child(2) {
     grid-column-start: 2;
     grid-column-end: 3;
-    @include accentDarkCard();
+    // @include accentDarkCard();
     @media (max-width: 575px) {
         order: 2;
         width: 50%;
@@ -610,14 +646,14 @@
 .about__row--grided:nth-child(4) .about-cell:nth-child(3) {
     grid-column-start: 3;
     grid-column-end: 4;
-    @include accentCard();
+    // @include accentCard();
     @media (max-width: 575px) {
         order: 4;
         width: 50%;
     }
 }
 .about__row--grided:nth-child(4) .about-cell:nth-child(4) {
-    @include whiteCard();
+    // @include whiteCard();
     @media (max-width: 575px) {
         order: 3;
         width: 50%;
@@ -625,7 +661,7 @@
     }
 }
 .about__row--grided:nth-child(4) .about-cell:nth-child(5) {
-    @include blackCard();
+    // @include blackCard();
     @media (max-width: 575px) {
         order: 5;
         width: 50%;
@@ -639,7 +675,7 @@
 .about__row--grided:nth-child(5) .about-cell:nth-child(1) {
     grid-row-end: 2;
     padding-right: 65px;
-    @include blackCard();
+    // @include blackCard();
     @media (max-width: 1100px) {
         padding-right: 55px;
     }
@@ -656,7 +692,7 @@
 
 .about__row--grided:nth-child(5) .about-cell:nth-child(2) {
     padding-right: 65px;
-    @include accentDarkCard();
+    // @include accentDarkCard();
     @media (max-width: 1100px) {
         padding-right: 60px;
     }
