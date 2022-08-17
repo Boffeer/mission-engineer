@@ -265,6 +265,12 @@ body._lock {
   }
 }
 
+@media (max-width: 1100px) {
+  .page-content--events-detailed {
+    overflow: visible;
+  }
+}
+
 .wrapper--app {
   flex-direction: row;
   width: 100%;

@@ -59,6 +59,12 @@
         padding-top: 40px;
     }
 }
+.page-content--events-detailed {
+    @media (max-width: 1100px) {
+        overflow: visible;
+    }
+}
+
 .wrapper--app {
     flex-direction: row;
     width: 100%;
