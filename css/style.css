@@ -1883,6 +1883,7 @@ body._lock {
   position: relative;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   background-color: var(--bg-element);
   border-radius: 5px;
 }
@@ -2117,7 +2118,8 @@ body._lock {
 }
 
 @media (min-width: 769px) {
-  .card--bg-pic:hover .card__img {
+  .featured-slider:hover .card__img,
+.card--bg-pic:hover .card__img {
     transform: scale(1.2);
   }
 }

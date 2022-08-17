@@ -342,21 +342,10 @@ window.addEventListener("DOMContentLoaded", () => {
     let featuredSlider = new Swiper(".featured-slider", {
       spaceBetween: 20,
       grabCursor: true,
-      // effect: "creative",
-      // creativeEffect: {
-      //   prev: {
-      //     // shadow: true,
-
-      //     translate: [0, 0, -400],
-      //   },
-      //   next: {
-      //     translate: ["100%", 0, 0],
-      //   },
-      // },
-      // effect: "fade",
-      // fadeEffect: {
-      //   crossFade: true,
-      // },
+      autoplay: {
+        delay: 5000,
+        pauseOnMouseEnter: true,
+      },
       pagination: {
         el: ".featured-slider__pagination",
         clickable: true,

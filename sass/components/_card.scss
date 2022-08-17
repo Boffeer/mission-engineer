@@ -10,6 +10,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
     background-color: var(--bg-element);
     border-radius: 5px;
 }
@@ -229,6 +230,8 @@
     overflow: hidden;
     border-radius: inherit;
 }
+
+.featured-slider:hover .card__img,
 .card--bg-pic:hover .card__img {
     @media (min-width: $minHover) {
         transform: scale(1.2);
