@@ -135,6 +135,7 @@
 }
 
 .modal__close {
+    --close-color: var(--c-accent);
     position: absolute;
     top: 32px;
     right: 32px;
@@ -152,8 +153,9 @@
         left: 50%;
         width: 20px;
         height: 2px;
-        background: var(--c-accent);
+        background: var(--close-color);
         border-radius: 100px;
+        transition: all 0.3s ease;
 
         &:nth-child(1) {
             transform: translate(-50%, -50%) rotate(45deg);
@@ -163,6 +165,15 @@
             transform: translate(-50%, -50%) rotate(-45deg);
         }
     }
+}
+
+.modal__close:hover {
+    @media (min-width: $minHover) {
+        --close-color: var(--c-accent--dark);
+    }
+}
+.modal__close:active {
+    opacity: 0.6;
 }
 
 // #events-thanks br {

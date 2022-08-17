@@ -1813,6 +1813,7 @@ body._lock {
 }
 
 .modal__close {
+  --close-color: var(--c-accent);
   position: absolute;
   top: 32px;
   right: 32px;
@@ -1831,14 +1832,25 @@ body._lock {
   left: 50%;
   width: 20px;
   height: 2px;
-  background: var(--c-accent);
+  background: var(--close-color);
   border-radius: 100px;
+  transition: all 0.3s ease;
 }
 .modal__close span:nth-child(1) {
   transform: translate(-50%, -50%) rotate(45deg);
 }
 .modal__close span:nth-child(2) {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media (min-width: 769px) {
+  .modal__close:hover {
+    --close-color: var(--c-accent--dark);
+  }
+}
+
+.modal__close:active {
+  opacity: 0.6;
 }
 
 .no-desktop {
