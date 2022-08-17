@@ -341,16 +341,22 @@ window.addEventListener("DOMContentLoaded", () => {
     // eslint-disable-next-line no-unused-vars, no-undef
     let featuredSlider = new Swiper(".featured-slider", {
       spaceBetween: 20,
-      grabCursor: true,
+      slidesPerView: 1,
       autoplay: {
         delay: 5000,
+        disableOnInteraction: false,
         pauseOnMouseEnter: true,
       },
+      // grabCursor: true,
       pagination: {
         el: ".featured-slider__pagination",
         clickable: true,
       },
     });
+    featuredSlider.autoplay.stop();
+    setTimeout(() => {
+      featuredSlider.autoplay.start();
+    }, 200);
   }
 });
 // #endregion featured-slider
