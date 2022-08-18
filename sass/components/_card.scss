@@ -343,7 +343,8 @@
 }
 
 .card__content {
-    display: block;
+    display: flex;
+    flex-direction: column;
     height: 100%;
     overflow: hidden;
     border-radius: 5px;

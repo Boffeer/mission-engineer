@@ -486,6 +486,7 @@ const newsSliderSettings = {
 
 function initSlider(slider) {
   // eslint-disable-next-line no-undef, no-unused-vars
+  console.log(slider.selector);
   return new Swiper(slider.selector, slider.options);
 }
 // eslint-disable-next-line no-undef, no-unused-vars
