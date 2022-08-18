@@ -97,7 +97,12 @@
 }
 
 .featured-slider {
+    isolation: isolate;
     border-radius: 5px;
+-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden
 }
 .featured-slider-slide {
     // transition: all 0.3s ease;

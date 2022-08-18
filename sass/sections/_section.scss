@@ -158,4 +158,8 @@
     overflow: hidden;
     isolation: isolate;
     border-radius: 50px;
+-webkit-transform: translate3d(0, 0, 0);
+-moz-transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+-moz-backface-visibility: hidden
 }
