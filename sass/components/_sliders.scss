@@ -79,8 +79,8 @@
     }
 }
 .news-slider-slide {
-    height: auto;
-    min-height: 364px;
+    height:auto;
+    min-height: 100%;
     @media (max-width: 1100px) {
         width: 100%;
         max-width: 322px;

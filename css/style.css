@@ -5843,7 +5843,7 @@ body._lock {
 
 .news-slider-slide {
   height: auto;
-  min-height: 364px;
+  min-height: 100%;
 }
 @media (max-width: 1100px) {
   .news-slider-slide {
