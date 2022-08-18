@@ -2771,19 +2771,25 @@ body._lock {
   }
 }
 
+.tabs-content {
+  position: relative;
+}
+
 .tabs-page {
-  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
+  pointer-events: none;
   opacity: 0;
   transition: all 0.35s ease-in;
-  transform: translateX(20%);
+  transform: translateX(-10%);
 }
 
 .tabs-page.tab--active {
+  position: static;
   display: block;
-}
-
-.tabs-page.tab--animated {
+  pointer-events: initial;
   opacity: 1;
   transform: translateX(0);
 }
