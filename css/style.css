@@ -2363,7 +2363,6 @@ body._lock {
 
 .menu__nav-link .button__text {
   margin-right: auto;
-  transition: all 0.3s ease;
 }
 
 @media (min-width: 1101px) and (max-width: 1550px) {
@@ -2544,14 +2543,9 @@ body._lock {
   opacity: 1;
 }
 
-.menu__nav-link:hover .button__icon svg {
-  fill: var(--c-accent--dark);
-}
-
 .menu__nav-link .button__icon {
   margin-right: 12px;
   background: transparent;
-  transition: all 0.4s ease;
   --button-icon-size: 20px;
 }
 
