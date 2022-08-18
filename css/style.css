@@ -613,6 +613,11 @@ body._lock {
   }
 }
 
+.section__content--featured-slider {
+  overflow: hidden;
+  border-radius: 5px;
+}
+
 /* Стили анимации пульсации кругов */
 @keyframes pulse {
   0% {
