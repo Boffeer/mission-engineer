@@ -156,5 +156,6 @@
 
 .section__content--featured-slider {
     overflow: hidden;
+    isolation: isolate;
     border-radius: 50px;
 }
