@@ -2534,7 +2534,7 @@ body._lock {
 .menu__nav-link .button__icon {
   margin-right: 12px;
   background: transparent;
-  transition: all 0.6s ease;
+  transition: all 0.3s ease;
   --button-icon-size: 20px;
 }
 
