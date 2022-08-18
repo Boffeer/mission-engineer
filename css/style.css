@@ -1843,6 +1843,7 @@ body._lock {
   }
 }
 .modal__close span {
+  outline: none;
   position: absolute;
   top: 50%;
   left: 50%;
