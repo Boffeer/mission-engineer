@@ -349,4 +349,6 @@
 .card__content {
     display: block;
     height: 100%;
+    overflow: hidden;
+    border-radius: 5px;
 }

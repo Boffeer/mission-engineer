@@ -2269,6 +2269,8 @@ body._lock {
 .card__content {
   display: block;
   height: 100%;
+  overflow: hidden;
+  border-radius: 5px;
 }
 
 .menu {
@@ -2440,25 +2442,15 @@ body._lock {
     padding-bottom: 120px;
   }
 }
-@media (min-width: 1101px) and (min-height: 900px) {
+@media (min-width: 1101px) and (min-height: 850px) {
   .menu__content {
-    height: 94%;
+    height: 93.4%;
   }
 }
 
 .menu__top {
-  margin-bottom: 96px;
+  margin-bottom: 40px;
   transition: all 0.3s ease;
-}
-@media (min-width: 1101px) and (min-height: 860px) and (max-height: 1000px) {
-  .menu__top {
-    margin-bottom: 36px;
-  }
-}
-@media (min-width: 1101px) and (min-height: 900px) {
-  .menu__top {
-    margin-bottom: 96px;
-  }
 }
 @media (max-width: 1100px) {
   .menu__top {
@@ -2542,7 +2534,7 @@ body._lock {
 .menu__nav-link .button__icon {
   margin-right: 12px;
   background: transparent;
-  transition: all 0.3s ease;
+  transition: all 0.6s ease;
   --button-icon-size: 20px;
 }
 
@@ -3003,6 +2995,7 @@ body._lock {
   background-color: transparent;
   opacity: 0;
   caret-color: transparent;
+  transition: none;
 }
 
 .chips--date.tab--active .input--calendar {
@@ -3017,10 +3010,6 @@ body._lock {
 
 .chips--date .chips__text {
   margin-right: 8px;
-}
-
-.tab--active .chips__text {
-  margin-right: 13px;
 }
 
 .chips--date .datepicker-input.in-edit:active,
@@ -3180,6 +3169,12 @@ body._lock {
     top: 0;
     left: 0;
     height: 100vh;
+    overflow-y: hidden;
+  }
+}
+
+@media (min-width: 1101px) {
+  .sidebar:hover {
     overflow-y: auto;
   }
 }
@@ -4744,13 +4739,16 @@ body._lock {
   font-size: 30px;
   font-weight: var(--fw-bold);
   line-height: var(--lh-h1);
-  color: #fff;
 }
 @media (max-width: 575px) {
   .about-cell__title {
     margin-bottom: 0;
     font-size: 24px;
   }
+}
+
+.theme--dark .about-cell__title {
+  color: #fff;
 }
 
 @media (max-width: 575px) {
@@ -4916,12 +4914,12 @@ body._lock {
   grid-column-end: 2;
 }
 
-.about__row:not(.about__row--grided) .about-cell .about-cell__link:hover {
+.about-cell--multilink .about-cell__link:hover {
   --icon-color: var(--c-accent);
 }
 
 @media (min-width: 769px) {
-  .about__row:not(.about__row--grided) .about-cell .about-cell__link:hover .button__icon {
+  .about-cell--multilink .about-cell__link:hover .button__icon {
     --icon-color: var(--c-accent);
   }
 }
@@ -5841,6 +5839,10 @@ body._lock {
   }
 }
 
+.featured-slider {
+  border-radius: 5px;
+}
+
 .featured-slider-slide {
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0);
@@ -5863,7 +5865,7 @@ body._lock {
   font-weight: var(--fw-normal);
   background-color: var(--bg-element);
   border-radius: 5px;
-  box-shadow: 3px 13px 52px rgba(209, 209, 209, 0.25);
+  box-shadow: var(--bs-snack);
 }
 
 .datepicker-controls {
@@ -5895,6 +5897,13 @@ body._lock {
   color: transparent;
   background-color: var(--c-accent);
 }
+@media (min-width: 769px) {
+  .datepicker-header .datepicker-controls .prev-btn:hover,
+.datepicker-header .datepicker-controls .next-btn:hover {
+    color: transparent;
+    background-color: var(--c-accent--dark);
+  }
+}
 
 .datepicker-controls .prev-btn {
   font-family: var(--ffMain);
@@ -5922,14 +5931,6 @@ body._lock {
   mask-position: center;
   -webkit-mask-size: 70%;
   mask-size: 70%;
-}
-
-@media (min-width: 769px) {
-  .datepicker-header .datepicker-controls .prev-btn:hover,
-.datepicker-header .datepicker-controls .next-btn:hover {
-    color: transparent;
-    background-color: var(--c-accent--dark);
-  }
 }
 
 .datepicker-controls .prev-btn:disabled,

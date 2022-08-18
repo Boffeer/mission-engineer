@@ -21,9 +21,23 @@
         left: 0;
         // height: #{"calc(100 * 1vh)"};
         height: calc(100vh);
+        overflow-y: hidden
+    }
+}
+
+.sidebar:hover {
+    @media (min-width: 1101px) {
         overflow-y: auto;
     }
 }
+// .sidebar::-webkit-scrollbar-track {
+//     display: none;
+// }
+
+// .sidebar::-webkit-scrollbar-thumb {
+//     background-color: inherit;
+// }
+
 .sidebar__title {
     padding-right: 24px;
     padding-left: 24px;

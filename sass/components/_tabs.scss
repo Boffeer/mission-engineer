@@ -251,6 +251,7 @@
     background-color: transparent;
     opacity: 0;
     caret-color: transparent;
+    transition: none;
 }
 .chips--date.tab--active .input--calendar {
     color: var(--c-text-on);
@@ -264,9 +265,6 @@
 
 .chips--date .chips__text {
     margin-right: 8px;
-}
-.tab--active .chips__text {
-    margin-right: 13px;
 }
 
 .chips--date .datepicker-input.in-edit:active,

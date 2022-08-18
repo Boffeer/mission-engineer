@@ -4,7 +4,8 @@
     font-weight: var(--fw-normal);
     background-color: var(--bg-element);
     border-radius: 5px;
-    box-shadow: 3px 13px 52px rgba(209, 209, 209, 0.25);
+    // box-shadow: 3px 13px 52px rgba(209, 209, 209, 0.25);
+    box-shadow: var(--bs-snack);
 }
 .datepicker-controls {
     padding: 0;
@@ -33,6 +34,10 @@
 .datepicker-header .datepicker-controls .next-btn:hover {
     color: transparent;
     background-color: var(--c-accent);
+    @media (min-width: $minHover) {
+        color: transparent;
+        background-color: var(--c-accent--dark);
+    }
 }
 .datepicker-controls .prev-btn {
     font-family: var(--ffMain);
@@ -45,14 +50,6 @@
     color: transparent;
     background-color: var(--c-accent);
     @include getmask("../img/icons/angle-right.svg", 70%);
-}
-
-.datepicker-header .datepicker-controls .prev-btn:hover,
-.datepicker-header .datepicker-controls .next-btn:hover {
-    @media (min-width: $minHover) {
-        color: transparent;
-        background-color: var(--c-accent--dark);
-    }
 }
 
 .datepicker-controls .prev-btn:disabled,
