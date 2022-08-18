@@ -83,17 +83,17 @@
     width: 100%;
     pointer-events: none;
     opacity: 0;
-    transition: all 0.35s ease-in;
+    transition: all 0.4s ease-in;
     transform: translateX(-10%);
 }
 .tabs-page.tab--active {
     position: static;
     display: block;
     pointer-events: initial;
-    opacity: 1;
-    transform: translateX(0);
 }
 .tabs-page.tab--animated {
+    opacity: 1;
+    transform: translateX(0);
     // opacity: 1;
     // transform: translateX(0);
 }
@@ -271,6 +271,7 @@
 .chips__text {
     min-width: 28px;
     min-height: 18px;
+		margin-right: 13px;
     pointer-events: none;
 }
 

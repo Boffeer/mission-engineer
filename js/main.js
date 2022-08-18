@@ -411,9 +411,9 @@ setTimeout(() => {
             tabPages.forEach((tabPage, tabIndex) => {
               if (tabIndex !== buttonIndex) {
                 tabPage.classList.remove(TAB_ANIMATED_CLASS);
-                setTimeout(() => {
-                  tabPage.classList.remove(TAB_ACTIVE_CLASS);
-                }, 10);
+                // setTimeout(() => {
+                tabPage.classList.remove(TAB_ACTIVE_CLASS);
+                // }, 10);
               }
             });
             tabPages[buttonIndex].classList.add(TAB_ACTIVE_CLASS);
