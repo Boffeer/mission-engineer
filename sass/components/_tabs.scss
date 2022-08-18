@@ -87,7 +87,7 @@
     transform: translateX(-10%);
 }
 .tabs-page.tab--active {
-    position: static;
+    position: relative;
     display: block;
     pointer-events: initial;
 }

@@ -228,7 +228,7 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    border-radius: inherit;
+    border-radius: 5px;
 }
 
 .featured-slider:hover .card__img,
@@ -331,10 +331,6 @@
         padding-top: 98px;
     }
 }
-// .featured-slider--evnets .card--featured .card__info {
-//     @media (max-width: 575px) {
-//     }
-// }
 
 .card--featured.card--event .card__title {
     margin-bottom: 0;
