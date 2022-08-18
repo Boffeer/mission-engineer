@@ -3155,6 +3155,7 @@ body._lock {
 }
 
 .sidebar {
+  width: 100%;
   max-width: 361px;
   padding-top: 40px;
   background-color: var(--bg-element);
