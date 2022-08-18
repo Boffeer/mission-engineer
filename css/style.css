@@ -5832,7 +5832,7 @@ body._lock {
 }
 
 .news-slider-slide {
-  height: 100%;
+  height: auto;
 }
 @media (max-width: 1100px) {
   .news-slider-slide {
