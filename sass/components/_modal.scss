@@ -141,6 +141,7 @@
     right: 32px;
     width: 32px;
     height: 32px;
+    outline: none;
 
     @media (max-width: 575px) {
         right: 16px;
@@ -155,7 +156,7 @@
         width: 20px;
         height: 2px;
         background: var(--close-color);
-        border-radius: 100px;
+        border-radius: 0;
         transition: all 0.3s ease;
 
         &:nth-child(1) {

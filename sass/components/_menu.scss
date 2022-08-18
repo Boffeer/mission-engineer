@@ -233,6 +233,9 @@
     opacity: 1;
 }
 
+.menu__nav-link:hover .button__icon svg {
+    fill: var(--c-accent--dark);
+}
 .menu__nav-link .button__icon {
     margin-right: 12px;
     background: transparent;

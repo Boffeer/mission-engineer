@@ -1835,6 +1835,7 @@ body._lock {
   right: 32px;
   width: 32px;
   height: 32px;
+  outline: none;
 }
 @media (max-width: 575px) {
   .modal__close {
@@ -1850,7 +1851,7 @@ body._lock {
   width: 20px;
   height: 2px;
   background: var(--close-color);
-  border-radius: 100px;
+  border-radius: 0;
   transition: all 0.3s ease;
 }
 .modal__close span:nth-child(1) {
@@ -2541,6 +2542,10 @@ body._lock {
 .menu:hover .menu__nav-list {
   display: block;
   opacity: 1;
+}
+
+.menu__nav-link:hover .button__icon svg {
+  fill: var(--c-accent--dark);
 }
 
 .menu__nav-link .button__icon {
