@@ -340,6 +340,7 @@ window.addEventListener("DOMContentLoaded", () => {
   if (featuredSlider) {
     // eslint-disable-next-line no-unused-vars, no-undef
     let featuredSlider = new Swiper(".featured-slider", {
+      speed: 350,
       spaceBetween: 20,
       slidesPerView: 1,
       autoplay: {
