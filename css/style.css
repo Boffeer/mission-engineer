@@ -615,7 +615,7 @@ body._lock {
 
 .section__content--featured-slider {
   overflow: hidden;
-  border-radius: 50px;
+  border-radius: 8px;
 }
 
 /* Стили анимации пульсации кругов */
