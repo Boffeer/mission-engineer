@@ -616,7 +616,7 @@ body._lock {
 .section__content--featured-slider {
   overflow: hidden;
   isolation: isolate;
-  border-radius: 50px;
+  border-radius: 5px;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
@@ -5871,6 +5871,7 @@ body._lock {
   -moz-transform: translate3d(0, 0, 0);
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
 }
 
 .featured-slider-slide {
