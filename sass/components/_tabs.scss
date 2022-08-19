@@ -196,7 +196,7 @@
     width: 16px;
     height: 16px;
     background-color: var(--c-text-on);
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease;
 }
 .chips--date::after {
     // margin-left: 8px;
@@ -271,10 +271,16 @@
 .chips__text {
     min-width: 28px;
     min-height: 18px;
-		margin-right: 13px;
     pointer-events: none;
 }
 
+.tab .chips__text {
+    transition: none;
+}
+
+.tab--active .chips__text {
+    margin-right: 13px;
+}
 .chips--date .chips__text {
     margin-right: 8px;
 }

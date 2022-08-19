@@ -52,10 +52,13 @@ document.body.classList.add("os-" + os);
 
 //#endregion PlatformDetect
 function bodyLock(con) {
-  const scrollFix = window.innerWidth - document.body.clientWidth + "px";
+  let scrollFix = window.innerWidth - document.body.clientWidth;
   if (con === true) {
     document.body.classList.add("_lock");
-    document.body.style.paddingRight = scrollFix;
+    if (scrollFix > 17) {
+      scrollFix = 17;
+    }
+    document.body.style.paddingRight = scrollFix + "px";
   } else if (con === false) {
     document.body.classList.remove("_lock");
     document.body.style.paddingRight = 0;
