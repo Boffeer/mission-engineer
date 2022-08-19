@@ -2933,6 +2933,11 @@ body._lock {
   mask-size: contain;
 }
 
+.tabs--chips .calendar--active.tab--active::after {
+  display: none !important;
+  content: none;
+}
+
 .chips--date {
   position: relative;
 }
@@ -2941,22 +2946,26 @@ body._lock {
   margin-right: 12px;
 }
 
-.chips--date.calendar--active::after {
+.chips--date.tab--active .chips__angle {
   transform: rotate(180deg);
 }
+.chips--date.tab--active .chips__angle svg {
+  stroke: var(--c-text-on);
+}
 
-.tabs--chips .chips--date::after {
-  -webkit-mask: url("../img/icons/arrow-down.svg");
-  mask: url("../img/icons/arrow-down.svg");
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
+.chips__angle {
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 16px;
+  overflow: hidden;
   pointer-events: none;
-  content: "";
-  background-color: var(--c-accent);
+  border-radius: 100%;
+  transition: transform 0.3s ease;
+}
+
+.chips__angle svg {
+  stroke: var(--c-accent);
 }
 
 @media (min-width: 769px) {
@@ -2964,15 +2973,14 @@ body._lock {
     color: var(--c-text-on);
     background-color: var(--c-accent);
   }
-}
-
-.tabs--chips .tab--active.chips--date::after {
-  background-color: var(--c-text-on);
+  .tabs--chips .chips--date:hover svg {
+    stroke: var(--c-text-on);
+  }
 }
 
 @media (min-width: 769px) {
-  .tabs--chips .chips--date:hover::after {
-    background-color: var(--c-text-on);
+  .tabs--chips .chips--date:hover .chips__angle svg {
+    stroke: var(--c-text-on);
   }
 }
 
@@ -3064,7 +3072,8 @@ body._lock {
   margin-right: 10px;
 }
 
-.tab--cancelable::after {
+.tab--cancelable::after,
+.tab--cancelable .chips__angle {
   display: none !important;
 }
 

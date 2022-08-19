@@ -198,13 +198,14 @@
     background-color: var(--c-text-on);
     transition: transform 0.3s ease;
 }
-.chips--date::after {
-    // margin-left: 8px;
-}
 .tabs--chips .tab--active::after {
     // margin-left: 13px;
     content: "";
     @include getmask("../img/icons/close-icon.svg");
+}
+.tabs--chips .calendar--active.tab--active::after {
+    display: none !important;
+    content: none;
 }
 
 .chips--date {
@@ -213,27 +214,37 @@
 .chips--date:first-of-type {
     margin-right: 12px;
 }
-.chips--date.calendar--active::after {
+.chips--date.tab--active .chips__angle {
     transform: rotate(180deg);
+    svg {
+        stroke: var(--c-text-on);
+    }
 }
-.tabs--chips .chips--date::after {
-    @include getmask("../img/icons/arrow-down.svg");
+.chips__angle {
+    position: relative;
+    display: block;
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
     pointer-events: none;
-    content: "";
-    background-color: var(--c-accent);
+    border-radius: 100%;
+    transition: transform 0.3s ease;
+}
+.chips__angle svg {
+    stroke: var(--c-accent);
 }
 .tabs--chips .chips--date:hover {
     @media (min-width: $minHover) {
         color: var(--c-text-on);
         background-color: var(--c-accent);
+        svg {
+            stroke: var(--c-text-on);
+        }
     }
 }
-.tabs--chips .tab--active.chips--date::after {
-    background-color: var(--c-text-on);
-}
-.tabs--chips .chips--date:hover::after {
+.tabs--chips .chips--date:hover .chips__angle svg {
     @media (min-width: $minHover) {
-        background-color: var(--c-text-on);
+        stroke: var(--c-text-on);
     }
 }
 .tabs--chips .tabs__scrollable {
@@ -304,7 +315,8 @@
     margin-right: 10px;
 }
 
-.tab--cancelable::after {
+.tab--cancelable::after,
+.tab--cancelable .chips__angle {
     display: none !important;
 }
 .tab--date-cancel {
