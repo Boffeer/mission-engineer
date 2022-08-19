@@ -24,8 +24,7 @@
 }
 .page--loaded .menu {
     // transition: all 0.3s ease-in;
-    transition: max-width 0.3s ease-in, margin 0.3s ease-in,
-        opacity 0.3s ease-in;
+    transition: max-width 0.3s ease-in, margin 0.3s ease-in, opacity 0.3s ease-in, backdrop-filter 0.3s ease
 }
 .menu::after {
     position: fixed;
