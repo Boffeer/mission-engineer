@@ -1101,6 +1101,12 @@ if ([...calendarInputs].length > 0) {
         calendar.parentElement.querySelector('.input--calendar[name="end"]'),
       ],
     });
+    datepicker.inputs[0].datepicker.picker.element.classList.add(
+      "datepicker-picker--start"
+    );
+    datepicker.inputs[1].datepicker.picker.element.classList.add(
+      "datepicker-picker--end"
+    );
     const dateCancel = document.createElement("span");
     dateCancel.classList.add("tab--date-cancel");
     dateCancel.addEventListener("click", () => {
@@ -1153,15 +1159,19 @@ chipsDatepickers.forEach((datepicker) => {
 });
 
 function updateRangeValues(e) {
-  const startValue =
-    e.target.parentElement.querySelector('[name="start"]').value;
-  const endValue = e.target.parentElement.querySelector('[name="end"]').value;
+  const startInput = e.target.parentElement.querySelector('[name="start"]');
+  const endInput = e.target.parentElement.querySelector('[name="end"]');
+
+  const startValue = startInput.value;
+  const endValue = endInput.value;
 
   let innerText = "";
   if (endValue == "") {
     innerText = startValue;
   } else {
     innerText = startValue + " – " + endValue;
+    // startPicker.classList.remove("datepicker--no-transition");
+    // endPicker.classList.remove("datepicker--no-transition");
   }
   e.target.parentElement.querySelector(".chips__text").innerText = innerText;
 }
@@ -1190,6 +1200,28 @@ function handleCalendarHide(input) {
     }
   });
 }
+
+function toggleStartCalendarsTransition(e) {
+  const startInput = e.target.parentElement.querySelector('[name="start"]');
+  const endInput = e.target.parentElement.querySelector('[name="end"]');
+  const startPicker = startInput.datepicker.element.datepicker.picker.element;
+  const endPicker = endInput.datepicker.element.datepicker.picker.element;
+
+  startPicker.classList.add("datepicker--no-transition");
+  endPicker.classList.add("datepicker--no-transition");
+  setTimeout(() => {
+    startPicker.classList.remove("datepicker--no-transition");
+  }, 700);
+}
+function toggleEndCalendarsTransition(e) {
+  const startInput = e.target.parentElement.querySelector('[name="start"]');
+  const endInput = e.target.parentElement.querySelector('[name="end"]');
+  const startPicker = startInput.datepicker.element.datepicker.picker.element;
+  const endPicker = endInput.datepicker.element.datepicker.picker.element;
+
+  startPicker.classList.remove("datepicker--no-transition");
+  endPicker.classList.remove("datepicker--no-transition");
+}
 calendarInputs.forEach((start) => {
   handleCalendarHide(start);
   start.addEventListener("changeDate", (e) => {
@@ -1198,6 +1230,8 @@ calendarInputs.forEach((start) => {
     if (inputName == "start") {
       e.target.parentElement.querySelector('[name="end"]').datepicker.show();
     }
+
+    toggleStartCalendarsTransition(e);
 
     setTimeout(() => {
       updateRangeValues(e);
@@ -1208,7 +1242,11 @@ calendarInputs.forEach((start) => {
 calendarInputsEnd.forEach((end) => {
   end.addEventListener("changeDate", (e) => {
     updateRangeValues(e);
-    e.target.datepicker.hide();
+
+    toggleEndCalendarsTransition(e);
+    setTimeout(() => {
+      e.target.datepicker.hide();
+    }, 400);
   });
   handleCalendarHide(end);
 });

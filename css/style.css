@@ -6045,11 +6045,29 @@ body._lock {
   background-color: var(--c-accent);
 }
 
+.datepicker {
+  display: block;
+  pointer-events: none;
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease;
+  transform: scaleY(0);
+  transform-origin: top;
+}
 @media (max-width: 575px) {
-  .datepicker.active {
+  .datepicker {
     right: 0 !important;
-    left: 5px !important;
+    left: 16px !important;
   }
+}
+
+.datepicker.active {
+  pointer-events: initial;
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.datepicker.datepicker--no-transition {
+  transition: none;
 }
 
 .datepicker-cell.selected {
