@@ -348,7 +348,9 @@ function indicateAutoplaySlider(slider, autoplaySpeed) {
   );
   const paginationPercentage = document.createElement("span");
   paginationPercentage.classList.add("featured-slider-bullet__percentage");
-  currentBullet.append(paginationPercentage);
+  if (currentBullet) {
+    currentBullet.append(paginationPercentage);
+  }
   let currentInterval = 0;
   if (isStarterSlide) {
     timingModifier = 1200;
@@ -400,6 +402,22 @@ window.addEventListener("DOMContentLoaded", () => {
       indicateAutoplaySlider(featuredSlider, customAutoplaySpeed);
     }, 200);
 
+    let isFeaturedInit = false;
+    while (!isFeaturedInit) {
+      if (featuredSlider.initialized) {
+        document.querySelectorAll(".featured-slider").forEach((slider) => {
+          const firstSlide = slider.querySelector(
+            ".swiper-pagination-bullet-active"
+          );
+          slider.swiper.slideNext();
+          // setTimeout(() => {
+          slider.swiper.slidePrev();
+          // });
+          isFeaturedInit = true;
+        });
+      }
+    }
+
     featuredSlider.on("slideChange", () => {
       clearInterval(autoplayInterval);
       indicateAutoplaySlider(featuredSlider, customAutoplaySpeed);
@@ -415,18 +433,6 @@ window.addEventListener("DOMContentLoaded", () => {
           }
         });
     });
-    let isFeaturedInit = false;
-    while (!isFeaturedInit) {
-      if (featuredSlider.initialized) {
-        document.querySelectorAll(".featured-slider").forEach((slider) => {
-          const firstSlide = slider.querySelector(
-            ".swiper-pagination-bullet-active"
-          );
-          console.log(firstSlide);
-          isFeaturedInit = true;
-        });
-      }
-    }
   }
 });
 // #endregion featured-slider
@@ -994,7 +1000,7 @@ function activateInput(input) {
     const bottom = dropdownList.getBoundingClientRect().bottom;
     const height = dropdownList.getBoundingClientRect().height;
     const offset = window.innerHeight - bottom;
-    console.log(bound);
+    // console.log(bound);
     if (offset < height + 20) {
       dropdownList.style.top = "unset";
       dropdownList.style.bottom = "calc(100% + 20px) ";
