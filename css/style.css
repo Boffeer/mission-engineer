@@ -2794,7 +2794,6 @@ body._lock {
   pointer-events: none;
   opacity: 0;
   transition: all 0.4s ease-in;
-  transform: translateX(-10%);
 }
 
 .tabs-page.tab--active {
@@ -2805,7 +2804,6 @@ body._lock {
 
 .tabs-page.tab--animated {
   opacity: 1;
-  transform: translateX(0);
 }
 
 .tabs__track {
@@ -4506,13 +4504,31 @@ body._lock {
   white-space: nowrap;
 }
 
+.detailed tr {
+  position: relative;
+}
+
+.detailed tr::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 1px;
+  content: "";
+  background-color: var(--c-blind);
+}
+
+.detailed tr:last-child:after {
+  display: none;
+}
+
 .detailed th,
 .detailed td {
   padding-top: 16px;
   padding-right: 8px;
   padding-bottom: 16px;
   padding-left: 8px;
-  border-bottom: 1px solid var(--c-blind);
 }
 
 .about__organization {
@@ -5025,6 +5041,7 @@ body._lock {
   grid-row-start: 1;
   grid-row-end: 3;
   background-image: url("../img/about/1.png");
+  background-size: 102%;
 }
 @media (max-width: 575px) {
   .about__row--grided:nth-child(1) .about-cell:nth-child(1),

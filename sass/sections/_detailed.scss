@@ -544,6 +544,22 @@
     color: var(--c-text-disabled);
     white-space: nowrap;
 }
+.detailed tr {
+    position: relative;
+}
+.detailed tr::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    content: "";
+    background-color: var(--c-blind);
+}
+.detailed tr:last-child:after {
+    display: none;
+}
 
 .detailed th,
 .detailed td {
@@ -551,5 +567,5 @@
     padding-right: 8px;
     padding-bottom: 16px;
     padding-left: 8px;
-    border-bottom: 1px solid var(--c-blind);
+    // border-bottom: 1px solid var(--c-blind);
 }

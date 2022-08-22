@@ -420,7 +420,7 @@
     }
 }
 // .about__row:not(.about__row--grided) .about-cell .about-cell__link:hover {
-    // --icon-color: var(--c-accent);
+// --icon-color: var(--c-accent);
 // }
 // .about__row:not(.about__row--grided)
 //     .about-cell
@@ -485,6 +485,7 @@
     grid-row-end: 3;
     // @include accentCard();
     background-image: url("../img/about/1.png");
+    background-size: 102%;
     @media (max-width: 575px) {
         min-height: 250px;
     }
