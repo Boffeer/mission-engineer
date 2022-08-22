@@ -339,13 +339,12 @@ modalClosers.forEach((button) => {
 // #region featured-slider
 
 let isStarterSlide = true;
-let lastSliderIndex = 0;
 let autoplayInterval = "";
 function indicateAutoplaySlider(slider, autoplaySpeed) {
   let timingModifier = 400;
 
   const currentBullet = slider.el.querySelector(
-    `.swiper-pagination-bullet-active`
+    ".swiper-pagination-bullet-active"
   );
   const paginationPercentage = document.createElement("span");
   paginationPercentage.classList.add("featured-slider-bullet__percentage");
@@ -397,6 +396,9 @@ window.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       // featuredSlider.autoplay.start();
       indicateAutoplaySlider(featuredSlider, customAutoplaySpeed);
+      featuredSlider.el
+        .querySelector(".swiper-pagination-bullet-active")
+        .click();
     }, 200);
     featuredSlider.on("slideChange", () => {
       clearInterval(autoplayInterval);
