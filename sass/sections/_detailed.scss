@@ -557,7 +557,7 @@
     content: "";
     background-color: var(--c-blind);
 }
-.detailed tr:last-child:after {
+.detailed tr:last-child:not(:only-child):after {
     display: none;
 }
 
