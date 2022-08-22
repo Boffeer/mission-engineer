@@ -24,7 +24,8 @@
 }
 .page--loaded .menu {
     // transition: all 0.3s ease-in;
-    transition: max-width 0.3s ease-in, margin 0.3s ease-in, opacity 0.3s ease-in, backdrop-filter 0.3s ease
+    transition: max-width 0.3s ease-in, margin 0.3s ease-in,
+        opacity 0.3s ease-in, backdrop-filter 0.3s ease;
 }
 .menu::after {
     position: fixed;
@@ -70,7 +71,7 @@
 
 .menu--shrink .menu__nav-link .button__text {
     @media (min-width: 1101px) and (max-width: 1550px) {
-        width: 0;
+        // width: 0;
         margin-right: 0;
         white-space: nowrap;
         opacity: 0;
@@ -171,7 +172,7 @@
 
 .menu--shrink:not(:hover) .menu__top {
     @media (min-width: 1101px) and (max-width: 1550px) {
-        margin-left: 5px;
+        // margin-left: 5px;
     }
 }
 
@@ -316,7 +317,7 @@
     transition: all 0.3s ease-in-out;
     transform: translateX(0);
     @media (max-width: 1100px) {
-    transition: transform 0.3s ease-in-out;
+        transition: transform 0.3s ease-in-out;
     }
 }
 

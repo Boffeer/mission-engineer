@@ -338,6 +338,40 @@ modalClosers.forEach((button) => {
 
 // #region featured-slider
 
+let isStarterSlide = true;
+function indicateAutoplaySlider(slider) {
+  let autoplayInterval = "";
+
+  let timingModifier = 400;
+
+  const currentBullet = slider.el.querySelector(
+    `.swiper-pagination-bullet-active`
+  );
+  const paginationPercentage = document.createElement("span");
+  paginationPercentage.classList.add("featured-slider-bullet__percentage");
+  currentBullet.append(paginationPercentage);
+  let currentInterval = 0;
+  if (isStarterSlide) {
+    timingModifier = 1200;
+    isStarterSlide = false;
+  } else {
+    timingModifier = 210;
+  }
+  autoplayInterval = setInterval(() => {
+    // if (!slider.autoplay.paused) {
+    currentInterval += 200;
+    const percentage =
+      (currentInterval / (slider.params.autoplay.delay - timingModifier)) * 100;
+    paginationPercentage.style.width = `${percentage}%`;
+    if (currentInterval >= slider.params.autoplay.delay) {
+      clearInterval(autoplayInterval);
+      setTimeout(() => {
+        paginationPercentage.remove();
+      }, 100);
+    }
+    // }
+  }, 200);
+}
 window.addEventListener("DOMContentLoaded", () => {
   const featuredSlider = document.querySelector(".featured-slider");
   if (featuredSlider) {
@@ -349,7 +383,7 @@ window.addEventListener("DOMContentLoaded", () => {
       autoplay: {
         delay: 5000,
         disableOnInteraction: false,
-        pauseOnMouseEnter: true,
+        pauseOnMouseEnter: false,
       },
       // grabCursor: true,
       pagination: {
@@ -360,7 +394,11 @@ window.addEventListener("DOMContentLoaded", () => {
     featuredSlider.autoplay.stop();
     setTimeout(() => {
       featuredSlider.autoplay.start();
+      indicateAutoplaySlider(featuredSlider);
     }, 200);
+    featuredSlider.on("slideChange", () => {
+      indicateAutoplaySlider(featuredSlider);
+    });
   }
 });
 // #endregion featured-slider
@@ -745,7 +783,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let detailedThumbs = new Swiper(
       `.detailed-slider-${index} .detailed-slider__thumbs`,
       {
-        grabCursor: true,
+        // grabCursor: true,
         spaceBetween: 8,
         slidesPerView: "auto",
         slidesPerGroup: 1,
