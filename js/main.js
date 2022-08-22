@@ -389,16 +389,12 @@ window.addEventListener("DOMContentLoaded", () => {
       },
       on: {
         afterInit: function () {
-          setTimeout(() => {
-            document.querySelectorAll(".featured-slider").forEach((slider) => {
-              const firstSlide = slider.querySelector(
-                ".swiper-pagination-bullet-active"
-              );
-              firstSlide.nextSibling.click();
-              setTimeout(() => {
-                firstSlide.click();
-              }, 1);
-            });
+          document.querySelectorAll(".featured-slider").forEach((slider) => {
+            const firstSlide = slider.querySelector(
+              ".swiper-pagination-bullet-active"
+            );
+            slider.swiper.slideNext();
+            slider.swiper.slidePrev();
           });
         },
       },
