@@ -387,16 +387,13 @@ window.addEventListener("DOMContentLoaded", () => {
         el: ".featured-slider__pagination",
         clickable: true,
       },
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        pauseOnMouseEnter: false,
+      },
       on: {
-        afterInit: function () {
-          document.querySelectorAll(".featured-slider").forEach((slider) => {
-            const firstSlide = slider.querySelector(
-              ".swiper-pagination-bullet-active"
-            );
-            slider.swiper.slideNext();
-            slider.swiper.slidePrev();
-          });
-        },
+        afterInit: function () {},
       },
     });
     setTimeout(() => {
@@ -418,6 +415,18 @@ window.addEventListener("DOMContentLoaded", () => {
           }
         });
     });
+    let isFeaturedInit = false;
+    while (!isFeaturedInit) {
+      if (featuredSlider.initialized) {
+        document.querySelectorAll(".featured-slider").forEach((slider) => {
+          const firstSlide = slider.querySelector(
+            ".swiper-pagination-bullet-active"
+          );
+          console.log(firstSlide);
+          isFeaturedInit = true;
+        });
+      }
+    }
   }
 });
 // #endregion featured-slider
@@ -546,7 +555,6 @@ const newsSliderSettings = {
 
 function initSlider(slider) {
   // eslint-disable-next-line no-undef, no-unused-vars
-  console.log(slider.selector);
   return new Swiper(slider.selector, slider.options);
 }
 // eslint-disable-next-line no-undef, no-unused-vars
