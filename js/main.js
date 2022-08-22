@@ -339,9 +339,9 @@ modalClosers.forEach((button) => {
 // #region featured-slider
 
 let isStarterSlide = true;
-function indicateAutoplaySlider(slider) {
-  let autoplayInterval = "";
-
+let lastSliderIndex = 0;
+let autoplayInterval = "";
+function indicateAutoplaySlider(slider, autoplaySpeed) {
   let timingModifier = 400;
 
   const currentBullet = slider.el.querySelector(
@@ -358,46 +358,60 @@ function indicateAutoplaySlider(slider) {
     timingModifier = 210;
   }
   autoplayInterval = setInterval(() => {
-    // if (!slider.autoplay.paused) {
     currentInterval += 200;
     const percentage =
-      (currentInterval / (slider.params.autoplay.delay - timingModifier)) * 100;
+      (currentInterval / (autoplaySpeed - timingModifier)) * 100;
     paginationPercentage.style.width = `${percentage}%`;
-    if (currentInterval >= slider.params.autoplay.delay) {
+    if (currentInterval >= autoplaySpeed) {
       clearInterval(autoplayInterval);
       setTimeout(() => {
         paginationPercentage.remove();
       }, 100);
+      if (slider.activeIndex >= slider.slides.length - 1) {
+        slider.slideTo(0);
+      } else {
+        slider.slideNext();
+      }
     }
-    // }
   }, 200);
 }
 window.addEventListener("DOMContentLoaded", () => {
   const featuredSlider = document.querySelector(".featured-slider");
+  const customAutoplaySpeed = 5000; //Потому что в айфоне дефолтный автоплей не работал
   if (featuredSlider) {
     // eslint-disable-next-line no-unused-vars, no-undef
     let featuredSlider = new Swiper(".featured-slider", {
       speed: 350,
       spaceBetween: 20,
       slidesPerView: 1,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: false,
-      },
-      // grabCursor: true,
+      // autoplay: { delay: 5000,
+      //   disableOnInteraction: false,
+      //   pauseOnMouseEnter: false,
+      // },
       pagination: {
         el: ".featured-slider__pagination",
         clickable: true,
       },
     });
-    featuredSlider.autoplay.stop();
+    // featuredSlider.autoplay.stop();
     setTimeout(() => {
-      featuredSlider.autoplay.start();
-      indicateAutoplaySlider(featuredSlider);
+      // featuredSlider.autoplay.start();
+      indicateAutoplaySlider(featuredSlider, customAutoplaySpeed);
     }, 200);
     featuredSlider.on("slideChange", () => {
-      indicateAutoplaySlider(featuredSlider);
+      clearInterval(autoplayInterval);
+      indicateAutoplaySlider(featuredSlider, customAutoplaySpeed);
+      featuredSlider.el
+        .querySelectorAll(".swiper-pagination-bullet")
+        .forEach((bullet) => {
+          if (!bullet.classList.contains("swiper-pagination-bullet-active")) {
+            bullet
+              .querySelectorAll(".featured-slider-bullet__percentage")
+              .forEach((indicator) => {
+                indicator.remove();
+              });
+          }
+        });
     });
   }
 });
