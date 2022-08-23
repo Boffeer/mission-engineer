@@ -3722,7 +3722,7 @@ body._lock {
 .header__button-search::before,
 .header__button-search::after,
 .header__button-search .header__button-search-icon {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out !important;
 }
 
 .header__button-search.active::before {
