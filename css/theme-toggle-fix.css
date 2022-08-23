@@ -1,3 +1,3 @@
-* {
+*:not(.featured-slider-bullet__percentage) {
   transition: none !important;
 }/*# sourceMappingURL=theme-toggle-fix.css.map */

@@ -1,1 +1,1 @@
-*{transition:none !important}/*# sourceMappingURL=theme-toggle-fix.min.css.map */
+*:not(.featured-slider-bullet__percentage){transition:none !important}/*# sourceMappingURL=theme-toggle-fix.min.css.map */
