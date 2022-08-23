@@ -13,9 +13,7 @@
   --c-element-disabled: #eeeeee;
   --border-bq: #d8d8de;
   --bg-modal: rgba(0, 0, 0, 0.2);
-  --bs-snack: 0px 4px 4px rgba(190, 190, 190, 0.25),
-      6px 7px 20px rgba(208, 208, 208, 0.25),
-      3px 13px 52px rgba(209, 209, 209, 0.25);
+  --bs-snack: 0px 0px 8px 0px rgba(0, 0, 0, 0.2);
   --c-error: #e23c2a;
 }
 
