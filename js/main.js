@@ -645,6 +645,7 @@ function showDocument() {
 }
 
 function setScheme(scheme) {
+  document.querySelector("#theme-toggle-fix").setAttribute("media", "all");
   switchMedia(scheme);
 
   if (scheme === "auto") {
@@ -675,6 +676,11 @@ function switchMedia(scheme) {
 
   document.body.classList.remove("theme--auto", "theme--dark", "theme--light");
   document.body.classList.add(`theme--${scheme}`);
+  setTimeout(() => {
+    document
+      .querySelector("#theme-toggle-fix")
+      .setAttribute("media", "not-all");
+  }, 300);
 }
 
 function setupScheme() {
