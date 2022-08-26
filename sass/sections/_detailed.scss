@@ -22,6 +22,11 @@
         --image-height: 164px;
     }
 }
+.section .detailed {
+    @media (min-width: 1450px) {
+        margin-left: unset;
+    }
+}
 
 .detailed__buttons {
     margin-bottom: var(--blocks-gap-big);

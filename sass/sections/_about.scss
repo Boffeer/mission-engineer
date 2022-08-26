@@ -486,8 +486,12 @@
     // @include accentCard();
     background-image: url("../img/about/1.png");
     background-size: 102%;
+    @media (max-width: 1440px) {
+        background-size: cover;
+    }
     @media (max-width: 575px) {
         min-height: 250px;
+        background-size: contain;
     }
 }
 .about__row--grided:nth-child(1) .about-cell:nth-child(1) .about-cell__title,
