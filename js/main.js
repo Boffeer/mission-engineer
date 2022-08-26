@@ -1362,4 +1362,12 @@ if (headerMenu) {
 
 window.addEventListener("DOMContentLoaded", () => {
   showDocument();
+
+  const tables = document.querySelectorAll(".detailed table");
+  tables.forEach((table) => {
+    const wrapper = document.createElement("div");
+    wrapper.classList = "table-wrap";
+    document.querySelector(".detailed").insertBefore(wrapper, table);
+    wrapper.append(table);
+  });
 });

@@ -4505,6 +4505,11 @@ body._lock {
   white-space: nowrap;
 }
 
+.detailed thead,
+.detailed tbody {
+  width: 100%;
+}
+
 .detailed tr {
   position: relative;
 }
