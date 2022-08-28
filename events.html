@@ -493,7 +493,8 @@
           >
             <div class="tabs__track tabs-filters">
               <div class="tabs__scrollable">
-                <button class="tab chips--date">
+                <label class="tab chips--date">
+                  <input class="tab__radio" type="radio" name="filter" />
                   <input
                     type="text"
                     class="input--calendar"
@@ -516,19 +517,23 @@
                       ></use>
                     </svg>
                   </span>
-                </button>
-                <button class="tab">
+                </label>
+                <label class="tab">
+                  <input class="tab__radio" type="radio" name="filter" />
                   <span class="chips__text">Сегодня</span>
-                </button>
-                <button class="tab">
+                </label>
+                <label class="tab">
+                  <input class="tab__radio" type="radio" name="filter" />
                   <span class="chips__text">Завтра</span>
-                </button>
-                <button class="tab">
+                </label>
+                <label class="tab">
+                  <input class="tab__radio" type="radio" name="filter" />
                   <span class="chips__text">На этой неделе</span>
-                </button>
-                <button class="tab tab--active">
+                </label>
+                <label class="tab tab--active">
+                  <input class="tab__radio" type="radio" name="filter" />
                   <span class="chips__text">В этом месяце</span>
-                </button>
+                </label>
               </div>
             </div>
           </div>

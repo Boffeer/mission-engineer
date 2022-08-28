@@ -440,7 +440,6 @@ tabsBars.forEach((tabsBar) => {
       const tabPages = tabsPagesWrap.querySelectorAll(".tabs-page");
       tabPages.forEach((tabPage) => {
         tabPage.classList.add(TAB_ACTIVE_CLASS);
-        // tabPage.classList.add(TAB_ANIMATED_CLASS);
       });
     });
   }
@@ -460,8 +459,15 @@ setTimeout(() => {
         }
         tabBarButtons.forEach((tab) => {
           tab.classList.remove(TAB_ACTIVE_CLASS);
+          const radio = tab.querySelector('input[type="radio"]');
+          if (radio) {
+            radio.removeAttribute("checked");
+          }
         });
+        const radio = tabButton.querySelector('input[type="radio"]');
         tabButton.classList.add(TAB_ACTIVE_CLASS);
+        radio.setAttribute("checked", "checked");
+
         if (tabsBar.dataset.tabs) {
           const tabPages = document
             .querySelector(`.tabs-content[data-tabs="${tabsBar.dataset.tabs}"]`)
@@ -471,9 +477,7 @@ setTimeout(() => {
             tabPages.forEach((tabPage, tabIndex) => {
               if (tabIndex !== buttonIndex) {
                 tabPage.classList.remove(TAB_ANIMATED_CLASS);
-                // setTimeout(() => {
                 tabPage.classList.remove(TAB_ACTIVE_CLASS);
-                // }, 10);
               }
             });
             tabPages[buttonIndex].classList.add(TAB_ACTIVE_CLASS);
@@ -849,7 +853,7 @@ window.addEventListener("DOMContentLoaded", () => {
 // #region validate
 function validateInput(input) {
   const field = input.querySelector("input");
-  if (input.classList.contains("input--no-validate")) return;
+  if (!input.classList.contains("input--required")) return;
   // console.log()
   if (field.type == "tel") {
     return validatePhone(input);
@@ -920,35 +924,34 @@ const formsList = document.querySelectorAll("form");
 formsList.forEach((form) => {
   // console.log("form");
   form.addEventListener("submit", async (event) => {
-    console.log(form);
+    // console.log(form);
     event.preventDefault();
 
     form.querySelectorAll(".input").forEach((input) => {
       validateInput(input);
     });
 
+    // const formBody = new URLSearchParams(new FormData(form));
+
     if ([...document.querySelectorAll(".input--invalid")].length === 0) {
-      if (eventsThanks) {
-        openModal(eventsThanks);
-      }
-    } else {
-      if (formError) {
-        openModal(formError);
+      let response = await fetch(window.location.origin + "/index.html", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
+      try {
+        let result = await response.json();
+        console.log(result);
+        if (eventsThanks) {
+          openModal(eventsThanks);
+        }
+      } catch {
+        if (formError) {
+          openModal(formError);
+        }
       }
     }
-
-    // let response = await fetch(
-    //   window.location.origin + "/wp-content/themes/c21/send.php",
-    //   {
-    //     method: "POST",
-    //     body: new URLSearchParams(new FormData(form)),
-    //     headers: {
-    //       "Content-Type": "application/x-www-form-urlencoded",
-    //     },
-    //   }
-    // );
-    // let result = await response.json();
-    // console.log(result);
   });
 });
 
@@ -973,7 +976,7 @@ function activateInput(input) {
       window.addEventListener("click", closeDropdowns);
     }, 400);
     const dropdownList = input.querySelector(".input-dropdown");
-    const bound = dropdownList.getBoundingClientRect();
+    // const bound = dropdownList.getBoundingClientRect();
     const bottom = dropdownList.getBoundingClientRect().bottom;
     const height = dropdownList.getBoundingClientRect().height;
     const offset = window.innerHeight - bottom;
@@ -1077,7 +1080,9 @@ function activateDropdown(input) {
   }, 200);
 }
 initInputs(inputs);
-customSelect(".input--dropdown .input__select");
+if (document.querySelector(".input--dropdown")) {
+  customSelect(".input--dropdown .input__select");
+}
 
 // #endregion input-labels
 
