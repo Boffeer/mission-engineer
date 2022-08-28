@@ -581,7 +581,7 @@ if (newsSliders) {
 
   window.addEventListener("resize", () => {
     debounce(() => {
-      console.log("resize");
+      // console.log("resize");
       removeSlider(newsSlider);
       initSlider(newsSlider);
     }, 1000);
@@ -849,6 +849,8 @@ window.addEventListener("DOMContentLoaded", () => {
 // #region validate
 function validateInput(input) {
   const field = input.querySelector("input");
+  if (input.classList.contains("input--no-validate")) return;
+  // console.log()
   if (field.type == "tel") {
     return validatePhone(input);
   } else if (field.type == "email") {
@@ -861,7 +863,6 @@ function validateInput(input) {
 }
 function validateInputLength(input) {
   const field = input.querySelector("input");
-  console.log(field.value);
   if (field.value.length == 0) {
     input.classList.add("input--invalid");
     return false;
@@ -875,11 +876,11 @@ function validatePhone(input) {
   let regex = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
   if (!regex.test(field.value)) {
     input.classList.add("input--invalid");
-    console.log("phone invalid");
+    // console.log("phone invalid");
     return false;
   } else {
     input.classList.remove("input--invalid");
-    console.log("phone valid");
+    // console.log("phone valid");
     return true;
   }
 }
@@ -890,11 +891,11 @@ function validateEmail(input) {
     /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
   if (!regex.test(field.value)) {
     input.classList.add("input--invalid");
-    console.log("email invalid");
+    // console.log("email invalid");
     return false;
   } else {
     input.classList.remove("input--invalid");
-    console.log("email valid");
+    // console.log("email valid");
     return true;
   }
 }
@@ -971,26 +972,11 @@ function activateInput(input) {
     setTimeout(() => {
       window.addEventListener("click", closeDropdowns);
     }, 400);
-    // Скроллит чтоб всегда было видно первые варианты ответов
-    // var element = input.querySelector(".input-dropdown");
-    // var listEndOffset = 145;
-    // var elementPosition = element.getBoundingClientRect().top;
-    // var offsetPosition =
-    //   elementPosition +
-    //   window.pageYOffset -
-    //   listEndOffset -
-    //   element.getBoundingClientRect().height * 2;
-    // window.scrollTo({
-    //   top: offsetPosition,
-    //   behavior: "smooth",
-    // });
-    //===
     const dropdownList = input.querySelector(".input-dropdown");
     const bound = dropdownList.getBoundingClientRect();
     const bottom = dropdownList.getBoundingClientRect().bottom;
     const height = dropdownList.getBoundingClientRect().height;
     const offset = window.innerHeight - bottom;
-    // console.log(bound);
     if (offset < height + 20) {
       dropdownList.style.top = "unset";
       dropdownList.style.bottom = "calc(100% + 20px) ";
@@ -1008,6 +994,7 @@ function deactivateInput(input) {
     }
   }, 100);
   const dropdownList = input.querySelector(".input-dropdown");
+  if (!dropdownList) return;
   setTimeout(() => {
     dropdownList.style.top = "";
     dropdownList.style.bottom = "";
@@ -1032,6 +1019,8 @@ function initInputs(inputs) {
       }
     });
 
+    if (!field) return;
+
     field.addEventListener("focus", () => {
       activateInput(input);
     });
@@ -1047,7 +1036,7 @@ function initInputs(inputs) {
     if (field.value !== "") {
       input.classList.add(inputClasses.active);
     }
-    activateDropdown(input);
+    // activateDropdown(input);
   });
 }
 
@@ -1088,6 +1077,7 @@ function activateDropdown(input) {
   }, 200);
 }
 initInputs(inputs);
+customSelect(".input--dropdown .input__select");
 
 // #endregion input-labels
 

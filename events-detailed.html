@@ -273,6 +273,7 @@
                   />
                 </label>
                 <button
+                  type="submit"
                   class="button button--primary button--small search__button"
                 >
                   Найти
@@ -370,15 +371,15 @@
         <form action="./mail.php" class="form form--regular">
           <div class="form__inner">
             <h2 class="form__title">Регистрация</h2>
-            <label class="input input--half">
+            <label class="input input--no-validate input--half">
               <input type="text" name="user_name" class="input__field" />
               <span class="input__label">Ваше имя</span>
-              <span class="input__error">Текст ошибки, текст ошибки</span>
+              <span class="input__error">Введите имя</span>
             </label>
             <label class="input input--half">
               <input type="text" name="user_name" class="input__field" />
               <span class="input__label">Ваша фамилия</span>
-              <span class="input__error">Текст ошибки, текст ошибки</span>
+              <span class="input__error">Введите фамилию</span>
             </label>
             <label class="input input--invalid">
               <input
@@ -388,7 +389,7 @@
                 value="user@mail.ru "
               />
               <span class="input__label">E-mail</span>
-              <span class="input__error">Текст ошибки, текст ошибки</span>
+              <span class="input__error">Введите корректный E-mail</span>
             </label>
             <label class="input">
               <input
@@ -398,13 +399,20 @@
                 value="Томский политехнический университет"
               />
               <span class="input__label">Компания</span>
-              <span class="input__error">Текст ошибки, текст ошибки</span>
+              <span class="input__error">Введите название компании</span>
             </label>
-            <label class="input input--dropdown">
+            <div class="input input--dropdown">
+              <select name="user_status" class="input__select">
+                <option value="choice_1">Выбор 1</option>
+                <option value="choice_2">Выбор 2</option>
+              </select>
+              <span class="input__error">Выберите один из вариантов</span>
+            </div>
+            <!-- <label class="input input--dropdown">
               <input type="text" hidden name="user_status" />
               <div class="input__field">Выберите из списка ваш статус</div>
               <span class="input__label">Выберите из списка ваш статус</span>
-              <span class="input__error">Текст ошибки, текст ошибки</span>
+              <span class="input__error">Выберите один из вариантов</span>
               <ul class="input-dropdown">
                 <li>
                   <button
@@ -439,9 +447,10 @@
                   </button>
                 </li>
               </ul>
-            </label>
+            </label> -->
             <div class="form__bottom flex">
               <button
+                type="submit"
                 class="button button--primary form__button detailed-form__button"
               >
                 Отправить
@@ -914,6 +923,7 @@
     <!-- Подключение скриптов -->
     <script src="./js/libs/swiper-bundle.min.js"></script>
     <script src="./js/libs/datepicker-full.min.js"></script>
+    <script src="./js/libs/custom-select.min.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>

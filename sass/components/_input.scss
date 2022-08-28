@@ -69,7 +69,16 @@
 .input--dropdown {
     margin-top: -2px;
 }
-.input--dropdown::after {
+.input--dropdown .custom-select-opener {
+    padding: 14px 16px;
+    font-size: inherit;
+    line-height: inherit;
+    color: var(--c-text);
+    background-color: var(--bg-element);
+    border: 1px solid var(--c-blind);
+    border-radius: 5px;
+}
+.input--dropdown .custom-select-opener::after {
     position: absolute;
     top: 17px;
     right: 16px;
@@ -84,8 +93,45 @@
     @include getmask("../img/icons/arrow-down.svg");
 }
 
+.input--dropdown .is-open .custom-select-opener::after,
 .input--active-dropdown.input--dropdown::after {
     transform: rotate(180deg);
+}
+
+.input--dropdown .custom-select-panel {
+    margin-top: 8px;
+    background-color: var(--bg-element);
+    border: 1px solid var(--c-text-disabled);
+    border-radius: 5px;
+    opacity: 0;
+}
+.input--dropdown .is-open .custom-select-panel {
+    opacity: 1;
+}
+.input--dropdown .custom-select-option {
+    width: 100%;
+    padding: 10px 16px;
+    font-size: var(--fz-body--small);
+    line-height: var(--lh-body--small);
+    color: var(--c-text);
+    text-align: left;
+    cursor: pointer;
+}
+
+.input--dropdown .is-selected.custom-select-option,
+.input--dropdown .has-focus.custom-select-option {
+    @media (min-width: $minHover) {
+        background-color: var(--c-accent--light);
+    }
+}
+.theme--dark .input--dropdown .is-selected.custom-select-option,
+.theme--dark .input--dropdown .has-focus.custom-select-option {
+    @media (min-width: $minHover) {
+        background: rgba(40, 190, 70, 0.1);
+    }
+}
+.input--dropdown .custom-select-option.is-selected::before {
+    display: none;
 }
 
 .input-dropdown {
@@ -114,27 +160,6 @@
     pointer-events: initial;
     visibility: visible;
     opacity: 1;
-}
-
-.input-dropdown__item {
-    width: 100%;
-    padding: 10px 16px;
-    font-size: var(--fz-body--small);
-    line-height: var(--lh-body--small);
-    color: var(--c-text);
-    text-align: left;
-}
-.input-dropdown__item:hover {
-    @media (min-width: $minHover) {
-        cursor: pointer;
-        background-color: var(--c-accent--light);
-    }
-}
-.theme--dark .input-dropdown__item:hover {
-    @media (min-width: $minHover) {
-        cursor: pointer;
-        background: rgba(40, 190, 70, 0.1);
-    }
 }
 
 .input--half {
