@@ -346,6 +346,7 @@ body._lock {
 }
 
 .cards--fullsize .card__info {
+  max-width: 966px;
   padding: 0;
 }
 
