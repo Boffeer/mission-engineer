@@ -466,7 +466,9 @@ setTimeout(() => {
         });
         const radio = tabButton.querySelector('input[type="radio"]');
         tabButton.classList.add(TAB_ACTIVE_CLASS);
-        radio.setAttribute("checked", "checked");
+        if (radio) {
+          radio.setAttribute("checked", "checked");
+        }
 
         if (tabsBar.dataset.tabs) {
           const tabPages = document
