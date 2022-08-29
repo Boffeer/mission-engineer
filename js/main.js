@@ -445,6 +445,24 @@ tabsBars.forEach((tabsBar) => {
   }
 });
 
+function activateFilter(tab) {
+  const checkbox = tab.querySelector('input[type="checkbox"]');
+  if (checkbox) {
+    checkbox.checked = true;
+    debounce(() => {
+      checkbox.dispatchEvent(new Event("change"));
+    }, 200);
+  }
+}
+function deactivateFilter(tab) {
+  const checkbox = tab.querySelector('input[type="checkbox"]');
+  if (checkbox) {
+    checkbox.checked = false;
+    debounce(() => {
+      checkbox.dispatchEvent(new Event("change"));
+    }, 200);
+  }
+}
 // Задержка нужна, чтобы Swiper слайдеры не разъезжались
 setTimeout(() => {
   tabsBars.forEach((tabsBar) => {
@@ -459,16 +477,10 @@ setTimeout(() => {
         }
         tabBarButtons.forEach((tab) => {
           tab.classList.remove(TAB_ACTIVE_CLASS);
-          const radio = tab.querySelector('input[type="radio"]');
-          if (radio) {
-            radio.removeAttribute("checked");
-          }
+          deactivateFilter(tab);
         });
-        const radio = tabButton.querySelector('input[type="radio"]');
         tabButton.classList.add(TAB_ACTIVE_CLASS);
-        if (radio) {
-          radio.setAttribute("checked", "checked");
-        }
+        activateFilter(tabButton);
 
         if (tabsBar.dataset.tabs) {
           const tabPages = document
@@ -487,10 +499,6 @@ setTimeout(() => {
               tabPages[buttonIndex].classList.add(TAB_ANIMATED_CLASS);
             }, 60);
           }
-        } else {
-          // console.warn(
-          //   `there is no tab pages [data-tab="${tabsBar.dataset.tabs}"]`
-          // );
         }
       });
     });
@@ -499,6 +507,7 @@ setTimeout(() => {
       tabBarButtons.forEach((tabButton) => {
         if (tabButton.classList.contains(TAB_ACTIVE_CLASS)) {
           tabButton.click();
+          activateFilter(tabButton);
         }
       });
     }
@@ -507,6 +516,7 @@ setTimeout(() => {
 
 const filtersButtons = document.querySelectorAll(".js_tabs-filters .tab");
 const closableArea = 28;
+// Клик по кнопке закрыть в чипсе
 filtersButtons.forEach((button) => {
   button.addEventListener("click", (e) => {
     if (
@@ -517,6 +527,11 @@ filtersButtons.forEach((button) => {
         if (button.getBoundingClientRect().width - e.offsetX < closableArea) {
           button.classList.remove("tab--active");
           button.classList.remove("calendar--active");
+
+          const checkbox = button.querySelector('input[type="checkbox"]');
+          if (checkbox) {
+            checkbox.checked = false;
+          }
         }
       }, 10);
     }
