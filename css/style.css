@@ -3170,6 +3170,14 @@ body._lock {
   background-color: var(--bg-element);
 }
 
+.tab__checkbox {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: absolute;
+  opacity: 0;
+}
+
 .socials {
   display: flex;
   align-items: center;
