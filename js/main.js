@@ -868,41 +868,70 @@ window.addEventListener("DOMContentLoaded", () => {
  */
 
 // #region validate
+document.addEventListener(
+  "invalid",
+  (function () {
+    return function (e) {
+      e.preventDefault();
+      e.target.focus();
+      const input = e.target.parentElement;
+      setInputInvalid(input);
+    };
+  })(),
+  true
+);
+
+function changeErrorText(input) {
+  const field = input.querySelector(".input__field");
+  const error = input.querySelector(".input__error");
+  if (error) {
+    error.innerText = field.validationMessage;
+  }
+}
+
 function validateInput(input) {
   const field = input.querySelector("input");
-  if (!input.classList.contains("input--required")) return;
-  // console.log()
+  if (field == null) return;
+  if (field.getAttribute("required") == null) return;
+
   if (field.type == "tel") {
     return validatePhone(input);
   } else if (field.type == "email") {
     return validateEmail(input);
-  } else if (input.classList.contains("input--dropdown ")) {
-    validateDropdown(input);
   } else {
     return validateInputLength(input);
   }
 }
+function setInputInvalid(input) {
+  input.classList.add("input--invalid");
+  const field = input.querySelector("input");
+  const isValid = field.validity.valid;
+  changeErrorText(input);
+  return isValid;
+}
+function setInputValid(input) {
+  input.classList.remove("input--invalid");
+  const field = input.querySelector("input");
+  const isValid = field.validity.valid;
+  changeErrorText(input);
+  return isValid;
+}
+
 function validateInputLength(input) {
   const field = input.querySelector("input");
   if (field.value.length == 0) {
-    input.classList.add("input--invalid");
-    return false;
+    return setInputInvalid(input);
   } else {
-    input.classList.remove("input--invalid");
-    return true;
+    return setInputValid(input);
   }
 }
 function validatePhone(input) {
   const field = input.querySelector(".input__field");
   let regex = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
   if (!regex.test(field.value)) {
-    input.classList.add("input--invalid");
-    // console.log("phone invalid");
-    return false;
+    return setInputInvalid(input);
   } else {
-    input.classList.remove("input--invalid");
-    // console.log("phone valid");
-    return true;
+    return setInputValid(input);
   }
 }
 function validateEmail(input) {
@@ -911,26 +940,9 @@ function validateEmail(input) {
     // eslint-disable-next-line no-control-regex
     /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
   if (!regex.test(field.value)) {
-    input.classList.add("input--invalid");
-    // console.log("email invalid");
-    return false;
+    return setInputInvalid(input);
   } else {
-    input.classList.remove("input--invalid");
-    // console.log("email valid");
-    return true;
-  }
-}
-
-function validateDropdown(input) {
-  const field = input.querySelector("input");
-  const label = input.querySelector("label");
-
-  if (field.value == label.innerText) {
-    input.classList.add("input--invalid");
-    return false;
-  } else {
-    input.classList.remove("input--invalid");
-    return true;
+    return setInputValid(input);
   }
 }
 // #endregion validate
@@ -941,7 +953,6 @@ const formsList = document.querySelectorAll("form");
 formsList.forEach((form) => {
   // console.log("form");
   form.addEventListener("submit", async (event) => {
-    // console.log(form);
     event.preventDefault();
 
     form.querySelectorAll(".input").forEach((input) => {
@@ -949,24 +960,21 @@ formsList.forEach((form) => {
     });
 
     // const formBody = new URLSearchParams(new FormData(form));
-
-    if ([...document.querySelectorAll(".input--invalid")].length === 0) {
-      let response = await fetch(window.location.origin + "/index.html", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-      });
-      try {
-        let result = await response.json();
-        console.log(result);
-        if (eventsThanks) {
-          openModal(eventsThanks);
-        }
-      } catch {
-        if (formError) {
-          openModal(formError);
-        }
+    let response = await fetch(window.location.origin + "/index.html", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+    });
+    try {
+      let result = await response.json();
+      console.log(result);
+      if (eventsThanks) {
+        openModal(eventsThanks);
+      }
+    } catch {
+      if (formError) {
+        openModal(formError);
       }
     }
   });
@@ -1067,35 +1075,7 @@ function closeDropdowns() {
   });
   window.removeEventListener("click", closeDropdowns);
 }
-function activateDropdown(input) {
-  const dropdown = input.querySelector(".input-dropdown");
-  if (!dropdown) return;
-  const dropdownItems = dropdown.querySelectorAll(".input-dropdown__item");
-  const field = input.querySelector(".input__field");
-  const realInput = input.querySelector("input[hidden]");
 
-  dropdownItems.forEach((dropdown) => {
-    dropdown.addEventListener("click", () => {
-      field.innerText = dropdown.innerText;
-      realInput.value = dropdown.innerText;
-      setTimeout(() => {
-        input.classList.remove(inputClasses.activeDropdown);
-        // console.log(input.classList);
-        input.classList.remove(inputClasses.invalid);
-        // console.log(input.classList);
-      }, 150);
-      input.classList.add(inputClasses.selectedDropdown);
-    });
-  });
-
-  setTimeout(() => {
-    if (realInput.value != "") {
-      // console.log(realInput.value);
-      field.innerText = realInput.value;
-      input.classList.add(inputClasses.selectedDropdown);
-    }
-  }, 200);
-}
 initInputs(inputs);
 if (document.querySelector(".input--dropdown")) {
   customSelect(".input--dropdown .input__select");
