@@ -93,6 +93,7 @@
 }
 
 .detailed__title {
+    max-width: 960px;
     margin-bottom: calc(var(--blocks-gap-small) + 3px);
     font-size: var(--fz-h1);
     font-weight: var(--fw-bold);
@@ -101,6 +102,7 @@
         margin-bottom: 24px;
     }
     @media (max-width: 576px) {
+        max-width: 100%;
         margin-bottom: 20px;
     }
 }

@@ -145,6 +145,12 @@
         width: 100%;
     }
 }
+.featured-slider .card__title {
+    max-width: 750px;
+    @media (max-width: 575px) {
+        max-width: 100%;
+    }
+}
 
 .swiper-wrapper-removed .card__title br {
     @media (max-width: 575px) {

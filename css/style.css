@@ -3993,6 +3993,7 @@ body._lock {
 }
 
 .detailed__title {
+  max-width: 960px;
   margin-bottom: calc(var(--blocks-gap-small) + 3px);
   font-size: var(--fz-h1);
   font-weight: var(--fw-bold);
@@ -4005,6 +4006,7 @@ body._lock {
 }
 @media (max-width: 576px) {
   .detailed__title {
+    max-width: 100%;
     margin-bottom: 20px;
   }
 }
@@ -6101,6 +6103,15 @@ body._lock {
 @media (max-width: 575px) {
   .featured-slider-slide {
     width: 100%;
+  }
+}
+
+.featured-slider .card__title {
+  max-width: 750px;
+}
+@media (max-width: 575px) {
+  .featured-slider .card__title {
+    max-width: 100%;
   }
 }
 
