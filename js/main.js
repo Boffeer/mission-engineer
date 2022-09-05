@@ -960,21 +960,23 @@ formsList.forEach((form) => {
     });
 
     // const formBody = new URLSearchParams(new FormData(form));
-    let response = await fetch(window.location.origin + "/index.html", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
-      },
-    });
-    try {
-      let result = await response.json();
-      console.log(result);
-      if (eventsThanks) {
-        openModal(eventsThanks);
-      }
-    } catch {
-      if (formError) {
-        openModal(formError);
+    if ([...form.querySelectorAll(".input--invalid")].length == 0) {
+      let response = await fetch(window.location.origin + "/index.html", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+      });
+      try {
+        let result = await response.json();
+        console.log(result);
+        if (eventsThanks) {
+          openModal(eventsThanks);
+        }
+      } catch {
+        if (formError) {
+          openModal(formError);
+        }
       }
     }
   });
