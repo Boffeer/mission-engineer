@@ -907,6 +907,18 @@ function setInputInvalid(input) {
   const field = input.querySelector("input");
   const isValid = field.validity.valid;
   changeErrorText(input);
+  let defaultErrorText = "Заполните поле";
+  if (field.type == "email") {
+    defaultErrorText = "Введите корректный email";
+  } else if (field.type == "tel") {
+    defaultErrorText = "Введите корректный телефон";
+  }
+  if (
+    input.classList.contains("input--invalid") &&
+    field.validationMessage == ""
+  ) {
+    input.querySelector(".input__error").innerText = defaultErrorText;
+  }
   return isValid;
 }
 function setInputValid(input) {
